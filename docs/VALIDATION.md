@@ -214,3 +214,10 @@ Limits: mapped coverage is partial; inferred heights, facade/window/material cho
 ## Public release — November 15, 2026, 22:18 MYT
 
 Owner-approved Sites version 1 succeeded at https://nightlens-sky-atlas.leveling-magician.chatgpt.site . Audience is public. Anonymous no-cookie HTTP checks returned 200 for the homepage, NASA MODIS JSON and original CSV; the CSV SHA-256 is byte-identical to the verified original. Live-browser checks confirmed the mapped-3D virtual platform, responsible lighting at 00:05, comparison and the 23-year MODIS trend with p≈0.197. No console errors/warnings were observed. Proofs: `evidence/browser/published-nightlens.jpg` and `published-nasa-trend.jpg`. This supersedes earlier local-only deployment status. Public demo and final owner judging submission remain separate work.
+
+
+## Public revision and repository verification
+
+Version 2 succeeded at 22:55 MYT on 15 November 2026. The public site showed renamed navigation, Start here, separate Environment controls, the explicit Busy city / No artificial light comparison, and Foggy strength 90. No browser errors/warnings were observed. Anonymous HTTP checks returned 200 for the homepage, MODIS JSON and original CSV, with the original checksum unchanged. Proof: `evidence/browser/published-v2-environment.jpg`.
+
+The public GitHub repository is https://github.com/ethanplayer1211-spec/nightlens . Source files and the rendered README were verified in the browser; the GitHub connector independently read the public judge's guide. The README's older unpublished-state statements were corrected before the final documentation push. This does not claim official judging submission.

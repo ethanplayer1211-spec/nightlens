@@ -1,6 +1,6 @@
 # Deployment handoff
 
-NightLens is a static Vite application. **Version 1 was publicly deployed through Sites on 15 November 2026 at 22:18 MYT:** https://nightlens-sky-atlas.leveling-magician.chatgpt.site. The owner explicitly approved public hosting. Final judging submission was not performed.
+NightLens is a static Vite application. **Version 2 was publicly deployed through Sites on 15 November 2026 at 22:55 MYT:** https://nightlens-sky-atlas.leveling-magician.chatgpt.site. The owner explicitly approved public hosting. Final judging submission was not performed.
 
 ## Vercel (preferred in the supplied brief)
 
@@ -32,3 +32,12 @@ No account files, credentials or owner agreement screenshot were included in sou
 4. Verify the published URL in a logged-out/private browser; official judges must not need access permissions.
 5. Host the ≤30-second video or ≤7-slide demo publicly. The storyboard is not itself a demo.
 6. Fill the official submission draft from `SUBMISSION.md`, review the owner declarations and submit before the event deadline.
+
+
+## Version 2 and public code repository
+
+Public code: https://github.com/ethanplayer1211-spec/nightlens . The repository README starts with `docs/JUDGES_GUIDE.md`, the live application and NASA investigation. This is the owner's chosen project-submission entry point. The earlier version-1 identifiers above remain historical release evidence.
+
+Version 2: saved version `appgprj_6af9bd2df6248191a5dd1aeccf732bb9~appgver_fd700fc7ba7881919a7ebba4afe0153f`; deployment `appgdep_6af9c7d3284c8191b191e8b316abd5e3`; source `e949915581f9c23ddc6a9db7e125ec33a682102a`. Public audience is unchanged. Subsequent GitHub documentation commits update release status only; application source is unchanged.
+
+The live app now exposes separate Place & time, Lighting and Environment tools, explicit before/after labels and an entry guide. Live browser checks confirmed mapped 3D, Busy city versus No artificial light, and Foggy strength 90. No console errors/warnings were observed. Anonymous HTTP checks again returned 200 for the homepage and NASA files; the original CSV checksum is unchanged. Official judging submission and public demo completion remain owner actions.

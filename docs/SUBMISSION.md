@@ -17,9 +17,9 @@ https://www.spaceappschallenge.org/2026/challenges/earth-system-trend-detective/
 
 ## Link to final project
 
-https://nightlens-sky-atlas.leveling-magician.chatgpt.site
+https://github.com/ethanplayer1211-spec/nightlens
 
-Public Sites version 1 deployed and anonymously verified on 15 November 2026 at 22:18 MYT. This URL is ready to paste into the official project editor; the editor was not modified during publication.
+Use the code repository as the project submission link. Its README begins with the judge’s starting guide and links to the public app: https://nightlens-sky-atlas.leveling-magician.chatgpt.site . Repository visibility is public. Live version 2 was verified on 15 November 2026. The official editor was not changed by this release.
 
 ## Link to project demo
 
