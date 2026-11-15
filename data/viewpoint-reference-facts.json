@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 1,
+  "researchedOn": "2026-11-15",
+  "purpose": "Source notes for named virtual observing stations and approximate parametric landmark geometry; not survey/CAD data or an access guide.",
+  "coordinatePolicy": "Final virtual camera inputs are map anchored, not surveyed eye positions. KL uses an estimated northeast deck edge; other stations use the specific mapped footway/viewpoint nodes documented below. Decimal precision does not establish survey accuracy.",
+  "stations": [
+    {
+      "id": "kl-sky-deck",
+      "city": "Kuala Lumpur",
+      "name": "KL Tower Sky Deck",
+      "coordinate": {
+        "latitude": 3.15293,
+        "longitude": 101.70386,
+        "status": "map-anchored virtual camera; not a surveyed eye position"
+      },
+      "deckFloorAboveGroundMeters": 300,
+      "assumedStandingEyeAboveSurfaceMeters": 1.7,
+      "nominalEyeAboveGroundMeters": 301.7,
+      "direction": "NE toward PETRONAS Twin Towers; heading should be calculated from source-aligned landmark coordinates.",
+      "sourceIds": [
+        "kl-tower",
+        "petronas-design",
+        "petronas-height"
+      ],
+      "terrain": {
+        "file": "public/data/terrain-kl-sky-deck.json",
+        "gridCenter": {
+          "latitude": 3.1529,
+          "longitude": 101.7038
+        },
+        "centerHeightMetersEGM96": 87.0,
+        "querySpacingMeters": 400,
+        "nativeProduct": "SRTMGL3 V003; approximately 90 m postings",
+        "status": "historical contextual surface estimate, not surveyed bare earth, deck or current building foundation",
+        "farFile": "public/data/terrain-far-kl-sky-deck.json",
+        "farQuerySpacingMeters": 2000
+      },
+      "coordinateNotes": "Estimated northeast deck-edge point near OSM tower node 5839389988; not a surveyed camera pose."
+    },
+    {
+      "id": "penang-esplanade",
+      "city": "Penang",
+      "name": "Esplanade waterfront promenade",
+      "coordinate": {
+        "latitude": 5.4215763,
+        "longitude": 100.3423921,
+        "status": "map-anchored virtual camera; not a surveyed eye position"
+      },
+      "deckFloorAboveGroundMeters": 0,
+      "assumedStandingEyeAboveSurfaceMeters": 1.7,
+      "nominalEyeAboveGroundMeters": 1.7,
+      "direction": "Waterfront and colonial civic precinct; use map-aligned shoreline and landmark bearings.",
+      "sourceIds": [
+        "penang-tourism"
+      ],
+      "terrain": {
+        "file": "public/data/terrain-penang-esplanade.json",
+        "gridCenter": {
+          "latitude": 5.42145,
+          "longitude": 100.34235
+        },
+        "centerHeightMetersEGM96": 6.0,
+        "querySpacingMeters": 500,
+        "nativeProduct": "SRTMGL3 V003; approximately 90 m postings",
+        "status": "historical contextual surface estimate, not surveyed bare earth, deck or current building foundation",
+        "farFile": "public/data/terrain-far-penang-esplanade.json",
+        "farQuerySpacingMeters": 2000
+      },
+      "coordinateNotes": "OpenStreetMap Esplanade footway 972732143, node 7651911375; not a surveyed eye position."
+    },
+    {
+      "id": "seoul-namsan",
+      "city": "Seoul",
+      "name": "Namsan Palgakjeong outdoor plaza",
+      "coordinate": {
+        "latitude": 37.5519388,
+        "longitude": 126.9885103,
+        "status": "map-anchored virtual camera; not a surveyed eye position"
+      },
+      "deckFloorAboveGroundMeters": 0,
+      "assumedStandingEyeAboveSurfaceMeters": 1.7,
+      "nominalEyeAboveGroundMeters": 1.7,
+      "direction": "Outdoor plaza near N Seoul Tower; do not imply an indoor observatory viewpoint.",
+      "sourceIds": [
+        "seoul-data",
+        "seoul-deck"
+      ],
+      "terrain": {
+        "file": "public/data/terrain-seoul-namsan.json",
+        "gridCenter": {
+          "latitude": 37.5514,
+          "longitude": 126.9883
+        },
+        "centerHeightMetersEGM96": 260.0,
+        "querySpacingMeters": 500,
+        "nativeProduct": "SRTMGL3 V003; approximately 90 m postings",
+        "status": "historical contextual surface estimate, not surveyed bare earth, deck or current building foundation",
+        "farFile": "public/data/terrain-far-seoul-namsan.json",
+        "farQuerySpacingMeters": 2000
+      },
+      "coordinateNotes": "OpenStreetMap viewpoint node 3832844678; eye height assumed."
+    },
+    {
+      "id": "sydney-macquaries",
+      "city": "Sydney",
+      "name": "Mrs Macquaries Chair",
+      "coordinate": {
+        "latitude": -33.8594584,
+        "longitude": 151.221884,
+        "status": "map-anchored virtual camera; not a surveyed eye position"
+      },
+      "deckFloorAboveGroundMeters": 0,
+      "assumedStandingEyeAboveSurfaceMeters": 1.7,
+      "nominalEyeAboveGroundMeters": 1.7,
+      "direction": "NW toward Opera House and Harbour Bridge, using their mapped bearings.",
+      "sourceIds": [
+        "sydney-chair",
+        "sydney-chair-nsw"
+      ],
+      "terrain": {
+        "file": "public/data/terrain-sydney-macquaries.json",
+        "gridCenter": {
+          "latitude": -33.85935,
+          "longitude": 151.2223
+        },
+        "centerHeightMetersEGM96": 3.0,
+        "querySpacingMeters": 500,
+        "nativeProduct": "SRTMGL3 V003; approximately 90 m postings",
+        "status": "historical contextual surface estimate, not surveyed bare earth, deck or current building foundation",
+        "farFile": "public/data/terrain-far-sydney-macquaries.json",
+        "farQuerySpacingMeters": 2000
+      },
+      "coordinateNotes": "OpenStreetMap viewpoint node 2386873673, beside Mrs Macquarie’s Chair."
+    },
+    {
+      "id": "london-primrose",
+      "city": "London",
+      "name": "Primrose Hill summit viewpoint",
+      "coordinate": {
+        "latitude": 51.5395287,
+        "longitude": -0.1606936,
+        "status": "map-anchored virtual camera; not a surveyed eye position"
+      },
+      "deckFloorAboveGroundMeters": 0,
+      "assumedStandingEyeAboveSurfaceMeters": 1.7,
+      "nominalEyeAboveGroundMeters": 1.7,
+      "direction": "South/southeast across central London; source-aligned BT Tower and Shard bearings.",
+      "sourceIds": [
+        "primrose-parks"
+      ],
+      "terrain": {
+        "file": "public/data/terrain-london-primrose.json",
+        "gridCenter": {
+          "latitude": 51.5395,
+          "longitude": -0.1606
+        },
+        "centerHeightMetersEGM96": 60.0,
+        "querySpacingMeters": 500,
+        "nativeProduct": "SRTMGL3 V003; approximately 90 m postings",
+        "status": "historical contextual surface estimate, not surveyed bare earth, deck or current building foundation",
+        "farFile": "public/data/terrain-far-london-primrose.json",
+        "farQuerySpacingMeters": 2000
+      },
+      "coordinateNotes": "OpenStreetMap viewpoint node 569700954; summit approximately 63 m ASL from Royal Parks."
+    },
+    {
+      "id": "new-york-pier1",
+      "city": "New York",
+      "name": "Brooklyn Bridge Park Pier 1 promenade",
+      "coordinate": {
+        "latitude": 40.7019951,
+        "longitude": -73.9974077,
+        "status": "map-anchored virtual camera; not a surveyed eye position"
+      },
+      "deckFloorAboveGroundMeters": 0,
+      "assumedStandingEyeAboveSurfaceMeters": 1.7,
+      "nominalEyeAboveGroundMeters": 1.7,
+      "direction": "Across the East River toward Lower Manhattan; Brooklyn Bridge north/northwest of this station.",
+      "sourceIds": [
+        "pier1-operator"
+      ],
+      "terrain": {
+        "file": "public/data/terrain-new-york-pier1.json",
+        "gridCenter": {
+          "latitude": 40.7021,
+          "longitude": -73.9969
+        },
+        "centerHeightMetersEGM96": 4.0,
+        "querySpacingMeters": 500,
+        "nativeProduct": "SRTMGL3 V003; approximately 90 m postings",
+        "status": "historical contextual surface estimate, not surveyed bare earth, deck or current building foundation",
+        "farFile": "public/data/terrain-far-new-york-pier1.json",
+        "farQuerySpacingMeters": 2000
+      },
+      "coordinateNotes": "OpenStreetMap Granite Prospect node 3351167989; terrace height is not surveyed."
+    },
+    {
+      "id": "atacama-kari",
+      "city": "San Pedro de Atacama",
+      "name": "Mirador de Kari / Piedra del Coyote",
+      "coordinate": {
+        "latitude": -22.9169811,
+        "longitude": -68.2545001,
+        "status": "map-anchored virtual camera; not a surveyed eye position"
+      },
+      "deckFloorAboveGroundMeters": 0,
+      "assumedStandingEyeAboveSurfaceMeters": 1.7,
+      "nominalEyeAboveGroundMeters": 1.7,
+      "direction": "Salt-range and basin view; landscape geometry requires sampled terrain rather than an invented urban skyline.",
+      "sourceIds": [
+        "kari-fieldguide",
+        "atacama-municipality",
+        "kari-manager"
+      ],
+      "terrain": {
+        "file": "public/data/terrain-atacama-kari.json",
+        "gridCenter": {
+          "latitude": -22.917238,
+          "longitude": -68.25399
+        },
+        "centerHeightMetersEGM96": 2595.0,
+        "querySpacingMeters": 500,
+        "nativeProduct": "SRTMGL3 V003; approximately 90 m postings",
+        "status": "historical contextual surface estimate, not surveyed bare earth, deck or current building foundation",
+        "farFile": "public/data/terrain-far-atacama-kari.json",
+        "farQuerySpacingMeters": 2000
+      },
+      "coordinateNotes": "OpenStreetMap Mirador/Piedra del Coyote node 1621464180; nearby Kari location corroborated by geology field guide."
+    }
+  ],
+  "architecturalFacts": [
+    {
+      "id": "petronas",
+      "name": "PETRONAS Twin Towers",
+      "dimensions": {
+        "architecturalHeightMeters": 451.9,
+        "occupiedHeightMeters": 375,
+        "storeys": 88,
+        "skybridgeAboveGroundMeters": 170,
+        "skybridgeLengthMeters": 58.4,
+        "skybridgeLevels": [
+          41,
+          42
+        ],
+        "observationDeckAboveGroundMeters": 370,
+        "bustleAnnexStoreys": 44
+      },
+      "shape": "Twin stepped towers with spires, interlocking-square/semicircle plan and a connecting double-level bridge. Parametric implementation remains approximate.",
+      "sourceIds": [
+        "petronas-design",
+        "petronas-height",
+        "petronas-ctbuh"
+      ],
+      "notes": [
+        "Official structure page shows inconsistent 451.8 m/452 m rounding; 451.9 m is stated by the operator stories page and CTBUH.",
+        "Architectural maximum, occupied height, observation deck and bridge are distinct measures.",
+        "Published dimensions do not specify every setback, facade panel or exact bridge attachment."
+      ]
+    },
+    {
+      "id": "merdeka118",
+      "name": "Merdeka 118",
+      "dimensions": {
+        "architecturalHeightMeters": 678.9,
+        "storeys": 118
+      },
+      "shape": "Diamond-plan, faceted glazed tower with spire.",
+      "sourceIds": [
+        "merdeka-pnb",
+        "merdeka-architect"
+      ],
+      "notes": [
+        "Use the developer final height, not the architect page introductory approximate 600 m wording.",
+        "Facet subdivisions and spire geometry require modelling assumptions unless surveyed/CAD data are acquired."
+      ]
+    },
+    {
+      "id": "sydney-opera",
+      "name": "Sydney Opera House",
+      "dimensions": {
+        "highestRoofMetersASL": 67,
+        "approximateLengthMeters": 183,
+        "approximateWidthMeters": 120
+      },
+      "shape": "Grouped shell roofs derived from a common sphere over a raised podium.",
+      "sourceIds": [
+        "opera-operator",
+        "opera-heritage",
+        "opera-contractor"
+      ],
+      "notes": [
+        "67 m is above sea level, not a height to add blindly above podium or terrain.",
+        "Maximum dimensions do not constitute a full roof-shell CAD model."
+      ]
+    },
+    {
+      "id": "sydney-bridge",
+      "name": "Sydney Harbour Bridge",
+      "dimensions": {
+        "archSpanMeters": 503,
+        "archTopMetersASL": 134,
+        "pylonHeightMeters": 89,
+        "shippingClearanceMeters": 49,
+        "deckWidthMeters": 49,
+        "totalLengthWithApproachesMeters": 1149
+      },
+      "shape": "Steel through-arch bridge with stone pylons and suspended deck.",
+      "sourceIds": [
+        "sydney-bridge"
+      ],
+      "notes": [
+        "Arch top ASL, shipping clearance and deck width are different geometric quantities.",
+        "Approximate reconstruction must not relabel shipping clearance as exact roadway elevation."
+      ]
+    },
+    {
+      "id": "bt-tower",
+      "name": "BT Tower",
+      "dimensions": {
+        "totalHeightMeters": 189,
+        "mainStructureHeightMeters": 177,
+        "includedRadarMastMeters": 12,
+        "revolvingFloorMetersAGL": 158
+      },
+      "shape": "Slender cylindrical concrete shaft, upper circular floors and mast.",
+      "sourceIds": [
+        "bt-archive"
+      ],
+      "notes": [
+        "Historic microwave dishes were removed in 2011; do not use an old dish-covered silhouette as a current exact model."
+      ]
+    },
+    {
+      "id": "shard",
+      "name": "The Shard",
+      "dimensions": {
+        "heightMeters": 309.6
+      },
+      "shape": "Tapering glazed tower with a separated-shard crown; detailed cross-section is approximate.",
+      "sourceIds": [
+        "shard-operator"
+      ],
+      "notes": [
+        "Height alone does not determine exact plan, facade or crown shape."
+      ]
+    },
+    {
+      "id": "one-wtc",
+      "name": "One World Trade Center",
+      "dimensions": {
+        "architecturalHeightFeet": 1776,
+        "architecturalHeightMetersConverted": 541.3248,
+        "spireFeet": 408,
+        "spireMetersConverted": 124.3584,
+        "upperSquareSideFeet": 150,
+        "upperSquareSideMetersConverted": 45.72,
+        "upperSquareRotationDegrees": 45
+      },
+      "shape": "Square base, eight triangular faces, octagonal middle and rotated square upper parapet.",
+      "sourceIds": [
+        "wtc-operator",
+        "wtc-architect",
+        "wtc-spire"
+      ],
+      "notes": [
+        "Foot conversions are arithmetic, not claims of millimetre modelling accuracy.",
+        "The spire is included in total architectural height; do not add it twice."
+      ]
+    },
+    {
+      "id": "brooklyn-bridge",
+      "name": "Brooklyn Bridge",
+      "dimensions": {
+        "mainSpanFeet": 1595.5,
+        "mainSpanMetersConverted": 486.3084,
+        "centerClearanceFeet": 135,
+        "centerClearanceMetersConverted": 41.148,
+        "towerAboveHighWaterFeet": 276.5,
+        "towerAboveHighWaterMetersConverted": 84.2772,
+        "towerBaseLengthFeet": 140,
+        "towerBaseWidthFeet": 59,
+        "towerTopLengthFeet": 136,
+        "towerTopWidthFeet": 53
+      },
+      "shape": "Masonry towers with paired pointed arch openings, suspension main cables and diagonal stays.",
+      "sourceIds": [
+        "brooklyn-dot",
+        "brooklyn-nps",
+        "brooklyn-loc"
+      ],
+      "notes": [
+        "NPS nomination gives 276 ft 6 in; HAER table rounds tower height differently and has inconsistent parenthetical conversions.",
+        "Use measured-datum wording above high water, not unqualified building AGL.",
+        "Historic total length varies by the definition of approaches; current DOT states 6016 ft."
+      ]
+    }
+  ],
+  "sources": {
+    "kl-tower": {
+      "url": "https://kltower.com.my/",
+      "publisher": "KL Tower operator",
+      "supports": "Sky Deck approximately 300 metres above ground; distinct from the PETRONAS Twin Towers."
+    },
+    "petronas-design": {
+      "url": "https://www.petronastwintowers.com.my/the-towers/design-structure/",
+      "publisher": "PETRONAS Twin Towers operator",
+      "supports": "88 storeys; bridge at 170 m AGL with 58.4 m length at levels 41/42; 370 m AGL observation level; interlocking-square and semicircle floor-plan description; 44-storey bustle annex."
+    },
+    "petronas-height": {
+      "url": "https://www.petronastwintowers.com.my/the-towers/the-stories/",
+      "publisher": "PETRONAS Twin Towers operator",
+      "supports": "451.9 m tower height."
+    },
+    "petronas-ctbuh": {
+      "url": "https://www.skyscrapercenter.com/building/wd/149",
+      "publisher": "Council on Tall Buildings and Urban Habitat",
+      "supports": "451.9 m architectural/tip height; highest occupied height 375 m; height measurement definitions."
+    },
+    "merdeka-pnb": {
+      "url": "https://www.pnb.com.my/sites/default/files/2024-09/2021.pdf",
+      "publisher": "Permodalan Nasional Berhad, developer annual report",
+      "supports": "Merdeka 118 final height 678.9 m after completion of the spire."
+    },
+    "merdeka-architect": {
+      "url": "https://fkaustralia.com/project/merdeka-118/",
+      "publisher": "Fender Katsalidis, project architect",
+      "supports": "118-storey tower; diamond plan and faceted glazing/design description. Its introductory 600 m wording is approximate, not the completed 678.9 m height source."
+    },
+    "penang-tourism": {
+      "url": "https://www.mypenang.gov.my/view_directory.php?id=bmhoU1hTWkZaYW9vMFh4TzdOKzJOUT09",
+      "publisher": "Penang Global Tourism",
+      "supports": "Esplanade / Padang Kota Lama location and waterfront precinct."
+    },
+    "seoul-data": {
+      "url": "https://www.nseoultower.co.kr/eng/global/intro2.asp",
+      "publisher": "N Seoul Tower operator",
+      "supports": "Total tower 236.7 m, body 135.7 m, steel mast 101 m; operator lists foundation datum 270 m and total elevation 506.7 m. Not the chosen plaza eye height."
+    },
+    "seoul-deck": {
+      "url": "https://www.nseoultower.co.kr/eng/visit/observatory.asp",
+      "publisher": "N Seoul Tower operator",
+      "supports": "Enclosed observatory approximately 400 m above sea level. This differs from the chosen outdoor Namsan plaza."
+    },
+    "sydney-chair": {
+      "url": "https://www.botanicgardens.org.au/facility/mrs-macquaries-chair",
+      "publisher": "Botanic Gardens of Sydney",
+      "supports": "Named Mrs Macquaries Chair station on the Domain waterfront."
+    },
+    "sydney-chair-nsw": {
+      "url": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/mrs-macquaries-chair-sydney",
+      "publisher": "NSW Government",
+      "supports": "Harbour viewpoint and carved sandstone seat; does not survey the chosen eye point."
+    },
+    "sydney-bridge": {
+      "url": "https://www.transport.nsw.gov.au/system/files/media/documents/2023/harbour-bridge-history.pdf",
+      "publisher": "Transport for NSW",
+      "supports": "Main arch span 503 m, top 134 m ASL, pylons 89 m, shipping clearance 49 m, deck width 49 m, total including approaches 1149 m."
+    },
+    "opera-operator": {
+      "url": "https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/tourism-sales-manual-december-2020.pdf",
+      "publisher": "Sydney Opera House",
+      "supports": "Highest sail 67 m above sea level, not 67 m above the raised podium."
+    },
+    "opera-heritage": {
+      "url": "https://www.dcceew.gov.au/parks-heritage/heritage/places/world/sydney-opera-house",
+      "publisher": "Australian Government DCCEEW",
+      "supports": "Roof-shell geometry derived from a common imagined sphere; not a complete licensed mesh."
+    },
+    "opera-contractor": {
+      "url": "https://www.permasteelisagroup.com/historic-project/sydney-opera-house/",
+      "publisher": "Permasteelisa, facade contractor",
+      "supports": "Approximate building dimensions 183 m long, 120 m wide, 67 m high."
+    },
+    "primrose-parks": {
+      "url": "https://www.royalparks.org.uk/visit/parks/regents-park-primrose-hill/primrose-hill",
+      "publisher": "The Royal Parks",
+      "supports": "Summit almost 63 m above sea level and designated skyline viewpoint; no precise surveyed eye coordinate."
+    },
+    "bt-archive": {
+      "url": "https://www.bt.com/bt-plc/assets/documents/about-bt/our-history/bt-archives/information-sheets-and-timelines/bt-tower.pdf",
+      "publisher": "BT Archives",
+      "supports": "189 m total including 12 m mast; main structure 177 m; revolving floor 158 m AGL; historic microwave aerials removed in 2011."
+    },
+    "shard-operator": {
+      "url": "https://www.the-shard.com/about//",
+      "publisher": "The Shard",
+      "supports": "Tower height 309.6 m."
+    },
+    "pier1-operator": {
+      "url": "https://brooklynbridgepark.org/places-to-see/pier-1/",
+      "publisher": "Brooklyn Bridge Park",
+      "supports": "Pier 1 promenade views of Lower Manhattan and Brooklyn Bridge; park peak 20 ft is not every promenade point elevation."
+    },
+    "brooklyn-dot": {
+      "url": "https://www.nyc.gov/html/dot/html/infrastructure/brooklyn-bridge.shtml",
+      "publisher": "NYC Department of Transportation",
+      "supports": "Main span 1595.5 ft, central clearance 135 ft, total bridge/approaches 6016 ft."
+    },
+    "brooklyn-nps": {
+      "url": "https://npgallery.nps.gov/GetAsset/763eefb2-3e0e-44e3-be5e-c7bdd9608e7b/",
+      "publisher": "US National Park Service, National Register nomination",
+      "supports": "Masonry tower height 276 ft 6 in above high water; base 140 by 59 ft; top 136 by 53 ft."
+    },
+    "brooklyn-loc": {
+      "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ny/ny1200/ny1234/data/ny1234data.pdf",
+      "publisher": "Library of Congress, HAER NY-18",
+      "supports": "Historical bridge dimensions. Some parenthetical metric conversions differ from direct foot conversions; preserve rounded modelling precision."
+    },
+    "wtc-operator": {
+      "url": "https://wtc.com/work-place/1wtc/",
+      "publisher": "World Trade Center operator",
+      "supports": "One WTC architectural height 1776 ft including spire."
+    },
+    "wtc-architect": {
+      "url": "https://www.som.com/projects/one-world-trade-center/",
+      "publisher": "Skidmore, Owings and Merrill, architect",
+      "supports": "Cubic base, eight triangular faces, octagonal middle, 150 ft square parapet turned 45 degrees relative to base."
+    },
+    "wtc-spire": {
+      "url": "https://www.som.com/news/one-wtc-inside-the-tallest-building-in-the-western-hemisphere/",
+      "publisher": "Skidmore, Owings and Merrill",
+      "supports": "408 ft spire/antenna description; not a separate total building height."
+    },
+    "kari-fieldguide": {
+      "url": "https://aulados.net/Geotours/PDFs/Valles_Luna_Marte_1.pdf",
+      "publisher": "Author-produced geological field guide",
+      "supports": "Mirador de Kari approximately -22.917200, -68.254060; broad regional altitude 2500-2900 m, not a precise observer elevation."
+    },
+    "atacama-municipality": {
+      "url": "https://munispa.cl/wp-content/uploads/2026/03/Manual-Turismo-Completo-22-2026.pdf",
+      "publisher": "Municipality of San Pedro de Atacama",
+      "supports": "Valle de la Luna / Mirador de Kari precinct. Its -22.924146,-68.288110 reference is an area point, not necessarily the Coyote lookout ledge."
+    },
+    "kari-manager": {
+      "url": "https://valledelaluna.com/en/?wmc-currency=USD",
+      "publisher": "Valley of the Moon Indigenous Association",
+      "supports": "Published Ckary closure notice after May 27, 2026 earthquake safety review; virtual station does not imply physical access."
+    },
+    "srtm-provider": {
+      "url": "https://www.opentopodata.org/datasets/srtm/",
+      "publisher": "Open Topo Data, serving NASA/USGS SRTMGL3 V003",
+      "supports": "3 arc-second (~90 m equatorial) historical surface elevations, WGS84 horizontal coordinates and EGM96 vertical datum; separate service from NASA."
+    },
+    "srtm-nasa": {
+      "url": "https://www.jpl.nasa.gov/missions/shuttle-radar-topography-mission-srtm/",
+      "publisher": "NASA/JPL",
+      "supports": "SRTM mission context; historical elevation sampling, not current facades or calibrated visibility."
+    }
+  },
+  "terrainLimits": [
+    "NASA/USGS SRTMGL3 V003 is historical radar-surface elevation with void filling, not a present-day surveyed bare-earth model.",
+    "Native approximately 90 m raster postings are sampled on NightLens grids spaced 400 m for KL and 500 m elsewhere. Query spacing is not native resolution.",
+    "Vertical datum is EGM96; operator references using above sea level may use unspecified datums. Their values are not an exact vertical-control survey.",
+    "Vegetation and buildings can affect radar returns; no original per-sample quality flags or uncertainty are provided by this API.",
+    "The observer camera must distinguish ground/surface ASL, platform AGL, and assumed standing eye height.",
+    "The KL grid center sample of 87 m is contextual and offset from the estimated deck edge; it is not an exact tower-foundation elevation."
+  ],
+  "accessNotes": {
+    "scope": "Virtual scenes do not imply physical visitor access at the selected clock time. No travel opening-hours recommendation is made.",
+    "atacama": {
+      "sourceId": "kari-manager",
+      "checkedOn": "2026-11-15",
+      "notice": "Official manager page states Ckary closed until further notice after May 27, 2026 earthquake safety review; current alert layers may coexist with nominal hours. The virtual scene must not be presented as advice to enter."
+    }
+  },
+  "panoramaAssessment": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Panorama_view_of_Petronas_Twin_Tower_from_KL_Tower_in_2019.jpg",
+      "author": "Shesmax / Maxim Shesterikov",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "status": "Research reference only; not downloaded or bundled.",
+      "limitations": [
+        "8654 by 3325 pixels; not verified as a full equirectangular sphere.",
+        "Caption/title places view at KL Tower, but camera geotag 3.158,101.712 is near the subject towers rather than KL Tower. It cannot establish an exact camera pose.",
+        "No verified compass heading, horizon pitch or stitched angular field is available; do not register the astronomical sky using this geotag."
+      ]
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Sky_Deck_at_Kuala_Lumpur_Tower_(Menara_KL),_Malaysia_on_28_July_2020_at_172231.jpg",
+      "author": "Frostpolar",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "status": "Research reference only; ordinary perspective photograph, not a calibrated 360-degree texture; not downloaded or bundled."
+    },
+    {
+      "url": "https://www.360cities.net/st/image/kuala-lumpur-malaysia-view-from-kl-tower-menara-feb-2009",
+      "status": "Actual spherical panorama found, but page requires licensing. Not downloaded, extracted or bundled."
+    }
+  ],
+  "renderingBoundary": [
+    "No third-party photographic panorama, facade texture, article figure or surveyed mesh is bundled by these research artifacts.",
+    "Parametric landmark profiles, platform railings, materials, windows and any unmeasured foreground detail are approximations.",
+    "Published maximum dimensions constrain scale; they do not prove every visible surface or the exact design of the real city.",
+    "Do not describe a fixed-location rotating virtual camera as a measured photorealistic digital twin or a walkable surveyed reconstruction.",
+    "Static/current landmark geometry does not reconstruct historical construction. Changing the sky date does not establish that all shown structures existed then; scene vintage must be stated."
+  ]
+}

@@ -1,6 +1,6 @@
 import type { LightColorScenario } from './scenario';
 
-export type HorizonTheme = 'local' | 'rooftop' | 'coast' | 'meadow';
+export type HorizonTheme = 'local' | 'rooftop' | 'coast' | 'meadow' | 'viewpoint';
 export type ViewStyle = 'natural' | 'survey';
 export interface SkyFilters {
   hazePercent: number;
@@ -28,8 +28,8 @@ export const DEFAULT_NIGHT_LIGHTING: Readonly<NightLighting> = Object.freeze({ s
 const clamp = (v: number, a = 0, b = 100) => { if (!Number.isFinite(v)) throw new RangeError('Display inputs must be finite'); return Math.max(a, Math.min(b, v)); };
 
 export function normalizeFilters(value: SkyFilters): SkyFilters {
-  if (!['local','rooftop','coast','meadow'].includes(value.horizon) || !['natural','survey'].includes(value.viewStyle) || typeof value.moonlightEnabled !== 'boolean') throw new RangeError('Unknown sky environment');
-  return { ...value, hazePercent:clamp(value.hazePercent),cloudPercent:clamp(value.cloudPercent),cloudOpacityPercent:clamp(value.cloudOpacityPercent),glarePercent:clamp(value.glarePercent),observerHeight:clamp(value.observerHeight,1.7,60) };
+  if (!['local','rooftop','coast','meadow','viewpoint'].includes(value.horizon) || !['natural','survey'].includes(value.viewStyle) || typeof value.moonlightEnabled !== 'boolean') throw new RangeError('Unknown sky environment');
+  return { ...value, hazePercent:clamp(value.hazePercent),cloudPercent:clamp(value.cloudPercent),cloudOpacityPercent:clamp(value.cloudOpacityPercent),glarePercent:clamp(value.glarePercent),observerHeight:clamp(value.observerHeight,1.7,value.horizon==='viewpoint'?600:60) };
 }
 export function normalizeLighting(value: NightLighting): NightLighting {
   if (typeof value.scheduleEnabled !== 'boolean' || typeof value.shieldingEnabled !== 'boolean' || !['warm','cool'].includes(value.lightColorScenario)) throw new RangeError('Unknown lighting setting');

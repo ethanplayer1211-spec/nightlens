@@ -27,6 +27,11 @@ void main(){
   float darkness=1.0-smoothstep(-18.0,-3.0,sunAltitude);
   vec3 lamp=mix(vec3(.20,.245,.29),vec3(.31,.21,.125),warmth*(1.0-before));
   if(elevation<0.0){
+    if(horizonKind>3.5){
+      // Unmapped distance is atmospheric context, never an invented continuation of the city.
+      vec3 distant=mix(vec3(.012,.022,.037)+vec3(.055,.07,.083)*light,vec3(.31,.43,.54),daylight);
+      gl_FragColor=vec4(distant,1.0);return;
+    }
     float height=horizonKind>.5&&horizonKind<1.5?1.7:eyeHeight;
     float distance=min(4000.0,height/max(.001,-elevation));
     vec3 hit=vec3(ray.x*distance,0.0,ray.z*distance);
@@ -138,7 +143,7 @@ export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void
         gl.uniform1f(uniforms.haze,props.filters.hazePercent/100);gl.uniform1f(uniforms.cloudOpacity,props.filters.cloudOpacityPercent/100);
         gl.uniform1f(uniforms.glare,props.filters.glarePercent/100);gl.uniform1f(uniforms.fixtureGlare,props.fixtureGlare);
         gl.uniform1f(uniforms.warmth,props.warmth);gl.uniform1f(uniforms.exposure,props.filters.viewStyle==='survey'?0.82:0.23);
-        gl.uniform1f(uniforms.horizonKind,['local','rooftop','coast','meadow'].indexOf(props.filters.horizon));gl.uniform1f(uniforms.eyeHeight,props.filters.observerHeight);
+        gl.uniform1f(uniforms.horizonKind,['local','rooftop','coast','meadow','viewpoint'].indexOf(props.filters.horizon));gl.uniform1f(uniforms.eyeHeight,props.filters.observerHeight);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
       },
       destroy() { disposed = true; image.onload = null; image.onerror = null; gl.deleteTexture(texture); gl.deleteBuffer(buffer); gl.deleteProgram(program); gl.deleteShader(vertex); gl.deleteShader(fragment); },

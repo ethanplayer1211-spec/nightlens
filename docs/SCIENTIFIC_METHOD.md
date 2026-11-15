@@ -56,7 +56,7 @@ Projection is azimuthal equidistant with north up, east left and zenith centered
 
 `y = centerY − r × cos(azimuth)`
 
-Moon symbol size/phase glyph and star sizes are schematic; local terrain, atmospheric refraction and optical instrument response are not modeled.
+Moon symbol size/phase glyph and star sizes are schematic; atmospheric refraction and optical instrument response are not modeled. Named stations use approximate terrain/building occlusion as documented in VIEWPOINT_SOURCES.md; geometric sky objects below 0 degrees remain excluded, including on high decks.
 
 ## City Experiment
 

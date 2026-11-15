@@ -1,0 +1,380 @@
+{
+  "sources": [
+    {
+      "provider": "OpenStreetMap contributors via OSM API 0.6",
+      "format": "OSM API JSON node references resolved to returned coordinates",
+      "boundingBox": [
+        101.7018,
+        3.1494,
+        101.7138,
+        3.1614
+      ],
+      "queryCenter": {
+        "latitude": 3.1554,
+        "longitude": 101.7078
+      },
+      "selectionReference": {
+        "latitude": 3.1529,
+        "longitude": 101.7032
+      },
+      "coverage": "Exact boundingBox is authoritative; station reference and map query center may differ. No complete distant skyline or terrain is claimed.",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/map.json?bbox=101.7018000,3.1494000,101.7138000,3.1614000",
+      "query": "bbox=101.7018000,3.1494000,101.7138000,3.1614000",
+      "retrievedAt": "2026-11-15T05:33:48.479872+00:00",
+      "osmTimestamp": null,
+      "rawFile": "data/raw/viewpoint-kl-sky-deck.json",
+      "rawSha256": "34ba83253f1e022e37a7cfee187b726d0224e5b083415b15c5352eafe9796228",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "changes": "Selected up to 650 nearest building ways plus all building parts and buildings carrying height/levels/name tags, and roads/water/wood/parks/grass ways. Selected ground furniture/viewpoint/tree/tower nodes retain their source coordinates and tags, without editing metadata. Source IDs, tags and geometry preserved; OSM API way node references resolve to returned original node coordinates. Bounding-box coverage may be partial; included relation membership is retained but missing outer members are not invented. Relation multipolygons and terrain not reconstructed. Unmapped architectural details and missing heights must not be described as exact.",
+      "id": "kl-sky-deck",
+      "observer": {
+        "latitude": 3.1554,
+        "longitude": 101.7078
+      },
+      "radiusMeters": 667,
+      "outputFile": "public/data/viewpoint-kl-sky-deck.json",
+      "rawBytes": 4693860,
+      "compactBytes": 1347116,
+      "sourceElements": 22790,
+      "elements": 3290,
+      "buildingWays": 484,
+      "buildingParts": 320,
+      "heightTaggedBuildings": 57,
+      "levelsTaggedBuildings": 107,
+      "heightTaggedParts": 105,
+      "levelsTaggedParts": 140,
+      "selectedNodes": 143
+    },
+    {
+      "provider": "OpenStreetMap contributors via OSM API 0.6",
+      "format": "OSM API JSON node references resolved to returned coordinates",
+      "boundingBox": [
+        100.33534999999999,
+        5.41445,
+        100.34935,
+        5.42845
+      ],
+      "queryCenter": {
+        "latitude": 5.42145,
+        "longitude": 100.34235
+      },
+      "selectionReference": {
+        "latitude": 5.42145,
+        "longitude": 100.34235
+      },
+      "coverage": "Exact boundingBox is authoritative; station reference and map query center may differ. No complete distant skyline or terrain is claimed.",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/map.json?bbox=100.3353500,5.4144500,100.3493500,5.4284500",
+      "query": "bbox=100.3353500,5.4144500,100.3493500,5.4284500",
+      "retrievedAt": "2026-11-15T05:34:10.881535+00:00",
+      "osmTimestamp": null,
+      "rawFile": "data/raw/viewpoint-penang-esplanade.json",
+      "rawSha256": "911941aa83253f191ac7cc379ea09d557a300d9099728cb36b6f68d0f8c2124a",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "changes": "Selected up to 650 nearest building ways plus all building parts and buildings carrying height/levels/name tags, and roads/water/wood/parks/grass ways. Selected ground furniture/viewpoint/tree/tower nodes retain their source coordinates and tags, without editing metadata. Source IDs, tags and geometry preserved; OSM API way node references resolve to returned original node coordinates. Bounding-box coverage may be partial; included relation membership is retained but missing outer members are not invented. Relation multipolygons and terrain not reconstructed. Unmapped architectural details and missing heights must not be described as exact.",
+      "id": "penang-esplanade",
+      "observer": {
+        "latitude": 5.42145,
+        "longitude": 100.34235
+      },
+      "radiusMeters": 776,
+      "outputFile": "public/data/viewpoint-penang-esplanade.json",
+      "rawBytes": 2696488,
+      "compactBytes": 653059,
+      "sourceElements": 12507,
+      "elements": 1563,
+      "buildingWays": 719,
+      "buildingParts": 13,
+      "heightTaggedBuildings": 2,
+      "levelsTaggedBuildings": 109,
+      "heightTaggedParts": 0,
+      "levelsTaggedParts": 13,
+      "selectedNodes": 59
+    },
+    {
+      "provider": "OpenStreetMap contributors via OSM API 0.6",
+      "format": "OSM API JSON node references resolved to returned coordinates",
+      "boundingBox": [
+        126.98129999999999,
+        37.5444,
+        126.9953,
+        37.5584
+      ],
+      "queryCenter": {
+        "latitude": 37.5514,
+        "longitude": 126.9883
+      },
+      "selectionReference": {
+        "latitude": 37.5514,
+        "longitude": 126.9883
+      },
+      "coverage": "Exact boundingBox is authoritative; station reference and map query center may differ. No complete distant skyline or terrain is claimed.",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/map.json?bbox=126.9813000,37.5444000,126.9953000,37.5584000",
+      "query": "bbox=126.9813000,37.5444000,126.9953000,37.5584000",
+      "retrievedAt": "2026-11-15T05:34:13.573025+00:00",
+      "osmTimestamp": null,
+      "rawFile": "data/raw/viewpoint-seoul-namsan.json",
+      "rawSha256": "c5275b6189668ebca67396281222e796b8aa6a1c561cf30264f866b128a9a4ef",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "changes": "Selected up to 650 nearest building ways plus all building parts and buildings carrying height/levels/name tags, and roads/water/wood/parks/grass ways. Selected ground furniture/viewpoint/tree/tower nodes retain their source coordinates and tags, without editing metadata. Source IDs, tags and geometry preserved; OSM API way node references resolve to returned original node coordinates. Bounding-box coverage may be partial; included relation membership is retained but missing outer members are not invented. Relation multipolygons and terrain not reconstructed. Unmapped architectural details and missing heights must not be described as exact.",
+      "id": "seoul-namsan",
+      "observer": {
+        "latitude": 37.5514,
+        "longitude": 126.9883
+      },
+      "radiusMeters": 618,
+      "outputFile": "public/data/viewpoint-seoul-namsan.json",
+      "rawBytes": 3624043,
+      "compactBytes": 644848,
+      "sourceElements": 16837,
+      "elements": 1433,
+      "buildingWays": 659,
+      "buildingParts": 4,
+      "heightTaggedBuildings": 3,
+      "levelsTaggedBuildings": 8,
+      "heightTaggedParts": 3,
+      "levelsTaggedParts": 0,
+      "selectedNodes": 173
+    },
+    {
+      "provider": "OpenStreetMap contributors via OSM API 0.6",
+      "format": "OSM API JSON node references resolved to returned coordinates",
+      "boundingBox": [
+        151.2133,
+        -33.86735,
+        151.23129999999998,
+        -33.85135
+      ],
+      "queryCenter": {
+        "latitude": -33.85935,
+        "longitude": 151.2223
+      },
+      "selectionReference": {
+        "latitude": -33.85935,
+        "longitude": 151.2223
+      },
+      "coverage": "Exact boundingBox is authoritative; station reference and map query center may differ. No complete distant skyline or terrain is claimed.",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/map.json?bbox=151.2133000,-33.8673500,151.2313000,-33.8513500",
+      "query": "bbox=151.2133000,-33.8673500,151.2313000,-33.8513500",
+      "retrievedAt": "2026-11-15T05:32:45.739946+00:00",
+      "osmTimestamp": null,
+      "rawFile": "data/raw/viewpoint-sydney-macquaries.json",
+      "rawSha256": "5b9892a6ce61dc7c14ce668cdd26c6229a06b89a4b443f356d0bc67daccd370d",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "changes": "Selected up to 650 nearest building ways plus all building parts and buildings carrying height/levels/name tags, and roads/water/wood/parks/grass ways. Selected ground furniture/viewpoint/tree/tower nodes retain their source coordinates and tags, without editing metadata. Source IDs, tags and geometry preserved; OSM API way node references resolve to returned original node coordinates. Bounding-box coverage may be partial; included relation membership is retained but missing outer members are not invented. Relation multipolygons and terrain not reconstructed. Unmapped architectural details and missing heights must not be described as exact.",
+      "id": "sydney-macquaries",
+      "observer": {
+        "latitude": -33.85935,
+        "longitude": 151.2223
+      },
+      "radiusMeters": 832,
+      "outputFile": "public/data/viewpoint-sydney-macquaries.json",
+      "rawBytes": 4469444,
+      "compactBytes": 1059399,
+      "sourceElements": 20276,
+      "elements": 3335,
+      "buildingWays": 256,
+      "buildingParts": 15,
+      "heightTaggedBuildings": 3,
+      "levelsTaggedBuildings": 160,
+      "heightTaggedParts": 4,
+      "levelsTaggedParts": 5,
+      "selectedNodes": 1572
+    },
+    {
+      "provider": "OpenStreetMap contributors via OSM API 0.6",
+      "format": "OSM API JSON node references resolved to returned coordinates",
+      "boundingBox": [
+        -0.1666,
+        51.5335,
+        -0.1546,
+        51.5455
+      ],
+      "queryCenter": {
+        "latitude": 51.5395,
+        "longitude": -0.1606
+      },
+      "selectionReference": {
+        "latitude": 51.5395,
+        "longitude": -0.1606
+      },
+      "coverage": "Exact boundingBox is authoritative; station reference and map query center may differ. No complete distant skyline or terrain is claimed.",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-0.1666000,51.5335000,-0.1546000,51.5455000",
+      "query": "bbox=-0.1666000,51.5335000,-0.1546000,51.5455000",
+      "retrievedAt": "2026-11-15T05:34:15.861131+00:00",
+      "osmTimestamp": null,
+      "rawFile": "data/raw/viewpoint-london-primrose.json",
+      "rawSha256": "4896829283e9d0ff401e8d6a414d30fa6f65b150a098b314d298aa89c46997e9",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "changes": "Selected up to 650 nearest building ways plus all building parts and buildings carrying height/levels/name tags, and roads/water/wood/parks/grass ways. Selected ground furniture/viewpoint/tree/tower nodes retain their source coordinates and tags, without editing metadata. Source IDs, tags and geometry preserved; OSM API way node references resolve to returned original node coordinates. Bounding-box coverage may be partial; included relation membership is retained but missing outer members are not invented. Relation multipolygons and terrain not reconstructed. Unmapped architectural details and missing heights must not be described as exact.",
+      "id": "london-primrose",
+      "observer": {
+        "latitude": 51.5395,
+        "longitude": -0.1606
+      },
+      "radiusMeters": 415,
+      "outputFile": "public/data/viewpoint-london-primrose.json",
+      "rawBytes": 6045725,
+      "compactBytes": 842820,
+      "sourceElements": 17595,
+      "elements": 1961,
+      "buildingWays": 791,
+      "buildingParts": 7,
+      "heightTaggedBuildings": 42,
+      "levelsTaggedBuildings": 147,
+      "heightTaggedParts": 3,
+      "levelsTaggedParts": 6,
+      "selectedNodes": 406
+    },
+    {
+      "provider": "OpenStreetMap contributors via OSM API 0.6",
+      "format": "OSM API JSON node references resolved to returned coordinates",
+      "boundingBox": [
+        -74.0029,
+        40.6961,
+        -73.9909,
+        40.7081
+      ],
+      "queryCenter": {
+        "latitude": 40.7021,
+        "longitude": -73.9969
+      },
+      "selectionReference": {
+        "latitude": 40.7021,
+        "longitude": -73.9969
+      },
+      "coverage": "Exact boundingBox is authoritative; station reference and map query center may differ. No complete distant skyline or terrain is claimed.",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-74.0029000,40.6961000,-73.9909000,40.7081000",
+      "query": "bbox=-74.0029000,40.6961000,-73.9909000,40.7081000",
+      "retrievedAt": "2026-11-15T05:34:18.744287+00:00",
+      "osmTimestamp": null,
+      "rawFile": "data/raw/viewpoint-new-york-pier1.json",
+      "rawSha256": "7535b80b63ed73cedf56f3f932c7d5a05411c5d0ee35fe01de7cad9d8178f8cd",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "changes": "Selected up to 650 nearest building ways plus all building parts and buildings carrying height/levels/name tags, and roads/water/wood/parks/grass ways. Selected ground furniture/viewpoint/tree/tower nodes retain their source coordinates and tags, without editing metadata. Source IDs, tags and geometry preserved; OSM API way node references resolve to returned original node coordinates. Bounding-box coverage may be partial; included relation membership is retained but missing outer members are not invented. Relation multipolygons and terrain not reconstructed. Unmapped architectural details and missing heights must not be described as exact.",
+      "id": "new-york-pier1",
+      "observer": {
+        "latitude": 40.7021,
+        "longitude": -73.9969
+      },
+      "radiusMeters": 506,
+      "outputFile": "public/data/viewpoint-new-york-pier1.json",
+      "rawBytes": 4736199,
+      "compactBytes": 1223644,
+      "sourceElements": 19629,
+      "elements": 3549,
+      "buildingWays": 613,
+      "buildingParts": 42,
+      "heightTaggedBuildings": 576,
+      "levelsTaggedBuildings": 52,
+      "heightTaggedParts": 38,
+      "levelsTaggedParts": 24,
+      "selectedNodes": 1406
+    },
+    {
+      "provider": "OpenStreetMap contributors via OSM API 0.6",
+      "format": "OSM API JSON node references resolved to returned coordinates",
+      "boundingBox": [
+        -68.26299,
+        -22.925238,
+        -68.24499,
+        -22.909238000000002
+      ],
+      "queryCenter": {
+        "latitude": -22.917238,
+        "longitude": -68.25399
+      },
+      "selectionReference": {
+        "latitude": -22.917238,
+        "longitude": -68.25399
+      },
+      "coverage": "Exact boundingBox is authoritative; station reference and map query center may differ. No complete distant skyline or terrain is claimed.",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-68.2629900,-22.9252380,-68.2449900,-22.9092380",
+      "query": "bbox=-68.2629900,-22.9252380,-68.2449900,-22.9092380",
+      "retrievedAt": "2026-11-15T05:32:46.822412+00:00",
+      "osmTimestamp": null,
+      "rawFile": "data/raw/viewpoint-atacama-kari.json",
+      "rawSha256": "b645cc6379c3ef1a0cf502131a29dc8a910775aaaca6dc3924efa5051cf167da",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "changes": "Selected up to 650 nearest building ways plus all building parts and buildings carrying height/levels/name tags, and roads/water/wood/parks/grass ways. Selected ground furniture/viewpoint/tree/tower nodes retain their source coordinates and tags, without editing metadata. Source IDs, tags and geometry preserved; OSM API way node references resolve to returned original node coordinates. Bounding-box coverage may be partial; included relation membership is retained but missing outer members are not invented. Relation multipolygons and terrain not reconstructed. Unmapped architectural details and missing heights must not be described as exact.",
+      "id": "atacama-kari",
+      "observer": {
+        "latitude": -22.917238,
+        "longitude": -68.25399
+      },
+      "radiusMeters": 891,
+      "outputFile": "public/data/viewpoint-atacama-kari.json",
+      "rawBytes": 111015,
+      "compactBytes": 25741,
+      "sourceElements": 571,
+      "elements": 15,
+      "buildingWays": 0,
+      "buildingParts": 0,
+      "heightTaggedBuildings": 0,
+      "levelsTaggedBuildings": 0,
+      "heightTaggedParts": 0,
+      "levelsTaggedParts": 0,
+      "selectedNodes": 3
+    }
+  ],
+  "failedAcquisitions": [
+    {
+      "id": "kl-sky-deck",
+      "attempts": [
+        {
+          "endpoint": "https://overpass-api.de/api/interpreter",
+          "attemptedAt": "2026-11-15T05:26:13.562700+00:00",
+          "error": "HTTP Error 502: Bad Gateway"
+        },
+        {
+          "endpoint": "https://overpass.kumi.systems/api/interpreter",
+          "attemptedAt": "2026-11-15T05:26:59.765716+00:00",
+          "error": "The read operation timed out"
+        }
+      ],
+      "dataCached": false
+    },
+    {
+      "id": "kl-sky-deck",
+      "attempts": [
+        {
+          "endpoint": "https://api.openstreetmap.org/api/0.6/map.json",
+          "attemptedAt": "2026-11-15T05:29:54.876875+00:00",
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ],
+      "dataCached": false
+    },
+    {
+      "id": "kl-sky-deck",
+      "attempts": [
+        {
+          "endpoint": "https://api.openstreetmap.org/api/0.6/map.json",
+          "attemptedAt": "2026-11-15T05:31:28.669613+00:00",
+          "error": "Source response exceeded bounded 10 MB limit"
+        }
+      ],
+      "dataCached": false
+    }
+  ]
+}

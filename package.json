@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "astronomy-engine": "^2.1.19",
+    "earcut": "^3.2.4",
     "lucide-react": "^0.468.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

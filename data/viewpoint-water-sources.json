@@ -1,0 +1,96 @@
+{
+  "sources": [
+    {
+      "provider": "OpenStreetMap contributors via official OSM API 0.6",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/relation/15522136/full.json",
+      "relationId": 15522136,
+      "relationName": "Port Jackson",
+      "retrievedAt": "2026-11-15T06:19:00.607829+00:00",
+      "rawFile": "data/raw/viewpoint-water-port-jackson.json",
+      "rawSha256": "4b5af7211228595e0d31d4c01f97dfe2c5a395bc92a180c33e721e8317bc8e8c",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "method": "Fetched complete relation and all way/node members. Joined only matching endpoint node IDs into genuinely closed outer/inner loops; open, ambiguous or invalid loops fail. Projected to a local equirectangular east/north metre frame, unioned source outers, subtracted source inner islands, and intersected with the ±4000 m station rectangle using Shapely. No simplification, inferred joins or shoreline invention. Rectangle edges are clipping boundaries, not measured coastline.",
+      "projection": {
+        "originLatitude": -33.8594584,
+        "originLongitude": 151.221884,
+        "eastMetresPerLongitudeDegree": 92440.87707445005,
+        "northMetresPerLatitudeDegree": 111320
+      },
+      "clipBoundsMeters": [
+        -4000,
+        -4000,
+        4000,
+        4000
+      ],
+      "shapelyVersion": "2.1.2",
+      "outerSourceRings": 1,
+      "innerSourceRings": 25,
+      "limits": "Source-map completeness/accuracy is not certified. Water level, tides and photographs are not supplied. Coverage ends at the explicit clipping rectangle; it is not a global ocean mask.",
+      "id": "sydney-macquaries",
+      "outputFile": "public/data/viewpoint-water-sydney-macquaries.json",
+      "bytes": 229957,
+      "polygons": 2,
+      "holes": 6,
+      "areaSquareMeters": 19315088.06544169
+    },
+    {
+      "provider": "OpenStreetMap contributors via official OSM API 0.6",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/relation/2389633/full.json",
+      "relationId": 2389633,
+      "relationName": "East River water",
+      "retrievedAt": "2026-11-15T06:18:59.260887+00:00",
+      "rawFile": "data/raw/viewpoint-water-east-river.json",
+      "rawSha256": "dddc84a91c25ed82cd6e958f15c48d14f1ff64c397e168f825ad807ecb900e15",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "method": "Fetched complete relation and all way/node members. Joined only matching endpoint node IDs into genuinely closed outer/inner loops; open, ambiguous or invalid loops fail. Projected to a local equirectangular east/north metre frame, unioned source outers, subtracted source inner islands, and intersected with the ±4000 m station rectangle using Shapely. No simplification, inferred joins or shoreline invention. Rectangle edges are clipping boundaries, not measured coastline.",
+      "projection": {
+        "originLatitude": 40.7019951,
+        "originLongitude": -73.9974077,
+        "eastMetresPerLongitudeDegree": 84392.98653781341,
+        "northMetresPerLatitudeDegree": 111320
+      },
+      "clipBoundsMeters": [
+        -4000,
+        -4000,
+        4000,
+        4000
+      ],
+      "shapelyVersion": "2.1.2",
+      "outerSourceRings": 4,
+      "innerSourceRings": 1,
+      "limits": "Source-map completeness/accuracy is not certified. Water level, tides and photographs are not supplied. Coverage ends at the explicit clipping rectangle; it is not a global ocean mask.",
+      "id": "new-york-pier1",
+      "outputFile": "public/data/viewpoint-water-new-york-pier1.json",
+      "bytes": 49744,
+      "polygons": 4,
+      "holes": 1,
+      "areaSquareMeters": 5791444.987954832
+    }
+  ],
+  "failures": [
+    {
+      "id": "penang-esplanade",
+      "recordedAt": "2026-11-15T06:25:29.155975+00:00",
+      "dataProduced": false,
+      "reason": "No complete regional water multipolygon was acquired. Complementing only Penang Island within a 4km window would wrongly classify the nearby Butterworth mainland as water. Partial coastline/DEM data are not used to invent a water mask."
+    }
+  ],
+  "additionalSourceSnapshots": [
+    {
+      "id": "sydney-harbour-1252425",
+      "sourceUrl": "https://api.openstreetmap.org/api/0.6/relation/1252425/full.json",
+      "rawFile": "data/raw/viewpoint-water-sydney-harbour.json",
+      "rawSha256": "ecd34fd38a4b168dd6c2c6d3b09465f5d5a67b8a7266e7ce040c0a6d3637fd98",
+      "retrievedAt": "2026-11-15T06:19:00.189335+00:00",
+      "license": "ODbL 1.0",
+      "attribution": "OpenStreetMap contributors",
+      "role": "Acquired complete candidate; final Sydney water mask uses the more detailed Port Jackson relation15522136. The older Sydney Harbour relation note says some administrative boundaries are used for simplicity."
+    }
+  ]
+}

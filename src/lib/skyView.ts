@@ -1,6 +1,7 @@
 import type { SkyCalculation } from './astronomy';
 import type { SkyFilters } from './skyAppearance';
 import type { LocalHorizon } from './horizon';
+import type { CityScene } from './cityScene';
 
 export interface SkyCamera { azimuth: number; altitude: number; fieldOfView: number }
 export interface ImmersiveSkyProps {
@@ -27,13 +28,14 @@ export interface ImmersiveSkyProps {
   cityLightPercent: number;
   horizonData: LocalHorizon | null;
   baselineLabel: string;
+  scene?:CityScene|null;
 }
 
 export const DEFAULT_CAMERA: SkyCamera = { azimuth: 180, altitude: 27, fieldOfView: 105 };
 
 export function normalizeCamera(camera: SkyCamera): SkyCamera {
   if (![camera.azimuth, camera.altitude, camera.fieldOfView].every(Number.isFinite)) throw new RangeError('Invalid camera');
-  return { azimuth: ((camera.azimuth % 360) + 360) % 360, altitude: Math.max(-5, Math.min(85, camera.altitude)), fieldOfView: Math.max(35, Math.min(125, camera.fieldOfView)) };
+  return { azimuth: ((camera.azimuth % 360) + 360) % 360, altitude: Math.max(-85, Math.min(85, camera.altitude)), fieldOfView: Math.max(35, Math.min(125, camera.fieldOfView)) };
 }
 
 /** Aim along an above-horizon part of the Galactic plane, without moving the survey. */

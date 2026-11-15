@@ -73,3 +73,7 @@ Live demo: **not deployed**. Remote repository: **not created or pushed**. Offic
 ## License and attribution
 
 Application code: MIT (`LICENSE`). HYG v3.8 subset and its source archive: **CC BY-SA 4.0**, David Nash / Astronexus; retained separately under the original license. Gaia survey image and its runtime reprojection: **CC BY-SA 3.0 IGO**, ESA/Gaia/DPAC, acknowledgement A. Moitinho. These data/image licenses remain separate from the application code. Open-Meteo / GeoNames data: CC BY 4.0. OpenStreetMap building geometry: ODbL 1.0. Published-study factual values are attributed with their source/right notices; article figures/full text are not bundled. Astronomy Engine: MIT, Don Cross. Interface icons: Lucide, ISC. NASA POWER/CERES data and DarkSky/IES guidance retain their source attribution. See `docs/THIRD_PARTY_NOTICES.md`.
+
+## Named city viewpoints
+
+The Observatory now starts at KL Tower’s Sky Deck facing Petronas, with six other curated outdoor stations. OpenStreetMap footprints/parts and NASA/USGS SRTM terrain provide geographic structure; fine architecture and foreground details remain approximate. City/lighting selections share the same astronomical frame. See `docs/VIEWPOINT_SOURCES.md` for exact station inputs, published landmark constraints and limitations. The standalone HTML embeds all seven stations.

@@ -1,7 +1,7 @@
 import type { Location } from './astronomy';
 import { validTimeZone } from './observingTime';
 
-export interface ObservingPlace extends Location { timeZone: string; source: 'preset' | 'search' | 'coordinates' | 'device'; elevationKnown: boolean }
+export interface ObservingPlace extends Location { timeZone: string; source: 'preset' | 'search' | 'coordinates' | 'device'; elevationKnown: boolean; viewpointId?:string }
 
 export const OBSERVING_PLACES: ObservingPlace[] = [
   { id: 'penang', name: 'Penang, Malaysia', latitude: 5.4141, longitude: 100.3354, elevation: 10, elevationKnown: false, utcOffset: 8, timeZone: 'Asia/Kuala_Lumpur', source: 'preset' },

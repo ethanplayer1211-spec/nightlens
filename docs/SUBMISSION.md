@@ -100,3 +100,7 @@ Additional references required before a later submission:
 - OpenStreetMap contributors / ODbL: https://www.openstreetmap.org/copyright ; Overpass API: https://wiki.openstreetmap.org/wiki/Overpass_API
 
 Describe the numerical source as attributed rounded published VIIRS aggregates from NOAA-generated Suomi NPP data, not a newly downloaded Black Marble record. Keep its small-sample reanalysis separate from the original 24-year NASA POWER challenge investigation and the uncalibrated appearance model. Building footprints are mapped, but heights/facades/terrain/viewpoint remain approximations. Essential safety lighting remains excluded. Current validation and source limitations are in `VALIDATION.md`, `OBSERVATORY.md` and `TUCSON_EVIDENCE.md`.
+
+## Prepared local addition: named viewpoints
+
+The Observatory adds seven named virtual outdoor stations, initially KL Tower Sky Deck looking toward the Petronas Twin Towers. Cached OSM footprint/building-part geometry and NASA/USGS SRTMGL3 V003 terrain align the city context with the calculated astronomical frame. Published landmark dimensions constrain simplified original geometry. Facades, materials, furniture shapes, paving and railings remain illustrative; no surveyed or exact photorealistic city is claimed. The selected date changes astronomy, not the city-construction vintage. Source references/provenance: docs/VIEWPOINT_SOURCES.md and data/viewpoint-{map,terrain}-sources.json. This local addition has not been copied to the official editor, deployed, pushed or submitted for judging.
