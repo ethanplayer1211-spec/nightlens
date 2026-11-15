@@ -12,7 +12,7 @@ Open http://127.0.0.1:4174/ in your recording browser. Keep that terminal runnin
 
 1. Use a landscape browser window, ideally a 1920×1080 capture. Keep browser zoom at 100%. Close unrelated tabs and notification popups.
 2. Start with KL Tower and **Tonight**. This is an explicitly labeled 21:00 local preview. **Now** uses the real clock and may show daylight or current model clouds.
-3. Click **Enter the sky → Controls**. Leave **Render quality → Balanced** for the first take. It limits display pixel density; it does not change astronomical positions. High detail uses more GPU on high-density displays. Smoothness still depends on your device and recorder.
+3. Click **Enter the sky → Controls**. Select **Render quality → Balanced** for a smoother first take. Ultra is now the maximum-detail default. It limits display pixel density; it does not change astronomical positions. High detail uses more GPU on high-density displays. Smoothness still depends on your device and recorder.
 4. Rehearse the actions once and let the named scene load before recording. The initial model/mesh upload can take longer than later lighting changes. Station choices inside Controls use an explicit Tonight preview; normal location search still uses Now.
 5. Keep the scientific captions visible. Natural impression is the default. Enhanced survey detail has a permanent warning in quiet view and should be described as an enhanced survey visualization.
 
@@ -39,3 +39,7 @@ This is a rehearsal script, not a recorded or submitted video. Add the correct t
 - **Escape** closes Controls first; a second Escape exits the immersive view. Direct camera dragging closes the panel. Camera arrows, scroll/pinch zoom and Reset camera remain available.
 
 Lighting changes use a bounded 360 ms display transition. Redraw requests are coalesced per browser animation frame; no continuous animation runs after the transition settles. Reduced-motion preferences make display transitions immediate. This does not establish a guaranteed recording frame rate. Actual recording/encoder performance, physical-device touch and broad GPU compatibility have not been certified.
+
+## Sky-first / Ultra update
+
+The opening now aims higher from the same observer. **Sky only** hides all local structures and foreground, with a visible exception label, while retaining the selected sky geometry, atmosphere and lighting. **City view** restores the original station camera. Ultra supersamples even a standard-density display, bounded at 4096 pixels per dimension and a 3840×2160 pixel budget. It improves edge/point rendering; it does not add source-model or survey information. Balanced remains available for capture performance.

@@ -38,6 +38,18 @@ export interface ImmersiveSkyProps {
 
 export const DEFAULT_CAMERA: SkyCamera = { azimuth: 180, altitude: 27, fieldOfView: 105 };
 
+/** Reframe from the same observer, keeping the skyline near the lower edge. */
+export function skyFirstCamera(camera:SkyCamera):SkyCamera{
+  return normalizeCamera({...camera,altitude:Math.max(28,camera.altitude),fieldOfView:Math.max(90,camera.fieldOfView)});
+}
+
+export type RenderQuality='balanced'|'high'|'ultra';
+/** Ultra supersamples even a 1x screen, bounded by a 4K pixel budget. */
+export function renderDensity(width:number,height:number,deviceDensity:number,quality:RenderQuality){
+  const desired=quality==='ultra'?Math.max(2,Math.min(3,deviceDensity)):Math.min(quality==='high'?2:1.5,deviceDensity);
+  return Math.max(.1,Math.min(desired,4096/Math.max(1,width,height),Math.sqrt(8294400/Math.max(1,width*height))));
+}
+
 export function normalizeCamera(camera: SkyCamera): SkyCamera {
   if (![camera.azimuth, camera.altitude, camera.fieldOfView].every(Number.isFinite)) throw new RangeError('Invalid camera');
   return { azimuth: ((camera.azimuth % 360) + 360) % 360, altitude: Math.max(-85, Math.min(85, camera.altitude)), fieldOfView: Math.max(8, Math.min(125, camera.fieldOfView)) };

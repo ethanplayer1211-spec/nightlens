@@ -9,7 +9,17 @@ export function createCityPostprocess(gl:WebGLRenderingContext){
     gl.attachShader(program,compile(gl.VERTEX_SHADER,'attribute vec2 point;varying vec2 uv;void main(){uv=point*.5+.5;gl_Position=vec4(point,0.0,1.0);}'));
     gl.attachShader(program,compile(gl.FRAGMENT_SHADER,`precision mediump float;varying vec2 uv;uniform sampler2D scene;uniform vec2 pixel;uniform float night;
       vec3 highlight(vec2 pos){vec4 c=texture2D(scene,pos);return max(vec3(0.0),c.rgb-vec3(.65))*c.a;}
-      void main(){vec4 c=texture2D(scene,uv);vec3 glow=highlight(uv)*.20;
+      vec4 edgeSample(vec2 pos){
+        vec4 c=texture2D(scene,pos),nw=texture2D(scene,pos+pixel*vec2(-1.,1.)),ne=texture2D(scene,pos+pixel),sw=texture2D(scene,pos-pixel),se=texture2D(scene,pos+pixel*vec2(1.,-1.));
+        vec3 l=vec3(.299,.587,.114);float a=dot(nw.rgb,l)+nw.a*.15,b=dot(ne.rgb,l)+ne.a*.15,d=dot(sw.rgb,l)+sw.a*.15,e=dot(se.rgb,l)+se.a*.15,m=dot(c.rgb,l)+c.a*.15;
+        float lo=min(m,min(min(a,b),min(d,e))),hi=max(m,max(max(a,b),max(d,e)));
+        if(hi-lo<max(.035,hi*.12))return c;
+        vec2 direction=vec2(-(a+b-d-e),a+d-b-e);float reduce=max((a+b+d+e)*.03125,.0078);
+        direction=clamp(direction/(min(abs(direction.x),abs(direction.y))+reduce),vec2(-4.),vec2(4.))*pixel;
+        vec4 along=(texture2D(scene,pos-direction/6.)+texture2D(scene,pos+direction/6.))*.5;
+        return mix(c,along,.70);
+      }
+      void main(){vec4 c=edgeSample(uv);vec3 glow=highlight(uv)*.20;
       glow+=(highlight(uv+pixel*vec2(1.5,0.0))+highlight(uv-pixel*vec2(1.5,0.0))+highlight(uv+pixel*vec2(0.0,1.5))+highlight(uv-pixel*vec2(0.0,1.5)))*.13;
       glow+=(highlight(uv+pixel*vec2(3.5,3.5))+highlight(uv-pixel*vec2(3.5,3.5))+highlight(uv+pixel*vec2(3.5,-3.5))+highlight(uv-pixel*vec2(3.5,-3.5)))*.07;
       glow*=night*.32;float alpha=clamp(c.a+max(glow.r,max(glow.g,glow.b)),0.0,1.0);gl_FragColor=vec4((c.rgb+glow)/max(alpha,.0001),alpha);}`));

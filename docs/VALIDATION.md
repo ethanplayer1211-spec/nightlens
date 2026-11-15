@@ -1,5 +1,13 @@
 # Validation record
 
+## Sky-first / Ultra pass — November 15, 2026
+
+**62 TypeScript tests + 21 scientific Python tests passed (83 total)**. Lint and the production TypeScript/build passed. Added tests verify higher framing without mutation of station cameras, supersampling on 1x displays, and the maximum render dimension/pixel budget. Scientific source files and analysis outputs are unchanged.
+
+Browser checks verified the default Ultra state and doubled canvas dimensions on the current portrait viewport. Sky only switched to `sky-only`, displayed its hidden-obstruction annotation and removed local structures. City view restored the mapped-3d camera at 78-degree FOV for KL; Reset camera returned to the new 90-degree sky-first framing. Balanced/Ultra switching worked. A standalone check at 1920×1080 verified all three actual canvas buffers were **3840×2160**, and its Sky only mode worked. Inspected warning/error logs were empty. Viewport overrides were reset; the user-requested server was left running.
+
+The source/production standalone files match at **16,829,010 bytes (~16.05 MiB)**, including all pinned source assets. This pass improves raster quality with supersampling, edge-aware city filtering and finer star points. It does not turn approximate building facades into photographic scans, increase source-map resolution, calibrate brightness or certify hardware FPS. Sky only is explicitly an obstruction-free illustration from the same astronomical observer; the geometric horizon filter is preserved. Proof: `sky-first-ultra.jpg` and `sky-only-ultra.jpg` in `evidence/browser/`.
+
 ## Recording polish — November 15, 2026, 18:18 MYT
 
 **60 TypeScript tests + 21 Python scientific tests passed (81 total)**. ESLint passed without warnings; TypeScript and the production build passed. The two added tests verify bounded/reversible display transitions, immediate reduced-motion output, exact convergence, input immutability and preservation of the sky/camera/matrix references. No scientific dataset or analysis pipeline was changed.
