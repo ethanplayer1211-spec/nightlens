@@ -1,6 +1,6 @@
 # NightLens — final submission review
 
-**Official draft saved 15 November 2026 at 23:37 MYT; public release verified at 23:42 MYT. A saved draft is not submitted for judging.**
+**Submitted for Judging on 15 November 2026 at 23:53 MYT.** The official page confirmed “Project Submitted for Judging! Your certificate is now available in your Profile” and “Last Submitted: 15 November 2026 23:53”. Owner explicitly authorized final submission after the final slide correction.
 
 ## Links
 
@@ -45,11 +45,15 @@ Seven-slide demo: https://nightlens-sky-atlas.leveling-magician.chatgpt.site/dem
 Separate two-page brief: https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/NightLens-judge-brief.pdf
 Judges: begin with README and docs/JUDGES_GUIDE.md.
 
-## Owner’s final checks
+## Completed owner review and submission
 
 - Owner confirmed at least two accepted Universal Event teammates and Malaysia residence timezone.
 - Review all seven demo slides, public app and source repository.
 - Confirm project name, summary, personal motivation, sources and SI-use selections.
 - Review the existing owner-checked original-work and legal declarations.
-- Only after approval, click Submit for Judging before 23:59 MYT on 15 November 2026.
-- Verify an explicit submission success notification; Save Progress alone does not count.
+- Owner approved submission; Submit for Judging completed at 23:53 MYT, before the 23:59 MYT deadline.
+- Explicit submission success notification and Last Submitted timestamp were verified.
+
+## Final published demo
+
+Sites version 4: source `afbf74dee54b86b3e06b3e735a50c2820f3abeb4`, deployed 23:53 MYT. Slide 4 uses an actual extreme-light / clear-reference Orion capture, with illustrative-appearance and guide-overlay labels. Slide 7 uses a courteous thank-you and review directory. Exactly seven slides; public images and both PDFs matched local bytes anonymously before submission. No application code changed in this last presentation correction.

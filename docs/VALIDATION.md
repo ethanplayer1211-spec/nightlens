@@ -14,9 +14,9 @@
 
 ## Public release verification
 
-Sites version 3, source `4fc5888a183975a73de62e0657fe660df4c3b6b3`, published at 23:41 MYT. Anonymous requests returned HTTP 200 for the app, demo, all seven slide images and both PDFs. Every public slide/PDF matched the reviewed local bytes. The original NASA export also returned HTTP 200 with SHA-256 `121f595c5668c0fe56c51537c959e1bac660195b5527da2a049538adf23dc299`.
+Sites version 4, source `afbf74dee54b86b3e06b3e735a50c2820f3abeb4`, published at 23:53 MYT. Anonymous requests returned HTTP 200 for the app, demo, all seven slide images and both PDFs. Every public slide/PDF matched the reviewed local bytes. The original NASA export also returned HTTP 200 with SHA-256 `121f595c5668c0fe56c51537c959e1bac660195b5527da2a049538adf23dc299`.
 
-The GitHub source was pushed to public `ethanplayer1211-spec/nightlens`. The official project draft was saved at 23:37 MYT with project/demo links, motivation, resources and SI disclosure. **It still requires Submit for Judging and owner review.**
+The GitHub source was pushed to public `ethanplayer1211-spec/nightlens`. The official project draft was saved at 23:37 MYT with project/demo links, motivation, resources and SI disclosure. **Following owner approval and final slide corrections, Submit for Judging succeeded at 23:53 MYT. The official page showed both the success message and Last Submitted timestamp.**
 
 ## Practical limits
 
