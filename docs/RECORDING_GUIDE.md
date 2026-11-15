@@ -1,45 +1,42 @@
-# Record NightLens
+# Record NightLens — simple controls
 
-The production build is ready. From `C:\My files\Nasa space app`, run:
+From `C:\My files\Nasa space app`, run:
 
 ```powershell
 npm run preview -- --port 4174
 ```
 
-Open http://127.0.0.1:4174/ in your recording browser. Keep that terminal running during capture. Use the full app for the submission walkthrough so the NASA Time Machine is available. The downloadable HTML is a separate sky-focused edition.
+Open http://127.0.0.1:4174/. Keep the server running while recording. Use the full app when showing NASA Time Machine; the standalone HTML is the sky-focused edition.
 
-## Prepare one clean take
+## What to touch
 
-1. Use a landscape browser window, ideally a 1920×1080 capture. Keep browser zoom at 100%. Close unrelated tabs and notification popups.
-2. Start with KL Tower and **Tonight**. This is an explicitly labeled 21:00 local preview. **Now** uses the real clock and may show daylight or current model clouds.
-3. Click **Enter the sky → Controls**. Select **Render quality → Balanced** for a smoother first take. Ultra is now the maximum-detail default. It limits display pixel density; it does not change astronomical positions. High detail uses more GPU on high-density displays. Smoothness still depends on your device and recorder.
-4. Rehearse the actions once and let the named scene load before recording. The initial model/mesh upload can take longer than later lighting changes. Station choices inside Controls use an explicit Tonight preview; normal location search still uses Now.
-5. Keep the scientific captions visible. Natural impression is the default. Enhanced survey detail has a permanent warning in quiet view and should be described as an enhanced survey visualization.
+The sky toolbar now has only **Adjust sky**, **Compare**, and **Reset**.
+
+1. Click **Adjust sky**. Under **Choose your place**, select a station. **Tonight** is an explicit local 21:00 preview; **Now** follows the actual clock.
+2. Under **Choose a lighting look**, choose **City lights**, **Dim after midnight**, or **No artificial light**. Dimming previews 00:05 on the observing night. The other looks preserve the selected instant and atmosphere.
+3. Under **Choose what you see**, **Show buildings** controls local obstructions, and **Star guides** controls names/asterism aids. Their visibility still depends on contrast and occlusion.
+4. Press **Done** to see the whole sky. Use **Compare** and drag the divider. Drag the sky to pan; scroll to zoom. **Reset** restores lighting, camera and visible buildings while keeping the selected instant.
+
+**Moon close-up** is available when the Moon is above the geometric horizon. It toggles back to the previous camera. The magnified view explicitly hides local obstructions. **Face the city** restores the original station camera.
+
+All detailed sliders, schedule settings, individual chart layers, weather-model coverage and image quality remain under **Advanced adjustments**. Ultra is the maximum-detail default; select Balanced if capture performance needs it. The enhanced survey treatment retains a visible warning: it is not a naked-eye prediction.
+
+## Real photographs
+
+KL and Sydney have a **Real place photograph** button below the place selector. It opens an unretouched, attributed historical source photograph. This is a fixed reference: its date, camera-pose limits and original sky are disclosed. Lighting controls apply to the calculated reconstruction behind it. Escape or Close photograph returns to the same settings. A photograph is not offered for places without a bundled licensed reference.
+
+The dynamic city still uses mapped/artist geometry and approximate facades. Correlated room/floor lighting reduces the previous speckled appearance, but does not establish surveyed or photographic accuracy.
 
 ## A 28-second take
 
 | Time | Action | Suggested narration |
 |---|---|---|
-| 00–04 | Show the opening, then Enter the sky | “NightLens connects a place to its calculated sky.” |
-| 04–10 | Controls → Experiment; enable shielding, close Controls | “Explore responsible lighting choices for nonessential fixtures.” |
-| 10–16 | After midnight; drag the comparison divider slowly across the city/sky | “Compare hypothetical changes. The lighting appearance remains illustrative.” |
-| 16–23 | Return to instrument → Time Machine; show 24 complete annual values and uncertainty | “Explore 24 years of NASA aerosol records, with uncertainty.” |
-| 23–28 | Keep the source/uncertainty labels readable | “Measured records and hypothetical lighting stay separate.” |
+| 00–04 | Opening → Adjust sky | “NightLens connects a place to its calculated sky.” |
+| 04–10 | Dim after midnight → Done | “Explore responsible lighting choices for nonessential fixtures.” |
+| 10–16 | Compare → drag the divider slowly | “Compare hypothetical changes. The lighting appearance remains illustrative.” |
+| 16–23 | Return to instrument → Time Machine | “Explore 24 years of NASA aerosol records, with uncertainty.” |
+| 23–28 | Keep the source and uncertainty labels visible | “Measured records and hypothetical lighting stay separate.” |
 
-This is a rehearsal script, not a recorded or submitted video. Add the correct team identity as required by your submission. The NASA aerosol record measures atmospheric aerosols, not city lighting. Do not describe fixture dimming as an equal percentage reduction in skyglow.
+This is a rehearsal script, not a recorded or submitted video. Add accurate team identification as required. Aerosol records are not city-light measurements, and fixture dimming is not an equal percentage change in skyglow. Keep essential safety lighting.
 
-## Useful controls during a longer walkthrough
-
-- **Controls** opens the same Lighting / Atmosphere / Experiment controls inside the sky. Switches show On/Off, slider values remain visible, and the selected tab stays selected when the panel is reopened.
-- **Before · 23:55 / After · 00:05** checks the recurring schedule around midnight. The observing date/time updates explicitly.
-- **Compare** is an independent toggle. Choosing a lighting theme preserves its state. The divider supports dragging and keyboard arrows/Home/End.
-- **Moon study** toggles into a magnified NASA-textured lunar view and returns to the preceding camera on the second click. Its local-obstruction exception is labeled. It appears only when the Moon is above the geometric horizon.
-- **Annotations / Quiet view** switches labels and asterism aids. Severe glare/clouds and occlusion can still suppress them; enabling a chart aid does not make an unobservable star visible.
-- **Reset lighting & view** restores appearance/camera defaults at the selected place and instant. It preserves your chosen night during a take.
-- **Escape** closes Controls first; a second Escape exits the immersive view. Direct camera dragging closes the panel. Camera arrows, scroll/pinch zoom and Reset camera remain available.
-
-Lighting changes use a bounded 360 ms display transition. Redraw requests are coalesced per browser animation frame; no continuous animation runs after the transition settles. Reduced-motion preferences make display transitions immediate. This does not establish a guaranteed recording frame rate. Actual recording/encoder performance, physical-device touch and broad GPU compatibility have not been certified.
-
-## Sky-first / Ultra update
-
-The opening now aims higher from the same observer. **Sky only** hides all local structures and foreground, with a visible exception label, while retaining the selected sky geometry, atmosphere and lighting. **City view** restores the original station camera. Ultra supersamples even a standard-density display, bounded at 4096 pixels per dimension and a 3840×2160 pixel budget. It improves edge/point rendering; it does not add source-model or survey information. Balanced remains available for capture performance.
+Rehearse once and wait for the scene to load before capture. A landscape window with 100% browser zoom is easiest to read. Actual recording FPS depends on your hardware and encoder. Publication, demo upload, judging submission and selected-challenge data eligibility are separate release steps.

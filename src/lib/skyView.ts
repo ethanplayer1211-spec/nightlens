@@ -5,11 +5,17 @@ import type { CityScene } from './cityScene';
 import type {ReactNode} from 'react';
 
 export interface SkyCamera { azimuth: number; altitude: number; fieldOfView: number }
+export interface SkyViewActions {
+  skyOnly:boolean;onSkyOnly:(value:boolean)=>void;onCityView:()=>void;
+  moonAvailable:boolean;moonStudy:boolean;onMoonStudy:()=>void;
+  quality:RenderQuality;onQuality:(value:RenderQuality)=>void;
+}
 export interface ImmersiveSkyProps {
   sky: SkyCalculation;
   onAfterMidnight?:()=>void;onComparisonToggle?:()=>void;enterViewRequest?:number;onNightPreview?:()=>void;localClockLabel?:string;
   onLightingTheme?:(id:string)=>void;lightTheme?:string;
-  controlPanel?:ReactNode;onImmersiveChange?:(value:boolean)=>void;midnightPresetSelected?:boolean;
+  controlPanel?:ReactNode|((view:SkyViewActions)=>ReactNode);onImmersiveChange?:(value:boolean)=>void;midnightPresetSelected?:boolean;
+  openControlsRequest?:number;onReset?:()=>void;
   onAnnotationsChange?:(value:boolean)=>void;
   /** Row-major matrix mapping east/up/north world vectors to Galactic x/y/z. */
   worldToGalactic: number[];

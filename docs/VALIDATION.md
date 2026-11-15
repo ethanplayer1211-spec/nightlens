@@ -1,5 +1,24 @@
 # Validation record
 
+## Guided controls / photographic references — November 15, 2026
+
+**64 TypeScript tests + 21 scientific Python tests passed (85 total)**. Lint, TypeScript and the production build passed. Added tests verify independent copies/restoration of the three lighting looks, preservation of the atmospheric/astronomical state boundary, and activation of the existing midnight schedule. No historical scientific source or numerical analysis output was changed.
+
+The toolbar now has exactly three buttons: Adjust sky, Compare and Reset. The panel exposes three guided sections and hides detailed controls in Advanced. More experiments below the main view are also collapsed. Done has verified dark text on a light background. Photo source metadata is shared with the existing editorial section; original bytes and licensing are unchanged.
+
+Browser rehearsal verified:
+
+- Opening Adjust sky, all three lighting choices, Done and the independent Compare action. The keyboard divider reached both 4 and 96. Midnight selected the following local 00:05; Tonight returned to 21:00 and cleared the false midnight-preview highlight.
+- Show buildings switched between sky-only and mapped rendering. Star guides switched on/off. Reset restored the original lighting, visible buildings, guides off and retained the selected instant. Moon close-up reached 12 degrees and returned to the 90-degree sky-first camera.
+- Advanced schedule, shielding and Moon-light switches worked; 00:05 reported Dimming active. Image quality switched Balanced/Ultra. Enhanced survey detail retained its warning. The shared advanced controls remain mounted once, without a duplicate primary outside panel.
+- KL and Sydney opened their actual historical photographs. Escape closed the photo while leaving adjustments open. Penang had no false photo option. Photo date/pose limitations, fixed-image behavior, author and license are visibly supplied. Native-modal keyboard events stay inside that viewer; comprehensive assistive-technology testing remains unperformed.
+- The 390×844 mobile document was 390 px wide, with the panel from x=16 to x=374. Mobile selection, building visibility, Done, Compare and Reset worked. Viewport overrides were reset. Desktop and the user's portrait layout were reviewed. Inspected warning/error logs were empty.
+- NASA Time Machine retained 24 complete annual values, zero missing. The standalone opened the simple panel, applied midnight and displayed the photographic reference from its embedded data URI. Package verification passed at **16,841,508 bytes (~16.06 MiB)**, matching production and every pinned embedded source asset, with no external scripts.
+
+Proof: `simple-controls-desktop.jpg`, `simple-controls-mobile.jpg`, `simple-controls-open.jpg`, `simple-real-photograph.jpg` under evidence/browser. The running user-requested server remains available. No deployment, demo recording/upload, online editor change or judging submission occurred.
+
+Photographic references are real static images, separate from the live calculation. Dynamic city facades remain approximate; the renderer now groups illustrative room/floor illumination to reduce unrelated speckling. It is not a photogrammetric city or calibrated eye/camera model. Source-map resolution, exact star detectability, energy/safety effects, physical-device performance and a broad GPU/browser matrix remain limits.
+
 ## Sky-first / Ultra pass — November 15, 2026
 
 **62 TypeScript tests + 21 scientific Python tests passed (83 total)**. Lint and the production TypeScript/build passed. Added tests verify higher framing without mutation of station cameras, supersampling on 1x displays, and the maximum render dimension/pixel budget. Scientific source files and analysis outputs are unchanged.

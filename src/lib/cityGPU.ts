@@ -96,9 +96,13 @@ void main(){
     float aa=clamp(distance*.00006,.015,.22);
     float windows=smoothstep(.12-aa,.12+aa,u)*(1.0-smoothstep(.84-aa,.84+aa,u))*smoothstep(.17-aa,.17+aa,fy)*(1.0-smoothstep(.80-aa,.80+aa,fy));
     float cell=random(vec2(floor(horizontal/2.9),floor(floorY)));
-    vec3 room=mix(vec3(1.0,.58,.24),vec3(.55,.72,1.0),step(.80,cell));
-    float lit=step(.69,cell)*mix(.12,1.1,random(vec2(floor(horizontal/18.0),floor(floorY/4.0))));
-    c*=1.0-windows*.40;
+    // Correlated rooms/floors avoid an unrelated salt-and-pepper facade pattern.
+    float roomGroup=random(vec2(floor(horizontal/14.5),floor(floorY/3.0)));
+    float floorGroup=random(vec2(floor(horizontal/60.0),floor(floorY)));
+    vec3 room=mix(vec3(1.0,.68,.39),vec3(.72,.82,1.0),smoothstep(.76,.96,roomGroup));
+    float occupied=smoothstep(.38,.72,roomGroup)*smoothstep(.22,.55,floorGroup);
+    float lit=step(.40,cell)*mix(.025,.95,occupied);
+    c*=1.0-windows*.55;
     if(heritage){
       float louvers=step(.5,fract(world.y*8.0));
       c=mix(c,vec3(.018,.049,.043)*(.70+.30*louvers)+vec3(.025)*day,windows*.75);
