@@ -75,3 +75,14 @@ Codex assisted with coding, documentation, research and testing. The user suppli
 - Fill remaining factual team information and all required form fields in English.
 - Personally review final original-work, licensing and legal declarations; submit before the applicable deadline.
 - After any later form changes, follow the official save/resubmit flow and verify a success banner. A saved draft is not a judged submission.
+
+
+## Local extension after the saved revision
+
+The perspective Observatory extension is implemented and locally tested. The saved online draft has not been updated to describe it. Before a later final submission, include the current location/time sky, embedded Gaia survey, optional Open-Meteo model conditions, illustrative lighting themes, and standalone HTML. Retain the separation from NASA POWER/CERES aerosol history. Add the actual new source references:
+
+- ESA/Gaia/DPAC, acknowledgement A. Moitinho; Gaia EDR3 integrated brightness/colour sky map, CC BY-SA 3.0 IGO: https://www.esa.int/media/interactive-map-of-the-sky-from-gaia-s-early-data-release-3
+- Open-Meteo / GeoNames geocoding and current model conditions, CC BY 4.0: https://open-meteo.com/en/docs/geocoding-api and https://open-meteo.com/en/docs ; source/license notices https://open-meteo.com/en/licence
+- NASA/JPL Horizons limited independent Moon position reference: https://ssd-api.jpl.nasa.gov/doc/horizons.html ; exact query/response cached in the project.
+
+Codex implemented this extension. A specifically approved Claude Code collaboration failed with an account/organization authorization error before any code contribution. Do not claim Claude co-authorship. See `AI_DISCLOSURE.md`, `OBSERVATORY.md` and `VALIDATION.md` for actual scope and limits. This addition is not a published demo or a final judging submission.

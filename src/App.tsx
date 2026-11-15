@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Activity, ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, CircleHelp, Clock3, Columns2, Compass, MapPin, Moon, RotateCcw, ShieldCheck, SlidersHorizontal, Sparkles, Sun, Telescope } from 'lucide-react';
 import SkyChart from './components/SkyChart';
+import LiveObservatory from './components/LiveObservatory';
 import History from './components/History';
 import { EvidenceContent, EvidenceDialog } from './components/Evidence';
 import { calculateSky, cardinal, localToUTC, LOCATIONS, type CatalogStar, type SkyObject } from './lib/astronomy';
@@ -9,7 +10,7 @@ import { validateHistoricalData, type HistoricalData } from './lib/data';
 
 type View = 'observatory' | 'time-machine' | 'sky-lab' | 'methodology';
 const VIEWS: { id: View; title: string }[] = [{ id: 'observatory', title: 'Observatory' }, { id: 'time-machine', title: 'Time Machine' }, { id: 'sky-lab', title: 'Sky Lab' }, { id: 'methodology', title: 'Methodology' }];
-const currentView = (): View => VIEWS.find(v => v.id === window.location.hash.slice(1))?.id ?? 'sky-lab';
+const currentView = (): View => VIEWS.find(v => v.id === window.location.hash.slice(1))?.id ?? 'observatory';
 
 function AtlasMark() { return <svg viewBox="0 0 42 42" fill="none" aria-hidden="true"><circle cx="21" cy="21" r="17" /><ellipse cx="21" cy="21" rx="7" ry="17" /><ellipse cx="21" cy="21" rx="17" ry="7" /><path d="M4 21h34M21 4v34M8 8l26 26" /><path d="m33 3 1.2 4.5L39 9l-4.8 1.5L33 15l-1.4-4.5L27 9l4.6-1.5Z" className="logo-star" /></svg>; }
 
@@ -81,11 +82,11 @@ export default function App() {
     </header>
 
     <main id="main-content" className="app-shell" tabIndex={-1}>
-      {(view === 'sky-lab' || view === 'observatory') && <div className="intro-row"><div><div className="eyebrow"><span className="section-number">{experiment ? '03' : '01'}</span> {experiment ? 'WHAT IF? — CITY EXPERIMENT' : 'THE DIGITAL OBSERVATORY'}<span className="eyebrow-rule" /></div><h1>{experiment ? <>A quieter city. <em>A deeper night.</em></> : <>Look up. <em>Know where you stand.</em></>}</h1><p>{experiment ? 'Explore responsible lighting. Keep the same sky. See a different possibility.' : 'A calculated atlas of the sky above you, grounded in time and place.'}</p></div><div className="intro-aside"><span className="edition">FIELD EDITION / 2026</span><span>{experiment ? 'A HYPOTHETICAL LIGHTING STUDY' : 'ASTRONOMY, WITHOUT THE GUESSWORK'}</span></div></div>}
+      {view === 'sky-lab' && <div className="intro-row"><div><div className="eyebrow"><span className="section-number">{experiment ? '03' : '01'}</span> {experiment ? 'WHAT IF? — CITY EXPERIMENT' : 'THE DIGITAL OBSERVATORY'}<span className="eyebrow-rule" /></div><h1>{experiment ? <>A quieter city. <em>A deeper night.</em></> : <>Look up. <em>Know where you stand.</em></>}</h1><p>{experiment ? 'Explore responsible lighting. Keep the same sky. See a different possibility.' : 'A calculated atlas of the sky above you, grounded in time and place.'}</p></div><div className="intro-aside"><span className="edition">FIELD EDITION / 2026</span><span>{experiment ? 'A HYPOTHETICAL LIGHTING STUDY' : 'ASTRONOMY, WITHOUT THE GUESSWORK'}</span></div></div>}
 
-      {view !== 'methodology' && <div className="observing-bar"><label className="location-control"><MapPin size={16} /><select aria-label="Observing location" value={locationId} onChange={e => { setLocationId(e.target.value); setSelected(null); }}>{LOCATIONS.map(l => <option value={l.id} key={l.id}>{l.name}</option>)}</select><ChevronDown size={14} /></label><span className="coordinates">{location.latitude.toFixed(4)}° N &nbsp; {location.longitude.toFixed(4)}° E</span>{view !== 'time-machine' && <><label className="date-control"><span>OBSERVING DATE</span><input aria-label="Observing date" type="date" min="2001-01-01" max="2100-12-31" value={date} onChange={e => setDate(e.target.value)} /></label><span className="timezone">UTC +{String(location.utcOffset).padStart(2, '0')}:00</span></>}<button className="text-link nasa-link" onClick={() => navigate(view === 'time-machine' ? 'sky-lab' : 'time-machine')}>{view === 'time-machine' ? 'Explore the sky' : 'Explore NASA records'}<ArrowUpRight size={14} /></button></div>}
+      {view !== 'methodology' && view !== 'observatory' && <div className="observing-bar"><label className="location-control"><MapPin size={16} /><select aria-label="Observing location" value={locationId} onChange={e => { setLocationId(e.target.value); setSelected(null); }}>{LOCATIONS.map(l => <option value={l.id} key={l.id}>{l.name}</option>)}</select><ChevronDown size={14} /></label><span className="coordinates">{location.latitude.toFixed(4)}° N &nbsp; {location.longitude.toFixed(4)}° E</span>{view !== 'time-machine' && <><label className="date-control"><span>OBSERVING DATE</span><input aria-label="Observing date" type="date" min="2001-01-01" max="2100-12-31" value={date} onChange={e => setDate(e.target.value)} /></label><span className="timezone">UTC +{String(location.utcOffset).padStart(2, '0')}:00</span></>}<button className="text-link nasa-link" onClick={() => navigate(view === 'time-machine' ? 'sky-lab' : 'time-machine')}>{view === 'time-machine' ? 'Explore the sky' : 'Explore NASA records'}<ArrowUpRight size={14} /></button></div>}
 
-      {(view === 'sky-lab' || view === 'observatory') && <>
+      {view === 'sky-lab' && <>
         {catalogError || observation.error ? <div className="load-error" role="alert"><CircleHelp size={22} /><p>{catalogError || observation.error}</p>{catalogError && <button className="quiet-button" onClick={() => setRetry(r => r + 1)}>Retry cached catalog</button>}</div> : sky && <div className="laboratory-layout">
           <section className="sky-column" aria-label="Interactive sky instrument">
             <div className="sky-toolbar"><span className="instrument-label"><Compass size={15} /> THE SKY ABOVE {locationId.toUpperCase()}</span><div className="chart-toggles"><button onClick={() => setConstellations(v => !v)} aria-pressed={constellations}>Asterisms</button><button onClick={() => setGrid(v => !v)} aria-pressed={grid}>Grid</button></div></div>
@@ -121,6 +122,7 @@ export default function App() {
         <section className="evidence-route"><Activity size={22} /><div><h3>A hypothetical sky. A real environmental record.</h3><p>The Time Machine explores NASA aerosol data, with source provenance and an uncertainty-aware trend test.</p></div><button className="text-link" onClick={() => navigate('time-machine')}>Go to the Time Machine <ArrowRight size={17} /></button></section>
       </>}
 
+      {view === 'observatory' && <LiveObservatory onHistory={() => navigate('time-machine')} />}
       {view === 'time-machine' && (data ? <History key={locationId} data={data} onEvidence={() => setEvidenceOpen(true)} /> : <div className="load-error" role={dataError ? 'alert' : 'status'}><p>{dataError || 'Loading cached NASA records…'}</p>{dataError && <button className="quiet-button" onClick={() => setRetry(r => r + 1)}>Retry NASA cache</button>}</div>)}
       {view === 'methodology' && <section className="methodology-view"><span className="eyebrow">04 / THE EVIDENCE NOTEBOOK</span><h1>Wonder, <em>with its workings shown.</em></h1><div className="methodology-grid"><aside><span className="eyebrow">THREE KINDS OF KNOWING</span><div><span className="evidence-tag measured">NASA-DERIVED RECORD</span><p>A traceable environmental dataset.</p></div><div><span className="evidence-tag calculated">CALCULATED</span><p>Geometry and statistics from stated methods.</p></div><div><span className="evidence-tag illustrative">ILLUSTRATIVE</span><p>An educational picture, never a measurement.</p></div></aside><EvidenceContent topic="all" /></div></section>}
     </main>

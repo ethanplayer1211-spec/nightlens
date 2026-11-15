@@ -9,3 +9,4 @@ playwright-report/
 .venv/
 __pycache__/
 .pytest_cache/
+public/downloads/nightlens-sky.html

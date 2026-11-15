@@ -2,6 +2,14 @@
 
 Verified November 15, 2026 (Malaysia time). No fabricated measurements are included.
 
+## Added perspective Observatory sources
+
+- **ESA/Gaia/DPAC EDR3 integrated brightness/colour survey:** historical image, not a live sky photograph or measured city brightness. Source and attribution: https://www.esa.int/media/interactive-map-of-the-sky-from-gaia-s-early-data-release-3. Acknowledgement A. Moitinho; CC BY-SA 3.0 IGO. Original 2000×1000 PNG, exact URL, projection and SHA-256 are pinned in `data/sky-assets.json`. Runtime reprojection and illustrative tone mapping are documented in `OBSERVATORY.md`. Reacquire using `python scripts/acquire_sky_assets.py`; changed bytes are rejected.
+- **Open-Meteo / GeoNames:** optional worldwide city search, coordinates, elevation and IANA timezones via https://open-meteo.com/en/docs/geocoding-api. Current cloud cover, temperature and humidity use https://open-meteo.com/en/docs with Unix timestamps; coverage is a weather-model value, not a sensor observation or NASA product. Data CC BY 4.0; source notices https://open-meteo.com/en/licence. Requests have visible failure states and do not block local astronomy. No current weather is substituted for conditions at a manually selected preview time.
+- **NASA/JPL Horizons:** an independent airless topocentric Moon benchmark at Penang, 2026-11-15 13:00 UTC. The exact query URL and complete response are cached in `data/validation/horizons-moon-20261115.json`; API documentation https://ssd-api.jpl.nasa.gov/doc/horizons.html. A 0.05° position tolerance is tested. This is a limited validation reference, not the runtime ephemeris and not validation of visual brightness.
+
+These additions do not change the NASA historical dataset below or resolve the stricter challenge-tab condition. Asset licenses remain separate from the application's MIT code license.
+
 ## Official challenge and eligibility
 
 - Challenge: https://www.spaceappschallenge.org/2026/challenges/earth-system-trend-detective/

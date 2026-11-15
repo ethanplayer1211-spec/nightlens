@@ -84,4 +84,4 @@ Essential safety lighting is excluded. The experiment is not a real infrastructu
 
 TypeScript tests exercise schedule boundaries, backward scrubbing, midnight, reset copies, deterministic output, participation edge cases, no linear dimming-to-skyglow claim, UTC conversion, invalid coordinates/dates, cardinal projection and an independent Equator/Horizon API comparison for Vega. Data tests validate hashes and every monthly value against raw responses. Python tests validate calendar weighting, missing values, duplicates, SciPy/OLS agreement and exact regeneration of all selectable NASA analysis windows.
 
-Browser checks and remaining verification limits are recorded in `docs/VALIDATION.md`. No claim of ground-calibrated visual accuracy or external JPL benchmark validation is made.
+Browser checks and remaining verification limits are recorded in `docs/VALIDATION.md`. No claim of ground-calibrated visual accuracy is made. The expanded perspective Observatory, timezone handling, survey mapping and limited independent NASA/JPL Moon benchmark are documented in `OBSERVATORY.md`.

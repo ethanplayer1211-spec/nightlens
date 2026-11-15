@@ -1,6 +1,6 @@
 import {
   Body, Equator, Horizon, HorizonFromVector, Illumination, Observer,
-  RotateVector, Rotation_EQJ_HOR, Spherical, VectorFromSphere,
+  RotateVector, Rotation_EQJ_HOR, Rotation_HOR_EQJ, Rotation_EQJ_GAL, CombineRotation, MakeTime, Vector, SearchRiseSet, SearchAltitude, Spherical, VectorFromSphere,
 } from 'astronomy-engine';
 
 export interface Location { id: string; name: string; latitude: number; longitude: number; utcOffset: number; elevation: number }
@@ -36,19 +36,40 @@ export function calculateSky(catalog: CatalogStar[], location: Location, date: D
     if (horizontal.lat < 0) continue;
     objects.push({ id: `s${star.id}`, name: star.name, magnitude: star.magnitude, kind: 'star', altitude: horizontal.lat, azimuth: horizontal.lon, hip: star.hip, constellation: star.constellation, colorIndex: star.colorIndex, ...project(horizontal.lat, horizontal.lon) });
   }
-  const planetBodies = [Body.Venus, Body.Mars, Body.Jupiter, Body.Saturn];
+  const planetBodies = [Body.Mercury, Body.Venus, Body.Mars, Body.Jupiter, Body.Saturn, Body.Uranus, Body.Neptune];
   let moonAltitude = 0;
   let sunAltitude = 0;
+  let sunAzimuth = 0;
   for (const body of [...planetBodies, Body.Moon, Body.Sun]) {
     const eq = Equator(body, date, observer, true, true);
     const horizontal = Horizon(date, observer, eq.ra, eq.dec, '');
-    if (body === Body.Sun) { sunAltitude = horizontal.altitude; continue; }
+    if (body === Body.Sun) { sunAltitude = horizontal.altitude; sunAzimuth = horizontal.azimuth; continue; }
     if (body === Body.Moon) moonAltitude = horizontal.altitude;
     if (horizontal.altitude < 0) continue;
     objects.push({ id: body, name: body, magnitude: Illumination(body, date).mag, kind: body === Body.Moon ? 'moon' : 'planet', altitude: horizontal.altitude, azimuth: horizontal.azimuth, ...project(horizontal.altitude, horizontal.azimuth) });
   }
   const moon = Illumination(Body.Moon, date);
-  return { objects, moonAltitude, moonIllumination: moon.phase_fraction, moonPhaseAngle: moon.phase_angle, sunAltitude, date };
+  return { objects, moonAltitude, moonIllumination: moon.phase_fraction, moonPhaseAngle: moon.phase_angle, sunAltitude, sunAzimuth, date };
+}
+
+/** Columns generated from basis vectors avoid assuming the library's matrix storage order. */
+export function worldToGalactic(location: Location, date: Date): number[] {
+  const observer = new Observer(location.latitude, location.longitude, location.elevation);
+  const rotation = CombineRotation(Rotation_HOR_EQJ(date, observer), Rotation_EQJ_GAL());
+  // Library HOR is north / west / zenith; renderer world is east / up / north.
+  const time = MakeTime(date);
+  const east = RotateVector(rotation, new Vector(0, -1, 0, time));
+  const up = RotateVector(rotation, new Vector(0, 0, 1, time));
+  const north = RotateVector(rotation, new Vector(1, 0, 0, time));
+  return [east.x, up.x, north.x, east.y, up.y, north.y, east.z, up.z, north.z];
+}
+
+export function eveningEvents(location: Location, startUTC: Date) {
+  const observer = new Observer(location.latitude, location.longitude, location.elevation);
+  return {
+    sunset: SearchRiseSet(Body.Sun, observer, -1, startUTC, 1.1)?.date ?? null,
+    astronomicalDusk: SearchAltitude(Body.Sun, observer, -1, startUTC, 1.1, -18)?.date ?? null,
+  };
 }
 
 export type SkyCalculation = ReturnType<typeof calculateSky>;

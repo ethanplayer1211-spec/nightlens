@@ -1,0 +1,16 @@
+{
+  "id": "esa-gaia-edr3-galactic-map",
+  "file": "public/data/gaia-sky.png",
+  "source_page": "https://www.esa.int/media/interactive-map-of-the-sky-from-gaia-s-early-data-release-3",
+  "download_url": "https://media.esa.int/legacy/web/images/esa_multimedia/images/2020/12/interactive_map_of_the_sky_from_gaia_s_early_data_release_3/25364650-1-eng-GB/Interactive_map_of_the_sky_from_Gaia_s_Early_Data_Release_3.png?dl=",
+  "retrieved_date": "2026-11-15",
+  "sha256": "a831d1a88ce6df8406f498c2f6a30d3905138f8a6262e870903133c75339f4b9",
+  "bytes": 3885439,
+  "width": 2000,
+  "height": 1000,
+  "credit": "ESA/Gaia/DPAC; acknowledgement: A. Moitinho",
+  "license": "CC BY-SA 3.0 IGO",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
+  "changes": "Original downloaded PNG preserved. Runtime perspective reprojection and illustrative colour/contrast changes; source texture is not a naked-eye brightness calibration.",
+  "projection": "Equirectangular Galactic coordinates; north at top, l=0 at horizontal center, longitude increasing left."
+}

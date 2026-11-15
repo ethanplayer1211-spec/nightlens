@@ -4,7 +4,7 @@ November 15, 2026, Malaysia time. This file records observed results, not a guar
 
 ## Commands that passed
 
-- `npm test`: 22 tests, 3 files. Schedule/reset/determinism, UTC handling, astronomy projection/library comparison, data provenance/units/raw values, short-series handling, exports and schema validation.
+- `npm test`: 34 tests, 4 files. Schedule/reset/determinism, UTC handling, astronomy projection/library comparison, data provenance/units/raw values, short-series handling, exports and schema validation.
 - `.\.venv\Scripts\python.exe -m pytest tests/test_analysis.py -q`: 10 tests. Calendar weighting, missing/nonfinite/fill data, duplicate month rejection, independent SciPy regression comparison, and regeneration of every Penang/Seoul analysis window from the original NASA responses.
 - `npm run typecheck`: strict TypeScript project check.
 - `npm run lint`: ESLint.
@@ -45,8 +45,24 @@ Project text, actual NASA references, other-source credits and AI-use categories
 ## Verification limits
 
 - No calibrated lighting/skyglow or exact visibility model exists.
-- No external JPL ephemeris benchmark or field star-visibility comparison was performed.
+- One independent NASA/JPL Horizons Moon benchmark was performed, at a single Penang instant with a 0.05° tolerance. Broader ephemeris validation and field star-visibility comparison were not performed.
 - No real-device touch/assistive-technology test, comprehensive browser matrix, load test, or real outdoor lighting validation was performed.
 - Black Marble HDF5 acquisition remains blocked by Earthdata authentication; no nighttime-radiance trend was analyzed.
 - A locally served production build is not a public deployment. No remote repository has been pushed; no public production site or official judging submission is claimed.
 - The official demo artifact/public URL is pending; the 28-second storyboard is a prepared script.
+
+
+## Perspective Observatory extension, November 15
+
+- 34 TypeScript tests and 10 Python tests passed (44 total); lint, strict TypeScript and production build passed. Added tests cover fractional IANA offsets, historical DST, repeated/nonexistent local hours, calendar rollover, skipped local midnight, invalid coordinates, geocoder/weather schemas, perspective orientation, horizon-to-Galactic rotation and the independent NASA/JPL Moon benchmark.
+- Real Singapore search returned named coordinate/timezone choices. Selecting the city moved the current clock to Asia/Singapore and recalculated the sky. Open-Meteo model conditions loaded with their timestamp. Saved Sydney used Australia/Sydney, UTC+11 in November, and the southern sky; 23:55 local corresponded to 12:55 UTC.
+- Now initially showed daylight in Penang; No artificial light preserved daylight. Tonight selected an explicit 21:00 preview and optional current clouds were disabled/excluded. The comparison shared one geometry and survey field.
+- Keyboard comparison reached its 4% and 96% limits; camera zoom changed field of view. Manual time entry, absolute hour steps and the full-day range updated the observing instant. Reset restored Now, busy-city value 85, default camera and comparison off.
+- Sky evidence opened/closed with survey/catalog licensing, location/weather attribution, visual limitations and the scoped Claude attempt disclosure.
+- Desktop 1440×1000 and mobile 390×844 had no document horizontal overflow. Proof: `evidence/browser/observatory-mobile.jpg` and `evidence/browser/observatory-standalone-desktop.jpg`.
+- The generated standalone HTML rendered in the browser from the production static server, with 4,105 embedded catalog stars, the embedded image complete at 2000 px width, and no external script tags. WebGL survey mode rendered successfully, with no console errors during these checks. The same HTML is designed to open directly from disk; a `file://` browser run was not performed. Network search/weather and device permissions are still browser/environment dependent.
+- Full-screen permission was refused by the in-app browser; the implemented control showed its explicit unavailable message and preserved the normal view. Successful native full-screen entry is not claimed for this environment.
+- Physical pointer dragging/pinch, actual device-location permission, real-device touch and forced GPU/image-failure paths were not exercised for this new renderer. Pointer/touch handlers and labeled keyboard alternatives are implemented; previous circular-atlas pointer checks are separate.
+- Regression browser smoke checks confirmed the existing City Experiment moves from waiting to active, resets, and the Time Machine still displays 24 complete NASA annual values for 2001–2024. The Python reproduction tests verified its numerical outputs remain unchanged.
+- Claude Code returned HTTP 403 `oauth_not_allowed_for_organization` before producing code; no contribution from Claude is claimed. The owner-approved integration was attempted, not completed.
+- The saved Space Apps draft was not modified for this extension. New ESA/Open-Meteo/JPL credits and feature wording must be incorporated before a later final submission. No deployment, repository push or judging submission occurred.
