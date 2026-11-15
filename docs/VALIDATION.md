@@ -1,5 +1,24 @@
 # Validation record
 
+## Recording polish — November 15, 2026, 18:18 MYT
+
+**60 TypeScript tests + 21 Python scientific tests passed (81 total)**. ESLint passed without warnings; TypeScript and the production build passed. The two added tests verify bounded/reversible display transitions, immediate reduced-motion output, exact convergence, input immutability and preservation of the sky/camera/matrix references. No scientific dataset or analysis pipeline was changed.
+
+The standalone verifier passed for **16,826,106 bytes (~16.05 MiB)**, matching its production copy and all pinned embedded source assets. The sky-focused standalone includes the new control panel, states and transitions; the full app remains the recording route for the 24-year NASA Time Machine.
+
+Production browser rehearsal verified:
+
+- Immersive Controls contains one shared control instance and one set of tab IDs. Lighting / Atmosphere / Experiment tabs and switches work, with explicit On/Off states. Current-model weather details are collapsed and visibly excluded in previews.
+- Before 23:55 reported Waiting for 00:00; After 00:05 reported Dimming active. The midnight action selected the following local 00:05 and comparison; the keyboard divider reached 96.
+- Theme changes preserved comparison both when Off and when On. Reset lighting & view restored appearance defaults while retaining the selected 00:05 instant. This supersedes the earlier reset-to-Now checks below.
+- Immersive station selection changed to the mapped Penang terrace at an explicit local 21:00 preview. High detail / Balanced selections updated the renderer quality state. Physical high-DPI resolution/FPS was not benchmarked.
+- Label/asterism switches enabled annotations. Moon study reached 12 degrees, then toggled back to the prior 88-degree station camera and mapped-3d mode. Escape closed Controls while leaving the immersive view open. The Evidence dialog opened above it and closed correctly.
+- An opaque cloud combination and scalar display changes reached settled renderer state. Transition math was tested separately; no claim of a measured real-world photometric transition is made.
+- Full-HD DOM layout was checked at 1920×1080 without document overflow; the panel remained within bounds. Visual proof uses the default 1280×720 capture. At 390×844 the immersive document width was 390 and the panel stayed between x=16 and x=374. Mobile tabs, Moon-light switch, close/reopen and Escape worked. Viewport overrides were reset.
+- The walkthrough reached NASA Time Machine with 24 complete annual values and zero missing. The updated standalone initialized, exposed the immersive panel, applied shielding/midnight and reported Dimming active. Inspected browser warning/error logs were empty.
+
+Proof: `recording-controls-desktop.jpg`, `recording-controls-mobile.jpg`, `recording-nasa-evidence.jpg`, `recording-package.jpg` under `evidence/browser/`. The take has not been screen-recorded, encoded, uploaded or submitted. Actual recorder/GPU performance, physical touch, reduced-motion OS emulation and broad browser compatibility remain unverified. See `RECORDING_GUIDE.md` for the rehearsal route. Publication and official submission are unchanged.
+
 ## Current immersive design pass — November 15, 2026, 16:32 MYT
 
 Local production checks passed: **58 TypeScript tests (7 files) + 21 scientific Python tests = 79 tests**, ESLint and TypeScript project checking through the production build. New checks cover finite Sun/Moon angular radii, orthonormal lunar attitude, a separate libration calculation, wider-context merge precedence/caps, pinned GLB topology and finite registered geometry. Existing schedule/reset, astronomy, data provenance and NASA/Tucson numerical reproduction checks still pass. This is automated verification, not field photometric calibration.

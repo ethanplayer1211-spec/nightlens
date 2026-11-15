@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Columns2, Maximize2, Minus, Plus, RotateCcw, X, Moon } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState, useId } from 'react';
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Columns2, Maximize2, Minus, Plus, RotateCcw, X, Moon, SlidersHorizontal } from 'lucide-react';
 import { ASTERISMS, cardinal } from '../lib/astronomy';
+import {appearanceValues,sampleAppearance,visualProps} from '../lib/appearanceTransition';
 import { starDisplayContrast } from '../lib/skyAppearance';
 import { blockedByBuilding, drawSurroundings } from '../lib/horizonRenderer';
 import { createCityGPU, type CityGPU } from '../lib/cityGPU';
@@ -14,6 +15,11 @@ function color(index?: number | null) { return index !== null && index !== undef
 
 export default function SkyTheatre(props: ImmersiveSkyProps) {
   const [immersive,setImmersive]=useState(false),[quiet,setQuiet]=useState(true),[skyDetail,setSkyDetail]=useState(false);
+  const [controlsOpen,setControlsOpen]=useState(false),[quality,setQuality]=useState<'balanced'|'high'>('balanced');
+  const controlsId=useId(),controlsPanel=useRef<HTMLElement>(null),controlsButton=useRef<HTMLButtonElement>(null);
+  const renderFrame=useRef<number|null>(null),qualityRef=useRef(quality),resizeRenderer=useRef<(()=>void)|null>(null);qualityRef.current=quality;
+  const initialAppearance=appearanceValues(props),appearance=useRef({from:initialAppearance,to:initialAppearance,start:0,duration:0});
+  const studyCamera=useRef(props.camera);
   const priorFocus=useRef<HTMLElement|null>(null),cameraMotion=useRef<number|null>(null);
   const cityCanvas=useRef<HTMLCanvasElement>(null),cityGPU=useRef<CityGPU|null>(null);
   const [cityFallback,setCityFallback]=useState(false);
@@ -29,15 +35,19 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
   const pointers = useRef(new Map<number, { x: number; y: number }>());
   const gesture = useRef({ x: 0, y: 0, az: 0, alt: 0, moved: false, pinch: 0, fov: 0 });
 
-  const render = useCallback(() => {
-    const p = current.current, { width: w, height: h, dpr } = dimensions.current;
+  const render = useCallback(function queueRender(){
+    if(renderFrame.current!==null)return;
+    renderFrame.current=requestAnimationFrame(()=>{
+    renderFrame.current=null;
+    const visual=sampleAppearance(appearance.current,performance.now());
+    const p = {...visualProps(current.current,visual.values),quiet:current.current.quiet,skyDetail:current.current.skyDetail}, { width: w, height: h, dpr } = dimensions.current;
     const canvas = foreground.current, ctx = canvas?.getContext('2d');
     if (!canvas || !ctx) return;
     gpu.current?.draw(p, Math.round(w * dpr), Math.round(h * dpr));
     let cityMesh:ReturnType<CityGPU['draw']>=null;
     try{cityMesh=cityGPU.current?.draw(p.skyDetail?{...p,filters:{...p.filters,horizon:'meadow'}}:p,Math.round(w*dpr),Math.round(h*dpr))??null;}
     catch{cityGPU.current?.destroy();cityGPU.current=null;setCityFallback(true);}
-    if(frame.current){frame.current.dataset.sceneTriangles=String(cityMesh?.triangles??0);frame.current.dataset.sceneMode=p.filters.horizon==='viewpoint'?(p.skyDetail?'sky-study':cityMesh?'mapped-3d':'fallback'):'illustrative';}
+    if(frame.current){frame.current.dataset.visualTransition=visual.active?'running':'settled';frame.current.dataset.renderQuality=qualityRef.current;frame.current.dataset.sceneTriangles=String(cityMesh?.triangles??0);frame.current.dataset.sceneMode=p.filters.horizon==='viewpoint'?(p.skyDetail?'sky-study':cityMesh?'mapped-3d':'fallback'):'illustrative';}
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
     const daylight = clamp((p.sky.sunAltitude + 12) / 16);
     const darkness = 1 - clamp((p.sky.sunAltitude + 16) / 13);
@@ -131,6 +141,8 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
       if (az % 45 === 0) { ctx.fillStyle = az % 90 === 0 ? '#c8b28e' : '#7c929f'; ctx.fillText(cardinal(az),horizon.x,horizon.y+20); }
     }
     ctx.textAlign = 'left';
+    if(visual.active)queueRender();
+    });
   }, []);
 
   useEffect(() => {
@@ -139,7 +151,8 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
     gpu.current = createSkyGPU(bg, render, () => { setImageFailed(true); render(); },setMoonReady);
     setFallback(!gpu.current);
     cityGPU.current=createCityGPU(city,render);setCityFallback(!cityGPU.current);
-    const resize = () => { const bounds = element.getBoundingClientRect(); const dpr = Math.min(2, window.devicePixelRatio || 1); dimensions.current = { width: bounds.width, height: bounds.height, dpr }; bg.width = fg.width = city.width = Math.round(bounds.width * dpr); bg.height = fg.height = city.height = Math.round(bounds.height * dpr); render(); };
+    const resize = () => { const bounds = element.getBoundingClientRect(); const dpr = Math.min(qualityRef.current==='high'?2:1.5, window.devicePixelRatio || 1); dimensions.current = { width: bounds.width, height: bounds.height, dpr }; bg.width = fg.width = city.width = Math.round(bounds.width * dpr); bg.height = fg.height = city.height = Math.round(bounds.height * dpr); render(); };
+    resizeRenderer.current=resize;
     const observer = new ResizeObserver(resize); observer.observe(element); resize();
     const onLost = (event: Event) => { event.preventDefault(); gpu.current?.destroy(); gpu.current = null; setFallback(true); render(); };
     bg.addEventListener('webglcontextlost', onLost);
@@ -148,8 +161,19 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
     document.addEventListener('fullscreenchange', onFullscreen);
     const wheel = (event: WheelEvent) => { event.preventDefault();if(cameraMotion.current!==null){cancelAnimationFrame(cameraMotion.current);cameraMotion.current=null;} const p = current.current; p.onCameraChange(normalizeCamera({ ...p.camera, fieldOfView: p.camera.fieldOfView + Math.sign(event.deltaY) * 5 })); };
     fg.addEventListener('wheel', wheel, { passive: false });
-    return () => { if(cameraMotion.current!==null)cancelAnimationFrame(cameraMotion.current);observer.disconnect();city.removeEventListener('webglcontextlost',onCityLost);cityGPU.current?.destroy();cityGPU.current=null;gpu.current?.destroy(); gpu.current = null; fg.removeEventListener('wheel', wheel); bg.removeEventListener('webglcontextlost', onLost); document.removeEventListener('fullscreenchange', onFullscreen); };
+    return () => { resizeRenderer.current=null;if(renderFrame.current!==null){cancelAnimationFrame(renderFrame.current);renderFrame.current=null;}if(cameraMotion.current!==null)cancelAnimationFrame(cameraMotion.current);observer.disconnect();city.removeEventListener('webglcontextlost',onCityLost);cityGPU.current?.destroy();cityGPU.current=null;gpu.current?.destroy(); gpu.current = null; fg.removeEventListener('wheel', wheel); bg.removeEventListener('webglcontextlost', onLost); document.removeEventListener('fullscreenchange', onFullscreen); };
   }, [render]);
+  useEffect(()=>{
+    const to=appearanceValues(current.current),previous=appearance.current;
+    if(Object.entries(to).every(([key,value])=>value===previous.to[key as keyof typeof to]))return;
+    const now=performance.now();appearance.current={from:sampleAppearance(previous,now).values,to,start:now,duration:window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:360};render();
+  },[props.lightPollution,props.compareLightPollution,props.cityLightPercent,props.cloudCover,props.fixtureGlare,props.fixtureOutput,props.warmth,props.filters.hazePercent,props.filters.glarePercent,props.filters.cloudOpacityPercent,render]);
+  useEffect(()=>{resizeRenderer.current?.();},[quality]);
+  const onImmersiveChange=props.onImmersiveChange;
+  useEffect(()=>{onImmersiveChange?.(immersive);},[immersive,onImmersiveChange]);
+  useEffect(()=>{if(props.showLabels||props.showConstellations)setQuiet(false);},[props.showLabels,props.showConstellations]);
+  useEffect(()=>{if(!immersive)setControlsOpen(false);},[immersive]);
+  useEffect(()=>{if(controlsOpen)controlsPanel.current?.querySelector<HTMLButtonElement>('button')?.focus({preventScroll:true});},[controlsOpen]);
   useEffect(render, [props, render,immersive,quiet,skyDetail]);
   useEffect(()=>{if(cameraMotion.current!==null){cancelAnimationFrame(cameraMotion.current);cameraMotion.current=null;}},[props.scene?.id,props.sky.date]);
   useEffect(()=>{if(props.enterViewRequest)setImmersive(true);},[props.enterViewRequest]);
@@ -175,17 +199,18 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
   const mode = props.sky.sunAltitude >= 0 ? 'DAYLIGHT' : props.sky.sunAltitude > -18 ? 'TWILIGHT' : 'ASTRONOMICAL NIGHT';
 
   return <div className={`theatre-frame ${immersive?'theatre-immersive':''} ${immersive&&quiet?'theatre-quiet':''}`} ref={frame} role={immersive?'dialog':undefined} aria-modal={immersive?true:undefined} aria-label={immersive?'Immersive night sky view':undefined}
-    onKeyDown={e=>{if(!immersive)return;if(e.key==='Escape'){e.preventDefault();setImmersive(false);}if(e.key==='Tab'){const focusable=[...frame.current!.querySelectorAll<HTMLElement>('button:not(:disabled),input,select,a[href],canvas[tabindex]')].filter(el=>el.offsetParent!==null),first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}}} data-testid="sky-theatre" data-camera-fov={props.camera.fieldOfView.toFixed(2)} data-sun-altitude={props.sky.sunAltitude.toFixed(4)}>
+    onKeyDown={e=>{if(!immersive)return;if(e.key==='Escape'){e.preventDefault();if(controlsOpen){setControlsOpen(false);controlsButton.current?.focus();}else setImmersive(false);}if(e.key==='Tab'){const focusable=[...frame.current!.querySelectorAll<HTMLElement>('button:not(:disabled),input,select,a[href],canvas[tabindex]')].filter(el=>el.offsetParent!==null),first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}}} data-testid="sky-theatre" data-camera-fov={props.camera.fieldOfView.toFixed(2)} data-sun-altitude={props.sky.sunAltitude.toFixed(4)}>
     <canvas ref={background} className="theatre-background" aria-hidden="true" />
     <canvas ref={foreground} className="theatre-canvas" tabIndex={0} role="img" aria-label="Perspective sky. Drag to look around, use arrow keys to pan, and plus or minus to zoom. Astronomical positions are calculated, appearance is simulated."
       onKeyDown={event => { const keys: Record<string, () => void> = { ArrowLeft: () => pan(-10, 0), ArrowRight: () => pan(10, 0), ArrowUp: () => pan(0, 7), ArrowDown: () => pan(0, -7), '+': () => zoom(-10), '=': () => zoom(-10), '-': () => zoom(10), Home: () => {setSkyDetail(false);moveCamera(props.scene?.site.camera??DEFAULT_CAMERA,650);} }; if (keys[event.key]) { event.preventDefault(); keys[event.key](); } }}
-      onPointerDown={event => { if(cameraMotion.current!==null){cancelAnimationFrame(cameraMotion.current);cameraMotion.current=null;}event.currentTarget.setPointerCapture(event.pointerId); pointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY }); if (pointers.current.size === 1) gesture.current = { x: event.clientX, y: event.clientY, az: props.camera.azimuth, alt: props.camera.altitude, moved: false, pinch: 0, fov: props.camera.fieldOfView }; if (pointers.current.size === 2) { const [a,b] = [...pointers.current.values()]; gesture.current.pinch = Math.hypot(a.x-b.x,a.y-b.y); gesture.current.fov = props.camera.fieldOfView; gesture.current.moved = true; } }}
+      onPointerDown={event => { setControlsOpen(false);if(cameraMotion.current!==null){cancelAnimationFrame(cameraMotion.current);cameraMotion.current=null;}event.currentTarget.setPointerCapture(event.pointerId); pointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY }); if (pointers.current.size === 1) gesture.current = { x: event.clientX, y: event.clientY, az: props.camera.azimuth, alt: props.camera.altitude, moved: false, pinch: 0, fov: props.camera.fieldOfView }; if (pointers.current.size === 2) { const [a,b] = [...pointers.current.values()]; gesture.current.pinch = Math.hypot(a.x-b.x,a.y-b.y); gesture.current.fov = props.camera.fieldOfView; gesture.current.moved = true; } }}
       onPointerMove={event => { if (!pointers.current.has(event.pointerId)) return; pointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY }); const g = gesture.current; if (pointers.current.size === 2 && g.pinch) { const [a,b] = [...pointers.current.values()]; props.onCameraChange(normalizeCamera({ ...props.camera, fieldOfView: g.fov * g.pinch / Math.max(10, Math.hypot(a.x-b.x,a.y-b.y)) })); return; } if (pointers.current.size !== 1 || g.pinch) return; const dx = event.clientX-g.x, dy = event.clientY-g.y; if (Math.hypot(dx,dy)>4) g.moved=true; props.onCameraChange(normalizeCamera({ ...props.camera, azimuth: g.az-dx/dimensions.current.width*props.camera.fieldOfView, altitude: g.alt+dy/dimensions.current.width*props.camera.fieldOfView })); }}
       onPointerUp={event => { const g = gesture.current; pointers.current.delete(event.pointerId); const remaining = [...pointers.current.values()][0]; if (remaining) gesture.current = { ...remaining, az: props.camera.azimuth, alt: props.camera.altitude, moved: true, pinch: 0, fov: props.camera.fieldOfView }; if (!g.moved && !g.pinch) { const bounds = event.currentTarget.getBoundingClientRect(); const x = event.clientX-bounds.left, y = event.clientY-bounds.top; const nearest = [...projected.current].sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0]; if (nearest && Math.hypot(nearest.x-x,nearest.y-y)<25) props.onSelect(nearest.id); } }}
       onPointerCancel={() => pointers.current.clear()} />
     <canvas ref={cityCanvas} className="theatre-city" aria-hidden="true"/>
     <div className="theatre-experience-toolbar">{immersive&&<div className="theatre-place-title"><strong>{props.scene?.site.name??'The sky above you'}</strong><span>{props.localClockLabel??`${props.sky.date.toISOString().replace('T',' ').slice(0,16)} UTC`} · CALCULATED SKY</span></div>}<button onClick={()=>setImmersive(v=>!v)} aria-label={immersive?'Exit immersive view':'Enter immersive view'}>{immersive?<><X size={15}/>Return to instrument</>:<><Maximize2 size={14}/>Enter the view</>}</button></div>
-    {immersive&&<div className="theatre-control-dock">{props.onLightingTheme&&<label className="immersive-light-choice"><span>LIGHTING ILLUSTRATION</span><select aria-label="Immersive lighting scenario" value={props.lightTheme} onChange={e=>props.onLightingTheme?.(e.target.value)}>{!['city','suburb','rural','natural'].includes(props.lightTheme??'')&&<option value={props.lightTheme}>Custom</option>}<option value="city">Busy city</option><option value="suburb">Quiet neighbourhood</option><option value="rural">Rural night</option><option value="natural">No artificial light</option></select></label>}{props.onAfterMidnight&&<button onClick={props.onAfterMidnight}>After midnight</button>}{props.onComparisonToggle&&<button onClick={props.onComparisonToggle} aria-pressed={props.comparison}><Columns2 size={13}/>Compare</button>}{props.sky.objects.some(o=>o.kind==='moon')&&<button onClick={()=>{const moon=props.sky.objects.find(o=>o.kind==='moon')!;setSkyDetail(true);moveCamera({azimuth:moon.azimuth,altitude:moon.altitude,fieldOfView:12},850);}}>Moon study</button>}{props.onNightPreview&&<button onClick={props.onNightPreview}><Moon size={13}/>Tonight</button>}<button onClick={()=>setQuiet(v=>!v)} aria-pressed={!quiet}>{quiet?'Annotations':'Quiet view'}</button></div>}
+    {immersive&&<div className="theatre-control-dock">{props.onLightingTheme&&<label className="immersive-light-choice"><span>LIGHTING ILLUSTRATION</span><select aria-label="Immersive lighting scenario" value={props.lightTheme} onChange={e=>props.onLightingTheme?.(e.target.value)}>{!['city','suburb','rural','natural'].includes(props.lightTheme??'')&&<option value={props.lightTheme}>Custom</option>}<option value="city">Busy city</option><option value="suburb">Quiet neighbourhood</option><option value="rural">Rural night</option><option value="natural">No artificial light</option></select></label>}{props.onAfterMidnight&&<button onClick={props.onAfterMidnight} aria-pressed={props.midnightPresetSelected}>After midnight</button>}{props.onComparisonToggle&&<button onClick={props.onComparisonToggle} aria-pressed={props.comparison}><Columns2 size={13}/>Compare</button>}{props.sky.objects.some(o=>o.kind==='moon')&&<button aria-pressed={skyDetail} onClick={()=>{if(skyDetail){setSkyDetail(false);moveCamera(studyCamera.current,650);}else{studyCamera.current={...props.camera};const moon=props.sky.objects.find(o=>o.kind==='moon')!;setSkyDetail(true);moveCamera({azimuth:moon.azimuth,altitude:moon.altitude,fieldOfView:12},850);}}}>Moon study</button>}{props.onNightPreview&&<button onClick={props.onNightPreview}><Moon size={13}/>Tonight</button>}{props.controlPanel&&<button ref={controlsButton} aria-expanded={controlsOpen} aria-controls={controlsId} onClick={()=>setControlsOpen(v=>!v)}><SlidersHorizontal size={14}/>Controls</button>}<button onClick={()=>{props.onAnnotationsChange?.(quiet);setQuiet(v=>!v);}} aria-pressed={!quiet}>{quiet?'Annotations':'Quiet view'}</button></div>}
+    {immersive&&controlsOpen&&<aside ref={controlsPanel} id={controlsId} className="immersive-controls-panel" aria-label="Immersive sky controls"><header><span>LIGHT & ATMOSPHERE</span><button aria-label="Close immersive controls" onClick={()=>{setControlsOpen(false);controlsButton.current?.focus();}}><X size={18}/></button></header>{props.controlPanel}<label className="immersive-quality"><span>Render quality</span><select aria-label="Render quality" value={quality} onChange={e=>setQuality(e.target.value as typeof quality)}><option value="balanced">Balanced</option><option value="high">High detail</option></select><small>Balanced limits pixel density while recording. Actual smoothness depends on your device.</small></label></aside>}
     <div className="theatre-top"><div className="theatre-state"><i className={mode === 'DAYLIGHT' ? 'theatre-day-dot' : ''} /><span>{mode}</span></div><span className="theatre-appearance">SIMULATED APPEARANCE</span></div>
     {props.comparison && <><div className="theatre-compare-label theatre-before">{props.baselineLabel}</div><div className="theatre-compare-label theatre-after">SELECTED LIGHTING</div><div className="theatre-divider" style={{ left: `${props.split}%` }} onPointerDown={e => { e.currentTarget.setPointerCapture(e.pointerId); splitPointer(e); }} onPointerMove={e => { if (e.buttons) splitPointer(e); }}><span><Columns2 size={16} /></span></div></>}
     {props.camera.fieldOfView<=15&&<span className="theatre-magnified-note">{skyDetail?'MAGNIFIED STUDY · LOCAL OBSTRUCTIONS HIDDEN':'MAGNIFIED VIEW'} · FOV {props.camera.fieldOfView.toFixed(0)}°</span>}

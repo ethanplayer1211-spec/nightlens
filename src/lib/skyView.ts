@@ -2,12 +2,15 @@ import type { SkyCalculation } from './astronomy';
 import type { SkyFilters } from './skyAppearance';
 import type { LocalHorizon } from './horizon';
 import type { CityScene } from './cityScene';
+import type {ReactNode} from 'react';
 
 export interface SkyCamera { azimuth: number; altitude: number; fieldOfView: number }
 export interface ImmersiveSkyProps {
   sky: SkyCalculation;
   onAfterMidnight?:()=>void;onComparisonToggle?:()=>void;enterViewRequest?:number;onNightPreview?:()=>void;localClockLabel?:string;
   onLightingTheme?:(id:string)=>void;lightTheme?:string;
+  controlPanel?:ReactNode;onImmersiveChange?:(value:boolean)=>void;midnightPresetSelected?:boolean;
+  onAnnotationsChange?:(value:boolean)=>void;
   /** Row-major matrix mapping east/up/north world vectors to Galactic x/y/z. */
   worldToGalactic: number[];
   camera: SkyCamera;

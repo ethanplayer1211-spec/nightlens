@@ -1,5 +1,7 @@
 # 28-second demo storyboard
 
+For the current immersive controls and a ready-to-rehearse take, use [RECORDING_GUIDE.md](RECORDING_GUIDE.md). The earlier Sky Lab-oriented route below remains available.
+
 This is a script, not a recorded or submitted demo. Replace the team/member placeholders with accurate owner-supplied information before recording. Use English or English subtitles. Do not exceed 30 seconds. Show only implemented controls.
 
 | Time | Screen | Spoken words / on-screen text |
