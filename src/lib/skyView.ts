@@ -9,6 +9,7 @@ export interface SkyViewActions {
   skyOnly:boolean;onSkyOnly:(value:boolean)=>void;onCityView:()=>void;
   moonAvailable:boolean;moonStudy:boolean;onMoonStudy:()=>void;
   quality:RenderQuality;onQuality:(value:RenderQuality)=>void;
+  clearPlatform:boolean;onClearPlatform:(value:boolean)=>void;platformElevation?:number;
 }
 export interface ImmersiveSkyProps {
   sky: SkyCalculation;
@@ -40,9 +41,18 @@ export interface ImmersiveSkyProps {
   horizonData: LocalHorizon | null;
   baselineLabel: string;
   scene?:CityScene|null;
+  /** Virtual camera height; original source geometry remains at its original elevation. */
+  observerElevation?:number;clearPlatform?:boolean;
+  onSceneCeiling?:(sceneId:string,elevation:number)=>void;
+  onClearPlatform?:(value:boolean)=>void;platformElevation?:number;
 }
 
 export const DEFAULT_CAMERA: SkyCamera = { azimuth: 180, altitude: 27, fieldOfView: 105 };
+
+/** Above the skyline, include a narrow band of the sourced city below the geometric horizon. */
+export function clearPlatformCamera(camera:SkyCamera):SkyCamera{
+  return normalizeCamera({...camera,altitude:12,fieldOfView:105});
+}
 
 /** Reframe from the same observer, keeping the skyline near the lower edge. */
 export function skyFirstCamera(camera:SkyCamera):SkyCamera{

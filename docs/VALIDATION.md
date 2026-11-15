@@ -1,5 +1,21 @@
 # Validation record
 
+## Final submission sprint — November 15, 2026
+
+**70 TypeScript tests + 24 Python tests passed (94 total)**. Lint and typecheck passed. The final production build passed. The standalone verifier confirmed 16,852,392 bytes, production equality, seven scene bundles, the model, seven images, five fonts and the catalog, with no external scripts. Vite reports one nonblocking shared-JavaScript chunk-size warning (about 508 kB minified). These current results supersede earlier counts and the earlier absent-Giovanni status; older dated checks remain historical evidence.
+
+Working additions:
+- Seven city scenes load in mapped-3D mode with clear virtual platform elevations: KL 1036 m, Penang 749 m, Seoul 583 m, Sydney 367 m, London 323 m, New York 559 m, Kari 3412 m ASL (rounded display). Every source vertex and the complete platform railing stay below the observer; original scene geometry is unchanged. Switching to the named viewpoint restores its original eye elevation.
+- Curated dates select real instants and recompute geometry. Runtime lunar phases are separate from local 21:00 previews; the 2026 Mars/Jupiter pair is aimed using calculated unit vectors. Geminid planning chooses among local pre-dawn candidates and explicitly simulates no meteor streaks or rates. Unit tests cover all seven stations, dark planning hours and the calculated phase timestamp.
+- Today’s city / Overlit future / Responsible lighting controls work; the latter previews 00:05. Future suppresses the stellar field without rewriting astronomy. Reset restores baseline lighting, guides off, visible city, virtual platform, camera and comparison off while preserving location/time. Lighting is deterministic and remains illustrative.
+- Night Designer records the three visited looks and gives source-based feedback on fixture output versus sky brightness. It is learning progress, not a physical sky-quality score.
+- Browser verification covered the three looks, compare on/off, keyboard divider to 96, reset, named-view return, seven platforms, sky-date selection and the question. The original Sky Lab still changes from waiting at 18:00 to active at midnight and resets to 21:00.
+- NASA MODIS through Giovanni is the default Penang Time Machine record. Browser verification confirmed source/product switching, the 23 complete annual values / 1 missing label, p≈0.197 inconclusive inference and short-window suppression. Seoul retains POWER context. The original raw CSV reproduces every selectable cached window in Python tests; complete calendar-HAC agrees with statsmodels and gaps are not bridged.
+
+Proofs: `evidence/browser/final-overlit-future.jpg`, `final-responsible-compare.jpg`, `final-giovanni-trend.jpg` `final-controls-desktop.jpg`, `final-mobile-controls.jpg`, `final-mobile-trend.jpg` and `final-pair-sky.jpg`. The 390 px mobile check had no horizontal page overflow. Final browser console inspection returned no errors or warnings. Performance claims are limited to observed browser behavior, not measured recording FPS or a broad GPU matrix.
+
+Still illustrative: star/display brightness, skyglow transfer, materials/windows/railings, the virtual platform and environmental appearance. No calibrated naked-eye forecast, photographic city digital twin, real rooftop access, meteor forecast, energy/safety prediction or arbitrary-city intervention estimate is claimed. Publication, video/deck and final judging submission are separate; no public deployment or final submission is claimed here.
+
 ## Guided controls / photographic references — November 15, 2026
 
 **64 TypeScript tests + 21 scientific Python tests passed (85 total)**. Lint, TypeScript and the production build passed. Added tests verify independent copies/restoration of the three lighting looks, preservation of the atmospheric/astronomical state boundary, and activation of the existing midnight schedule. No historical scientific source or numerical analysis output was changed.

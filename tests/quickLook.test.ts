@@ -16,4 +16,12 @@ describe('guided lighting looks',()=>{
     expect(deriveNightLighting(next.lighting,360,next.glow).scheduleActive).toBe(false);
     expect(()=>quickLightingLook('other' as 'city')).toThrow();
   });
+  it('keeps extreme glare and responsible lighting deterministic and lighting-only',()=>{
+    const future=quickLightingLook('future'),responsible=quickLightingLook('responsible');
+    expect(future.glow).toBe(100);expect(future.lighting).toEqual(DEFAULT_NIGHT_LIGHTING);
+    expect(responsible).toEqual(quickLightingLook('midnight'));
+    expect(deriveNightLighting(responsible.lighting,0,responsible.glow).scheduleActive).toBe(true);
+    expect(deriveNightLighting(responsible.lighting,1439,responsible.glow).scheduleActive).toBe(false);
+    expect(Object.keys(future).sort()).toEqual(['glow','lighting']);
+  });
 });

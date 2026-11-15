@@ -2,6 +2,10 @@
 
 Review date: November 15, 2026. The user authorized inspection of their signed-in browser session. No profile, registration, terms checkbox or submitted project was changed during guidance review.
 
+## Final resource-use update — 21:45 MYT
+
+The earlier NASA resource gap is addressed in the current build. The owner signed into Earthdata and accepted the GES DISC data agreement themselves. A verified regional Giovanni MODIS Terra monthly AOD CSV now drives the default Penang Time Machine analysis. Original CSV, SHA-256, source bounds, reproducible request, completeness and uncertainty are available. The actual source is MOD08_M3 v6.1; this is not a Black Marble radiance claim. Organizers retain eligibility decisions. Public project/demo links and the final owner submission remain release work.
+
 ## Official primary sources inspected
 
 - Challenge Details and Resources: https://www.spaceappschallenge.org/2026/challenges/earth-system-trend-detective/

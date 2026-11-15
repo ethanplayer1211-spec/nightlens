@@ -1,0 +1,427 @@
+{
+  "schemaVersion": 1,
+  "researchedAt": "2026-11-15T12:19:57.406698+00:00",
+  "purpose": "Primary-source candidates and factual numerical transcription for possible integration; no app integration or organizer eligibility certification is claimed.",
+  "candidates": [
+    {
+      "id": "seawifs-tab-listed-paper",
+      "rank": 1,
+      "challengeResourceRelation": "Exact NASA NTRS PDF URL recorded in the selected challenge Resources tab",
+      "status": "downloaded-and-visually-inspected",
+      "title": "Time-Series Analysis of Remotely-Sensed SeaWiFS Chlorophyll in River-Influenced Coastal Regions",
+      "authors": [
+        "James G. Acker",
+        "Erin McMahon",
+        "Suhung Shen",
+        "Thomas Hearty",
+        "Nancy Casey"
+      ],
+      "publicationYear": 2009,
+      "ntrsId": "20090042747",
+      "landingUrl": "https://ntrs.nasa.gov/citations/20090042747",
+      "downloadUrl": "https://ntrs.nasa.gov/api/citations/20090042747/downloads/20090042747.pdf",
+      "rawFile": "data/raw/final-challenge-seawifs-20090042747.pdf",
+      "bytes": 8810247,
+      "sha256": "5209cee13b536f0b4df59b6e4fac9f631fafd1458f1e4d936d2cfab5edda0ab3",
+      "rightsAsReportedByNtrs": "Public Use Permitted",
+      "pages": 27,
+      "numericalSources": {
+        "regionBounds": "Table 1, page 4",
+        "fullSeriesSummary": "Table 5, page 17",
+        "modelSensitivityPairs": "Table 6, page 18"
+      },
+      "records": [
+        {
+          "id": "amazon",
+          "region": "Amazon",
+          "table1Bounds": {
+            "north": 8,
+            "south": 7.5,
+            "west": -51,
+            "east": -50.5
+          },
+          "table5": {
+            "distanceKm": 850,
+            "pValue": 0.78,
+            "fStatistic": 0.07,
+            "slopeAsPrinted": -0.0005,
+            "rSquared": 0.0006,
+            "meanChlorophyllMgM3": 0.55
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": -0.0005,
+            "robustSlopeAsPrinted": -0.0002
+          },
+          "crossTableOrdinarySlopeDiffers": false,
+          "derivedTable6MagnitudeReductionPercent": 60.0
+        },
+        {
+          "id": "congo",
+          "region": "Congo",
+          "table1Bounds": {
+            "north": -5,
+            "south": -5.5,
+            "west": 2,
+            "east": 2.5
+          },
+          "table5": {
+            "distanceKm": 1100,
+            "pValue": 0.28,
+            "fStatistic": 1.17,
+            "slopeAsPrinted": -0.0023,
+            "rSquared": 0.0099,
+            "meanChlorophyllMgM3": 0.728
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": -0.0023,
+            "robustSlopeAsPrinted": -0.0026
+          },
+          "crossTableOrdinarySlopeDiffers": false,
+          "derivedTable6MagnitudeReductionPercent": -13.043478260869556
+        },
+        {
+          "id": "eel",
+          "region": "Eel",
+          "table1Bounds": {
+            "north": 41.5,
+            "south": 41,
+            "west": -125.9,
+            "east": -125.4
+          },
+          "table5": {
+            "distanceKm": 150,
+            "pValue": 0.035,
+            "fStatistic": 4.53,
+            "slopeAsPrinted": 0.0017,
+            "rSquared": 0.0371,
+            "meanChlorophyllMgM3": 0.64
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": 0.001,
+            "robustSlopeAsPrinted": 0.0014
+          },
+          "crossTableOrdinarySlopeDiffers": true,
+          "derivedTable6MagnitudeReductionPercent": -39.99999999999999
+        },
+        {
+          "id": "ganges",
+          "region": "Ganges",
+          "table1Bounds": {
+            "north": 20.3,
+            "south": 19.8,
+            "west": 89.4,
+            "east": 89.9
+          },
+          "table5": {
+            "distanceKm": 275,
+            "pValue": 0.03,
+            "fStatistic": 4.8,
+            "slopeAsPrinted": -0.001,
+            "rSquared": 0.0402,
+            "meanChlorophyllMgM3": 0.35
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": -0.0006,
+            "robustSlopeAsPrinted": -0.0007
+          },
+          "crossTableOrdinarySlopeDiffers": true,
+          "derivedTable6MagnitudeReductionPercent": -16.666666666666675
+        },
+        {
+          "id": "guadalquivir",
+          "region": "Guadalquivir",
+          "table1Bounds": {
+            "north": 36.5,
+            "south": 36,
+            "west": -6.8,
+            "east": -6.3
+          },
+          "table5": {
+            "distanceKm": 65,
+            "pValue": 0.07,
+            "fStatistic": 3.28,
+            "slopeAsPrinted": -0.0024,
+            "rSquared": 0.027,
+            "meanChlorophyllMgM3": 0.7
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": -0.0024,
+            "robustSlopeAsPrinted": -0.0014
+          },
+          "crossTableOrdinarySlopeDiffers": false,
+          "derivedTable6MagnitudeReductionPercent": 41.666666666666664
+        },
+        {
+          "id": "mississippi-east",
+          "region": "Mississippi (East)",
+          "table1Bounds": {
+            "north": 29.6,
+            "south": 29.1,
+            "west": -86.75,
+            "east": -86.25
+          },
+          "table5": {
+            "distanceKm": 300,
+            "pValue": 0.0169,
+            "fStatistic": 5.66,
+            "slopeAsPrinted": -0.0014,
+            "rSquared": 0.0458,
+            "meanChlorophyllMgM3": 0.38
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": -0.0029,
+            "robustSlopeAsPrinted": -0.0011
+          },
+          "crossTableOrdinarySlopeDiffers": true,
+          "derivedTable6MagnitudeReductionPercent": 62.06896551724137
+        },
+        {
+          "id": "mississippi-west",
+          "region": "Mississippi (West)",
+          "table1Bounds": {
+            "north": 28.75,
+            "south": 28.25,
+            "west": -94,
+            "east": -93.5
+          },
+          "table5": {
+            "distanceKm": 300,
+            "pValue": 0.0018,
+            "fStatistic": 10.12,
+            "slopeAsPrinted": -0.0043,
+            "rSquared": 0.079,
+            "meanChlorophyllMgM3": 0.54
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": -0.0043,
+            "robustSlopeAsPrinted": -0.0005
+          },
+          "crossTableOrdinarySlopeDiffers": false,
+          "derivedTable6MagnitudeReductionPercent": 88.37209302325581
+        },
+        {
+          "id": "orinoco",
+          "region": "Orinoco",
+          "table1Bounds": {
+            "north": 12.5,
+            "south": 12,
+            "west": -64.8,
+            "east": -64.3
+          },
+          "table5": {
+            "distanceKm": 700,
+            "pValue": 0.63,
+            "fStatistic": 0.23,
+            "slopeAsPrinted": -0.0005,
+            "rSquared": 0.002,
+            "meanChlorophyllMgM3": 0.66
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": -0.0005,
+            "robustSlopeAsPrinted": -0.0007
+          },
+          "crossTableOrdinarySlopeDiffers": false,
+          "derivedTable6MagnitudeReductionPercent": -39.99999999999999
+        },
+        {
+          "id": "pearl",
+          "region": "Pearl",
+          "table1Bounds": {
+            "north": 22.5,
+            "south": 22,
+            "west": 117.5,
+            "east": 118
+          },
+          "table5": {
+            "distanceKm": 400,
+            "pValue": 0.068,
+            "fStatistic": 3.37,
+            "slopeAsPrinted": 0.0006,
+            "rSquared": 0.0289,
+            "meanChlorophyllMgM3": 0.3
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": 0.0013,
+            "robustSlopeAsPrinted": 0.0005
+          },
+          "crossTableOrdinarySlopeDiffers": true,
+          "derivedTable6MagnitudeReductionPercent": 61.53846153846154
+        },
+        {
+          "id": "po",
+          "region": "Po",
+          "table1Bounds": {
+            "north": 44.5,
+            "south": 44,
+            "west": 13.5,
+            "east": 14
+          },
+          "table5": {
+            "distanceKm": 150,
+            "pValue": 0.053,
+            "fStatistic": 3.8,
+            "slopeAsPrinted": -0.0012,
+            "rSquared": 0.0313,
+            "meanChlorophyllMgM3": 0.39
+          },
+          "table6": {
+            "ordinarySlopeAsPrinted": -0.0035,
+            "robustSlopeAsPrinted": -0.0009
+          },
+          "crossTableOrdinarySlopeDiffers": true,
+          "derivedTable6MagnitudeReductionPercent": 74.28571428571429
+        }
+      ],
+      "computedChecks": {
+        "table5NominalPBelow005": [
+          "eel",
+          "ganges",
+          "mississippi-east",
+          "mississippi-west"
+        ],
+        "table5BenjaminiHochbergAtFdr005": [
+          "mississippi-west"
+        ],
+        "table6MagnitudeReduces": 6,
+        "table6MagnitudeIncreases": 4,
+        "crossTableOrdinarySlopeDisagreements": [
+          "eel",
+          "ganges",
+          "mississippi-east",
+          "pearl",
+          "po"
+        ]
+      },
+      "safeIntegration": "Interactive published-result sensitivity benchmark: compare the within-Table6 paired slopes, compute magnitude ratio/change, inspect Table5 significance and optional multiple-testing sensitivity. Preserve both tables and explicitly flag their disagreements. Contrast this benchmark with separately processed current project AOD data; do not merge variables or claim reproduction of unavailable raw regressions.",
+      "limits": [
+        "Factual rounded published results, not new raw monthly SeaWiFS acquisition.",
+        "Table5 and Table6 ordinary slopes disagree for five regions; preserve separately.",
+        "The tables do not explicitly label slope time units; show as printed or compare dimensionless within-table ratios. Do not silently multiply by12.",
+        "The source discusses1998–2007 but calls its analysis nine-year and ten-year in different places; do not manufacture exact120monthly observations from the figures.",
+        "Robust-method parameter settings and original monthly ASCII inputs were not obtained.",
+        "Chlorophyll retrievals in coastal waters can be influenced by colored dissolved organic matter and suspended sediment; they are not direct nutrient or human-causality measures.",
+        "Using this source numerically is stronger than a citation-only reference, but organizer acceptance is not certified."
+      ]
+    },
+    {
+      "id": "giovanni-modis-aod-export",
+      "rank": 2,
+      "challengeResourceRelation": "Actual authenticated export through the tab-listed Giovanni service",
+      "status": "owner-sign-in-required-for-full-archive",
+      "portal": "https://giovanni.gsfc.nasa.gov/giovanni/",
+      "officialGuide": "https://giovanni.gsfc.nasa.gov/giovanni/doc/UsersManualworkingdocument.docx.html",
+      "loginAction": "Owner signs in to Earthdata inside Giovanni; authorize NASA GESDISC DATA ARCHIVE if prompted. Never share password or session token.",
+      "request": {
+        "plot": "Area-Averaged Time Series",
+        "platform": "Terra",
+        "instrument": "MODIS",
+        "product": "MOD08_M3",
+        "collection": "6.1",
+        "temporalResolution": "Monthly",
+        "spatialResolution": "1 degree",
+        "sdsName": "AOD_550_Dark_Target_Deep_Blue_Combined_Mean_Mean",
+        "catalogIdStatus": "Exact runtime Giovanni variable ID unverified; choose the variable label in the catalog, not a guessed URL parameter.",
+        "dateStart": "2001-01-01",
+        "dateEnd": "2024-12-31",
+        "regions": [
+          {
+            "id": "penang-1deg",
+            "west": 100,
+            "south": 5,
+            "east": 101,
+            "north": 6
+          },
+          {
+            "id": "seoul-1deg",
+            "west": 126,
+            "south": 37,
+            "east": 127,
+            "north": 38
+          }
+        ],
+        "export": [
+          "CSV processed time series",
+          "Lineage/provenance",
+          "NetCDF when available"
+        ]
+      },
+      "variableDocumentation": "https://earth.gsfc.nasa.gov/climate/data/deep-blue/data",
+      "integrationLimits": [
+        "MODIS DT/DB combined monthly retrieval is not the same dataset as POWER/CERES SYN1deg assimilation. Preserve source identity and compare rather than overwrite/merge.",
+        "Cloud screening, retrieval gaps and Terra sampling/drift need documentation. Do not turn satellite column AOD into measured local night visibility.",
+        "Verify actual returned temporal coverage, units, region and fill handling before analysis."
+      ]
+    },
+    {
+      "id": "appeears-monthly-vegetation-backup",
+      "rank": 3,
+      "challengeResourceRelation": "Actual extraction through the tab-listed AppEEARS service",
+      "status": "public-catalog-verified-owner-authenticated-extraction-not-performed",
+      "portal": "https://appeears.earthdatacloud.nasa.gov/",
+      "product": "MOD13A3.061",
+      "catalogUrl": "https://appeears.earthdatacloud.nasa.gov/api/product",
+      "layerUrl": "https://appeears.earthdatacloud.nasa.gov/api/product/MOD13A3.061",
+      "datasetDoi": "10.5067/MODIS/MOD13A3.061",
+      "metadata": {
+        "platform": "Terra MODIS",
+        "description": "Vegetation Indices (NDVI & EVI)",
+        "temporalGranularity": "Monthly",
+        "resolution": "1000m",
+        "begin": "2000-02-01",
+        "available": true
+      },
+      "ownerAction": "Sign in to AppEEARS with Earthdata in the browser; create a Point extraction using public reference points. No password/token sharing.",
+      "request": {
+        "type": "Point",
+        "points": [
+          {
+            "id": "Penang",
+            "latitude": 5.4141,
+            "longitude": 100.3354
+          },
+          {
+            "id": "Seoul",
+            "latitude": 37.5665,
+            "longitude": 126.978
+          }
+        ],
+        "dateStart": "01-01-2001",
+        "dateEnd": "12-31-2024",
+        "layers": [
+          "_1_km_monthly_NDVI",
+          "_1_km_monthly_VI_Quality",
+          "_1_km_monthly_pixel_reliability"
+        ],
+        "output": "CSV point time series, original metadata, QA documentation and task parameters"
+      },
+      "rawCatalogFiles": [
+        "data/raw/final-challenge-appeears-products.json",
+        "data/raw/final-challenge-appeears-mod13a3-061.json"
+      ],
+      "limits": [
+        "This is a new vegetation variable, not AOD, night radiance, sky brightness or a calibration for scene appearance.",
+        "A single1km sample is not a citywide mean. Coordinates and source pixel/QA need explicit provenance.",
+        "Layer metadata provides original scale0.0001, source fill-3000 and nominal validrange-0.2..1; output datatypefloat32 indicates transformed values may already be scaled. Inspect returned output before deciding scaling.",
+        "Strict QA and complete-year handling must be defined before trend inference.",
+        "The catalog alone is discovery, not meaningful numerical data use or a completed extraction."
+      ]
+    }
+  ],
+  "rawSourceIntegrity": [
+    {
+      "file": "data/raw/final-challenge-seawifs-20090042747.pdf",
+      "bytes": 8810247,
+      "sha256": "5209cee13b536f0b4df59b6e4fac9f631fafd1458f1e4d936d2cfab5edda0ab3"
+    },
+    {
+      "file": "data/raw/final-challenge-appeears-products.json",
+      "bytes": 111855,
+      "sha256": "c0244fcd0a3e3cd00d026c393b39899b0a44d3375051160b4994bf69a1e4ff45"
+    },
+    {
+      "file": "data/raw/final-challenge-appeears-mod13a3-061.json",
+      "bytes": 6054,
+      "sha256": "6db022f95baae707ca8e00433a1631760a4ffc0732b84a019a56fd1313e3a8aa"
+    }
+  ]
+}

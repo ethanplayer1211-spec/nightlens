@@ -16,3 +16,12 @@ This is a script, not a recorded or submitted demo. Replace the team/member plac
 Keep the illustrative badge visible during the lighting demonstration. Do not imply that the aerosol series measures artificial lighting or that 50% fixture dimming means 50% less skyglow. Do not claim weather, energy, safety or exact star visibility predictions. Record the functioning app after a production build; do not use fake transitions or unimplemented features.
 
 The official submission also permits a deck up to seven slides. A video or deck must be hosted publicly with no login/permission request. The final project and demo need separate usable links.
+
+
+Final 28-second recording route (replaces earlier wording):
+0–4 s: NightLens title / calculated sky, named or explicitly virtual viewpoint.
+4–10 s: Adjust sky → Overlit future → Responsible lighting (00:05) → Done.
+10–16 s: Compare; move the divider smoothly. Narrate “Illustrative lighting; the same astronomical sky.”
+16–25 s: Return → Time Machine, Penang MODIS via Giovanni, 2001–2024, source + uncertainty.
+25–28 s: “A real NASA trend investigation, with responsible-lighting experiments.”
+State that the trend is inconclusive if discussing its direction. The original CSV and evidence are linked. Include the actual team identity as required; this text is not a finished video or submission.

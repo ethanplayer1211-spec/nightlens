@@ -21,6 +21,7 @@ function RangeControl({ label, value, onChange, min = 0, max = 100, suffix = '%'
 export default function App() {
   const [view, setView] = useState<View>(currentView);
   const [locationId, setLocationId] = useState('penang');
+  const [historySource,setHistorySource]=useState('giovanni');
   const location = LOCATIONS.find(l => l.id === locationId)!;
   const [date, setDate] = useState('2026-11-15');
   const [scenario, setScenario] = useState<CityScenario>(resetScenario);
@@ -55,9 +56,9 @@ export default function App() {
   useEffect(() => {
     const abort = new AbortController();
     setData(null); setDataError('');
-    fetch(`/data/${locationId}.json`, { signal: abort.signal }).then(r => { if (!r.ok) throw new Error('NASA cache unavailable'); return r.json(); }).then(value => setData(validateHistoricalData(value))).catch((e: Error) => { if (e.name !== 'AbortError') setDataError('The cached NASA record could not be loaded.'); });
+    fetch(`/data/${locationId}${locationId==='penang'&&historySource==='giovanni'?'-modis':''}.json`, { signal: abort.signal }).then(r => { if (!r.ok) throw new Error('NASA cache unavailable'); return r.json(); }).then(value => setData(validateHistoricalData(value))).catch((e: Error) => { if (e.name !== 'AbortError') setDataError('The cached NASA record could not be loaded.'); });
     return () => abort.abort();
-  }, [locationId, retry]);
+  }, [locationId, historySource, retry]);
 
   const observation = useMemo(() => {
     try { if (date < '2001-01-01' || date > '2100-12-31') throw new RangeError('Date outside supported UI range'); return { sky: calculateSky(stars, location, localToUTC(date, scenario.time, location.utcOffset)), error: '' }; }
@@ -123,7 +124,7 @@ export default function App() {
       </>}
 
       {view === 'observatory' && <LiveObservatory onHistory={() => navigate('time-machine')} />}
-      {view === 'time-machine' && (data ? <History key={locationId} data={data} onEvidence={() => setEvidenceOpen(true)} /> : <div className="load-error" role={dataError ? 'alert' : 'status'}><p>{dataError || 'Loading cached NASA records…'}</p>{dataError && <button className="quiet-button" onClick={() => setRetry(r => r + 1)}>Retry NASA cache</button>}</div>)}
+      {view === 'time-machine' && (data ? <History source={historySource} onSource={setHistorySource} key={locationId} data={data} onEvidence={() => setEvidenceOpen(true)} /> : <div className="load-error" role={dataError ? 'alert' : 'status'}><p>{dataError || 'Loading cached NASA records…'}</p>{dataError && <button className="quiet-button" onClick={() => setRetry(r => r + 1)}>Retry NASA cache</button>}</div>)}
       {view === 'methodology' && <section className="methodology-view"><span className="eyebrow">04 / THE EVIDENCE NOTEBOOK</span><h1>Wonder, <em>with its workings shown.</em></h1><div className="methodology-grid"><aside><span className="eyebrow">THREE KINDS OF KNOWING</span><div><span className="evidence-tag measured">NASA-DERIVED RECORD</span><p>A traceable environmental dataset.</p></div><div><span className="evidence-tag calculated">CALCULATED</span><p>Geometry and statistics from stated methods.</p></div><div><span className="evidence-tag illustrative">ILLUSTRATIVE</span><p>An educational picture, never a measurement.</p></div></aside><EvidenceContent topic="all" /></div></section>}
     </main>
     <footer className="site-footer"><div><AtlasMark /><span>NightLens <small>A digital observatory for the changing night sky.</small></span></div><span>NASA SPACE APPS 2026 · INDEPENDENT PROJECT</span><a href="#methodology" onClick={() => setView('methodology')}>Sources & AI disclosure <ArrowUpRight size={12} /></a></footer>

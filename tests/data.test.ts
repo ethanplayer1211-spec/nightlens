@@ -3,6 +3,17 @@ import crypto from 'node:crypto';
 import { describe, expect, it } from 'vitest';
 import { evidenceCSV, validateHistoricalData } from '../src/lib/data';
 
+describe('challenge-listed Giovanni export',()=>{
+  it('validates product provenance independently of POWER and exports the correct source',()=>{
+    const data=validateHistoricalData(JSON.parse(fs.readFileSync('public/data/penang-modis.json','utf8')));
+    expect(data.windows['2001-2024'].n).toBe(23);
+    expect(evidenceCSV(data,2001,2024)).toContain('MODIS Terra');
+    expect(evidenceCSV(data,2001,2024)).not.toContain('CERES SYN1deg');
+    expect(()=>validateHistoricalData({...data,sourceUrl:'https://example.com/'})).toThrow();
+    expect(()=>validateHistoricalData({...data,sourceHeader:{sources:['SYN1DEG']}})).toThrow();
+  });
+});
+
 describe.each(['penang', 'seoul'])('NASA provenance: %s', region => {
   const raw = fs.readFileSync(`data/raw/power-${region}.json`);
   const source = JSON.parse(raw.toString());

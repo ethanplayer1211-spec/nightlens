@@ -5,7 +5,7 @@ import type { GroundPoint } from './horizon';
 export type Vec3=[number,number,number];
 export type Color=[number,number,number];
 export interface Material {color:Color;emission?:number;kind?:number;alpha?:number}
-export interface SceneMesh {opaque:Float32Array;glass:Float32Array;triangles:number;buildingCount:number;mappedPartCount:number}
+export interface SceneMesh {opaque:Float32Array;glass:Float32Array;triangles:number;buildingCount:number;mappedPartCount:number;maxElevation:number}
 const stone:Material={color:[.32,.35,.37]},metal:Material={color:[.43,.49,.54],kind:2},glass:Material={color:[.3,.48,.57],alpha:.13,kind:2};
 const sub=(a:Vec3,b:Vec3):Vec3=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]];
 const cross=(a:Vec3,b:Vec3):Vec3=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
@@ -13,11 +13,12 @@ const unit=(v:Vec3):Vec3=>{const n=Math.hypot(...v)||1;return[v[0]/n,v[1]/n,v[2]
 const scale=(v:Vec3,s:number):Vec3=>[v[0]*s,v[1]*s,v[2]*s];
 const add=(a:Vec3,b:Vec3):Vec3=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]];
 export class MeshBuilder {
-  opaque:number[]=[];glass:number[]=[];
+  opaque:number[]=[];glass:number[]=[];maxElevation=-Infinity;
   triangle(a:Vec3,b:Vec3,c:Vec3,m:Material,normal?:Vec3|[Vec3,Vec3,Vec3]){
     if([...a,...b,...c].some(v=>!Number.isFinite(v)))return;
     const normals=normal&&Array.isArray(normal[0])?normal as [Vec3,Vec3,Vec3]:null,n=normals?normals[0]:normal as Vec3|undefined??unit(cross(sub(b,a),sub(c,a))),out=(m.alpha??1)<1?this.glass:this.opaque;
     if(Math.hypot(...cross(sub(b,a),sub(c,a)))<1e-8)return;
+    this.maxElevation=Math.max(this.maxElevation,a[1],b[1],c[1]);
     for(const [i,p] of [a,b,c].entries())out.push(...p,...(normals?.[i]??n),...m.color,m.alpha??1,m.emission??0,m.kind??0);
   }
   quad(a:Vec3,b:Vec3,c:Vec3,d:Vec3,m:Material,normal?:Vec3){this.triangle(a,b,c,m,normal);this.triangle(a,c,d,m,normal);}
@@ -57,7 +58,21 @@ export class MeshBuilder {
     const normal=(p:Vec3)=>unit([(p[0]-center[0])/radius[0]**2,(p[1]-center[1])/radius[1]**2,(p[2]-center[2])/radius[2]**2]);
     for(let i=0;i<12;i++)for(let j=0;j<8;j++){const a=point(i,j),b=point(i+1,j),c=point(i+1,j+1),d=point(i,j+1);this.triangle(a,b,c,m,[normal(a),normal(b),normal(c)]);this.triangle(a,c,d,m,[normal(a),normal(c),normal(d)]);}
   }
-  finish(buildingCount:number,mappedPartCount:number):SceneMesh{return{opaque:new Float32Array(this.opaque),glass:new Float32Array(this.glass),triangles:(this.opaque.length+this.glass.length)/36,buildingCount,mappedPartCount};}
+  finish(buildingCount:number,mappedPartCount:number):SceneMesh{return{opaque:new Float32Array(this.opaque),glass:new Float32Array(this.glass),triangles:(this.opaque.length+this.glass.length)/36,buildingCount,mappedPartCount,maxElevation:this.maxElevation};}
+}
+
+/** Fictional observation platform. Its entire surface and railing stay below the eye. */
+export function buildClearPlatform(eyeElevation:number):SceneMesh{
+  if(!Number.isFinite(eyeElevation))throw new RangeError('Invalid platform height');
+  const mesh=new MeshBuilder(),floor=eyeElevation-1.7;
+  mesh.cylinder([0,floor-.2,0],2.4,.2,{color:[.20,.23,.25],kind:4},96);
+  for(let i=0;i<48;i++){
+    const a=i*Math.PI/24,b=(i+1)*Math.PI/24;
+    const point=(t:number,y:number):Vec3=>[Math.sin(t)*2.4,y,Math.cos(t)*2.4];
+    mesh.beam(point(a,floor),point(a,floor+1.05),.035,metal);
+    mesh.beam(point(a,floor+1.05),point(b,floor+1.05),.045,metal);
+  }
+  return mesh.finish(0,0);
 }
 
 const mean=(ring:GroundPoint[])=>({east:ring.reduce((s,p)=>s+p.east,0)/ring.length,north:ring.reduce((s,p)=>s+p.north,0)/ring.length});

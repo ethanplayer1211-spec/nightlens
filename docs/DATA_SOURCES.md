@@ -2,6 +2,21 @@
 
 Verified November 15, 2026 (Malaysia time). No fabricated measurements are included.
 
+## Final sprint: challenge-listed Giovanni MODIS record
+
+Retrieved through the owner-authorized NASA GES DISC / Giovanni session on 15 November 2026. No credential or token is stored in this project. The browser export was inspected before use; earlier accidental global requests were rejected and are not in the dataset.
+
+- Product: Terra MODIS **MOD08_M3 v6.1**, monthly Level 3, combined Dark Target / Deep Blue AOD at 550 nm; dimensionless.
+- Requested dates: 2001-01-01 through 2024-12-31. Requested bounds: west 100°, south 5°, east 101°, north 6°. The actual selected grid centre is **100.5° E, 5.5° N**. This is one source grid cell, not all of Penang or a nighttime measurement.
+- Original CSV: `data/raw/giovanni-modis-penang-2001-2024.csv`; byte-identical downloadable copy in `public/data/`. SHA-256: `121f595c5668c0fe56c51537c959e1bac660195b5527da2a049538adf23dc299`.
+- Reproduce: https://giovanni.gsfc.nasa.gov/giovanni/#service=ArAvTs&starttime=2001-01-01T00:00:00Z&endtime=2024-12-31T23:59:59Z&bbox=100,5,101,6&data=MOD08_M3_6_1_AOD_550_Dark_Target_Deep_Blue_Combined_Mean_Mean&portal=GIOVANNI&format=json
+- Product guidance: https://earth.gsfc.nasa.gov/climate/data/deep-blue/data ; Giovanni methods: https://giovanni.gsfc.nasa.gov/giovanni/doc/UsersManualworkingdocument.docx.html
+- 288 monthly timestamps; October 2022 is fill (−9999), excluding 2022 and leaving 23 complete annual values. Exported physical values are not scaled again. No retrieval-count/pixel QA columns are in this export; cloud sampling and retrieval quality remain limitations.
+- Offline pipeline: `.venv/Scripts/python.exe scripts/analyze_giovanni.py`; output `public/data/penang-modis.json`. Every selectable trend window is reproduced in tests.
+- Full-period endpoint change: −15.1288%; fitted slope −0.0155456 AOD/decade; 95% interval −0.0398202 to +0.0087290; p=0.1972016. The trend is **inconclusive**. Newey–West lag-1 pairs use actual calendar adjacency, so the missing year is not bridged.
+
+Giovanni is listed in the selected challenge Resources tab and is now used numerically in Time Machine. The older POWER/CERES context remains separate. This documents actual resource use, not organizer certification or a nighttime-lighting calibration.
+
 ## Added perspective Observatory sources
 
 - **ESA/Gaia/DPAC EDR3 integrated brightness/colour survey:** historical image, not a live sky photograph or measured city brightness. Source and attribution: https://www.esa.int/media/interactive-map-of-the-sky-from-gaia-s-early-data-release-3. Acknowledgement A. Moitinho; CC BY-SA 3.0 IGO. Original 2000×1000 PNG, exact URL, projection and SHA-256 are pinned in `data/sky-assets.json`. Runtime reprojection and illustrative tone mapping are documented in `OBSERVATORY.md`. Reacquire using `python scripts/acquire_sky_assets.py`; changed bytes are rejected.

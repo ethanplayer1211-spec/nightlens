@@ -8,6 +8,14 @@
 
 These paths do not feed an undocumented conversion from satellite values to star visibility.
 
+## Final default record: MODIS through Giovanni
+
+The default Penang investigation now uses the challenge-listed Giovanni resource: Terra MOD08_M3 v6.1 combined Dark Target / Deep Blue monthly AOD at 550 nm, 2001–2024. Requested 100–101° E / 5–6° N selects the single grid centre at 100.5° E / 5.5° N. `scripts/analyze_giovanni.py` checks dates, science-variable ID, bounds and 288 timestamps against the original CSV before analysis.
+
+October 2022 is fill. All 12 months are required for day-weighted annual aggregation, so 2022 is excluded. The 23-value regression uses actual year offsets. Calendar-year Newey–West covariance uses Bartlett weight 0.5 only for pairs one actual year apart, with n/(n−2) correction and t(n−2) inference; it never bridges the missing year. Complete records agree with statsmodels HAC. The final result is −0.01555 AOD/decade, 95% CI [−0.03982,+0.00873], p≈0.197, inconclusive. This does not measure light pollution or calibrate the sky.
+
+The retained POWER context below uses its original independently reproduced pipeline. Do not splice the products or interpret a product switch as change over time.
+
 ## Historical environmental investigation
 
 Question: how did 550 nm aerosol optical depth change in the source grid cell selected by Penang or Seoul’s coordinate from 2001 to 2024?

@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "researchedOn": "2026-11-15",
+  "scope": "Five curated tags for the final 2026 NightLens sprint; dated meteor/planet examples must expire/archive after their windows, lunar-quarter tags recalculate at runtime.",
+  "sources": [
+    {
+      "id": "nasa-november-2026",
+      "title": "What's Up: November 2026 Skywatching Tips from NASA",
+      "url": "https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/",
+      "publisher": "NASA/JPL-Caltech",
+      "publishedOn": "2026-11-02",
+      "supports": "Mars/Jupiter apparent pairing on November 15–16 mornings; qualitative observing context. It does not supply an exact conjunction UTC."
+    },
+    {
+      "id": "imo-2026",
+      "title": "2026 Meteor Shower Calendar",
+      "url": "https://www.imo.net/files/meteor-shower/cal2026.pdf",
+      "publisher": "International Meteor Organization; edited by Jürgen Rendtel",
+      "pagesOneBased": [
+        20,
+        21
+      ],
+      "supports": "Geminid predicted broad maximum December 14 at 14h UT, approximate radiantRA 112° / Dec +33°, latitude/time-of-night limitations, uncertainty in meteor-stream maxima."
+    },
+    {
+      "id": "nasa-geminids",
+      "title": "Geminids Meteor Shower",
+      "url": "https://science.nasa.gov/solar-system/meteors-meteorites/geminids/",
+      "publisher": "NASA",
+      "supports": "Annual mid-December shower, Gemini radiant, parent 3200 Phaethon, broad-sky observing guidance. Do not transfer idealized public rate numbers to the user."
+    },
+    {
+      "id": "usno-phases",
+      "title": "Dates of Primary Phases of the Moon—2026",
+      "url": "https://aa.usno.navy.mil/calculated/moon/phases?year=2026",
+      "apiUrl": "https://aa.usno.navy.mil/api/moon/phases/year?year=2026",
+      "publisher": "U.S. Naval Observatory Astronomical Applications Department",
+      "supports": "Independent minute-resolution Universal Time phase reference; not NASA data or local visibility."
+    },
+    {
+      "id": "nasa-moon-viewing",
+      "title": "Moon Viewing Tips",
+      "url": "https://science.nasa.gov/moon/viewing-tips/",
+      "publisher": "NASA",
+      "supports": "Reflected sunlight, earthshine, and relief near the day/night boundary; a partly illuminated Moon is useful for surface detail."
+    },
+    {
+      "id": "nasa-night-sky-basics",
+      "title": "May’s Night Sky Notes: Stargazing for Beginners",
+      "url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/may2024-night-sky-notes/",
+      "publisher": "NASA Night Sky Network",
+      "supports": "Bright Moon and artificial lighting affect faint-object contrast. NightLens must not infer Bortle class or exact counts from an uncalibrated slider."
+    },
+    {
+      "id": "darksky-ies",
+      "title": "Five Principles for Responsible Outdoor Lighting",
+      "url": "https://darksky.org/resources/guides-and-how-tos/lighting-principles/",
+      "publisher": "DarkSky International and Illuminating Engineering Society",
+      "updatedOn": "2026-09-30",
+      "supports": "Useful, targeted, low-level, controlled and warm-colored lighting; educational design guidance, not a site-specific safety prescription."
+    },
+    {
+      "id": "nasa-tucson",
+      "title": "Experimenting with Tucson Night Lights",
+      "url": "https://science.nasa.gov/earth/earth-observatory/experimenting-with-tucson-night-lights-148259/",
+      "publisher": "NASA Earth Observatory",
+      "publishedOn": "2021-05-03",
+      "supports": "Observed VIIRS lighting-intervention context; streetlights are one of several urban sources. Numericalstudy replay is already documented separately in docs/TUCSON_EVIDENCE.md."
+    },
+    {
+      "id": "astronomy-engine",
+      "title": "Astronomy Engine JavaScript API/source",
+      "url": "https://github.com/cosinekitty/astronomy/tree/master/source/js",
+      "publisher": "Don Cross / Astronomy Engine",
+      "supports": "SearchMoonQuarter/NextMoonQuarter, topocentric Equator/Horizon calculations; local installedversion 2.1.19 used for sanity examples."
+    }
+  ],
+  "events": [
+    {
+      "id": "mars-jupiter-2026",
+      "title": "Mars beside Jupiter",
+      "timingMode": "published-date-window-plus-local-observing-preview",
+      "sourceIds": [
+        "nasa-november-2026",
+        "astronomy-engine"
+      ],
+      "publishedLocalMorningDates": [
+        "2026-11-15",
+        "2026-11-16"
+      ],
+      "suggestedPreviewLocalDateTime": "2026-11-16T05:00",
+      "previewMeaning": "A chosen observing time on a NASA-documented morning, not the exact UTC instant of conjunction. Resolve this local value in the selected place’s IANA timezone, then recalculate all objects.",
+      "cameraTargets": [
+        "Mars",
+        "Jupiter"
+      ],
+      "cameraMethod": "Aim between calculated horizontal vectors; do not hard-code compass bearings or place textural planets.",
+      "educationalCopy": "Two planets can appear close in the sky while remaining far apart in space. Their approximate 1.2-degree separation is calculated for this preview.",
+      "geographicLimits": "Check both geometric altitudes and current Sun altitude. Southern sites may already be in dawn twilight at 05:00; terrain, buildings and weather can block them. No detection guarantee."
+    },
+    {
+      "id": "next-first-quarter",
+      "title": "Moon’s terminator",
+      "timingMode": "runtime-calculated-lunar-quarter",
+      "quarter": 1,
+      "sourceIds": [
+        "astronomy-engine",
+        "usno-phases",
+        "nasa-moon-viewing"
+      ],
+      "runtimeMethod": "SearchMoonQuarter(selectedDateOrNow), then NextMoonQuarter until requested quarter. Do not reuse this dated example indefinitely.",
+      "phaseMeaning": "Global geocentric phase instant; independent of observer longitude. Local Moon altitude and sky appearance still depend on place/time.",
+      "suggestedPreviewLocalTime": "21:00",
+      "previewDateRule": "Convert the calculated phase instant to the selected IANA local date, choose 21:00 on that date as an explicit observing preview, and label if the phase instant and view instant differ. Check Sun/Moon geometry rather than asserting visibility.",
+      "cameraTarget": "Moon",
+      "sampleCalculatedPhaseUTC": "2026-11-17T11:48:27.140Z",
+      "independentReference": {
+        "publisher": "USNO",
+        "publishedUniversal TimeMinuteRepresentedAsISO": "2026-11-17T11:48:00Z",
+        "sourceTimeScale": "Universal Time, minute precision. Software ISO Z is an approximately UTC representation at this precision; do not claim sub-minute reference precision."
+      },
+      "displayPrecision": "Minute precision with Calculated label. The installed engine and independent USNO reference differ by up to about 1 minute in these examples.",
+      "limitations": "New Moon removes neither sunlight nor artificial light or clouds. Full Moon reduces faint-background contrast. Phase alone does not guarantee local darkness, a visible Moon, a visible Milky Way core or any particular star count."
+    },
+    {
+      "id": "next-full-moon",
+      "title": "Moonlit city",
+      "timingMode": "runtime-calculated-lunar-quarter",
+      "quarter": 2,
+      "sourceIds": [
+        "astronomy-engine",
+        "usno-phases",
+        "nasa-moon-viewing"
+      ],
+      "runtimeMethod": "SearchMoonQuarter(selectedDateOrNow), then NextMoonQuarter until requested quarter. Do not reuse this dated example indefinitely.",
+      "phaseMeaning": "Global geocentric phase instant; independent of observer longitude. Local Moon altitude and sky appearance still depend on place/time.",
+      "suggestedPreviewLocalTime": "21:00",
+      "previewDateRule": "Convert the calculated phase instant to the selected IANA local date, choose 21:00 on that date as an explicit observing preview, and label if the phase instant and view instant differ. Check Sun/Moon geometry rather than asserting visibility.",
+      "cameraTarget": "Moon",
+      "sampleCalculatedPhaseUTC": "2026-11-24T14:54:04.191Z",
+      "independentReference": {
+        "publisher": "USNO",
+        "publishedUniversal TimeMinuteRepresentedAsISO": "2026-11-24T14:53:00Z",
+        "sourceTimeScale": "Universal Time, minute precision. Software ISO Z is an approximately UTC representation at this precision; do not claim sub-minute reference precision."
+      },
+      "displayPrecision": "Minute precision with Calculated label. The installed engine and independent USNO reference differ by up to about 1 minute in these examples.",
+      "limitations": "New Moon removes neither sunlight nor artificial light or clouds. Full Moon reduces faint-background contrast. Phase alone does not guarantee local darkness, a visible Moon, a visible Milky Way core or any particular star count."
+    },
+    {
+      "id": "next-new-moon",
+      "title": "An evening with less moonlight",
+      "timingMode": "runtime-calculated-lunar-quarter",
+      "quarter": 0,
+      "sourceIds": [
+        "astronomy-engine",
+        "usno-phases",
+        "nasa-moon-viewing"
+      ],
+      "runtimeMethod": "SearchMoonQuarter(selectedDateOrNow), then NextMoonQuarter until requested quarter. Do not reuse this dated example indefinitely.",
+      "phaseMeaning": "Global geocentric phase instant; independent of observer longitude. Local Moon altitude and sky appearance still depend on place/time.",
+      "suggestedPreviewLocalTime": "21:00",
+      "previewDateRule": "Convert the calculated phase instant to the selected IANA local date, choose 21:00 on that date as an explicit observing preview, and label if the phase instant and view instant differ. Check Sun/Moon geometry rather than asserting visibility.",
+      "cameraTarget": null,
+      "sampleCalculatedPhaseUTC": "2026-12-09T00:52:31.284Z",
+      "independentReference": {
+        "publisher": "USNO",
+        "publishedUniversal TimeMinuteRepresentedAsISO": "2026-12-09T00:52:00Z",
+        "sourceTimeScale": "Universal Time, minute precision. Software ISO Z is an approximately UTC representation at this precision; do not claim sub-minute reference precision."
+      },
+      "displayPrecision": "Minute precision with Calculated label. The installed engine and independent USNO reference differ by up to about 1 minute in these examples.",
+      "limitations": "New Moon removes neither sunlight nor artificial light or clouds. Full Moon reduces faint-background contrast. Phase alone does not guarantee local darkness, a visible Moon, a visible Milky Way core or any particular star count."
+    },
+    {
+      "id": "geminids-2026",
+      "title": "Plan a Geminid night",
+      "timingMode": "published-broad-maximum-plus-local-planning-preview",
+      "sourceIds": [
+        "imo-2026",
+        "nasa-geminids",
+        "astronomy-engine"
+      ],
+      "publishedMaximumUTC": "2026-12-14T14:00:00Z",
+      "publishedMaximumPrecision": "Nominal broad maximum quoted to an hour; not a precise or guaranteed peak instant.",
+      "publishedTimingContextUTC": [
+        "2026-12-13T21:00:00Z",
+        "2026-12-14T18:00:00Z"
+      ],
+      "publishedTimingContextMeaning": "IMO says reliable past maxima fall in the corresponding solar-longitude interval mapped to these 2026 times. This is context, not a confidence interval or guaranteed rate-duration window.",
+      "suggestedCandidateLocalDates": [
+        "2026-12-14",
+        "2026-12-15"
+      ],
+      "suggestedCandidateLocalHours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "planningMethod": "Resolve candidates in the selected timezone; exclude daylight and below-horizon radiant candidates. Prefer a dark interval with higher radiant, Moon below the horizon and temporal proximity to the nominal peak. Do not present this simple geometric ranking as a weather or meteor-count forecast.",
+      "malaysiaPreviewLocalDateTime": "2026-12-15T02:00",
+      "exampleDatesByRegion": {
+        "Asia/Kuala_Lumpur": "2026-12-15T02:00",
+        "Asia/Seoul": "2026-12-15T02:00",
+        "Australia/Sydney": "2026-12-15T02:00",
+        "Europe/London": "2026-12-14T02:00",
+        "America/New_York": "2026-12-14T02:00",
+        "America/Santiago": "2026-12-14T02:00"
+      },
+      "cameraTarget": "Calculated radiant direction or broad sky; NASA explains that meteors can appear across the sky, so looking only at Gemini is unnecessary.",
+      "geographicLimits": "The +33° radiant gets lower toward southern latitudes; Sydney and Kari can have useful night geometry but lower culmination than northern sites. At extreme southern latitudes it may not rise. Polar daylight or local horizon obstruction can remove usable intervals.",
+      "renderingBoundary": "This tag changes the selected observing instant and genuine sky geometry. It does not generate measured meteor tracks, promise a meteor count, or imply current weather.",
+      "publishedRadiantDegrees": {
+        "rightAscension": 112,
+        "declination": 33,
+        "limitations": "Approximate published shower-radiant coordinates near maximum; daily radiant drift and coordinate-epoch refinements are not modeled by the simple sanity example."
+      }
+    }
+  ],
+  "sanityCalculation": {
+    "library": "Astronomy Engine 2.1.19 installed locally",
+    "computedFromStartUTC": "2026-11-15T00:00:00Z",
+    "status": "Geometry calculations for independent sanity examples; not observed conditions or guarantees. Values must be recomputed at runtime for actual selected point/elevation.",
+    "phaseSequence": [
+      {
+        "quarter": 1,
+        "calculatedUTC": "2026-11-17T11:48:27.140Z"
+      },
+      {
+        "quarter": 2,
+        "calculatedUTC": "2026-11-24T14:54:04.191Z"
+      },
+      {
+        "quarter": 3,
+        "calculatedUTC": "2026-12-01T06:09:14.538Z"
+      },
+      {
+        "quarter": 0,
+        "calculatedUTC": "2026-12-09T00:52:31.284Z"
+      }
+    ],
+    "locationExamples": [
+      {
+        "id": "kl-sky-deck",
+        "latitude": 3.15293,
+        "longitude": 101.70386,
+        "elevationMetersAssumed": 0,
+        "timeZone": "Asia/Kuala_Lumpur",
+        "planetPreview": {
+          "utc": "2026-11-15T21:00:00Z",
+          "marsAltitudeDegrees": 51.74832032579554,
+          "jupiterAltitudeDegrees": 52.28115734563742,
+          "sunAltitudeDegrees": -28.87599432366683,
+          "separationDegrees": 1.1965885434321009
+        },
+        "geminidPreview": {
+          "utc": "2026-12-14T18:00:00Z",
+          "radiantApproxAltitudeDegrees": 56.2328479838304,
+          "sunAltitudeDegrees": -66.29375500679473,
+          "moonAltitudeDegrees": -38.60589074214454,
+          "moonIlluminatedFraction": 0.26575039451706417
+        }
+      },
+      {
+        "id": "penang-esplanade",
+        "latitude": 5.4215763,
+        "longitude": 100.3423921,
+        "elevationMetersAssumed": 0,
+        "timeZone": "Asia/Kuala_Lumpur",
+        "planetPreview": {
+          "utc": "2026-11-15T21:00:00Z",
+          "marsAltitudeDegrees": 51.17805591877868,
+          "jupiterAltitudeDegrees": 51.63192879876467,
+          "sunAltitudeDegrees": -30.900136989448825,
+          "separationDegrees": 1.1965361812472606
+        },
+        "geminidPreview": {
+          "utc": "2026-12-14T18:00:00Z",
+          "radiantApproxAltitudeDegrees": 57.61278836946877,
+          "sunAltitudeDegrees": -68.93745587937224,
+          "moonAltitudeDegrees": -37.811032311476495,
+          "moonIlluminatedFraction": 0.26575039451706417
+        }
+      },
+      {
+        "id": "seoul-namsan",
+        "latitude": 37.5519388,
+        "longitude": 126.9885103,
+        "elevationMetersAssumed": 0,
+        "timeZone": "Asia/Seoul",
+        "planetPreview": {
+          "utc": "2026-11-15T20:00:00Z",
+          "marsAltitudeDegrees": 57.1528966097279,
+          "jupiterAltitudeDegrees": 56.42785478658298,
+          "sunAltitudeDegrees": -26.20356156847744,
+          "separationDegrees": 1.1968145051534802
+        },
+        "geminidPreview": {
+          "utc": "2026-12-14T17:00:00Z",
+          "radiantApproxAltitudeDegrees": 82.93106261708382,
+          "sunAltitudeDegrees": -65.44102086028505,
+          "moonAltitudeDegrees": -46.829956238502064,
+          "moonIlluminatedFraction": 0.2622270479946245
+        }
+      },
+      {
+        "id": "sydney-macquaries",
+        "latitude": -33.8594584,
+        "longitude": 151.221884,
+        "elevationMetersAssumed": 0,
+        "timeZone": "Australia/Sydney",
+        "planetPreview": {
+          "utc": "2026-11-15T18:00:00Z",
+          "marsAltitudeDegrees": 32.329694618358545,
+          "jupiterAltitudeDegrees": 33.449900167126536,
+          "sunAltitudeDegrees": -8.856310548681208,
+          "separationDegrees": 1.2010781439691103
+        },
+        "geminidPreview": {
+          "utc": "2026-12-14T15:00:00Z",
+          "radiantApproxAltitudeDegrees": 22.119183106819136,
+          "sunAltitudeDegrees": -30.51878800306379,
+          "moonAltitudeDegrees": -26.199084382992766,
+          "moonIlluminatedFraction": 0.2552330052371659
+        }
+      },
+      {
+        "id": "london-primrose",
+        "latitude": 51.5395287,
+        "longitude": -0.1606936,
+        "elevationMetersAssumed": 0,
+        "timeZone": "Europe/London",
+        "planetPreview": {
+          "utc": "2026-11-16T05:00:00Z",
+          "marsAltitudeDegrees": 50.25445755634639,
+          "jupiterAltitudeDegrees": 49.296620369278564,
+          "sunAltitudeDegrees": -21.551806495221612,
+          "separationDegrees": 1.1938554277706002
+        },
+        "geminidPreview": {
+          "utc": "2026-12-14T02:00:00Z",
+          "radiantApproxAltitudeDegrees": 71.45524176968335,
+          "sunAltitudeDegrees": -52.87693803534455,
+          "moonAltitudeDegrees": -49.42600270111075,
+          "moonIlluminatedFraction": 0.21156316019950583
+        }
+      },
+      {
+        "id": "new-york-pier1",
+        "latitude": 40.7019951,
+        "longitude": -73.9974077,
+        "elevationMetersAssumed": 0,
+        "timeZone": "America/New_York",
+        "planetPreview": {
+          "utc": "2026-11-16T10:00:00Z",
+          "marsAltitudeDegrees": 59.907765693188935,
+          "jupiterAltitudeDegrees": 59.11562306214054,
+          "sunAltitudeDegrees": -19.692136643725462,
+          "separationDegrees": 1.1993486625544159
+        },
+        "geminidPreview": {
+          "utc": "2026-12-14T07:00:00Z",
+          "radiantApproxAltitudeDegrees": 82.13849436562916,
+          "sunAltitudeDegrees": -57.73003477728511,
+          "moonAltitudeDegrees": -55.53721207215523,
+          "moonIlluminatedFraction": 0.2279816436519324
+        }
+      },
+      {
+        "id": "atacama-kari",
+        "latitude": -22.9169811,
+        "longitude": -68.2545001,
+        "elevationMetersAssumed": 0,
+        "timeZone": "America/Santiago",
+        "planetPreview": {
+          "utc": "2026-11-16T08:00:00Z",
+          "marsAltitudeDegrees": 34.50089701192124,
+          "jupiterAltitudeDegrees": 35.567646984593054,
+          "sunAltitudeDegrees": -21.59150029110161,
+          "separationDegrees": 1.1981662505167792
+        },
+        "geminidPreview": {
+          "utc": "2026-12-14T05:00:00Z",
+          "radiantApproxAltitudeDegrees": 30.151022313699933,
+          "sunAltitudeDegrees": -43.20573698443235,
+          "moonAltitudeDegrees": -27.61191374646134,
+          "moonIlluminatedFraction": 0.22135611270467292
+        }
+      }
+    ]
+  },
+  "miniChallenge": {
+    "id": "keep-the-light-where-it-is-needed",
+    "title": "Keep the light where it is needed",
+    "sourceIds": [
+      "darksky-ies",
+      "nasa-tucson"
+    ],
+    "purpose": "A short educational experiment about lighting choices and evidence limits, not an engineering optimization or safety certification.",
+    "steps": [
+      {
+        "principle": "Useful",
+        "action": "Keep essential safety lighting outside the participating fixture set; choose a hypothetical group of nonessential fixtures."
+      },
+      {
+        "principle": "Targeted",
+        "action": "Enable shielding and compare the same place, camera and instant."
+      },
+      {
+        "principle": "Low level",
+        "action": "Choose a lower participating-fixture output. The displayed command percentage is not the percentage change in skyglow."
+      },
+      {
+        "principle": "Controlled",
+        "action": "Schedule the selected fixtures after midnight; verify the explicit before/after clock and active state."
+      },
+      {
+        "principle": "Warm-colored",
+        "action": "Compare warmer and cooler scenarios while retaining natural Moon/Sun/weather effects."
+      }
+    ],
+    "reflectionQuestion": "Does 50% dimming of selected streetlights establish 50% less skyglow?",
+    "reflectionAnswer": "No. Other sources and atmospheric transport remain, and the renderer is illustrative. Read the separate Tucson observations rather than treating the slider as a calibrated prediction.",
+    "evidenceAction": "Open the existing Tucson study replay and distinguish satellite sum, separate ground-sky measurements, fitted contrast and illustrative local appearance.",
+    "completionCriterion": "Acknowledge the principles and answer the evidence-limit question; do not reward exact visible-star counts, maximum darkness, energy savings or safety claims."
+  },
+  "copyBoundary": "All source wording above is paraphrased. No source images, calendar charts, meteor-rate promises or weather forecasts are bundled by this research."
+}

@@ -1,6 +1,6 @@
 import {createCityPostprocess} from './cityPostprocess';
 import type { ImmersiveSkyProps } from './skyView';
-import { buildSceneMesh,type SceneMesh } from './sceneMesh';
+import { buildSceneMesh,buildClearPlatform,type SceneMesh } from './sceneMesh';
 import {localPoint,type CityScene} from './cityScene';
 
 const vertex=`
@@ -135,7 +135,8 @@ export function createCityGPU(canvas:HTMLCanvasElement,onMaterialReady:()=>void=
     const attributes=['position','normal','color','material'].map(name=>gl.getAttribLocation(program!,name));
     const names=['forward','rightward','upward','eyeElevation','tangent','aspect','sunDirection','moonDirection','moonLight','sunAltitude','cityLight','selectedLight','baselineLight','comparison','split','pixelWidth','fixtureOutput','haze','warmth','overcast','waterMask','waterOrigin','waterExtent','hasWater','pavingColor','pavingNormal','pavingRoughness','hasPaving','wetness'];
     const uniforms=Object.fromEntries(names.map(name=>[name,gl.getUniformLocation(program!,name)]));
-    const opaque=gl.createBuffer(),glass=gl.createBuffer();if(!opaque||!glass)throw new Error('Scene buffer allocation failed');buffers.push(opaque,glass);
+    const opaque=gl.createBuffer(),glass=gl.createBuffer(),platform=gl.createBuffer();if(!opaque||!glass||!platform)throw new Error('Scene buffer allocation failed');buffers.push(opaque,glass,platform);
+    let platformHeight=NaN,platformVertices=0;
     let materialsLoaded=0;
     for(const [i,name] of ['diffuse','normal-gl','roughness'].entries()){
       const texture=gl.createTexture();if(!texture)throw new Error('Material allocation failed');materialTextures.push(texture);gl.activeTexture(gl.TEXTURE1+i);gl.bindTexture(gl.TEXTURE_2D,texture);
@@ -171,7 +172,8 @@ export function createCityGPU(canvas:HTMLCanvasElement,onMaterialReady:()=>void=
         gl.useProgram(program);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,waterTexture);gl.uniform1i(uniforms.waterMask,0);for(const [i,name] of ['pavingColor','pavingNormal','pavingRoughness'].entries()){gl.activeTexture(gl.TEXTURE1+i);gl.bindTexture(gl.TEXTURE_2D,materialTextures[i]);gl.uniform1i(uniforms[name],1+i);}gl.uniform1f(uniforms.hasPaving,materialsLoaded===3?1:0);gl.uniform1f(uniforms.wetness,.12);gl.uniform2f(uniforms.waterOrigin,waterBounds[0],waterBounds[1]);gl.uniform2f(uniforms.waterExtent,waterBounds[2],waterBounds[3]);gl.uniform1f(uniforms.hasWater,p.scene.water?.polygons.length?1:0);gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);gl.disable(gl.CULL_FACE);gl.depthMask(true);gl.disable(gl.BLEND);
         const rad=Math.PI/180,a=p.camera.azimuth*rad,h=p.camera.altitude*rad;
         gl.uniform3f(uniforms.forward,Math.cos(h)*Math.sin(a),Math.sin(h),Math.cos(h)*Math.cos(a));gl.uniform3f(uniforms.rightward,Math.cos(a),0,-Math.sin(a));gl.uniform3f(uniforms.upward,-Math.sin(h)*Math.sin(a),Math.cos(h),-Math.sin(h)*Math.cos(a));
-        gl.uniform1f(uniforms.eyeElevation,p.scene.eyeElevation);gl.uniform1f(uniforms.tangent,Math.tan(p.camera.fieldOfView*rad/2));gl.uniform1f(uniforms.aspect,width/height);
+        const eye=p.observerElevation??p.scene.eyeElevation;
+        gl.uniform1f(uniforms.eyeElevation,eye);gl.uniform1f(uniforms.tangent,Math.tan(p.camera.fieldOfView*rad/2));gl.uniform1f(uniforms.aspect,width/height);
         const sa=p.sky.sunAzimuth*rad,sh=p.sky.sunAltitude*rad;gl.uniform3f(uniforms.sunDirection,Math.cos(sh)*Math.sin(sa),Math.sin(sh),Math.cos(sh)*Math.cos(sa));
         const ma=(p.sky.objects.find(o=>o.kind==='moon')?.azimuth??0)*rad,mh=p.sky.moonAltitude*rad;gl.uniform3f(uniforms.moonDirection,Math.cos(mh)*Math.sin(ma),Math.sin(mh),Math.cos(mh)*Math.cos(ma));
         gl.uniform1f(uniforms.moonLight,(p.filters.moonlightEnabled?1:0)*Math.max(0,Math.sin(mh))*p.sky.moonIllumination);
@@ -179,6 +181,10 @@ export function createCityGPU(canvas:HTMLCanvasElement,onMaterialReady:()=>void=
         gl.uniform1f(uniforms.sunAltitude,p.sky.sunAltitude);gl.uniform1f(uniforms.cityLight,p.cityLightPercent);gl.uniform1f(uniforms.selectedLight,p.lightPollution);gl.uniform1f(uniforms.baselineLight,p.compareLightPollution);
         gl.uniform1f(uniforms.comparison,p.comparison?1:0);gl.uniform1f(uniforms.split,p.split/100);gl.uniform1f(uniforms.pixelWidth,width);gl.uniform1f(uniforms.fixtureOutput,p.fixtureOutput);gl.uniform1f(uniforms.haze,p.filters.hazePercent/100);gl.uniform1f(uniforms.warmth,p.warmth);
         bind(opaque);gl.drawArrays(gl.TRIANGLES,0,mesh.opaque.length/12);
+        if(p.clearPlatform&&p.observerElevation!==undefined){
+          if(platformHeight!==eye){const deck=buildClearPlatform(eye);platformHeight=eye;platformVertices=deck.opaque.length/12;gl.bindBuffer(gl.ARRAY_BUFFER,platform);gl.bufferData(gl.ARRAY_BUFFER,deck.opaque,gl.STATIC_DRAW);}
+          bind(platform);gl.drawArrays(gl.TRIANGLES,0,platformVertices);
+        }
         gl.enable(gl.BLEND);gl.blendFuncSeparate(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA,gl.ONE,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);bind(glass);gl.drawArrays(gl.TRIANGLES,0,mesh.glass.length/12);gl.depthMask(true);
         post?.end(1-Math.max(0,Math.min(1,(p.sky.sunAltitude+12)/17)));
         return mesh;

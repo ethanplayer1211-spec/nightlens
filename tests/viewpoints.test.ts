@@ -17,6 +17,10 @@ describe('named city viewpoint assets',()=>{
       expect(scene.eyeElevation).toBeCloseTo(scene.groundElevation+site.deckHeight+site.eyeHeight,9);
       expect(scene.terrain?.source.dataset).toContain('SRTM');
       expect(Number.isFinite(scene.eyeElevation)).toBe(true);
+      const mesh=buildSceneMesh(scene),eye=Math.max(scene.eyeElevation,mesh.maxElevation+5);
+      let highest=-Infinity;
+      for(const vertices of [mesh.opaque,mesh.glass])for(let i=1;i<vertices.length;i+=12)highest=Math.max(highest,vertices[i]);
+      expect(highest).toBeLessThan(eye);
       expect(far.size).toBe(21);expect(far.spacingMeters).toBe(2000);
     }
   });
