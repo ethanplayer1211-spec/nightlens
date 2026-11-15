@@ -1,6 +1,7 @@
 import {
   Body, Equator, Horizon, HorizonFromVector, Illumination, Observer,
   RotateVector, Rotation_EQJ_HOR, Rotation_HOR_EQJ, Rotation_EQJ_GAL, CombineRotation, MakeTime, Vector, SearchRiseSet, SearchAltitude, Spherical, VectorFromSphere,
+  RotationAxis,
 } from 'astronomy-engine';
 
 export interface Location { id: string; name: string; latitude: number; longitude: number; utcOffset: number; elevation: number }
@@ -40,16 +41,23 @@ export function calculateSky(catalog: CatalogStar[], location: Location, date: D
   let moonAltitude = 0;
   let sunAltitude = 0;
   let sunAzimuth = 0;
+  let moonAngularRadius = .25, sunAngularRadius = .2666;
   for (const body of [...planetBodies, Body.Moon, Body.Sun]) {
     const eq = Equator(body, date, observer, true, true);
     const horizontal = Horizon(date, observer, eq.ra, eq.dec, '');
-    if (body === Body.Sun) { sunAltitude = horizontal.altitude; sunAzimuth = horizontal.azimuth; continue; }
-    if (body === Body.Moon) moonAltitude = horizontal.altitude;
+    if (body === Body.Sun) { sunAltitude = horizontal.altitude; sunAzimuth = horizontal.azimuth; sunAngularRadius=Math.asin(695700/(eq.dist*149597870.7))*180/Math.PI;continue; }
+    if (body === Body.Moon) {moonAltitude = horizontal.altitude;moonAngularRadius=Math.asin(1737.4/(eq.dist*149597870.7))*180/Math.PI;}
     if (horizontal.altitude < 0) continue;
     objects.push({ id: body, name: body, magnitude: Illumination(body, date).mag, kind: body === Body.Moon ? 'moon' : 'planet', altitude: horizontal.altitude, azimuth: horizontal.azimuth, ...project(horizontal.altitude, horizontal.azimuth) });
   }
   const moon = Illumination(Body.Moon, date);
-  return { objects, moonAltitude, moonIllumination: moon.phase_fraction, moonPhaseAngle: moon.phase_angle, sunAltitude, sunAzimuth, date };
+  const axis=RotationAxis(Body.Moon,date),a=axis.ra*Math.PI/12,d=axis.dec*Math.PI/180,w=axis.spin*Math.PI/180;
+  // IAU body-fixed prime-meridian axes in J2000, then into east/up/north.
+  const lunarAxes=[[-Math.sin(a)*Math.cos(w)-Math.cos(a)*Math.sin(d)*Math.sin(w),Math.cos(a)*Math.cos(w)-Math.sin(a)*Math.sin(d)*Math.sin(w),Math.cos(d)*Math.sin(w)],
+    [Math.sin(a)*Math.sin(w)-Math.cos(a)*Math.sin(d)*Math.cos(w),-Math.cos(a)*Math.sin(w)-Math.sin(a)*Math.sin(d)*Math.cos(w),Math.cos(d)*Math.cos(w)],
+    [Math.cos(a)*Math.cos(d),Math.sin(a)*Math.cos(d),Math.sin(d)]];
+  const worldToMoon=lunarAxes.flatMap(v=>{const h=RotateVector(rotation,new Vector(v[0],v[1],v[2],MakeTime(date)));return[-h.y,h.z,h.x];});
+  return { objects, moonAltitude, moonIllumination: moon.phase_fraction, moonPhaseAngle: moon.phase_angle, moonAngularRadius,sunAngularRadius,worldToMoon,sunAltitude, sunAzimuth, date };
 }
 
 /** Columns generated from basis vectors avoid assuming the library's matrix storage order. */

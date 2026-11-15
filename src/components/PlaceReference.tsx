@@ -1,0 +1,12 @@
+import {ArrowUpRight} from 'lucide-react';
+
+const photographs={
+  'kl-sky-deck':{file:'kl-tower-petronas-night-reference.jpg',embedded:'nightlens-reference-kl',place:'Kuala Lumpur',author:'Maxim Shesterikov (Shesmax)',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',url:'https://commons.wikimedia.org/wiki/File:Petronas_Twin_Towers._View_from_KL_Tower._2019-11-30_20-50-32_(panorama).jpg',note:'Historical photograph, 30 November 2019. Source caption states KL Tower; its exact camera pose and deck level are unverified. Its photographed sky, weather and lighting are not the calculated scene.'},
+  'sydney-macquaries':{file:'sydney-harbour-reference.jpg',embedded:'nightlens-reference-sydney',place:'Sydney',author:'Robert Linsdell',license:'CC BY 2.0',licenseUrl:'https://creativecommons.org/licenses/by/2.0/',url:'https://commons.wikimedia.org/wiki/File:View_from_Mrs_Macquaries_Point,_Sydney_(483336)_(9442907794).jpg',note:'Historical photograph from Mrs Macquarie’s Point, approximately 3 m from the selected station. Angular registration is unverified. This reference keeps its original photographed sky and conditions.'},
+} as const;
+export default function PlaceReference({id,onEnter}:{id?:string;onEnter:()=>void}){
+  const photo=photographs[id as keyof typeof photographs];
+  if(!photo)return null;
+  const embedded=document.getElementById(photo.embedded)?.getAttribute('src');
+  return <section className="place-reference experience-reveal is-revealed" aria-labelledby="place-reference-heading"><div className="place-reference-heading"><span className="eyebrow">A PLACE WITH A REFERENCE</span><h2 id="place-reference-heading">Recognize the place.<br/><em>Question the picture.</em></h2><div><p>A source photograph gives the reconstruction something real to answer to. The simulated view uses mapped geometry and a calculated sky; fine architectural detail remains approximate.</p><button onClick={onEnter}>Return to the calculated sky <ArrowUpRight size={16}/></button></div></div><figure><img src={embedded??`/data/realism/${photo.file}`} loading="lazy" alt={`Historical source photograph of ${photo.place}, by ${photo.author}. It is a reference, not the simulated sky.`}/><figcaption><span>{photo.note}</span><span>Photo: <a href={photo.url} target="_blank" rel="noreferrer">{photo.author}</a> · <a href={photo.licenseUrl} target="_blank" rel="noreferrer">{photo.license}</a>. Unretouched source thumbnail.</span></figcaption></figure></section>;
+}

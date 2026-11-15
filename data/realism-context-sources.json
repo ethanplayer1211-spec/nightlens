@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "square-floor-diffuse",
+      "filename": "square-floor-diffuse-1k.jpg",
+      "downloadUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/square_floor/square_floor_diff_1k.jpg",
+      "sourceUrl": "https://polyhaven.com/a/square_floor",
+      "author": "Rob Tuytel / Poly Haven",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "providerMd5": "6a0612931ceb2f91d95c3efe179ed8bf",
+      "kind": "material-diffuse",
+      "physicalWidthMeters": 2,
+      "limits": "Generic measured material texture, not evidence that the named city or KL Tower uses this exact paving.",
+      "publicFile": "public/data/realism/square-floor-diffuse-1k.jpg",
+      "retrievedAt": "2026-11-15T06:47:56.502000+00:00",
+      "sha256": "f33c3828782bd08d64fe3c802b055124289d178c9e0d7f2539fd6041083b6f02",
+      "bytes": 395263
+    },
+    {
+      "id": "square-floor-normal-gl",
+      "filename": "square-floor-normal-gl-1k.jpg",
+      "downloadUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/square_floor/square_floor_nor_gl_1k.jpg",
+      "sourceUrl": "https://polyhaven.com/a/square_floor",
+      "author": "Rob Tuytel / Poly Haven",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "providerMd5": "a35229ec48321b67911e30297ad6f3ba",
+      "kind": "material-normal-opengl",
+      "physicalWidthMeters": 2,
+      "limits": "Generic surface microstructure, not a site survey. OpenGL tangent-space normal convention.",
+      "publicFile": "public/data/realism/square-floor-normal-gl-1k.jpg",
+      "retrievedAt": "2026-11-15T06:47:58.361818+00:00",
+      "sha256": "81d9e1238cee39cc5762f9ea33e5c29f59a3780013b323568df13e6b9f5f6921",
+      "bytes": 937058
+    },
+    {
+      "id": "square-floor-roughness",
+      "filename": "square-floor-roughness-1k.jpg",
+      "downloadUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/square_floor/square_floor_rough_1k.jpg",
+      "sourceUrl": "https://polyhaven.com/a/square_floor",
+      "author": "Rob Tuytel / Poly Haven",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "providerMd5": "40918410c9a5821c6c25bbbfb97387ce",
+      "kind": "material-roughness",
+      "physicalWidthMeters": 2,
+      "limits": "Generic roughness field; not a measured named-station material or wetness state.",
+      "publicFile": "public/data/realism/square-floor-roughness-1k.jpg",
+      "retrievedAt": "2026-11-15T06:48:00.111768+00:00",
+      "sha256": "558674f11fba1c189188ea2c34fc467d5b0e8253be541d8c99172ce89d44c6f7",
+      "bytes": 404661
+    },
+    {
+      "id": "kl-tower-petronas-night-reference",
+      "filename": "kl-tower-petronas-night-reference.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Petronas_Twin_Towers._View_from_KL_Tower._2019-11-30_20-50-32_%28panorama%29.jpg/3840px-Petronas_Twin_Towers._View_from_KL_Tower._2019-11-30_20-50-32_%28panorama%29.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petronas_Twin_Towers._View_from_KL_Tower._2019-11-30_20-50-32_(panorama).jpg",
+      "author": "Maxim Shesterikov (Shesmax)",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "kind": "historical-photo-reference",
+      "capturedAt": "2019-11-30T20:50:32",
+      "originalDimensions": [
+        8654,
+        3840
+      ],
+      "downloadDimensions": [
+        3840,
+        1704
+      ],
+      "changes": "Wikimedia server-provided 3840-pixel thumbnail of original photograph; no local image edits.",
+      "projection": "Stitched perspective panoramic photograph; not a certified equirectangular 360-degree landscape.",
+      "cameraPoseStatus": "Uncalibrated. Description says view from KL Tower, but metadata geotag 3.158,101.712 lies at Petronas, not at KL Tower. It cannot certify the eye coordinates, north/horizon, deck level or angular mapping.",
+      "limits": "Historic reference only. Its photographed sky/lighting/weather do not represent a current sky, a controlled dimming scenario or the exact current city. Do not silently register it as measured surroundings.",
+      "publicFile": "public/data/realism/kl-tower-petronas-night-reference.jpg",
+      "retrievedAt": "2026-11-15T06:48:02.007881+00:00",
+      "sha256": "a3be41fe5a960f76e2ff5afa5fc10e608011b0d0e2646baa8469befd7ca68cd1",
+      "bytes": 1770287
+    },
+    {
+      "id": "sydney-harbour-reference",
+      "filename": "sydney-harbour-reference.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/View_from_Mrs_Macquaries_Point%2C_Sydney_%28483336%29_%289442907794%29.jpg/3840px-View_from_Mrs_Macquaries_Point%2C_Sydney_%28483336%29_%289442907794%29.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_Mrs_Macquaries_Point,_Sydney_(483336)_(9442907794).jpg",
+      "author": "Robert Linsdell",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "kind": "historical-photo-reference",
+      "capturedAt": "2012-11-25",
+      "sourceCameraCoordinates": [
+        -33.859443,
+        151.221857
+      ],
+      "projection": "Stitched partial panorama, not certified equirectangular 360.",
+      "cameraPoseStatus": "Source location is approximately 3 m from the selected Sydney station; north/horizon/FOV are not certified.",
+      "changes": "Wikimedia server-provided 3840-pixel thumbnail; no local image edits.",
+      "limits": "Historic geographic/material reference only; original sky, illumination and weather are fixed photographic content, not the calculated selected-time sky.",
+      "publicFile": "public/data/realism/sydney-harbour-reference.jpg",
+      "retrievedAt": "2026-11-15T06:50:55.098694+00:00",
+      "sha256": "77490a961c93715187ad5cc21b1af6a7f074aef60b2612ba668b935d940368c1",
+      "bytes": 800432
+    }
+  ],
+  "policy": "Original downloaded bytes retained. Photos are uncalibrated historical references, not registered 360-degree scenes; materials are generic illustrative finishes.",
+  "candidateSources": [
+    {
+      "id": "london-primrose-reference",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Primrose_Hill_Panorama,_London_-_April_2011.jpg",
+      "author": "DAVID ILIFF",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "kind": "historical-photo-reference",
+      "capturedAt": "2011-04-09",
+      "sourceCameraCoordinates": [
+        51.539616,
+        -0.160683
+      ],
+      "projection": "Stitched partial panorama, not certified equirectangular 360.",
+      "cameraPoseStatus": "Source camera coordinates are near the selected summit station; no certified north/horizon/FOV registration.",
+      "changes": "Wikimedia server-provided 3840-pixel thumbnail; no local image edits.",
+      "limits": "Historic geographic/material reference only; original sky, illumination and weather are fixed photographic content, not the calculated selected-time sky."
+    },
+    {
+      "id": "seoul-namsan-reference",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seoul_from_Namsan_3.jpg",
+      "author": "kallerna",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "kind": "historical-photo-reference",
+      "capturedAt": "2022-12-04",
+      "sourceCameraCoordinates": null,
+      "projection": "Stitched partial north-facing panorama, not a calibrated 360-degree panorama.",
+      "cameraPoseStatus": "Description verifies north-facing view from Namsan, but exact outdoor eye position and north/horizon registration are not established.",
+      "changes": "Wikimedia server-provided 3840-pixel thumbnail; no local image edits.",
+      "limits": "Historic geographic/material reference only; original sky, illumination and weather are fixed photographic content, not the calculated selected-time sky."
+    },
+    {
+      "id": "new-york-pier1-reference",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge-Manhattan_Skyline.jpg",
+      "author": "Aaron D'Angelo",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "kind": "historical-photo-reference",
+      "capturedAt": "2017-07-12",
+      "sourceCameraCoordinates": null,
+      "projection": "Stitched partial panorama, not a calibrated 360-degree panorama.",
+      "cameraPoseStatus": "Commons categorizes this image at Pier 1, but camera coordinate/eye height/north/horizon/FOV are not supplied.",
+      "changes": "Wikimedia server-provided 3840-pixel thumbnail; no local image edits.",
+      "limits": "Historic geographic/material reference only; original sky, illumination and weather are fixed photographic content, not the calculated selected-time sky."
+    },
+    {
+      "id": "atacama-valley-reference",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:360%C2%B0_Panorama_Valle_de_la_Luna_Atacama_Chile.jpg",
+      "author": "Uwe Behm (Uwebart)",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "kind": "historical-photo-reference",
+      "capturedAt": "2012-03-15",
+      "sourceCameraCoordinates": null,
+      "projection": "Author-described 360-degree horizontal panoramic strip; not full 180-degree vertical coverage.",
+      "cameraPoseStatus": "No source camera coordinates or north/horizon registration. Valle de la Luna is not proof of capture at Mirador de Kari.",
+      "changes": "Wikimedia server-provided 3840-pixel thumbnail; no local image edits.",
+      "limits": "Historic geographic/material reference only; original sky, illumination and weather are fixed photographic content, not the calculated selected-time sky."
+    }
+  ],
+  "failures": [
+    {
+      "id": "london-primrose-reference",
+      "status": 429,
+      "reason": "Wikimedia server rate limit; download postponed rather than retried immediately."
+    }
+  ]
+}

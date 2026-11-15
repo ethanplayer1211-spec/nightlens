@@ -10,9 +10,10 @@ describe('named city viewpoint assets',()=>{
   it('loads every cached scene with sourced terrain and a separate eye/deck height',()=>{
     expect(new Set(VIEWPOINTS.map(s=>s.id)).size).toBe(7);
     for(const site of VIEWPOINTS){
-      const terrain=validateTerrain(read(`public/data/terrain-${site.id}.json`),site.id);
-      const far=validateTerrain(read(`public/data/terrain-far-${site.id}.json`),site.id);
-      const scene=buildCityScene(site,read(`public/data/viewpoint-${site.id}.json`) as ViewpointMap,terrain,far);
+      const assetId=site.assetId??site.id;
+      const terrain=validateTerrain(read(`public/data/terrain-${assetId}.json`),assetId);
+      const far=validateTerrain(read(`public/data/terrain-far-${assetId}.json`),assetId);
+      const scene=buildCityScene(site,read(`public/data/viewpoint-${assetId}.json`) as ViewpointMap,terrain,far);
       expect(scene.eyeElevation).toBeCloseTo(scene.groundElevation+site.deckHeight+site.eyeHeight,9);
       expect(scene.terrain?.source.dataset).toContain('SRTM');
       expect(Number.isFinite(scene.eyeElevation)).toBe(true);
@@ -35,7 +36,7 @@ describe('named city viewpoint assets',()=>{
     expect(sceneBlocks(scene,3,0)).toBe(true);expect(sceneBlocks(scene,45,0)).toBe(false);
   });
   it('keeps the Namsan eye above the rendered terrain at the final mapped camera coordinate',()=>{
-    const site=VIEWPOINTS[2],scene=buildCityScene(site,null,validateTerrain(read(`public/data/terrain-${site.id}.json`),site.id),validateTerrain(read(`public/data/terrain-far-${site.id}.json`),site.id));
+    const site=VIEWPOINTS[2],assetId=site.assetId??site.id,scene=buildCityScene(site,null,validateTerrain(read(`public/data/terrain-${assetId}.json`),assetId),validateTerrain(read(`public/data/terrain-far-${assetId}.json`),assetId));
     const mesh=buildSceneMesh(scene),v=mesh.opaque,heights:number[]=[];
     for(let i=0;i<v.length;i+=36){
       if(v[i+11]!==6)continue;

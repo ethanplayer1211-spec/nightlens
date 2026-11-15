@@ -1,0 +1,165 @@
+{
+  "uri": "https://api.sketchfab.com/v3/models/4111f3de53f24ab0a9547205723665b1",
+  "uid": "4111f3de53f24ab0a9547205723665b1",
+  "name": "Petronas Twin Towers",
+  "staffpickedAt": null,
+  "viewCount": 499,
+  "likeCount": 8,
+  "animationCount": 0,
+  "viewerUrl": "https://sketchfab.com/3d-models/4111f3de53f24ab0a9547205723665b1",
+  "embedUrl": "https://sketchfab.com/models/4111f3de53f24ab0a9547205723665b1/embed",
+  "commentCount": 0,
+  "isDownloadable": true,
+  "publishedAt": "2022-02-09T20:23:14.012429",
+  "tags": [
+    {
+      "name": "skyscraper",
+      "slug": "skyscraper",
+      "uri": "https://api.sketchfab.com/v3/tags/skyscraper"
+    },
+    {
+      "name": "1990s",
+      "slug": "1990s",
+      "uri": "https://api.sketchfab.com/v3/tags/1990s"
+    },
+    {
+      "name": "malaysia",
+      "slug": "malaysia",
+      "uri": "https://api.sketchfab.com/v3/tags/malaysia"
+    },
+    {
+      "name": "kualalumpur",
+      "slug": "kualalumpur",
+      "uri": "https://api.sketchfab.com/v3/tags/kualalumpur"
+    },
+    {
+      "name": "twin-towers",
+      "slug": "twin-towers",
+      "uri": "https://api.sketchfab.com/v3/tags/twin-towers"
+    }
+  ],
+  "categories": [
+    {
+      "name": "architecture"
+    },
+    {
+      "name": "cultural-heritage-history"
+    }
+  ],
+  "thumbnails": {
+    "images": [
+      {
+        "uid": "ae7b53581c854d80acaf4d68d191b393",
+        "size": 87789,
+        "width": 1920,
+        "url": "https://media.sketchfab.com/models/4111f3de53f24ab0a9547205723665b1/thumbnails/647266df313e4936a1de66f3029695fd/b68ab813caa74815a491f55d970814fe.jpeg",
+        "height": 1080
+      },
+      {
+        "uid": "683808eb17a446e69f2da3f5904e6f34",
+        "size": 30883,
+        "width": 1024,
+        "url": "https://media.sketchfab.com/models/4111f3de53f24ab0a9547205723665b1/thumbnails/647266df313e4936a1de66f3029695fd/cd3a7e48261a4962969196b932bc448e.jpeg",
+        "height": 576
+      },
+      {
+        "uid": "c766353336764632aad7205c7cacdb56",
+        "size": 17750,
+        "width": 720,
+        "url": "https://media.sketchfab.com/models/4111f3de53f24ab0a9547205723665b1/thumbnails/647266df313e4936a1de66f3029695fd/ec62e3e6097f40efb6ac4904f0bc6559.jpeg",
+        "height": 405
+      },
+      {
+        "uid": "29ed22f1599346dcaffd13eb3ae6f0ea",
+        "size": 3654,
+        "width": 256,
+        "url": "https://media.sketchfab.com/models/4111f3de53f24ab0a9547205723665b1/thumbnails/647266df313e4936a1de66f3029695fd/e2fb957912624195bc5a8d5b4914d70f.jpeg",
+        "height": 144
+      },
+      {
+        "uid": "addbe21b5d214cb2b888811ee46eb365",
+        "size": 910,
+        "width": 64,
+        "url": "https://media.sketchfab.com/models/4111f3de53f24ab0a9547205723665b1/thumbnails/647266df313e4936a1de66f3029695fd/d98987fb89f64305a4d2968405860a75.jpeg",
+        "height": 36
+      }
+    ]
+  },
+  "user": {
+    "uid": "0f3aa0a442b346289aceca7e90e684b8",
+    "username": "NanoRay",
+    "displayName": "NanoRay",
+    "profileUrl": "https://sketchfab.com/NanoRay",
+    "account": "basic",
+    "avatar": {
+      "uri": "https://api.sketchfab.com/v3/avatars/41b52947f96b4c83a4f31fd67d86bf77",
+      "images": [
+        {
+          "size": 1011,
+          "width": 32,
+          "url": "https://media.sketchfab.com/avatars/41b52947f96b4c83a4f31fd67d86bf77/d81076ed5c954d0895165974919e5969.jpeg",
+          "height": 32
+        },
+        {
+          "size": 1256,
+          "width": 48,
+          "url": "https://media.sketchfab.com/avatars/41b52947f96b4c83a4f31fd67d86bf77/75981358cde44da985aef4b95c3be692.jpeg",
+          "height": 48
+        },
+        {
+          "size": 2110,
+          "width": 90,
+          "url": "https://media.sketchfab.com/avatars/41b52947f96b4c83a4f31fd67d86bf77/60257b917a8d405da4442eb08b76b27d.jpeg",
+          "height": 90
+        },
+        {
+          "size": 2412,
+          "width": 100,
+          "url": "https://media.sketchfab.com/avatars/41b52947f96b4c83a4f31fd67d86bf77/e37eac63dc2f4315b0da445dbab90aeb.jpeg",
+          "height": 100
+        }
+      ]
+    },
+    "uri": "https://api.sketchfab.com/v3/users/0f3aa0a442b346289aceca7e90e684b8"
+  },
+  "description": "Located in Kuala Lumpur, Asia. They were once the world's tallest buildings and were still the tallest twin towers. Both standing 1,483 feet, 32 feet taller than Willis Tower's roof. They ruled as the world's tallest from 1998 until 2004 when Taipei 101 surpassed them.",
+  "faceCount": 47988,
+  "createdAt": "2022-02-09T20:18:48.464360",
+  "vertexCount": 37916,
+  "isAgeRestricted": false,
+  "archives": {
+    "glb": {
+      "textureCount": 0,
+      "size": 1854460,
+      "type": "glb",
+      "textureMaxResolution": 0,
+      "faceCount": 47772,
+      "vertexCount": 53189
+    },
+    "gltf": {
+      "textureCount": 0,
+      "size": 724905,
+      "type": "gltf",
+      "textureMaxResolution": 0,
+      "faceCount": 47772,
+      "vertexCount": 53189
+    },
+    "source": {
+      "textureCount": null,
+      "size": 420190,
+      "type": "source",
+      "textureMaxResolution": null,
+      "faceCount": null,
+      "vertexCount": null
+    },
+    "usdz": {
+      "textureCount": null,
+      "size": 1519975,
+      "type": "usdz",
+      "textureMaxResolution": null,
+      "faceCount": null,
+      "vertexCount": null
+    }
+  },
+  "license": "by"
+}

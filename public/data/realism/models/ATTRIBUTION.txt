@@ -1,0 +1,15 @@
+Landmark source models — separate Creative Commons licenses
+
+Petronas Twin Towers by NanoRay (https://sketchfab.com/NanoRay)
+Source: https://sketchfab.com/3d-models/petronas-twin-towers-4111f3de53f24ab0a9547205723665b1
+License: Creative Commons Attribution 4.0 International — https://creativecommons.org/licenses/by/4.0/
+Public archive: https://huggingface.co/datasets/allenai/objaverse
+Original bytes unchanged. Runtime Petronas adaptation: georegistered spire centers, height scaled to 452 m, source bridge omitted and separate approximate bridge substituted; materials and lighting adapted. No surveyed accuracy or endorsement claimed.
+
+Research-only source, not shipped or rendered: Sydney Opera House by Nick Reinhardt (https://sketchfab.com/Nickardiamond)
+Source: https://sketchfab.com/3d-models/sydney-opera-house-317b2d540f0a4f7e8d87dd3b0372712d
+License: Creative Commons Attribution 4.0 International — https://creativecommons.org/licenses/by/4.0/
+Public archive: https://huggingface.co/datasets/allenai/objaverse
+Changes: none to these original GLB bytes. No surveyed accuracy or endorsement claimed.
+
+Archive collection attribution: Objaverse: A Universe of Annotated 3D Objects, Deitke et al. (2022), Ai2 / University of Washington. Collection database ODC-By 1.0: https://opendatacommons.org/licenses/by/1-0/. Each original model retains its own CC BY 4.0 license.

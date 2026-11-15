@@ -52,6 +52,11 @@ export class MeshBuilder {
     const p=(i:number,r:number):Vec3=>[center[0]+Math.sin(i*2*Math.PI/segments)*r,center[1],center[2]+Math.cos(i*2*Math.PI/segments)*r];
     for(let i=0;i<segments;i++)this.quad(p(i,inner),p(i,outer),p(i+1,outer),p(i+1,inner),m,[0,1,0]);
   }
+  ellipsoid(center:Vec3,radius:Vec3,m:Material){
+    const point=(i:number,j:number):Vec3=>[center[0]+radius[0]*Math.sin(j*Math.PI/8)*Math.cos(i*Math.PI/6),center[1]+radius[1]*Math.cos(j*Math.PI/8),center[2]+radius[2]*Math.sin(j*Math.PI/8)*Math.sin(i*Math.PI/6)];
+    const normal=(p:Vec3)=>unit([(p[0]-center[0])/radius[0]**2,(p[1]-center[1])/radius[1]**2,(p[2]-center[2])/radius[2]**2]);
+    for(let i=0;i<12;i++)for(let j=0;j<8;j++){const a=point(i,j),b=point(i+1,j),c=point(i+1,j+1),d=point(i,j+1);this.triangle(a,b,c,m,[normal(a),normal(b),normal(c)]);this.triangle(a,c,d,m,[normal(a),normal(c),normal(d)]);}
+  }
   finish(buildingCount:number,mappedPartCount:number):SceneMesh{return{opaque:new Float32Array(this.opaque),glass:new Float32Array(this.glass),triangles:(this.opaque.length+this.glass.length)/36,buildingCount,mappedPartCount};}
 }
 
@@ -118,10 +123,13 @@ function mappedBuildings(mesh:MeshBuilder,scene:CityScene){
   const area=(ring:GroundPoint[])=>Math.abs(ring.reduce((sum,p,i)=>{const n=ring[(i+1)%ring.length];return sum+p.east*n.north-n.east*p.north;},0)/2);
   const accents=scene.buildings.filter(b=>b.accent).map(b=>({b,center:mean(b.ring),area:area(b.ring)}));
   for(const b of scene.buildings){
-    const ring=b.ring,wall=b.tags['building:material']==='glass'||b.accent;
+    if(scene.id==='kl-sky-deck'&&(b.id===645604854||scene.landmarkModel&&b.accent))continue;
+    const ring=b.ring,heritage=scene.site.cityId==='penang'&&!b.part&&b.top<=18,wall=b.tags['building:material']==='glass'||b.accent||b.top>60;
     const tint=(Math.abs(b.id)%9)/100;
-    const m:Material={color:b.accent?[.39,.48,.53]:wall?[.25+tint,.34+tint,.40+tint]:[.36+tint,.36+tint,.35+tint],kind:wall?7:8};
-    const base=b.base+b.bottom,top=b.base+b.top;
+    const m:Material={color:heritage?[.54+tint,.52+tint,.43+tint]:b.accent?[.39,.48,.53]:wall?[.25+tint,.34+tint,.40+tint]:[.36+tint,.36+tint,.35+tint],kind:heritage?17:b.accent?9:wall?7:8};
+    const simple=ring.length===5,edgeLengths=simple?ring.slice(0,4).map((p,i)=>Math.hypot(p.east-ring[(i+1)%4].east,p.north-ring[(i+1)%4].north)):[];
+    const gabled=simple&&(b.tags['roof:shape']==='gabled'||heritage),roofRise=gabled?Math.min(2.2,Math.min(...edgeLengths)*.22):0;
+    const base=b.base+b.bottom,top=b.base+b.top-roofRise;
     const center=mean(ring),footArea=area(ring);
     const exposed=b.accent?Math.max(b.bottom,...accents.filter(a=>a.b.top<b.top-.5&&a.area>footArea*1.08&&Math.hypot(a.center.east-center.east,a.center.north-center.north)<20).map(a=>a.b.top)):b.bottom;
     for(let i=1;i<ring.length;i++){
@@ -146,7 +154,13 @@ function mappedBuildings(mesh:MeshBuilder,scene:CityScene){
         }
       }
     }
-    mesh.polygon(ring,()=>top,{color:b.accent?[.47,.53,.57]:[.30,.32,.33],kind:wall?7:8});
+    if(gabled){
+      const long=edgeLengths[0]>=edgeLengths[1]?0:1;
+      const a=ring[long],c=ring[(long+1)%4],d=ring[(long+2)%4],e=ring[(long+3)%4];
+      const ridgeA:Vec3=[(a.east+e.east)/2,top+roofRise,(a.north+e.north)/2],ridgeB:Vec3=[(c.east+d.east)/2,top+roofRise,(c.north+d.north)/2];
+      const p=(v:GroundPoint):Vec3=>[v.east,top,v.north],roof:Material={color:[.42,.25,.17],kind:18};
+      mesh.quad(p(a),p(c),ridgeB,ridgeA,roof);mesh.quad(p(d),p(e),ridgeA,ridgeB,roof);mesh.triangle(p(e),p(a),ridgeA,m);mesh.triangle(p(c),p(d),ridgeB,m);
+    }else mesh.polygon(ring,()=>top,{color:b.accent?[.47,.53,.57]:[.30,.32,.33],kind:wall?2:0});
   }
 }
 function furniture(mesh:MeshBuilder,scene:CityScene){
@@ -157,8 +171,13 @@ function furniture(mesh:MeshBuilder,scene:CityScene){
     if(e.tags.natural==='tree'&&distance<1500&&renderedTrees++<500){
       const height=Math.min(24,parseFloat(e.tags.height??'')||7+(e.id%5));
       mesh.cylinder([p.east,base,p.north],.22,height*.6,{color:[.21,.16,.11]},6);
-      mesh.cylinder([p.east,base+height*.32,p.north],height*.24,height*.45,{color:[.15,.25,.14]},9,height*.19);
-      mesh.cylinder([p.east,base+height*.62,p.north],height*.22,height*.38,{color:[.20,.30,.17]},9,0);
+      if(e.tags.leaf_type==='needleleaved'){
+        mesh.cylinder([p.east,base+height*.32,p.north],height*.24,height*.45,{color:[.15,.25,.14]},9,height*.19);
+        mesh.cylinder([p.east,base+height*.62,p.north],height*.22,height*.38,{color:[.20,.30,.17]},9,0);
+      }else{
+        mesh.ellipsoid([p.east,base+height*.70,p.north],[height*.30,height*.30,height*.27],{color:[.18,.29,.14]});
+        for(let branch=0;branch<3;branch++){const a=(branch*2.1+(e.id%13))%6.28,tip:Vec3=[p.east+Math.sin(a)*height*.18,base+height*.62,p.north+Math.cos(a)*height*.18];mesh.beam([p.east,base+height*.38,p.north],tip,.12,{color:[.22,.17,.12]},5);mesh.ellipsoid(tip,[height*.23,height*.22,height*.23],{color:[.15+.02*branch,.25+.02*branch,.12]});}
+      }
     }else if(e.tags.amenity==='bench'&&distance<170){
       mesh.box([p.east,base+.45,p.north],1.7,.10,.55,{color:[.36,.25,.15]});mesh.box([p.east,base+.55,p.north+.23],1.7,.48,.07,{color:[.36,.25,.15]});
       for(const x of [-.6,.6])mesh.box([p.east+x,base,p.north],.09,.5,.5,metal);
@@ -179,7 +198,7 @@ function foreground(mesh:MeshBuilder,scene:CityScene){
   const site=scene.site,floor=scene.eyeElevation-site.eyeHeight;
   if(site.groundKind==='deck'){
     const c=localPoint(3.152859,101.7037604,site),center:Vec3=[c.east,floor,c.north];
-    mesh.ring(center,8.2,20,{color:[.52,.53,.53]},96);
+    mesh.ring(center,8.2,20,{color:[.52,.53,.53],kind:10},96);
     for(let i=0;i<96;i++){
       const p=(t:number):Vec3=>[c.east+Math.sin(t)*20,floor,c.north+Math.cos(t)*20];
       rail(mesh,p(i*2*Math.PI/96),p((i+1)*2*Math.PI/96),1.12,true);
@@ -192,9 +211,22 @@ function foreground(mesh:MeshBuilder,scene:CityScene){
     mesh.cylinder([c.east,scene.groundElevation+327,c.north],2.6,94,{color:[.59,.57,.51],kind:2},16,.25);
     return;
   }
+  if(site.groundKind==='balcony'){
+    const a=site.camera.azimuth*Math.PI/180,c=Math.cos(a),sn=Math.sin(a);
+    const p=(x:number,z:number,y=0):Vec3=>[x*c+z*sn,floor+y,-x*sn+z*c];
+    mesh.box(p(0,0,-.22),10,.22,7,{color:[.54,.50,.42],kind:10},site.camera.azimuth);
+    mesh.box(p(-4.8,0),.32,3.2,7,{color:[.68,.66,.57]},site.camera.azimuth);
+    mesh.box(p(-4.7,-3.3),9.6,3.2,.25,{color:[.68,.66,.57]},site.camera.azimuth);
+    rail(mesh,p(-4.7,3.2),p(4.7,3.2),1.05);rail(mesh,p(4.7,-3.4),p(4.7,3.2),1.05);
+    for(const x of [-1.4,1.6]){
+      const pot=p(x,2.7);mesh.cylinder(pot,.30,.50,{color:[.39,.22,.13]},16,.38);
+      for(let i=0;i<7;i++){const t=i*Math.PI*2/7,tip=add(pot,[Math.sin(t)*.34,.85+(i%3)*.10,Math.cos(t)*.34]);mesh.beam(add(pot,[0,.4,0]),tip,.025,{color:[.12,.23,.075]},5);mesh.ellipsoid(tip,[.20,.15,.23],{color:[.13,.27,.09]});}
+    }
+    return;
+  }
   const az=site.camera.azimuth*Math.PI/180,f=[Math.sin(az),Math.cos(az)],r=[Math.cos(az),-Math.sin(az)];
   const p=(right:number,forward:number,up=0):Vec3=>[r[0]*right+f[0]*forward,floor+up,r[1]*right+f[1]*forward];
-  const groundMat:Material={color:site.groundKind==='park'?[.48,.46,.40]:site.groundKind==='cliff'?[.51,.37,.23]:[.44,.45,.44]};
+  const groundMat:Material={kind:10,color:site.groundKind==='park'?[.48,.46,.40]:site.groundKind==='cliff'?[.51,.37,.23]:[.44,.45,.44]};
   // Foreground dimensions/materials are reference-informed approximations, not surveyed pavement.
   for(let x=-8;x<8;x+=1)for(let z=-6;z<5;z+=1){
     const a=p(x,z),b=p(x+.97,z),c=p(x+.97,z+.97),d=p(x,z+.97);mesh.quad(a,b,c,d,groundMat,[0,1,0]);
@@ -212,6 +244,7 @@ export function buildSceneMesh(scene:CityScene):SceneMesh{
     for(let i=0;i<indices.length;i+=3)mesh.triangle(point(indices[i]),point(indices[i+1]),point(indices[i+2]),{color:[.055,.15,.20],kind:3},[0,1,0]);
   }
   addLandmarkModels(mesh,scene);
+  if(scene.landmarkModel)registeredPetronas(mesh,scene);
   return mesh.finish(scene.buildings.length,scene.buildings.filter(b=>b.part).length);
 }
 
@@ -300,4 +333,21 @@ function oneWorldTradeCenter(mesh:MeshBuilder,base:Vec3){
   const m:Material={color:[.35,.49,.56],kind:7,emission:.015};
   mesh.box(base,61,plinth,61,{color:[.30,.39,.45],kind:7});
   for(let i=0;i<8;i++)mesh.quad(p(lower[i],plinth),p(lower[(i+1)%8],plinth),p(upper[(i+1)%8],roof),p(upper[i],roof),m);
+}
+
+function registeredPetronas(mesh:MeshBuilder,scene:CityScene){
+  const model=scene.landmarkModel!;
+  const targets=[[3.1576104,101.7114256],[3.1582379,101.7121562]].map(([lat,lon])=>localPoint(lat,lon,scene.site));
+  const dx=targets[1].east-targets[0].east,dz=targets[1].north-targets[0].north,distance=Math.hypot(dx,dz),axis=[dx/distance,dz/distance],scale=452/model.height;
+  const half=(model.tips[0][0]+model.tips[1][0])/2;
+  const bases=targets.map(t=>sceneGround(scene,t.east,t.north));
+  for(const primitive of model.primitives){
+    // The source artist's bridge is omitted; the published 58.4 m / 170 m bridge remains.
+    if(primitive.material===2||primitive.material===3)continue;
+    const color=primitive.color.slice(0,3).map(v=>Math.pow(Math.max(0,v),1/2.2)) as Color;
+    const material:Material={color,kind:primitive.material===4?15:primitive.material===1?16:14};
+    const vertex=(i:number):Vec3=>{const source=primitive.positions,side=source[i*3]<half?0:1,tip=model.tips[side],along=(source[i*3]-tip[0])*scale,across=(source[i*3+2]-tip[2])*scale;return[targets[side].east+along*axis[0]-across*axis[1],bases[side]+(source[i*3+1]-model.baseY)*scale,targets[side].north+along*axis[1]+across*axis[0]];};
+    const normal=(i:number):Vec3=>{const n=primitive.normals;return unit([n[i*3]*axis[0]-n[i*3+2]*axis[1],n[i*3+1],n[i*3]*axis[1]+n[i*3+2]*axis[0]]);};
+    for(let i=0;i<primitive.indices.length;i+=3){const a=primitive.indices[i],b=primitive.indices[i+1],c=primitive.indices[i+2];mesh.triangle(vertex(a),vertex(b),vertex(c),material,[normal(a),normal(b),normal(c)]);}
+  }
 }

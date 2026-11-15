@@ -9,8 +9,8 @@
       "city": "Kuala Lumpur",
       "name": "KL Tower Sky Deck",
       "coordinate": {
-        "latitude": 3.15293,
-        "longitude": 101.70386,
+        "latitude": 3.152949,
+        "longitude": 101.703889,
         "status": "map-anchored virtual camera; not a surveyed eye position"
       },
       "deckFloorAboveGroundMeters": 300,
@@ -35,23 +35,23 @@
         "farFile": "public/data/terrain-far-kl-sky-deck.json",
         "farQuerySpacingMeters": 2000
       },
-      "coordinateNotes": "Estimated northeast deck-edge point near OSM tower node 5839389988; not a surveyed camera pose."
+      "coordinateNotes": "Estimated northeast deck-edge camera, 17.5 m from mapped tower center in the approximate 20 m deck reconstruction; not surveyed."
     },
     {
-      "id": "penang-esplanade",
+      "id": "penang-neighbourhood",
       "city": "Penang",
-      "name": "Esplanade waterfront promenade",
+      "name": "George Town virtual neighbourhood terrace",
       "coordinate": {
-        "latitude": 5.4215763,
-        "longitude": 100.3423921,
-        "status": "map-anchored virtual camera; not a surveyed eye position"
+        "latitude": 5.4141,
+        "longitude": 100.3354,
+        "status": "public neighbourhood anchor; virtual terrace, not a surveyed private home"
       },
-      "deckFloorAboveGroundMeters": 0,
+      "deckFloorAboveGroundMeters": 7,
       "assumedStandingEyeAboveSurfaceMeters": 1.7,
-      "nominalEyeAboveGroundMeters": 1.7,
+      "nominalEyeAboveGroundMeters": 8.7,
       "direction": "Waterfront and colonial civic precinct; use map-aligned shoreline and landmark bearings.",
       "sourceIds": [
-        "penang-tourism"
+        "george-town-heritage"
       ],
       "terrain": {
         "file": "public/data/terrain-penang-esplanade.json",
@@ -66,7 +66,9 @@
         "farFile": "public/data/terrain-far-penang-esplanade.json",
         "farQuerySpacingMeters": 2000
       },
-      "coordinateNotes": "OpenStreetMap Esplanade footway 972732143, node 7651911375; not a surveyed eye position."
+      "coordinateNotes": "Assumed 7 m platform plus 1.7 m eye offset. Absolute cached Esplanade terrain/map coverage is reprojected to this neighbourhood anchor, merged with original Penang footprint sample.",
+      "assetId": "penang-esplanade",
+      "platformHeightAssumed": true
     },
     {
       "id": "seoul-namsan",

@@ -1,0 +1,143 @@
+{
+  "sources": [
+    {
+      "id": "kl-sky-deck",
+      "rawBatches": [
+        {
+          "sourceUrl": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%28way%5B%22building%22%5D%28around%3A1800%2C3.15293%2C101.70386%29%3Bway%5B%22building%22%5D%5B%22height%22%5D%28around%3A4200%2C3.15293%2C101.70386%29%3Bway%5B%22building%22%5D%5B%22building%3Alevels%22%5D%28around%3A4200%2C3.15293%2C101.70386%29%3Bway%5B%22building%3Apart%22%5D%5B%22height%22%5D%28around%3A3200%2C3.15293%2C101.70386%29%3B%29%3Bout+tags+geom%3B",
+          "query": "[out:json][timeout:25];(way[\"building\"](around:1800,3.15293,101.70386);way[\"building\"][\"height\"](around:4200,3.15293,101.70386);way[\"building\"][\"building:levels\"](around:4200,3.15293,101.70386);way[\"building:part\"][\"height\"](around:3200,3.15293,101.70386););out tags geom;",
+          "retrievedAt": "2026-11-15T06:48:40.096222+00:00",
+          "rawFile": "data/raw/context-kl-sky-deck-overpass.json",
+          "sha256": "19348dc0eb277399d901919531d53ba5acff4571ca4e991bb6f9e5dc5df50bc6",
+          "bytes": 6057234,
+          "format": "Overpass tags geom"
+        }
+      ],
+      "elements": 9153,
+      "publicFile": "public/data/context-kl-sky-deck.json",
+      "bytes": 3800473,
+      "heightTagged": 909,
+      "levelsTagged": 3306,
+      "parts": 304
+    },
+    {
+      "id": "sydney-macquaries",
+      "rawBatches": [
+        {
+          "sourceUrl": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%28way%5B%22building%22%5D%28around%3A900%2C-33.8594584%2C151.221884%29%3Bway%5B%22building%22%5D%5B%22height%22%5D%28around%3A4200%2C-33.8594584%2C151.221884%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3Bway%5B%22building%22%5D%5B%22building%3Alevels%22%5D%28around%3A4200%2C-33.8594584%2C151.221884%29%28if%3Anumber%28t%5B%22building%3Alevels%22%5D%29%3E%3D7%29%3Bway%5B%22building%3Apart%22%5D%5B%22height%22%5D%28around%3A3200%2C-33.8594584%2C151.221884%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3B%29%3Bout+tags+geom%3B",
+          "query": "[out:json][timeout:25];(way[\"building\"](around:900,-33.8594584,151.221884);way[\"building\"][\"height\"](around:4200,-33.8594584,151.221884)(if:number(t[\"height\"])>=20);way[\"building\"][\"building:levels\"](around:4200,-33.8594584,151.221884)(if:number(t[\"building:levels\"])>=7);way[\"building:part\"][\"height\"](around:3200,-33.8594584,151.221884)(if:number(t[\"height\"])>=20););out tags geom;",
+          "retrievedAt": "2026-11-15T06:51:55.672070+00:00",
+          "rawFile": "data/raw/context-sydney-macquaries-overpass.json",
+          "sha256": "b7b05737929a767cb1ab3ec461edf1d712a980b3d43bf9eb467b4590ff545900",
+          "bytes": 1446732,
+          "format": "Overpass tags geom"
+        }
+      ],
+      "elements": 1419,
+      "publicFile": "public/data/context-sydney-macquaries.json",
+      "bytes": 992706,
+      "heightTagged": 152,
+      "levelsTagged": 1260,
+      "parts": 95
+    },
+    {
+      "id": "seoul-namsan",
+      "rawBatches": [
+        {
+          "sourceUrl": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%28way%5B%22building%22%5D%28around%3A900%2C37.5519388%2C126.9885103%29%3Bway%5B%22building%22%5D%5B%22height%22%5D%28around%3A4200%2C37.5519388%2C126.9885103%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3Bway%5B%22building%22%5D%5B%22building%3Alevels%22%5D%28around%3A4200%2C37.5519388%2C126.9885103%29%28if%3Anumber%28t%5B%22building%3Alevels%22%5D%29%3E%3D7%29%3Bway%5B%22building%3Apart%22%5D%5B%22height%22%5D%28around%3A3200%2C37.5519388%2C126.9885103%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3B%29%3Bout+tags+geom%3B",
+          "query": "[out:json][timeout:25];(way[\"building\"](around:900,37.5519388,126.9885103);way[\"building\"][\"height\"](around:4200,37.5519388,126.9885103)(if:number(t[\"height\"])>=20);way[\"building\"][\"building:levels\"](around:4200,37.5519388,126.9885103)(if:number(t[\"building:levels\"])>=7);way[\"building:part\"][\"height\"](around:3200,37.5519388,126.9885103)(if:number(t[\"height\"])>=20););out tags geom;",
+          "retrievedAt": "2026-11-15T06:52:27.168403+00:00",
+          "rawFile": "data/raw/context-seoul-namsan-overpass.json",
+          "sha256": "d1f8dd6acb16584d3c1c33d011c210df14ad6a31039c6f56e75c5c0d7a06c46c",
+          "bytes": 3804268,
+          "format": "Overpass tags geom"
+        }
+      ],
+      "elements": 4968,
+      "publicFile": "public/data/context-seoul-namsan.json",
+      "bytes": 2465469,
+      "heightTagged": 2683,
+      "levelsTagged": 3069,
+      "parts": 78
+    },
+    {
+      "id": "penang-esplanade",
+      "rawBatches": [
+        {
+          "sourceUrl": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%28way%5B%22building%22%5D%28around%3A900%2C5.4215763%2C100.3423921%29%3Bway%5B%22building%22%5D%5B%22height%22%5D%28around%3A4200%2C5.4215763%2C100.3423921%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3Bway%5B%22building%22%5D%5B%22building%3Alevels%22%5D%28around%3A4200%2C5.4215763%2C100.3423921%29%28if%3Anumber%28t%5B%22building%3Alevels%22%5D%29%3E%3D7%29%3Bway%5B%22building%3Apart%22%5D%5B%22height%22%5D%28around%3A3200%2C5.4215763%2C100.3423921%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3B%29%3Bout+tags+geom%3B",
+          "query": "[out:json][timeout:25];(way[\"building\"](around:900,5.4215763,100.3423921);way[\"building\"][\"height\"](around:4200,5.4215763,100.3423921)(if:number(t[\"height\"])>=20);way[\"building\"][\"building:levels\"](around:4200,5.4215763,100.3423921)(if:number(t[\"building:levels\"])>=7);way[\"building:part\"][\"height\"](around:3200,5.4215763,100.3423921)(if:number(t[\"height\"])>=20););out tags geom;",
+          "retrievedAt": "2026-11-15T06:54:11.385731+00:00",
+          "rawFile": "data/raw/context-penang-esplanade-overpass.json",
+          "sha256": "990172fba3ba8e3e37459807534a43335e1895b836563546bd043faae1f888ab",
+          "bytes": 1178450,
+          "format": "Overpass tags geom"
+        }
+      ],
+      "elements": 1639,
+      "publicFile": "public/data/context-penang-esplanade.json",
+      "bytes": 756300,
+      "heightTagged": 7,
+      "levelsTagged": 318,
+      "parts": 0
+    },
+    {
+      "id": "london-primrose",
+      "status": "unavailable",
+      "reason": "Both bounded public Overpass requests timed out. No additional distant context is supplied; the existing named-viewpoint map remains available. Failure URLs/timestamps are retained in data/context-sources.json.",
+      "rawBatches": [],
+      "elements": 0,
+      "publicFile": "public/data/context-london-primrose.json",
+      "bytes": 440
+    },
+    {
+      "id": "new-york-pier1",
+      "status": "unavailable",
+      "reason": "Both bounded public Overpass requests timed out. No additional distant context is supplied; the existing named-viewpoint map remains available. Failure URLs/timestamps are retained in data/context-sources.json.",
+      "rawBatches": [],
+      "elements": 0,
+      "publicFile": "public/data/context-new-york-pier1.json",
+      "bytes": 439
+    },
+    {
+      "id": "atacama-kari",
+      "status": "not-applicable",
+      "reason": "Terrain-led desert lookout; no additional city-building acquisition was requested.",
+      "rawBatches": [],
+      "elements": 0,
+      "publicFile": "public/data/context-atacama-kari.json",
+      "bytes": 312
+    }
+  ],
+  "failures": [
+    {
+      "id": "kl-sky-deck",
+      "url": "https://overpass.private.coffee/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%28way%5B%22building%22%5D%28around%3A1800%2C3.15293%2C101.70386%29%3Bway%5B%22building%22%5D%5B%22height%22%5D%28around%3A4200%2C3.15293%2C101.70386%29%3Bway%5B%22building%22%5D%5B%22building%3Alevels%22%5D%28around%3A4200%2C3.15293%2C101.70386%29%3Bway%5B%22building%3Apart%22%5D%5B%22height%22%5D%28around%3A3200%2C3.15293%2C101.70386%29%3B%29%3Bout+tags+geom%3B",
+      "failedAt": "2026-11-15T06:47:58.907970+00:00",
+      "error": "The read operation timed out"
+    },
+    {
+      "id": "london-primrose",
+      "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%28way%5B%22building%22%5D%28around%3A900%2C51.5395287%2C-0.1606936%29%3Bway%5B%22building%22%5D%5B%22height%22%5D%28around%3A4200%2C51.5395287%2C-0.1606936%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3Bway%5B%22building%22%5D%5B%22building%3Alevels%22%5D%28around%3A4200%2C51.5395287%2C-0.1606936%29%28if%3Anumber%28t%5B%22building%3Alevels%22%5D%29%3E%3D7%29%3Bway%5B%22building%3Apart%22%5D%5B%22height%22%5D%28around%3A3200%2C51.5395287%2C-0.1606936%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3B%29%3Bout+tags+geom%3B",
+      "failedAt": "2026-11-15T06:50:46.204507+00:00",
+      "error": "The read operation timed out"
+    },
+    {
+      "id": "london-primrose",
+      "url": "https://overpass.private.coffee/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%28way%5B%22building%22%5D%28around%3A900%2C51.5395287%2C-0.1606936%29%3Bway%5B%22building%22%5D%5B%22height%22%5D%28around%3A4200%2C51.5395287%2C-0.1606936%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3Bway%5B%22building%22%5D%5B%22building%3Alevels%22%5D%28around%3A4200%2C51.5395287%2C-0.1606936%29%28if%3Anumber%28t%5B%22building%3Alevels%22%5D%29%3E%3D7%29%3Bway%5B%22building%3Apart%22%5D%5B%22height%22%5D%28around%3A3200%2C51.5395287%2C-0.1606936%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3B%29%3Bout+tags+geom%3B",
+      "failedAt": "2026-11-15T06:51:21.583096+00:00",
+      "error": "The read operation timed out"
+    },
+    {
+      "id": "new-york-pier1",
+      "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%28way%5B%22building%22%5D%28around%3A900%2C40.7019951%2C-73.9974077%29%3Bway%5B%22building%22%5D%5B%22height%22%5D%28around%3A4200%2C40.7019951%2C-73.9974077%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3Bway%5B%22building%22%5D%5B%22building%3Alevels%22%5D%28around%3A4200%2C40.7019951%2C-73.9974077%29%28if%3Anumber%28t%5B%22building%3Alevels%22%5D%29%3E%3D7%29%3Bway%5B%22building%3Apart%22%5D%5B%22height%22%5D%28around%3A3200%2C40.7019951%2C-73.9974077%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3B%29%3Bout+tags+geom%3B",
+      "failedAt": "2026-11-15T06:53:02.683586+00:00",
+      "error": "The read operation timed out"
+    },
+    {
+      "id": "new-york-pier1",
+      "url": "https://overpass.private.coffee/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%28way%5B%22building%22%5D%28around%3A900%2C40.7019951%2C-73.9974077%29%3Bway%5B%22building%22%5D%5B%22height%22%5D%28around%3A4200%2C40.7019951%2C-73.9974077%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3Bway%5B%22building%22%5D%5B%22building%3Alevels%22%5D%28around%3A4200%2C40.7019951%2C-73.9974077%29%28if%3Anumber%28t%5B%22building%3Alevels%22%5D%29%3E%3D7%29%3Bway%5B%22building%3Apart%22%5D%5B%22height%22%5D%28around%3A3200%2C40.7019951%2C-73.9974077%29%28if%3Anumber%28t%5B%22height%22%5D%29%3E%3D20%29%3B%29%3Bout+tags+geom%3B",
+      "failedAt": "2026-11-15T06:53:38.038873+00:00",
+      "error": "The read operation timed out"
+    }
+  ]
+}

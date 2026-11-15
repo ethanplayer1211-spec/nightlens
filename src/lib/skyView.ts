@@ -6,6 +6,8 @@ import type { CityScene } from './cityScene';
 export interface SkyCamera { azimuth: number; altitude: number; fieldOfView: number }
 export interface ImmersiveSkyProps {
   sky: SkyCalculation;
+  onAfterMidnight?:()=>void;onComparisonToggle?:()=>void;enterViewRequest?:number;onNightPreview?:()=>void;localClockLabel?:string;
+  onLightingTheme?:(id:string)=>void;lightTheme?:string;
   /** Row-major matrix mapping east/up/north world vectors to Galactic x/y/z. */
   worldToGalactic: number[];
   camera: SkyCamera;
@@ -35,7 +37,7 @@ export const DEFAULT_CAMERA: SkyCamera = { azimuth: 180, altitude: 27, fieldOfVi
 
 export function normalizeCamera(camera: SkyCamera): SkyCamera {
   if (![camera.azimuth, camera.altitude, camera.fieldOfView].every(Number.isFinite)) throw new RangeError('Invalid camera');
-  return { azimuth: ((camera.azimuth % 360) + 360) % 360, altitude: Math.max(-85, Math.min(85, camera.altitude)), fieldOfView: Math.max(35, Math.min(125, camera.fieldOfView)) };
+  return { azimuth: ((camera.azimuth % 360) + 360) % 360, altitude: Math.max(-85, Math.min(85, camera.altitude)), fieldOfView: Math.max(8, Math.min(125, camera.fieldOfView)) };
 }
 
 /** Aim along an above-horizon part of the Galactic plane, without moving the survey. */

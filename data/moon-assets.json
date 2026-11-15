@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "file": "public/data/moon-lroc-2025-2k.jpg",
+  "download_url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
+  "source_url": "https://svs.gsfc.nasa.gov/4720/",
+  "title": "CGI Moon Kit — 2025 LROC color map",
+  "source_updated": "2026-01-09",
+  "texture_produced": "2025-12",
+  "retrieved_at": "2026-11-15T06:47:17.421203+00:00",
+  "bytes": 457942,
+  "sha256": "f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170",
+  "format": "JPEG",
+  "width": 2048,
+  "height": 1024,
+  "credit": "NASA's Scientific Visualization Studio",
+  "visualizer": "Ernie Wright (STC)",
+  "scientist": "Noah Petro (NASA/GSFC)",
+  "data": "Lunar Reconnaissance Orbiter Camera (LROC) Wide Angle Camera Hapke-normalized mosaic; polar fill from Lunar Orbiter Laser Altimeter albedo",
+  "projection": "global longitude-latitude equirectangular color map centered on 0 degrees longitude",
+  "mapping_note": "Center longitude confirmed by NASA source. Renderer must independently validate east/west handedness, lunar pole orientation and libration; a fixed front-facing texture is not an exact lunar attitude model.",
+  "bands_nm": {
+    "red": 643,
+    "green": 566,
+    "blue": 415
+  },
+  "rights": {
+    "basis": "NASA Images and Media Usage Guidelines",
+    "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "status": "NASA SVS item supplies this map for 3D rendering with NASA SVS credit. No separate third-party restriction was identified on the item. Do not imply endorsement or relicense as application MIT."
+  },
+  "limitations": [
+    "NASA describes this map as optimized for aesthetics, not science.",
+    "Color/exposure and white balance are adjusted; high-latitude gaps are filled.",
+    "This is a historical compiled lunar surface texture, not a live observation or calibrated display brightness.",
+    "Downloading this asset does not validate a renderer, surface orientation, phase model, angular scale or local visibility."
+  ],
+  "changes": "None; downloaded ready-sized original JPEG bytes, no image editing, cropping, resizing or transcoding."
+}

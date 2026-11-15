@@ -1,5 +1,30 @@
 # Validation record
 
+## Current immersive design pass — November 15, 2026, 16:32 MYT
+
+Local production checks passed: **58 TypeScript tests (7 files) + 21 scientific Python tests = 79 tests**, ESLint and TypeScript project checking through the production build. New checks cover finite Sun/Moon angular radii, orthonormal lunar attitude, a separate libration calculation, wider-context merge precedence/caps, pinned GLB topology and finite registered geometry. Existing schedule/reset, astronomy, data provenance and NASA/Tucson numerical reproduction checks still pass. This is automated verification, not field photometric calibration.
+
+Cached acquisition verifiers passed for all seven context statuses, both research model originals, Moon image, three paving maps, two source-reference photos, five WOFF2 binaries and three font licenses. `node scripts/verify-sky-package.mjs` verified **16,813,336 bytes (~16.03 MiB)**, byte equality with the production copy, every embedded scene map/context/near/far grid and available water asset, model, seven image assets, five fonts and catalog. There are no external script tags. The unused Opera House research model is retained under data/raw and excluded from public runtime output.
+
+Browser review used the production static server:
+
+- The full-width opening, self-hosted typography, primary Enter action, immersive Exit/Escape behavior, page-scroll restoration and source links worked. Camera travel reached the 12° Moon study. Its NASA texture, calculated crescent and explicit local-obstruction exception were visible. Normal station geometry remained separate.
+- All seven named stations reported mapped-3d with finite geometry. Penang’s replacement neighbourhood station reused the explicit asset ID and showed its terrace/rail/pots. Wider London/NY context remains unavailable while their near scenes work. Actual architecture/eye poses are not certified.
+- Midnight action selected the following local 00:05 and the scheduled combination. Comparison toggled and its keyboard divider moved from 50 to 96. Reset restored Now, artificial intensity 85, natural treatment, model-cloud option and labels/asterisms off. Opaque overcast visibly suppressed the Moon disk and stellar field. Artificial intensity 100 suppressed stars. Neither setting establishes a real-world brightness threshold.
+- Viewpoints and lighting drawers were mutually exclusive. The manual-coordinate entry remained reachable. Actual device geolocation was not requested in this pass. City/station selection and the IANA clock behavior remain covered by earlier browser review and current unit tests.
+- Enhanced survey detail retained a visible “NOT A NAKED-EYE PREDICTION” annotation in immersive quiet mode. Historical source photographs were separate, with attribution and pose/vintage limits.
+- At an explicitly verified **390×844** mobile viewport, the main app document was 375 px wide; the immersive document was 390 px wide. No document horizontal overflow appeared. The dock scrolls inside its own rail; viewport overrides were reset after review. This is desktop-browser emulation, not physical-device touch/performance testing.
+- The current standalone initialized its compressed bundles, rendered mapped-3d, exposed 4,105 embedded stars, seven scene entries, five embedded fonts, Moon/model assets and zero external scripts. A Penang station change rendered from the bundle. Inspected package warning/error logs were empty. Direct file-origin execution and deliberately disconnected networking were not tested.
+- Regression checks: NASA Time Machine retained 24 complete annual records, zero missing, 2001–2024. Sky Lab at 18:00 showed “Waiting for the schedule”; at midnight it was active; Reset restored 21:00 and default controls.
+
+Proof images under `evidence/browser/`: `realism-hero-desktop.png`, `realism-kl-night.png`, `realism-penang-terrace.png`, `realism-moon-study.png`, `realism-enhanced-survey.png`, `realism-severe-glare.png`, `realism-opaque-cloud.png`, `realism-mobile.png`, `realism-mobile-immersive.png`.
+
+Remaining limits: no outdoor comparison, exact star-detectability model, surveyed city mesh, live camera feed, broad GPU/browser matrix, physical-device performance, native full-screen success or assistive-technology certification. Local only: no deployment, remote push, online editor change or judging submission. Selected-challenge tab-resource eligibility remains unresolved; see the corrected official-answer references in CHALLENGE_REVIEW.md.
+
+## Earlier checkpoints
+
+The dated records below describe previous builds and are retained as history. Their test counts, package sizes, scene defaults and implementation limits do not override the current section above.
+
 November 15, 2026, Malaysia time. This file records observed results, not a guarantee of scientific or operational accuracy.
 
 ## Commands that passed

@@ -42,7 +42,7 @@ The central circular sky chart, restrained controls and evidence notebook use th
 - NASA CERES product description: https://ceres.larc.nasa.gov/Data/
 - Official challenge and November 13 submission/judging guides were consulted.
 
-NASA POWER is not listed in the challenge Resources tab. The current official submission guide requires use of a NASA data or resource without a tab restriction. The original brief’s stricter tab-listed-data requirement remains unmet; do not claim otherwise. NASA does not endorse this application, and eligibility is determined by the organizers.
+NASA POWER is not recorded in the selected challenge Resources tab. The official NASA/spaceapps answered discussions [1827](https://github.com/nasa/spaceapps/discussions/1827) and [1947](https://github.com/nasa/spaceapps/discussions/1947) explicitly require meaningful use of at least one NASA source from that tab for Global Awards. This corrects the earlier inference from the submission guide’s broader wording. No qualifying tab-listed source has been demonstrated in this build; Moon imagery and SRTM context do not resolve that condition. Organizer eligibility remains unresolved. NASA does not endorse this application.
 
 Black Marble VNP46A4 was evaluated but could not be downloaded without Earthdata sign-in. It is not an analyzed dataset in this version. The numerical investigation is aerosols; it is not a radiance trend investigation.
 
@@ -104,3 +104,7 @@ Describe the numerical source as attributed rounded published VIIRS aggregates f
 ## Prepared local addition: named viewpoints
 
 The Observatory adds seven named virtual outdoor stations, initially KL Tower Sky Deck looking toward the Petronas Twin Towers. Cached OSM footprint/building-part geometry and NASA/USGS SRTMGL3 V003 terrain align the city context with the calculated astronomical frame. Published landmark dimensions constrain simplified original geometry. Facades, materials, furniture shapes, paving and railings remain illustrative; no surveyed or exact photorealistic city is claimed. The selected date changes astronomy, not the city-construction vintage. Source references/provenance: docs/VIEWPOINT_SOURCES.md and data/viewpoint-{map,terrain}-sources.json. This local addition has not been copied to the official editor, deployed, pushed or submitted for judging.
+
+## Current design-pass handoff (local only)
+
+The Observatory now opens with an explicit Tonight preview, an immersive sky, progressive controls, wider mapped context, a georegistered attributed Petronas artist model, an assumed George Town terrace and a NASA LROC Moon surface with calculated size/phase/orientation. Separate historical reference photographs and source credits help users assess the reconstruction. Local fonts and all seven viewpoint bundles are included in the approximately 16.03 MiB standalone. City fine detail, domestic foreground and lighting appearance remain illustrative, not a live photograph or measured digital twin. No changes were made to the saved online editor, public deployment or judging submission during this pass. The corrected tab-listed-resource eligibility gap above must be resolved before claiming Global Awards eligibility.

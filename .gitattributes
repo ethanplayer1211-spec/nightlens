@@ -1,4 +1,7 @@
 * text=auto eol=lf
-data/raw/* -text
+data/raw/* -text -whitespace
 *.gz -text
 *.jpg -text
+*.glb -text
+*.woff2 -text
+public/fonts/OFL-*.txt -text -whitespace

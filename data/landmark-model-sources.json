@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "checkedOn": "2026-11-15",
+  "policy": "Only identified public Creative Commons archive originals acquired; original source and archive license match, and each GLB carries author/license/source extras. No account, authentication bypass, Sketchfab viewer extraction, paid content, model/image edits, or geometric accuracy certification.",
+  "acquiredModels": [
+    {
+      "id": "petronas-nanoray",
+      "title": "Petronas Twin Towers",
+      "author": "NanoRay",
+      "username": "NanoRay",
+      "sketchfabUid": "4111f3de53f24ab0a9547205723665b1",
+      "sourceUrl": "https://sketchfab.com/3d-models/petronas-twin-towers-4111f3de53f24ab0a9547205723665b1",
+      "sourceMetadataUrl": "https://api.sketchfab.com/v3/models/4111f3de53f24ab0a9547205723665b1",
+      "sourceMetadataFile": "data/raw/landmark-sketchfab-4111f3de53f24ab0a9547205723665b1.json",
+      "archiveProvider": "Ai2 Objaverse 1.0 public Creative Commons archive",
+      "archiveDatasetUrl": "https://huggingface.co/datasets/allenai/objaverse",
+      "downloadUrl": "https://huggingface.co/datasets/allenai/objaverse/resolve/main/glbs/000-142/4111f3de53f24ab0a9547205723665b1.glb",
+      "archiveMetadataShardFile": "data/raw/landmark-objaverse-metadata-000-142.json.gz",
+      "publicFile": "public/data/realism/models/petronas-nanoray.glb",
+      "rawFile": "data/raw/landmark-petronas-nanoray-original.glb",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "databaseLicense": "ODC-By 1.0 for Objaverse collection, separate from per-object license",
+      "databaseLicenseUrl": "https://opendatacommons.org/licenses/by/1-0/",
+      "retrievedAt": "2026-11-15T07:41:04.971349+00:00",
+      "bytes": 1854460,
+      "sha256": "3739ad4444330c151614b80ea65773726acf28b8f2089a98b060a5072f5aa29b",
+      "meshCount": 5,
+      "materialCount": 5,
+      "embeddedImageCount": 0,
+      "faceCountFromSource": 47988,
+      "glbAssetExtras": {
+        "author": "NanoRay (https://sketchfab.com/NanoRay)",
+        "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+        "source": "https://sketchfab.com/3d-models/petronas-twin-towers-4111f3de53f24ab0a9547205723665b1",
+        "title": "Petronas Twin Towers"
+      },
+      "extensionsRequired": [],
+      "changes": "None. Public GLB equals the preserved original downloaded GLB byte for byte.",
+      "registrationAndAccuracyLimits": "Source is an artist-authored model, not surveyed CAD. Original local bounds are [-24.822,-180.5,-16.75] to [30,0,10]. Source height 180.5 units requires deliberate scale and bearing registration to published real-world dimensions and mapped tower anchors. Root node includes rotation/translation; apply full hierarchy before alignment. No facades or textures were edited.",
+      "triangleCountFromGlbIndices": 47772,
+      "countNote": "The downloaded GLB contains 47,772 indexed triangles; the source API reports 47,988 faces. Preserve both counts without claiming they are identical."
+    },
+    {
+      "id": "opera-house-nickardiamond",
+      "title": "Sydney Opera House",
+      "author": "Nick Reinhardt",
+      "username": "Nickardiamond",
+      "sketchfabUid": "317b2d540f0a4f7e8d87dd3b0372712d",
+      "sourceUrl": "https://sketchfab.com/3d-models/sydney-opera-house-317b2d540f0a4f7e8d87dd3b0372712d",
+      "sourceMetadataUrl": "https://api.sketchfab.com/v3/models/317b2d540f0a4f7e8d87dd3b0372712d",
+      "sourceMetadataFile": "data/raw/landmark-sketchfab-317b2d540f0a4f7e8d87dd3b0372712d.json",
+      "archiveProvider": "Ai2 Objaverse 1.0 public Creative Commons archive",
+      "archiveDatasetUrl": "https://huggingface.co/datasets/allenai/objaverse",
+      "downloadUrl": "https://huggingface.co/datasets/allenai/objaverse/resolve/main/glbs/000-141/317b2d540f0a4f7e8d87dd3b0372712d.glb",
+      "archiveMetadataShardFile": "data/raw/landmark-objaverse-metadata-000-141.json.gz",
+      "publicFile": null,
+      "rawFile": "data/raw/landmark-opera-nickardiamond-original.glb",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "databaseLicense": "ODC-By 1.0 for Objaverse collection, separate from per-object license",
+      "databaseLicenseUrl": "https://opendatacommons.org/licenses/by/1-0/",
+      "retrievedAt": "2026-11-15T07:44:14.494966+00:00",
+      "bytes": 11466660,
+      "sha256": "584749e10aca32d57c4a5c3aa65447273e01373ced2b6ad0132584ec7cd08a5f",
+      "meshCount": 10,
+      "materialCount": 10,
+      "embeddedImageCount": 23,
+      "faceCountFromSource": 62424,
+      "glbAssetExtras": {
+        "author": "Nick Reinhardt (https://sketchfab.com/Nickardiamond)",
+        "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+        "source": "https://sketchfab.com/3d-models/sydney-opera-house-317b2d540f0a4f7e8d87dd3b0372712d",
+        "title": "Sydney Opera House"
+      },
+      "extensionsRequired": [],
+      "changes": "None. Public GLB equals the preserved original downloaded GLB byte for byte.",
+      "registrationAndAccuracyLimits": "Author describes a Stylized Station challenge model, made in Blender with Substance Painter PBR. This is artistic geometry with decorative scene context, not a surveyed heritage model. Full node hierarchy and optional scene-context meshes must be inspected before placement. All embedded source images remain untouched; no claim of exact architectural or facade accuracy.",
+      "distribution": "Research-only original retained in data/raw; not shipped or rendered."
+    }
+  ],
+  "otherCandidates": [
+    {
+      "id": "3dmr-petronas-3",
+      "url": "https://3dmr.eu/model/3",
+      "metadataUrl": "https://3dmr.eu/api/info/3",
+      "sourceLicenseLabel": "CC0 1.0",
+      "upstreamSource": "https://www.turbosquid.com/FullPreview/Index.cfm/ID/311222",
+      "status": "not acquired",
+      "reason": "Primary repository page and API description both retain uploader note: I am checking about Extended Uses Clearances. CC0 label therefore does not resolve conflicting upstream source/clearance evidence. No binary downloaded."
+    },
+    {
+      "id": "kl-tower",
+      "status": "no rights-clear downloadable small model established",
+      "candidateUrl": "https://www.turbosquid.com/Search/3D-Models/landmarks?free=true",
+      "reason": "Free Menara KL Tower listing is marketplace standard/editorial content, not a verified open-redistribution grant. No account flow, purchase, or viewer extraction performed."
+    },
+    {
+      "id": "brooklyn-cmbc",
+      "url": "https://sketchfab.com/3d-models/0aeb37ea6cdf480aab19eb204f5255ee",
+      "license": "CC BY 4.0",
+      "archiveUrl": "https://huggingface.co/datasets/allenai/objaverse/resolve/main/glbs/000-090/0aeb37ea6cdf480aab19eb204f5255ee.glb",
+      "status": "not acquired: exceeds bound",
+      "remoteContentLength": 161319676,
+      "reason": "HEAD reported 161,319,676 bytes versus 15 MB bound; source API reports 1,480,678 faces. No binary fetched."
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "data/raw/landmark-3dmr-petronas-info.json",
+      "bytes": 361,
+      "sha256": "ee8adaff63a01b88d977a723d5c537c20d1318d1c99fad435bde50ea0799020e"
+    },
+    {
+      "path": "data/raw/landmark-objaverse-metadata-000-141.json.gz",
+      "bytes": 3590381,
+      "sha256": "1fda906da222df7d1ca4b50628d7974e470401fc0a54eeac2c5770f5360c3e92"
+    },
+    {
+      "path": "data/raw/landmark-objaverse-metadata-000-142.json.gz",
+      "bytes": 3593175,
+      "sha256": "65ce47bebe6d1a450e835d20e3281d3b0a5beb1d33d8a832b9869e8ee622343e"
+    },
+    {
+      "path": "data/raw/landmark-objaverse-object-paths.json.gz",
+      "bytes": 19803736,
+      "sha256": "db88ff78942613f10566ec4723fb8b8f558c37ffe8e78a8fc5428a20b93886a0"
+    },
+    {
+      "path": "data/raw/landmark-opera-nickardiamond-objaverse-metadata.json",
+      "bytes": 6747,
+      "sha256": "0c6595afaf635a2e2bbfc352b1124e969829c814c66ec8672d7cdbe16c55f455"
+    },
+    {
+      "path": "data/raw/landmark-opera-nickardiamond-original.glb",
+      "bytes": 11466660,
+      "sha256": "584749e10aca32d57c4a5c3aa65447273e01373ced2b6ad0132584ec7cd08a5f"
+    },
+    {
+      "path": "data/raw/landmark-petronas-nanoray-objaverse-metadata.json",
+      "bytes": 5447,
+      "sha256": "725c3c491abbf232b676a7bafa5b4e6524762f6c4bcbe47c791df0dcaa8fd336"
+    },
+    {
+      "path": "data/raw/landmark-petronas-nanoray-original.glb",
+      "bytes": 1854460,
+      "sha256": "3739ad4444330c151614b80ea65773726acf28b8f2089a98b060a5072f5aa29b"
+    },
+    {
+      "path": "data/raw/landmark-sketchfab-0aeb37ea6cdf480aab19eb204f5255ee.json",
+      "bytes": 5082,
+      "sha256": "0576ca8d6043a8ad4740a843cd7d7868bcb55e30afd63378c17bd68efafdbacc"
+    },
+    {
+      "path": "data/raw/landmark-sketchfab-317b2d540f0a4f7e8d87dd3b0372712d.json",
+      "bytes": 6491,
+      "sha256": "8e2ba806ed3ece77346f1e3cda9a3ea88b2396ebdfa22469830848355d9a0ddc"
+    },
+    {
+      "path": "data/raw/landmark-sketchfab-4111f3de53f24ab0a9547205723665b1.json",
+      "bytes": 5536,
+      "sha256": "c9c2dc1dc20d114da490c63c3e97e9ae86462f4ed91484336c6f204c2e5c65e8"
+    },
+    {
+      "path": "data/raw/landmark-sketchfab-8921d6616c10447d9025e4bbb7b9bb7c.json",
+      "bytes": 4104,
+      "sha256": "a3ddcf8ef50a2fb989627317047c1799fbaf84664b296b6802d816aa7e51c67c"
+    }
+  ],
+  "datasetAttribution": "Objaverse: A Universe of Annotated 3D Objects, Deitke et al., 2022; Ai2 and University of Washington; https://arxiv.org/abs/2212.08051"
+}

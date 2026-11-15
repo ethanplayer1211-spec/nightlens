@@ -8,7 +8,9 @@ void main(){screen=position;gl_Position=vec4(position,0.0,1.0);}`;
 const fragmentSource = `
 precision highp float;
 varying vec2 screen;
-uniform sampler2D survey;
+uniform sampler2D survey,moonTexture;
+uniform float hasMoonTexture,moonRadius,sunRadius,pixelAngle,moonVisible,moonPhase;
+uniform mat3 worldToMoon;
 uniform float hasSurvey;
 uniform mat3 worldToGalactic;
 uniform vec3 forward,rightward,upward,sunDirection,moonDirection;
@@ -70,6 +72,27 @@ void main(){
   color+=lamp*pow(light,1.3)*(.22+.78*horizon)*(1.0-daylight*.9)*(1.0+haze*.7);
   color+=vec3(.018,.026,.042)*moonLight*(.5+.5*horizon)*(1.0-daylight);
   color+=lamp*glare*fixtureGlare*light*.20*(1.0-daylight);
+  // Finite angular disks, actual phase and IAU lunar attitude. Tone mapping is illustrative.
+  float moonCos=dot(ray,moonDirection),moonEdge=cos(moonRadius),aa=max(.0000001,pixelAngle*sin(moonRadius));
+  float lunarDisk=smoothstep(moonEdge-aa,moonEdge+aa,moonCos)*moonVisible;
+  if(lunarDisk>0.0){
+    vec3 tangentNormal=(ray-moonDirection*moonCos)/sin(moonRadius);
+    vec3 normal=normalize(tangentNormal-moonDirection*sqrt(max(0.0,1.0-dot(tangentNormal,tangentNormal))));
+    vec3 surface=worldToMoon*normal;
+    vec2 lunarUV=vec2(fract(.5+atan(surface.y,surface.x)/(2.0*PI)),.5-asin(clamp(surface.z,-1.0,1.0))/PI);
+    vec3 albedo=mix(vec3(.58),texture2D(moonTexture,lunarUV).rgb,hasMoonTexture);
+    vec3 tangentSun=sunDirection-moonDirection*dot(sunDirection,moonDirection);vec3 sunward=tangentSun/max(.000001,length(tangentSun));
+    float k=moonPhase*2.0-1.0;
+    vec3 lunarSun=sunward*sqrt(max(0.0,1.0-k*k))-moonDirection*k;
+    float lunarDiffuse=max(0.0,dot(normal,lunarSun));
+    vec3 lunarColor=albedo*(pow(lunarDiffuse,.48)*1.25+.008*(1.0-moonPhase));
+    lunarColor=mix(lunarColor,lunarColor*.55+day*.24,daylight);
+    color=mix(color,lunarColor,lunarDisk);
+  }
+  float angularSeparation=acos(clamp(moonCos,-1.0,1.0));
+  color+=vec3(.12,.15,.20)*moonLight*exp(-angularSeparation*angularSeparation/(.0005+haze*.004))*.18;
+  float sunDisk=smoothstep(cos(sunRadius)-pixelAngle*sin(sunRadius),cos(sunRadius)+pixelAngle*sin(sunRadius),dot(ray,sunDirection))*step(0.0,sunAltitude);
+  color=mix(color,vec3(1.0,.97,.86),sunDisk);
   float pattern=cloudField(ray*7.0+vec3(7,3,19));
   float cloudMask=smoothstep(1.0-clouds-.13,1.0-clouds+.13,pattern)*step(.001,clouds);
   if(clouds>.995)cloudMask=1.0;
@@ -80,7 +103,7 @@ void main(){
 
 export interface SkyGPU { draw: (props: ImmersiveSkyProps, width: number, height: number) => void; destroy: () => void }
 
-export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void, onImageError: () => void): SkyGPU | null {
+export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void, onImageError: () => void,onMoonStatus:(ready:boolean)=>void=()=>{}): SkyGPU | null {
   const gl = canvas.getContext('webgl', { alpha: false, antialias: false, powerPreference: 'low-power' });
   if (!gl) return null;
   const compile = (type: number, source: string) => {
@@ -90,7 +113,7 @@ export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void
     return shader;
   };
   let vertex: WebGLShader | null = null, fragment: WebGLShader | null = null;
-  let program: WebGLProgram | null = null, buffer: WebGLBuffer | null = null, texture: WebGLTexture | null = null;
+  let program: WebGLProgram | null = null, buffer: WebGLBuffer | null = null, texture: WebGLTexture | null = null,moonTexture:WebGLTexture|null=null;
   try {
     vertex = compile(gl.VERTEX_SHADER, vertexSource); fragment = compile(gl.FRAGMENT_SHADER, fragmentSource);
     program = gl.createProgram(); if (!program) throw new Error('Sky program unavailable');
@@ -104,14 +127,16 @@ export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, 1, 1, 0, gl.RGB, gl.UNSIGNED_BYTE, new Uint8Array([0, 0, 0]));
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-    const names = ['survey','hasSurvey','worldToGalactic','forward','rightward','upward','sunDirection','tangent','aspect','sunAltitude','moonLight','pollution','baselinePollution','comparison','split','clouds','moonDirection','haze','cloudOpacity','glare','fixtureGlare','warmth','exposure','horizonKind','eyeHeight'];
+    const names = ['survey','hasSurvey','worldToGalactic','forward','rightward','upward','sunDirection','tangent','aspect','sunAltitude','moonLight','pollution','baselinePollution','comparison','split','clouds','moonDirection','haze','cloudOpacity','glare','fixtureGlare','warmth','exposure','horizonKind','eyeHeight','moonTexture','hasMoonTexture','moonRadius','sunRadius','pixelAngle','moonVisible','moonPhase','worldToMoon'];
     const uniforms = Object.fromEntries(names.map(name => [name, gl.getUniformLocation(program!, name)]));
     gl.uniform1i(uniforms.survey, 0);
-    let loaded = false, disposed = false;
+    moonTexture=gl.createTexture();gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,moonTexture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,1,1,0,gl.RGB,gl.UNSIGNED_BYTE,new Uint8Array([148,148,148]));gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.uniform1i(uniforms.moonTexture,1);
+    let loaded = false,moonLoaded=false,disposed = false;
+    const moonImage=new Image();moonImage.onload=()=>{if(disposed)return;gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,moonTexture);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,moonImage);moonLoaded=true;onMoonStatus(true);onImageReady();};moonImage.onerror=()=>{if(!disposed)onMoonStatus(false);};moonImage.src=document.getElementById('nightlens-moon-texture')?.getAttribute('src')??'/data/moon-lroc-2025-2k.jpg';
     const image = new Image();
     image.onload = () => {
       if (disposed) return;
-      gl.bindTexture(gl.TEXTURE_2D, texture);
+      gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D, texture);
       // No flip: DOM image top row is sampled at v=0; Galactic north maps to v=0.
       gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, image);
@@ -122,7 +147,7 @@ export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void
     return {
       draw(props, width, height) {
         if (disposed || !width || !height || gl.isContextLost()) return;
-        gl.viewport(0, 0, width, height); gl.useProgram(program);
+        gl.viewport(0, 0, width, height); gl.useProgram(program);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,texture);gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,moonTexture);
         const rad = Math.PI / 180, az = props.camera.azimuth * rad, alt = props.camera.altitude * rad;
         gl.uniform3f(uniforms.forward, Math.cos(alt) * Math.sin(az), Math.sin(alt), Math.cos(alt) * Math.cos(az));
         gl.uniform3f(uniforms.rightward, Math.cos(az), 0, -Math.sin(az));
@@ -131,7 +156,9 @@ export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void
         gl.uniform3f(uniforms.sunDirection, Math.cos(sh) * Math.sin(sa), Math.sin(sh), Math.cos(sh) * Math.cos(sa));
         const m = props.worldToGalactic;
         gl.uniformMatrix3fv(uniforms.worldToGalactic, false, new Float32Array([m[0],m[3],m[6],m[1],m[4],m[7],m[2],m[5],m[8]]));
-        gl.uniform1f(uniforms.hasSurvey, loaded ? 1 : 0);
+        gl.uniform1f(uniforms.hasSurvey, loaded ? 1 : 0);gl.uniform1f(uniforms.hasMoonTexture,moonLoaded?1:0);
+        const lunar=props.sky.worldToMoon;gl.uniformMatrix3fv(uniforms.worldToMoon,false,new Float32Array([lunar[0],lunar[3],lunar[6],lunar[1],lunar[4],lunar[7],lunar[2],lunar[5],lunar[8]]));
+        gl.uniform1f(uniforms.moonRadius,props.sky.moonAngularRadius*rad);gl.uniform1f(uniforms.sunRadius,props.sky.sunAngularRadius*rad);gl.uniform1f(uniforms.pixelAngle,Math.tan(props.camera.fieldOfView*rad/2)*2/width);gl.uniform1f(uniforms.moonPhase,props.sky.moonIllumination);gl.uniform1f(uniforms.moonVisible,props.sky.moonAltitude>=0?1:0);
         gl.uniform1f(uniforms.tangent, Math.tan(props.camera.fieldOfView * rad / 2)); gl.uniform1f(uniforms.aspect, width / height);
         gl.uniform1f(uniforms.sunAltitude, props.sky.sunAltitude);
         gl.uniform1f(uniforms.moonLight, (props.filters.moonlightEnabled ? 1 : 0) * Math.max(0, Math.sin(props.sky.moonAltitude * rad)) * props.sky.moonIllumination);
@@ -146,10 +173,10 @@ export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void
         gl.uniform1f(uniforms.horizonKind,['local','rooftop','coast','meadow','viewpoint'].indexOf(props.filters.horizon));gl.uniform1f(uniforms.eyeHeight,props.filters.observerHeight);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
       },
-      destroy() { disposed = true; image.onload = null; image.onerror = null; gl.deleteTexture(texture); gl.deleteBuffer(buffer); gl.deleteProgram(program); gl.deleteShader(vertex); gl.deleteShader(fragment); },
+      destroy() { disposed = true; image.onload = null; image.onerror = null;moonImage.onload=null;moonImage.onerror=null; gl.deleteTexture(texture);gl.deleteTexture(moonTexture); gl.deleteBuffer(buffer); gl.deleteProgram(program); gl.deleteShader(vertex); gl.deleteShader(fragment); },
     };
   } catch {
-    if (texture) gl.deleteTexture(texture); if (buffer) gl.deleteBuffer(buffer); if (program) gl.deleteProgram(program); if (vertex) gl.deleteShader(vertex); if (fragment) gl.deleteShader(fragment);
+    if (texture) gl.deleteTexture(texture);gl.deleteTexture(moonTexture); if (buffer) gl.deleteBuffer(buffer); if (program) gl.deleteProgram(program); if (vertex) gl.deleteShader(vertex); if (fragment) gl.deleteShader(fragment);
     return null;
   }
 }
