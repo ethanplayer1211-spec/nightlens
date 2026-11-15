@@ -23,7 +23,7 @@ npm run build
 npm run preview -- --port 4173
 ```
 
-Production output: `dist/`. Deploy as a static Vite app; no Python server is required. See `docs/DEPLOYMENT.md`. Nothing has been published or submitted from this checkout.
+Production output: `dist/`. Deploy as a static Vite app; no Python server is required. See `docs/DEPLOYMENT.md`. Public version 1: https://nightlens-sky-atlas.leveling-magician.chatgpt.site. Final judging submission has not been performed.
 
 ## Implemented
 

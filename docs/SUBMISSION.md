@@ -17,7 +17,9 @@ https://www.spaceappschallenge.org/2026/challenges/earth-system-trend-detective/
 
 ## Link to final project
 
-PENDING PUBLICATION — insert the public URL only after deployment and an unauthenticated access check. The local preview URL is not a public submission link.
+https://nightlens-sky-atlas.leveling-magician.chatgpt.site
+
+Public Sites version 1 deployed and anonymously verified on 15 November 2026 at 22:18 MYT. This URL is ready to paste into the official project editor; the editor was not modified during publication.
 
 ## Link to project demo
 

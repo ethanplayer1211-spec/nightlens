@@ -1,0 +1,20 @@
+{
+  "project_id": "appgprj_6af9bd2df6248191a5dd1aeccf732bb9",
+  "version_id": "appgprj_6af9bd2df6248191a5dd1aeccf732bb9~appgver_399820a47de481919d8384d1f6cac8ea",
+  "version_number": 1,
+  "deployment_id": "appgdep_6af9bf1724808191bb033da97da7b688",
+  "status": "succeeded",
+  "audience": "public",
+  "access_revision": 2,
+  "url": "https://nightlens-sky-atlas.leveling-magician.chatgpt.site",
+  "source_commit": "3401e3f73241068962d6f3922037b4eec51c4258",
+  "deployed_at_utc": "2026-11-15T14:18:30.756320+00:00",
+  "anonymous_http": {
+    "homepage": 200,
+    "modis_json": 200,
+    "original_csv": 200
+  },
+  "published_csv_sha256": "121f595c5668c0fe56c51537c959e1bac660195b5527da2a049538adf23dc299",
+  "browser_smoke": "Mapped sky, scheduled comparison and NASA trend verified; no observed console errors/warnings.",
+  "judging_submission": "Not performed; hosting approval only."
+}
