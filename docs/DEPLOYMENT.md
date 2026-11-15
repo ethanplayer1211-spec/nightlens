@@ -1,6 +1,11 @@
 # Deployment handoff
 
-NightLens is a static Vite application. **Version 2 was publicly deployed through Sites on 15 November 2026 at 22:55 MYT:** https://nightlens-sky-atlas.leveling-magician.chatgpt.site. The owner explicitly approved public hosting. Final judging submission was not performed.
+NightLens is a static Vite application. **Sites version 3 was publicly deployed on 15 November 2026 at 23:41 MYT:** https://nightlens-sky-atlas.leveling-magician.chatgpt.site . Public access was explicitly authorized. No runtime credentials are needed. Deployed application source: `4fc5888a183975a73de62e0657fe660df4c3b6b3`.
+
+- Public seven-slide demo: https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/
+- Public project/source: https://github.com/ethanplayer1211-spec/nightlens
+- Final judging submission remains separate and requires owner approval.
+- Anonymous asset and NASA-export checks passed; see `VALIDATION.md`.
 
 ## Vercel (preferred in the supplied brief)
 

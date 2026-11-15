@@ -5,3 +5,6 @@ data/raw/* -text -whitespace
 *.glb -text
 *.woff2 -text
 public/fonts/OFL-*.txt -text -whitespace
+
+*.pdf binary
+*.png binary

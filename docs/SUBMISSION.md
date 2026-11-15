@@ -1,6 +1,6 @@
 # NightLens — final submission review
 
-**Prepared 15 November 2026. A saved draft is not submitted for judging.**
+**Official draft saved 15 November 2026 at 23:37 MYT; public release verified at 23:42 MYT. A saved draft is not submitted for judging.**
 
 ## Links
 
