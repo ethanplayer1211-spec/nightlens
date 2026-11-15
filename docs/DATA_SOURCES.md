@@ -77,3 +77,14 @@ DarkSky International and Illuminating Engineering Society, Five Principles for 
 https://darksky.org/resources/guides-and-how-tos/lighting-principles/
 
 Principles are paraphrased and attributed in the Evidence notebook. No certification, endorsement, quantitative performance model or safety standard is implied.
+
+
+## Human-lighting intervention evidence (added)
+
+NASA Earth Observatory documents the Tucson 2019 experiment: https://science.nasa.gov/earth/earth-observatory/experimenting-with-tucson-night-lights-148259/ . The numerical source is Kyba et al., DOI 10.1177/1477153520958463, Table 6: https://journals.sagepub.com/doi/full/10.1177/1477153520958463?journalCode=lrtd . Six factual city-level observations are transcribed at published precision in `data/raw/tucson-2019-table6.json`, hashed, processed by `scripts/analyze_intervention.py` and exported to `public/data/tucson-intervention.json`. Data are authors' corrected/uncorrected aggregates from NOAA-generated Suomi NPP VIIRS records, not raw NASA Black Marble. No full-precision raster/lamp download occurred. The publisher's mW/MW header discrepancy and normalization are explicitly documented.
+
+Barentine et al. (2020), DOI 10.1016/j.jqsrt.2020.107120, Table 7 supplies separately reported ground-sky reductions and measurement uncertainties: https://www.johncbarentine.com/uploads/7/8/0/8/78081652/barentine-et-al-2020.pdf . These are cited published findings, not new NightLens ground measurements. Article figures/full text are not bundled or relicensed. Full provenance, corrections and limitations: `TUCSON_EVIDENCE.md`.
+
+## OpenStreetMap surroundings (added)
+
+Overpass: https://overpass-api.de/api/interpreter ; API documentation https://wiki.openstreetmap.org/wiki/Overpass_API ; contributor credit and ODbL 1.0 https://www.openstreetmap.org/copyright . The Penang raw response, compact geometry, exact query URL, retrieval/source timestamps and SHA-256 are retained under `data/raw/osm-penang.json`, `public/data/horizon-penang.json` and `data/osm-sources.json`. Script: `scripts/acquire_horizons.py`. All 909 footprints are preserved; the renderer shows a bounded nearby subset. Heights/facades and the outdoor/raised viewpoint are approximations; geometry is not a photograph or surveyed terrain. Failed optional acquisitions are recorded without fabricated substitutes.

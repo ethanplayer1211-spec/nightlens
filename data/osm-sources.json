@@ -1,0 +1,43 @@
+{
+  "sources": [
+    {
+      "provider": "OpenStreetMap contributors via Overpass API",
+      "sourceUrl": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3Bway%5B%22building%22%5D%28around%3A450%2C5.4141%2C100.3354%29%3Bout+tags+geom%3B",
+      "query": "[out:json][timeout:25];way[\"building\"](around:450,5.4141,100.3354);out tags geom;",
+      "retrievedAt": "2026-11-15T04:18:03.237356+00:00",
+      "osmTimestamp": "2026-11-15T04:16:20Z",
+      "rawFile": "data/raw/osm-penang.json",
+      "rawSha256": "d5d2e0f2dc0d5b0c13ce74c92755293fbc5e5f800b43c54ff151228497d0b9ad",
+      "license": "ODbL 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attribution": "© OpenStreetMap contributors",
+      "attributionUrl": "https://www.openstreetmap.org/copyright",
+      "changes": "Selected building ways; retained source id, tags and geometry; compact JSON encoding. Relation multipolygons and terrain are not included. Heights are map tags where available; renderer assumptions must be labeled separately.",
+      "id": "penang",
+      "observer": {
+        "latitude": 5.4141,
+        "longitude": 100.3354
+      },
+      "radiusMeters": 450,
+      "outputFile": "public/data/horizon-penang.json",
+      "rawBytes": 532408,
+      "buildingWays": 909,
+      "waysWithHeightTag": 0,
+      "waysWithLevelsTag": 117
+    }
+  ],
+  "failedAcquisitions": [
+    {
+      "id": "seoul",
+      "attemptedAt": "2026-11-15T04:19:59.260598+00:00",
+      "error": "HTTP 502 Bad Gateway from Overpass; one attempt, no retry",
+      "dataCached": false
+    },
+    {
+      "id": "tucson",
+      "attemptedAt": "2026-11-15T04:19:59.260598+00:00",
+      "error": "Overpass read timed out after40seconds; one attempt, no retry",
+      "dataCached": false
+    }
+  ]
+}

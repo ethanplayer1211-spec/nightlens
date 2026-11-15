@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "tucson-2019-published-table6",
+  "title": "Tucson 2019 municipal streetlight dimming experiment",
+  "source": {
+    "kind": "Factual transcription of a published table, not a raw satellite download",
+    "citation": "Kyba et al. (2020 online; 2021 issue), Direct measurement of the contribution of street lighting to satellite observations of nighttime light emissions from urban areas, Lighting Research & Technology 53(3), 189–211",
+    "doi": "10.1177/1477153520958463",
+    "url": "https://journals.sagepub.com/doi/full/10.1177/1477153520958463?journalCode=lrtd",
+    "table": "Table 6; units corroborated by section 2.1 and Table 1; corrections in section 2.2 and Table 4",
+    "transcribedOn": "2026-11-15",
+    "transcription": "Six city-level observations preserved at the precision reported in Table 6. These are rounded published aggregate observations, not the authors' full-precision pixel or lamp data. Table 1 and Table 6 contain slightly different power values (for example 1010 kW versus 1.00 in the final row); Table 6 is retained without silently replacing its values.",
+    "nasaStoryUrl": "https://science.nasa.gov/earth/earth-observatory/experimenting-with-tucson-night-lights-148259/",
+    "nasaStoryRole": "NASA Earth Observatory context for a joint NASA-NOAA Suomi NPP VIIRS experiment; not the numerical table source",
+    "instrument": "Suomi NPP VIIRS Day/Night Band, approximately 750 m original spatial resolution, 500–900 nm spectral window",
+    "product": "NOAA-generated Sensor Data Records obtained by the authors through NOAA CLASS; not NASA Black Marble VNP46A2/VNP46A4",
+    "selection": "Six overpasses selected by the authors as cloud-free over Tucson; April 7 used only its second, cloud-free overpass. Moonlight and twilight were absent. Observation unit is one selected night, not one resampled pixel.",
+    "correction": "Authors resampled onto a 50 m equal-area grid, area-weighted the sums and divided by 400 to normalize relative to 1 km². They subtracted an airglow/background zero point from dark control hexagons and divided by a multiplicative factor based on nearby lit nonparticipating communities. Published corrected sums are used directly; original raster processing is not reproduced here.",
+    "dataAvailability": "Lamp-by-lamp operating records are available from the authors upon request; no downloadable full-precision numerical dataset was acquired. This artifact contains only factual values transcribed from the published tables.",
+    "rights": "Article is free to read, copyright The Chartered Institution of Building Services Engineers 2020. No Creative Commons or open-data license for the article was verified. Factual numerical transcription is attributed; no article text, figures or full PDF are redistributed or relicensed."
+  },
+  "units": {
+    "powerMW": "MW of municipal streetlight electrical power",
+    "sourcePowerHeader": "The publisher's HTML Table 6 renders the header as mW. The values are normalized here as MW, corroborated by section 2.1's explicit 1.46 MW network total and Table 1's corresponding kW values. No assertion is made that the HTML header is an authoritative milliwatt unit.",
+    "rawSum": "nW cm⁻² sr⁻¹ relative to a 1 km² area, under the authors' sum-of-lights normalization",
+    "correctedSum": "nW cm⁻² sr⁻¹ relative to a 1 km² area, under the authors' sum-of-lights normalization",
+    "sumInterpretation": "An area-normalized aggregate, not lumens, electrical energy, ground zenith brightness or the ordinary mean radiance of a single pixel"
+  },
+  "observations": [
+    { "date": "2019-03-29", "powerMW": 0.70, "rawSum": 9280, "correctedSum": 9550, "localOverpassTime": "02:25", "nadirAngleDegrees": 21.9, "zeroOffset": 1.75, "multiplicativeOffset": 0.961, "condition": "dim" },
+    { "date": "2019-03-31", "powerMW": 0.68, "rawSum": 9500, "correctedSum": 9440, "localOverpassTime": "01:47", "nadirAngleDegrees": 32.2, "zeroOffset": 2.40, "multiplicativeOffset": 0.990, "condition": "dim" },
+    { "date": "2019-04-03", "powerMW": 0.67, "rawSum": 9370, "correctedSum": 9280, "localOverpassTime": "02:31", "nadirAngleDegrees": 29.5, "zeroOffset": 2.59, "multiplicativeOffset": 0.993, "condition": "dim" },
+    { "date": "2019-04-07", "powerMW": 1.38, "rawSum": 11400, "correctedSum": 10200, "localOverpassTime": "02:56", "nadirAngleDegrees": 48.8, "zeroOffset": 4.30, "multiplicativeOffset": 1.087, "condition": "bright" },
+    { "date": "2019-04-08", "powerMW": 1.06, "rawSum": 9920, "correctedSum": 9850, "localOverpassTime": "02:37", "nadirAngleDegrees": 35.9, "zeroOffset": 3.02, "multiplicativeOffset": 0.989, "condition": "standard" },
+    { "date": "2019-04-11", "powerMW": 1.00, "rawSum": 10200, "correctedSum": 9860, "localOverpassTime": "01:41", "nadirAngleDegrees": 38.4, "zeroOffset": 1.64, "multiplicativeOffset": 1.024, "condition": "standard" }
+  ],
+  "publishedFindings": {
+    "satelliteStreetlightContribution": {
+      "estimatePercent": 13,
+      "ci95Percent": [10, 16],
+      "undimmedEstimatePercent": 18,
+      "undimmedCI95Percent": [15, 23],
+      "sourceUrl": "https://doi.org/10.1177/1477153520958463",
+      "scope": "Authors' estimates for municipal streetlights' contribution to satellite-observed Tucson radiance after midnight, not a percentage reduction in ground skyglow and not this rounded-table reanalysis",
+      "uncertainty": "Published statistical confidence intervals omit systematic uncertainties"
+    },
+    "groundSkyChanges": {
+      "citation": "Barentine et al. (2020), Recovering the city street lighting fraction from skyglow measurements in a large-scale municipal dimming experiment, JQSRT 253, 107120",
+      "doi": "10.1016/j.jqsrt.2020.107120",
+      "sourceUrl": "https://www.johncbarentine.com/uploads/7/8/0/8/78081652/barentine-et-al-2020.pdf",
+      "table": "Table 7, printed page 13; measurement uncertainty described in section 3.3, printed page 7",
+      "program": "Municipal test program 90% before midnight to 30% after midnight; actual responses varied and essential crossing/intersection lighting was retained",
+      "sites": [
+        { "name": "Reid Park", "changePercent": -5.4, "uncertaintyPercentagePoints": 0.9 },
+        { "name": "Tanque Verde", "changePercent": -3.6, "uncertaintyPercentagePoints": 0.9 }
+      ],
+      "uncertainty": "Reported measurement uncertainty from 1σ scatter with an instrument-resolution floor of approximately 0.9% luminance; not a 95% confidence interval",
+      "scope": "Ground-based zenith sky brightness at these Tucson study sites, kept separate from satellite upward radiance and from NightLens's hypothetical rendering",
+      "rights": "Copyright Elsevier 2020, all rights reserved. Only factual reported numbers and attribution are included; paper and figures are not redistributed."
+    }
+  }
+}

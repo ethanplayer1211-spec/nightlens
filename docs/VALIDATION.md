@@ -4,8 +4,8 @@ November 15, 2026, Malaysia time. This file records observed results, not a guar
 
 ## Commands that passed
 
-- `npm test`: 34 tests, 4 files. Schedule/reset/determinism, UTC handling, astronomy projection/library comparison, data provenance/units/raw values, short-series handling, exports and schema validation.
-- `.\.venv\Scripts\python.exe -m pytest tests/test_analysis.py -q`: 10 tests. Calendar weighting, missing/nonfinite/fill data, duplicate month rejection, independent SciPy regression comparison, and regeneration of every Penang/Seoul analysis window from the original NASA responses.
+- `npm test`: 47 tests, 5 files. Schedule/reset/determinism, UTC handling, astronomy projection/library comparison, data provenance/units/raw values, short-series handling, exports and schema validation.
+- `.\.venv\Scripts\python.exe -m pytest tests/test_analysis.py tests/test_intervention.py -q`: 21 tests. Calendar weighting, missing/nonfinite/fill data, duplicate month rejection, independent SciPy regression comparison, and regeneration of every Penang/Seoul analysis window from the original NASA responses.
 - `npm run typecheck`: strict TypeScript project check.
 - `npm run lint`: ESLint.
 - `npm run build`: TypeScript plus Vite production bundle.
@@ -66,3 +66,31 @@ Project text, actual NASA references, other-source credits and AI-use categories
 - Regression browser smoke checks confirmed the existing City Experiment moves from waiting to active, resets, and the Time Machine still displays 24 complete NASA annual values for 2001–2024. The Python reproduction tests verified its numerical outputs remain unchanged.
 - Claude Code returned HTTP 403 `oauth_not_allowed_for_organization` before producing code; no contribution from Claude is claimed. The owner-approved integration was attempted, not completed.
 - The saved Space Apps draft was not modified for this extension. New ESA/Open-Meteo/JPL credits and feature wording must be incorporated before a later final submission. No deployment, repository push or judging submission occurred.
+
+
+## Combined environment / intervention extension, November 15
+
+47 TypeScript tests and 21 Python tests passed (68 total). TypeScript, lint (zero warnings), and production packaging/build passed. New tests cover recurring midnight and 06:00 boundaries, evening/next-day start times, backward scrubbing, participation/source-share edge cases, separate defaults, deterministic transfer, severe glare in both visual treatments, daylight and opaque-overcast suppression, altitude/haze/Moon contrast, tagged/floor/assumed building heights, actual cached-map parsing and observer-building omission, camera near-plane clipping and obstruction, bounded empirical replay and exact agreement with processed reference results.
+
+The 11 new scientific Python checks compare OLS/covariance/intervals with independent SciPy and statsmodels calculations; compare contrast against a linear t-test; independently enumerate all 720 response permutations; verify leave-one-night-out and Theil–Sen outputs, missing/duplicate/invalid-data rejection and exact cached-artifact/hash reproduction. Original 10 NASA aerosol reproduction tests still pass. Small-sample/statistical assumptions remain documented limits.
+
+Browser checks actually performed on the production bundle:
+
+- Mapped Penang footprints loaded; the raised 14 m viewpoint and local building occlusion rendered. Heights/materials were labeled approximate. Selecting street level produced stronger actual footprint obstruction; selecting a raised viewpoint revealed more sky.
+- Natural impression used a subdued survey field. Artificial intensity 100 with comparison off suppressed the stellar field and asterism lines; the interface kept asterisms enabled, avoiding a misleading toggle-only test. Scope is this artistic severe-glare setting, not an empirical brightness calibration.
+- The coast combination changed the lower view to an illustrative water horizon; scene changes kept the selected observing instant. Other controls remained independently editable.
+- The recurring schedule showed waiting at 23:55 on November 15 and active at 00:05 on November 16, local Malaysia time. Default selected output changed 100%→50%; the combined After midnight scenario used 30% output, shielding, warmth and its disclosed larger artistic source-share assumption. The preset opened Experiment controls and used an explicit time preview.
+- Reset restored Now, busy-city intensity 85, the 14 m default viewpoint, default atmosphere, comparison off and the Lighting control tab. Keyboard ArrowRight moved from Lighting to Atmosphere. Overcast selected coverage 100 and opacity 100 and opened Atmosphere controls.
+- The Tucson corrected panel displayed the processed −7.6% fitted satellite-sum contrast, conditional interval −10.3% to −4.9%, exact permutation p 0.0028 and six-night diagnostics. The replay reached the upper observed power 1.38 MW with zero fitted contrast; raw/corrected switching changed results. No extrapolation was offered.
+- Actual browser export completed. Its six rows, selected 0.70 MW power and −7.6005589% fitted contrast were parsed and verified; copy `evidence/browser/tucson-study-export.json`.
+- A 390×844 viewport initially exposed overflow from absolutely positioned accessible preset descriptions; anchoring descriptions to their buttons fixed it. A fresh production check returned document width 375, viewport 390, no document horizontal overflow. Horizontal preset scrolling stays inside its rail. The mobile artifact is `evidence/browser/environment-mobile.jpg`; scientific chart labels use a mobile-specific size with an accessible data table.
+- The standalone HTML rendered from the production static server with 4,105 embedded HYG stars, 909 embedded OSM footprints, the source/study replay available and no external script tags. Initial map rendering did not require an Overpass request. Console errors returned none. Direct `file://` execution and actual offline-network disconnection were not tested; embedded code/assets and source fallbacks were inspected.
+
+Physical-device touch/pinch, actual device geolocation, GPU failure and successful native full-screen remain unverified or environment-limited as previously recorded. Only Penang has a cached footprint asset; optional Seoul/Tucson acquisition failed and is recorded. Live Overpass requests for arbitrary locations can fail and show their explicit fallback. Buildings are an approximate map extrusion, not photographs, surveyed heights or a complete real horizon. The sky renderer remains uncalibrated for exact human visibility. The statistical replay is a separate study, with its small-sample assumptions, and does not certify local causal effects or safety outcomes.
+
+The saved online Space Apps draft has not been changed for this extension. Required new source/reference wording is prepared in `SUBMISSION.md`. Nothing was deployed, pushed or submitted for judging.
+
+
+Final browser checks also confirmed a Seoul location change used Asia/Seoul / UTC+09:00, timed out its live map request without breaking astronomy, and explicitly labeled its fallback skyline. Returning to Penang used the embedded cache. The open six-row data table on a 390 px viewport kept its 430 px content inside a 338 px scroll area; document width remained 375 px with no horizontal document overflow. Final static-server regression checks confirmed the 24-complete-year NASA view, Sky Lab's waiting/active transition and its reset. The final mapped-scene screenshots are `environment-desktop.jpg` and `environment-sky-detail.jpg`; severe glare is `severe-glare-desktop.jpg`; study/mobile/export proofs are retained alongside them in `evidence/browser/`.
+
+Building faces now use footprint winding for back-face culling and roof visibility from the selected eye height, reducing hidden-face artifacts and rendering work. This improves the approximate geometry without making unknown heights/materials surveyed facts. The final standalone contains all initial assets, matches its generated source byte-for-byte, and is about 6.52 MiB. No direct file-origin/offline-network-disconnection or successful arbitrary-location map service was claimed.

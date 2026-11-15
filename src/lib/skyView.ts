@@ -1,4 +1,6 @@
 import type { SkyCalculation } from './astronomy';
+import type { SkyFilters } from './skyAppearance';
+import type { LocalHorizon } from './horizon';
 
 export interface SkyCamera { azimuth: number; altitude: number; fieldOfView: number }
 export interface ImmersiveSkyProps {
@@ -18,6 +20,13 @@ export interface ImmersiveSkyProps {
   onSelect: (id: string) => void;
   /** Relative artistic cloud contrast knob, not measured optical depth. */
   cloudCover: number;
+  filters: SkyFilters;
+  fixtureGlare: number;
+  fixtureOutput: number;
+  warmth: number;
+  cityLightPercent: number;
+  horizonData: LocalHorizon | null;
+  baselineLabel: string;
 }
 
 export const DEFAULT_CAMERA: SkyCamera = { azimuth: 180, altitude: 27, fieldOfView: 105 };

@@ -1,0 +1,781 @@
+{
+  "schemaVersion": 1,
+  "id": "tucson-2019-published-table6",
+  "title": "Tucson 2019 municipal streetlight dimming experiment",
+  "source": {
+    "kind": "Factual transcription of a published table, not a raw satellite download",
+    "citation": "Kyba et al. (2020 online; 2021 issue), Direct measurement of the contribution of street lighting to satellite observations of nighttime light emissions from urban areas, Lighting Research & Technology 53(3), 189–211",
+    "doi": "10.1177/1477153520958463",
+    "url": "https://journals.sagepub.com/doi/full/10.1177/1477153520958463?journalCode=lrtd",
+    "table": "Table 6; units corroborated by section 2.1 and Table 1; corrections in section 2.2 and Table 4",
+    "transcribedOn": "2026-11-15",
+    "transcription": "Six city-level observations preserved at the precision reported in Table 6. These are rounded published aggregate observations, not the authors' full-precision pixel or lamp data. Table 1 and Table 6 contain slightly different power values (for example 1010 kW versus 1.00 in the final row); Table 6 is retained without silently replacing its values.",
+    "nasaStoryUrl": "https://science.nasa.gov/earth/earth-observatory/experimenting-with-tucson-night-lights-148259/",
+    "nasaStoryRole": "NASA Earth Observatory context for a joint NASA-NOAA Suomi NPP VIIRS experiment; not the numerical table source",
+    "instrument": "Suomi NPP VIIRS Day/Night Band, approximately 750 m original spatial resolution, 500–900 nm spectral window",
+    "product": "NOAA-generated Sensor Data Records obtained by the authors through NOAA CLASS; not NASA Black Marble VNP46A2/VNP46A4",
+    "selection": "Six overpasses selected by the authors as cloud-free over Tucson; April 7 used only its second, cloud-free overpass. Moonlight and twilight were absent. Observation unit is one selected night, not one resampled pixel.",
+    "correction": "Authors resampled onto a 50 m equal-area grid, area-weighted the sums and divided by 400 to normalize relative to 1 km². They subtracted an airglow/background zero point from dark control hexagons and divided by a multiplicative factor based on nearby lit nonparticipating communities. Published corrected sums are used directly; original raster processing is not reproduced here.",
+    "dataAvailability": "Lamp-by-lamp operating records are available from the authors upon request; no downloadable full-precision numerical dataset was acquired. This artifact contains only factual values transcribed from the published tables.",
+    "rights": "Article is free to read, copyright The Chartered Institution of Building Services Engineers 2020. No Creative Commons or open-data license for the article was verified. Factual numerical transcription is attributed; no article text, figures or full PDF are redistributed or relicensed."
+  },
+  "units": {
+    "powerMW": "MW of municipal streetlight electrical power",
+    "sourcePowerHeader": "The publisher's HTML Table 6 renders the header as mW. The values are normalized here as MW, corroborated by section 2.1's explicit 1.46 MW network total and Table 1's corresponding kW values. No assertion is made that the HTML header is an authoritative milliwatt unit.",
+    "rawSum": "nW cm⁻² sr⁻¹ relative to a 1 km² area, under the authors' sum-of-lights normalization",
+    "correctedSum": "nW cm⁻² sr⁻¹ relative to a 1 km² area, under the authors' sum-of-lights normalization",
+    "sumInterpretation": "An area-normalized aggregate, not lumens, electrical energy, ground zenith brightness or the ordinary mean radiance of a single pixel"
+  },
+  "observations": [
+    {
+      "date": "2019-03-29",
+      "powerMW": 0.7,
+      "rawSum": 9280,
+      "correctedSum": 9550,
+      "localOverpassTime": "02:25",
+      "nadirAngleDegrees": 21.9,
+      "zeroOffset": 1.75,
+      "multiplicativeOffset": 0.961,
+      "condition": "dim"
+    },
+    {
+      "date": "2019-03-31",
+      "powerMW": 0.68,
+      "rawSum": 9500,
+      "correctedSum": 9440,
+      "localOverpassTime": "01:47",
+      "nadirAngleDegrees": 32.2,
+      "zeroOffset": 2.4,
+      "multiplicativeOffset": 0.99,
+      "condition": "dim"
+    },
+    {
+      "date": "2019-04-03",
+      "powerMW": 0.67,
+      "rawSum": 9370,
+      "correctedSum": 9280,
+      "localOverpassTime": "02:31",
+      "nadirAngleDegrees": 29.5,
+      "zeroOffset": 2.59,
+      "multiplicativeOffset": 0.993,
+      "condition": "dim"
+    },
+    {
+      "date": "2019-04-07",
+      "powerMW": 1.38,
+      "rawSum": 11400,
+      "correctedSum": 10200,
+      "localOverpassTime": "02:56",
+      "nadirAngleDegrees": 48.8,
+      "zeroOffset": 4.3,
+      "multiplicativeOffset": 1.087,
+      "condition": "bright"
+    },
+    {
+      "date": "2019-04-08",
+      "powerMW": 1.06,
+      "rawSum": 9920,
+      "correctedSum": 9850,
+      "localOverpassTime": "02:37",
+      "nadirAngleDegrees": 35.9,
+      "zeroOffset": 3.02,
+      "multiplicativeOffset": 0.989,
+      "condition": "standard"
+    },
+    {
+      "date": "2019-04-11",
+      "powerMW": 1,
+      "rawSum": 10200,
+      "correctedSum": 9860,
+      "localOverpassTime": "01:41",
+      "nadirAngleDegrees": 38.4,
+      "zeroOffset": 1.64,
+      "multiplicativeOffset": 1.024,
+      "condition": "standard"
+    }
+  ],
+  "analysis": {
+    "corrected": {
+      "n": 6,
+      "df": 4,
+      "slopePerMW": 1143.244241901712,
+      "intercept": 8650.5981853266,
+      "coefficientOrder": [
+        "intercept",
+        "slopePerMW"
+      ],
+      "coefficientCovariance": [
+        [
+          18921.12313133573,
+          -19132.662772555057
+        ],
+        [
+          -19132.662772555057,
+          20910.01395907656
+        ]
+      ],
+      "slopeStandardErrorPerMW": 144.6029528020661,
+      "slopeCI95PerMW": [
+        741.762081397268,
+        1544.726402406156
+      ],
+      "pValue": 0.0013846732268590835,
+      "rSquared": 0.9398553129426986,
+      "residualStdError": 92.13262270600532,
+      "method": "OLS with intercept; classical residual variance; two-sided Student-t slope test and pointwise 95% t intervals, n−2 residual degrees of freedom",
+      "permutation": {
+        "statistic": "absolute Pearson correlation",
+        "observedStatistic": 0.9694613519592713,
+        "pValue": 0.002777777777777778,
+        "extremePermutations": 2,
+        "permutations": 720,
+        "method": "All n! response-label permutations, with ties and observed ordering included; extreme count/n!, no Monte Carlo correction",
+        "assumption": "Response labels must be exchangeable under the null. This is an association diagnostic, not a randomized-treatment causal test; weather, timing, corrections and serial dependence can violate exchangeability."
+      },
+      "leaveOneOut": [
+        {
+          "excludedDate": "2019-03-29",
+          "slopePerMW": 1216.2177585026252
+        },
+        {
+          "excludedDate": "2019-03-31",
+          "slopePerMW": 1153.2030146019783
+        },
+        {
+          "excludedDate": "2019-04-03",
+          "slopePerMW": 1022.9995208433156
+        },
+        {
+          "excludedDate": "2019-04-07",
+          "slopePerMW": 1250.9557618787549
+        },
+        {
+          "excludedDate": "2019-04-08",
+          "slopePerMW": 1148.928346291238
+        },
+        {
+          "excludedDate": "2019-04-11",
+          "slopePerMW": 1126.2585581957312
+        }
+      ],
+      "fitMeanBand": [
+        {
+          "powerMW": 0.67,
+          "fitted": 9416.571827400747,
+          "ci95": [
+            9273.110990992187,
+            9560.032663809307
+          ]
+        },
+        {
+          "powerMW": 0.6995833333333333,
+          "fitted": 9450.39280289034,
+          "ci95": [
+            9314.799566692813,
+            9585.986039087866
+          ]
+        },
+        {
+          "powerMW": 0.7291666666666667,
+          "fitted": 9484.213778379932,
+          "ci95": [
+            9355.86980828734,
+            9612.557748472524
+          ]
+        },
+        {
+          "powerMW": 0.75875,
+          "fitted": 9518.034753869524,
+          "ci95": [
+            9396.211281365768,
+            9639.85822637328
+          ]
+        },
+        {
+          "powerMW": 0.7883333333333333,
+          "fitted": 9551.855729359117,
+          "ci95": [
+            9435.701189698568,
+            9668.010269019665
+          ]
+        },
+        {
+          "powerMW": 0.8179166666666666,
+          "fitted": 9585.676704848709,
+          "ci95": [
+            9474.20953231899,
+            9697.143877378428
+          ]
+        },
+        {
+          "powerMW": 0.8475,
+          "fitted": 9619.497680338302,
+          "ci95": [
+            9511.6082978351,
+            9727.387062841502
+          ]
+        },
+        {
+          "powerMW": 0.8770833333333333,
+          "fitted": 9653.318655827894,
+          "ci95": [
+            9547.784576028007,
+            9758.852735627781
+          ]
+        },
+        {
+          "powerMW": 0.9066666666666666,
+          "fitted": 9687.139631317486,
+          "ci95": [
+            9582.655661357347,
+            9791.623601277626
+          ]
+        },
+        {
+          "powerMW": 0.93625,
+          "fitted": 9720.960606807079,
+          "ci95": [
+            9616.182303732498,
+            9825.73890988166
+          ]
+        },
+        {
+          "powerMW": 0.9658333333333333,
+          "fitted": 9754.78158229667,
+          "ci95": [
+            9648.375659299489,
+            9861.18750529385
+          ]
+        },
+        {
+          "powerMW": 0.9954166666666666,
+          "fitted": 9788.602557786262,
+          "ci95": [
+            9679.295271022247,
+            9897.909844550277
+          ]
+        },
+        {
+          "powerMW": 1.025,
+          "fitted": 9822.423533275854,
+          "ci95": [
+            9709.038877049034,
+            9935.808189502675
+          ]
+        },
+        {
+          "powerMW": 1.0545833333333332,
+          "fitted": 9856.244508765447,
+          "ci95": [
+            9737.7277908191,
+            9974.761226711793
+          ]
+        },
+        {
+          "powerMW": 1.0841666666666665,
+          "fitted": 9890.06548425504,
+          "ci95": [
+            9765.492295185286,
+            10014.638673324793
+          ]
+        },
+        {
+          "powerMW": 1.11375,
+          "fitted": 9923.886459744632,
+          "ci95": [
+            9792.460125722951,
+            10055.312793766312
+          ]
+        },
+        {
+          "powerMW": 1.1433333333333333,
+          "fitted": 9957.707435234224,
+          "ci95": [
+            9818.749103526896,
+            10096.665766941553
+          ]
+        },
+        {
+          "powerMW": 1.1729166666666666,
+          "fitted": 9991.528410723817,
+          "ci95": [
+            9844.463494905922,
+            10138.593326541712
+          ]
+        },
+        {
+          "powerMW": 1.2025,
+          "fitted": 10025.34938621341,
+          "ci95": [
+            9869.69304739195,
+            10181.00572503487
+          ]
+        },
+        {
+          "powerMW": 1.2320833333333332,
+          "fitted": 10059.170361703002,
+          "ci95": [
+            9894.513636959637,
+            10223.827086446367
+          ]
+        },
+        {
+          "powerMW": 1.2616666666666667,
+          "fitted": 10092.991337192594,
+          "ci95": [
+            9918.98871356795,
+            10266.993960817239
+          ]
+        },
+        {
+          "powerMW": 1.2912499999999998,
+          "fitted": 10126.812312682185,
+          "ci95": [
+            9943.171021327431,
+            10310.453604036938
+          ]
+        },
+        {
+          "powerMW": 1.3208333333333333,
+          "fitted": 10160.633288171779,
+          "ci95": [
+            9967.10429915525,
+            10354.162277188309
+          ]
+        },
+        {
+          "powerMW": 1.3504166666666664,
+          "fitted": 10194.45426366137,
+          "ci95": [
+            9990.82482049017,
+            10398.083706832569
+          ]
+        },
+        {
+          "powerMW": 1.38,
+          "fitted": 10228.275239150962,
+          "ci95": [
+            10014.362720817413,
+            10442.187757484511
+          ]
+        }
+      ],
+      "contrast": {
+        "powerBeforeMW": 1.38,
+        "powerAfterMW": 0.7,
+        "withinObservedRange": true,
+        "fittedBefore": 10228.275239150962,
+        "fittedBeforeCI95": [
+          10014.362720817413,
+          10442.187757484511
+        ],
+        "fittedAfter": 9450.8691546578,
+        "fittedAfterCI95": [
+          9315.382556740376,
+          9586.355752575222
+        ],
+        "change": -777.4060844931641,
+        "changeCI95": [
+          -1050.413953636186,
+          -504.3982153501422
+        ],
+        "percentChange": -7.60055890476502,
+        "percentChangeCI95": [
+          -10.269707541849254,
+          -4.931410267680788
+        ],
+        "denominator": "Fixed fitted baseline at powerBeforeMW; its estimation uncertainty is not propagated into the percentage interval",
+        "interpretation": "Conditional difference between fitted mean satellite sums within the observed study range; not a new-night prediction interval, a paired before/after observation, or a local skyglow/star-visibility forecast"
+      },
+      "theilSen": {
+        "slopePerMW": 1093.7500000000005,
+        "intercept": 8770.3125,
+        "slopeCI95PerMW": [
+          833.3333333333331,
+          9000.000000000025
+        ],
+        "method": "SciPy Theil–Sen median pairwise slope with separate intercept; small-sample nonparametric slope interval, not a causal estimate"
+      }
+    },
+    "raw": {
+      "n": 6,
+      "df": 4,
+      "slopePerMW": 2667.9394014041136,
+      "intercept": 7503.835447715236,
+      "coefficientOrder": [
+        "intercept",
+        "slopePerMW"
+      ],
+      "coefficientCovariance": [
+        [
+          147138.68387398386,
+          -148783.7059046602
+        ],
+        [
+          -148783.7059046602,
+          162605.14306520237
+        ]
+      ],
+      "slopeStandardErrorPerMW": 403.2432802480438,
+      "slopeCI95PerMW": [
+        1548.3565697555305,
+        3787.5222330526967
+      ],
+      "pValue": 0.002705877540552412,
+      "rSquared": 0.9162726986065622,
+      "residualStdError": 256.9232527960809,
+      "method": "OLS with intercept; classical residual variance; two-sided Student-t slope test and pointwise 95% t intervals, n−2 residual degrees of freedom",
+      "permutation": {
+        "statistic": "absolute Pearson correlation",
+        "observedStatistic": 0.9572213425360732,
+        "pValue": 0.015277777777777777,
+        "extremePermutations": 11,
+        "permutations": 720,
+        "method": "All n! response-label permutations, with ties and observed ordering included; extreme count/n!, no Monte Carlo correction",
+        "assumption": "Response labels must be exchangeable under the null. This is an association diagnostic, not a randomized-treatment causal test; weather, timing, corrections and serial dependence can violate exchangeability."
+      },
+      "leaveOneOut": [
+        {
+          "excludedDate": "2019-03-29",
+          "slopePerMW": 2600.6619493266385
+        },
+        {
+          "excludedDate": "2019-03-31",
+          "slopePerMW": 2819.0061234102686
+        },
+        {
+          "excludedDate": "2019-04-03",
+          "slopePerMW": 2737.182558696694
+        },
+        {
+          "excludedDate": "2019-04-07",
+          "slopePerMW": 1851.174221736756
+        },
+        {
+          "excludedDate": "2019-04-08",
+          "slopePerMW": 2856.167262029839
+        },
+        {
+          "excludedDate": "2019-04-11",
+          "slopePerMW": 2660.6927104309307
+        }
+      ],
+      "fitMeanBand": [
+        {
+          "powerMW": 0.67,
+          "fitted": 9291.354846655991,
+          "ci95": [
+            8891.296499716835,
+            9691.413193595148
+          ]
+        },
+        {
+          "powerMW": 0.6995833333333333,
+          "fitted": 9370.281387280864,
+          "ci95": [
+            8992.162819961008,
+            9748.39995460072
+          ]
+        },
+        {
+          "powerMW": 0.7291666666666667,
+          "fitted": 9449.207927905736,
+          "ci95": [
+            9091.304838810214,
+            9807.111017001258
+          ]
+        },
+        {
+          "powerMW": 0.75875,
+          "fitted": 9528.134468530607,
+          "ci95": [
+            9188.414596206394,
+            9867.85434085482
+          ]
+        },
+        {
+          "powerMW": 0.7883333333333333,
+          "fitted": 9607.061009155479,
+          "ci95": [
+            9283.149659623534,
+            9930.972358687424
+          ]
+        },
+        {
+          "powerMW": 0.8179166666666666,
+          "fitted": 9685.987549780351,
+          "ci95": [
+            9375.147505231713,
+            9996.82759432899
+          ]
+        },
+        {
+          "powerMW": 0.8475,
+          "fitted": 9764.914090405222,
+          "ci95": [
+            9464.05115737731,
+            10065.777023433135
+          ]
+        },
+        {
+          "powerMW": 0.8770833333333333,
+          "fitted": 9843.840631030094,
+          "ci95": [
+            9549.545751901893,
+            10138.135510158296
+          ]
+        },
+        {
+          "powerMW": 0.9066666666666666,
+          "fitted": 9922.767171654967,
+          "ci95": [
+            9631.40065414176,
+            10214.133689168173
+          ]
+        },
+        {
+          "powerMW": 0.93625,
+          "fitted": 10001.693712279837,
+          "ci95": [
+            9709.506410347962,
+            10293.881014211713
+          ]
+        },
+        {
+          "powerMW": 0.9658333333333333,
+          "fitted": 10080.62025290471,
+          "ci95": [
+            9783.89413081828,
+            10377.346374991139
+          ]
+        },
+        {
+          "powerMW": 0.9954166666666666,
+          "fitted": 10159.54679352958,
+          "ci95": [
+            9854.729858497358,
+            10464.363728561802
+          ]
+        },
+        {
+          "powerMW": 1.025,
+          "fitted": 10238.473334154452,
+          "ci95": [
+            9922.286148341696,
+            10554.660519967209
+          ]
+        },
+        {
+          "powerMW": 1.0545833333333332,
+          "fitted": 10317.399874779323,
+          "ci95": [
+            9986.9012979326,
+            10647.898451626046
+          ]
+        },
+        {
+          "powerMW": 1.0841666666666665,
+          "fitted": 10396.326415404195,
+          "ci95": [
+            10048.93861717433,
+            10743.71421363406
+          ]
+        },
+        {
+          "powerMW": 1.11375,
+          "fitted": 10475.252956029068,
+          "ci95": [
+            10108.754312571764,
+            10841.751599486372
+          ]
+        },
+        {
+          "powerMW": 1.1433333333333333,
+          "fitted": 10554.179496653938,
+          "ci95": [
+            10166.676942870277,
+            10941.6820504376
+          ]
+        },
+        {
+          "powerMW": 1.1729166666666666,
+          "fitted": 10633.10603727881,
+          "ci95": [
+            10222.997267612225,
+            11043.214806945396
+          ]
+        },
+        {
+          "powerMW": 1.2025,
+          "fitted": 10712.032577903683,
+          "ci95": [
+            10277.965558928749,
+            11146.099596878617
+          ]
+        },
+        {
+          "powerMW": 1.2320833333333332,
+          "fitted": 10790.959118528554,
+          "ci95": [
+            10331.793406391966,
+            11250.124830665141
+          ]
+        },
+        {
+          "powerMW": 1.2616666666666667,
+          "fitted": 10869.885659153426,
+          "ci95": [
+            10384.657748087113,
+            11355.113570219739
+          ]
+        },
+        {
+          "powerMW": 1.2912499999999998,
+          "fitted": 10948.812199778298,
+          "ci95": [
+            10436.705667512382,
+            11460.918732044214
+          ]
+        },
+        {
+          "powerMW": 1.3208333333333333,
+          "fitted": 11027.738740403169,
+          "ci95": [
+            10488.05913606664,
+            11567.418344739697
+          ]
+        },
+        {
+          "powerMW": 1.3504166666666664,
+          "fitted": 11106.66528102804,
+          "ci95": [
+            10538.81930673571,
+            11674.511255320369
+          ]
+        },
+        {
+          "powerMW": 1.38,
+          "fitted": 11185.591821652913,
+          "ci95": [
+            10589.070216060169,
+            11782.113427245658
+          ]
+        }
+      ],
+      "contrast": {
+        "powerBeforeMW": 1.38,
+        "powerAfterMW": 0.7,
+        "withinObservedRange": true,
+        "fittedBefore": 11185.591821652913,
+        "fittedBeforeCI95": [
+          10589.070216060169,
+          11782.113427245658
+        ],
+        "fittedAfter": 9371.393028698116,
+        "fittedAfterCI95": [
+          8993.57183545697,
+          9749.21422193926
+        ],
+        "change": -1814.198792954797,
+        "changeCI95": [
+          -2575.5151184758333,
+          -1052.8824674337607
+        ],
+        "percentChange": -16.2190684398379,
+        "percentChangeCI95": [
+          -23.02529146012808,
+          -9.41284541954772
+        ],
+        "denominator": "Fixed fitted baseline at powerBeforeMW; its estimation uncertainty is not propagated into the percentage interval",
+        "interpretation": "Conditional difference between fitted mean satellite sums within the observed study range; not a new-night prediction interval, a paired before/after observation, or a local skyglow/star-visibility forecast"
+      }
+    }
+  },
+  "sensitivity": {
+    "rawSlopePerMW": 2667.9394014041136,
+    "correctedSlopePerMW": 1143.244241901712,
+    "correctedToRawSlopeRatio": 0.4285120723881631,
+    "correctedLeaveOneOutSlopeRangePerMW": [
+      1022.9995208433156,
+      1250.9557618787549
+    ],
+    "interpretation": "The large raw/corrected difference demonstrates dependence on the published atmospheric, background and viewing-condition corrections; it is not a second independent replication."
+  },
+  "publishedFindings": {
+    "satelliteStreetlightContribution": {
+      "estimatePercent": 13,
+      "ci95Percent": [
+        10,
+        16
+      ],
+      "undimmedEstimatePercent": 18,
+      "undimmedCI95Percent": [
+        15,
+        23
+      ],
+      "sourceUrl": "https://doi.org/10.1177/1477153520958463",
+      "scope": "Authors' estimates for municipal streetlights' contribution to satellite-observed Tucson radiance after midnight, not a percentage reduction in ground skyglow and not this rounded-table reanalysis",
+      "uncertainty": "Published statistical confidence intervals omit systematic uncertainties"
+    },
+    "groundSkyChanges": {
+      "citation": "Barentine et al. (2020), Recovering the city street lighting fraction from skyglow measurements in a large-scale municipal dimming experiment, JQSRT 253, 107120",
+      "doi": "10.1016/j.jqsrt.2020.107120",
+      "sourceUrl": "https://www.johncbarentine.com/uploads/7/8/0/8/78081652/barentine-et-al-2020.pdf",
+      "table": "Table 7, printed page 13; measurement uncertainty described in section 3.3, printed page 7",
+      "program": "Municipal test program 90% before midnight to 30% after midnight; actual responses varied and essential crossing/intersection lighting was retained",
+      "sites": [
+        {
+          "name": "Reid Park",
+          "changePercent": -5.4,
+          "uncertaintyPercentagePoints": 0.9
+        },
+        {
+          "name": "Tanque Verde",
+          "changePercent": -3.6,
+          "uncertaintyPercentagePoints": 0.9
+        }
+      ],
+      "uncertainty": "Reported measurement uncertainty from 1σ scatter with an instrument-resolution floor of approximately 0.9% luminance; not a 95% confidence interval",
+      "scope": "Ground-based zenith sky brightness at these Tucson study sites, kept separate from satellite upward radiance and from NightLens's hypothetical rendering",
+      "rights": "Copyright Elsevier 2020, all rights reserved. Only factual reported numbers and attribution are included; paper and figures are not redistributed."
+    }
+  },
+  "provenance": {
+    "sourceFile": "data/raw/tucson-2019-table6.json",
+    "sourceSha256": "d3a6c462c3aae65fbd36ae770835516143a9e186a5caf3ccf52b5764b5702bab",
+    "script": "scripts/analyze_intervention.py",
+    "pipelineVersion": 1,
+    "reproduction": ".\\.venv\\Scripts\\python.exe scripts/analyze_intervention.py",
+    "dependencies": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1"
+    }
+  },
+  "limitations": [
+    "Six selected study nights, not six hundred pixels or a long-term trend. Retain NightLens's separate 24-year NASA POWER/CERES investigation for the challenge's time-series question.",
+    "These are rounded published table aggregates. Recomputed coefficients do not exactly reproduce the authors' full-precision estimate; original pixel, lamp and calibration data were not acquired or reprocessed.",
+    "Classical OLS intervals and p-values condition on fixed predictor values and published corrections, independent homoscedastic errors and the linear model. They omit measurement, rounding, correction-parameter and systematic uncertainty.",
+    "The exact permutation result requires exchangeability under the null; it does not establish randomized-treatment causality or remove weather, timing, serial dependence or private-light changes.",
+    "Only one selected bright-condition night is available. Leave-one-night-out slopes and a Theil–Sen diagnostic expose sensitivity but do not cure the small sample or establish worldwide transferability.",
+    "The fitted contrast stays inside the observed 0.67–1.38 MW range. Its percent interval uses a fixed fitted denominator, not a full ratio-uncertainty interval or a new-night prediction interval.",
+    "DNB upward radiance in 500–900 nm is not ground zenith sky brightness. DNB misses the blue peak of white LEDs and has a different spectral response from human vision.",
+    "Buildings, shielding, source spectra, atmospheric scattering and nonparticipating sources prevent conversion to arbitrary-city skyglow, exact star visibility, Bortle class, energy savings or safety effects.",
+    "Published ground-sky measurements are a separately attributed study and are not used as calibration constants for the rendering. Dimmed streetlights alone did not restore a pristine night sky."
+  ],
+  "selectedReplay": {
+    "corrected": true,
+    "before": 10228.275239150962,
+    "after": 9450.8691546578,
+    "change": -777.4060844931641,
+    "percent": -7.60055890476502,
+    "ci95": [
+      -10.269707541849252,
+      -4.931410267680787
+    ],
+    "powerBeforeMW": 1.38,
+    "powerAfterMW": 0.7,
+    "denominator": "Fixed fitted baseline; baseline uncertainty omitted",
+    "scope": "Within-study fitted satellite-sum contrast; not ground skyglow or star visibility"
+  },
+  "warning": "Published six-night satellite study, not the selected city or a prediction of visible stars."
+}

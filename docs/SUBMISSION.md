@@ -86,3 +86,17 @@ The perspective Observatory extension is implemented and locally tested. The sav
 - NASA/JPL Horizons limited independent Moon position reference: https://ssd-api.jpl.nasa.gov/doc/horizons.html ; exact query/response cached in the project.
 
 Codex implemented this extension. A specifically approved Claude Code collaboration failed with an account/organization authorization error before any code contribution. Do not claim Claude co-authorship. See `AI_DISCLOSURE.md`, `OBSERVATORY.md` and `VALIDATION.md` for actual scope and limits. This addition is not a published demo or a final judging submission.
+
+
+## Realism / human-intervention extension after the saved revision
+
+The local implementation now adds six editable environmental combinations, stronger glare/cloud attenuation, coherent constellation/star/label contrast, a recurring after-midnight nonessential-fixture schedule, map-based surroundings and an observed intervention case. The saved online draft is still the earlier revision; it has not been silently updated or submitted.
+
+Additional references required before a later submission:
+
+- NASA Earth Observatory, Experimenting with Tucson Night Lights: https://science.nasa.gov/earth/earth-observatory/experimenting-with-tucson-night-lights-148259/
+- Kyba et al., DOI 10.1177/1477153520958463, Table 6 (actual numerical source for the six-night VIIRS reanalysis): https://journals.sagepub.com/doi/full/10.1177/1477153520958463?journalCode=lrtd
+- Barentine et al., DOI 10.1016/j.jqsrt.2020.107120, Table 7, separately cited ground measurements: https://www.johncbarentine.com/uploads/7/8/0/8/78081652/barentine-et-al-2020.pdf
+- OpenStreetMap contributors / ODbL: https://www.openstreetmap.org/copyright ; Overpass API: https://wiki.openstreetmap.org/wiki/Overpass_API
+
+Describe the numerical source as attributed rounded published VIIRS aggregates from NOAA-generated Suomi NPP data, not a newly downloaded Black Marble record. Keep its small-sample reanalysis separate from the original 24-year NASA POWER challenge investigation and the uncalibrated appearance model. Building footprints are mapped, but heights/facades/terrain/viewpoint remain approximations. Essential safety lighting remains excluded. Current validation and source limitations are in `VALIDATION.md`, `OBSERVATORY.md` and `TUCSON_EVIDENCE.md`.

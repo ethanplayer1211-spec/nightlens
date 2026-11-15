@@ -40,13 +40,13 @@ Penang’s fit is inconclusive at α=0.05 under this test. Seoul’s fit meets t
 
 Limitations: short annual sample; linearity assumption; potential autocorrelation beyond lag 1; product changes, retrieval/model bias, measurement uncertainty and spatial representativeness. HAC does not remove those issues. Looking at many windows can produce apparently significant results by chance; there is no multiple-testing correction. Eight years is a conservative UI threshold, not a guarantee of robust inference. Results are exploratory.
 
-## Astronomical geometry
+## Circular Sky Lab astronomical geometry
 
-The local date and selected minute are converted explicitly to UTC using the chosen city’s offset: Penang +08:00, Seoul +09:00. These locations do not require a daylight-saving transition table for the supported UI dates. Minute 1440 means the next day’s midnight.
+In the circular Sky Lab, the local date and selected minute are converted explicitly to UTC using the chosen city’s offset: Penang +08:00, Seoul +09:00. These locations do not require a daylight-saving transition table for the supported UI dates. Minute 1440 means the next day’s midnight.
 
 For each HYG J2000 star, convert RA hours to degrees, create an equatorial unit vector, apply Astronomy Engine’s `Rotation_EQJ_HOR`, and convert using `HorizonFromVector` with no refraction. The library’s rotation accounts for precession/nutation. Proper motion and parallax are omitted; no subarcminute catalog accuracy claim is made.
 
-Moon, Sun, Venus, Mars, Jupiter and Saturn use topocentric `Equator(..., ofdate=true, aberration=true)` then `Horizon` without refraction. Objects below geometric altitude 0° are filtered. Moon illumination comes from `Illumination`. The target list is geometrical, not a guarantee of detectability. No live weather provider is used.
+Moon, Sun, Mercury, Venus, Mars, Jupiter, Saturn, Uranus and Neptune use topocentric `Equator(..., ofdate=true, aberration=true)` then `Horizon` without refraction. Objects below geometric altitude 0° are filtered. Moon illumination comes from `Illumination`. The target list is geometrical, not a guarantee of detectability. Sky Lab uses illustrative atmosphere controls. The expanded perspective Observatory separately supports timestamped Open-Meteo current model conditions and IANA timezones, documented in `OBSERVATORY.md`.
 
 Projection is azimuthal equidistant with north up, east left and zenith centered:
 
@@ -85,3 +85,12 @@ Essential safety lighting is excluded. The experiment is not a real infrastructu
 TypeScript tests exercise schedule boundaries, backward scrubbing, midnight, reset copies, deterministic output, participation edge cases, no linear dimming-to-skyglow claim, UTC conversion, invalid coordinates/dates, cardinal projection and an independent Equator/Horizon API comparison for Vega. Data tests validate hashes and every monthly value against raw responses. Python tests validate calendar weighting, missing values, duplicates, SciPy/OLS agreement and exact regeneration of all selectable NASA analysis windows.
 
 Browser checks and remaining verification limits are recorded in `docs/VALIDATION.md`. No claim of ground-calibrated visual accuracy is made. The expanded perspective Observatory, timezone handling, survey mapping and limited independent NASA/JPL Moon benchmark are documented in `OBSERVATORY.md`.
+
+
+## Human-lighting intervention reanalysis
+
+The new Tucson case is a distinct published-table investigation, not a causal estimate from the aerosol trend or a raw NASA Black Marble time series. Six rounded city-level observations from Kyba et al. pair municipal electrical power with raw/corrected VIIRS sums. NASA Earth Observatory documents the joint NASA–NOAA satellite experiment; the numerical source remains the paper's Table 6.
+
+`analyze_intervention.py` fits OLS with an intercept; reports parameter covariance, t-based slope/mean intervals with n−2=4 degrees of freedom, classical p and R²; exhaustively permutes all 720 response orderings for an association diagnostic; computes leave-one-night-out slopes and a Theil–Sen sensitivity estimate/interval. The replay rejects powers outside 0.67–1.38 MW and displays a mean contrast with a fixed fitted percentage denominator. Correction, baseline, rounding and systematic uncertainty are not fully propagated. Exchangeability and independent constant-variance errors are assumptions, not established facts. Six nights cannot replace a long-term trend or estimate local naked-eye visibility.
+
+The authors' ground-sky findings are presented separately with their reported measurement uncertainty. Neither study calibrates the renderer's arbitrary source-mixture, shielding, colour or glare factors. See `TUCSON_EVIDENCE.md` for the exact provenance, units discrepancy and limitations, and `OBSERVATORY.md` for the appearance and mapped-surroundings model.
