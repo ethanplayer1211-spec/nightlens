@@ -1,6 +1,6 @@
 # Submission draft — owner review required
 
-No official project form has been submitted from this checkout. Public final-project and demo links remain required.
+The official project editor contains a saved NightLens revision (November 15, 2026 10:23 Malaysia time), verified by reopening the editor. The owner reviewed/checked the declarations. No Submit for Judging action was performed. Public final-project and demo links remain required, and the public non-editor tab still showed its prior placeholder title. This local document is the durable source draft.
 
 ## Project name
 

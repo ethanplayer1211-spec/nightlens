@@ -30,13 +30,17 @@ Using the in-app browser against the local NightLens server:
 - A 390×844 viewport showed a mobile layout with no document horizontal overflow. The timeline was moved above the sky so it remains easily reachable on mobile.
 - Browser console error check returned no errors during these checks.
 
+The final `dist/` build was also served independently on local port 4174. The app, both NASA JSON files, HYG subset and catalog license returned HTTP 200. The served data bytes exactly matched the validated source files. Browser smoke checks on that production server returned no console errors, and desktop/mobile layouts had no document horizontal overflow.
+
+Actual browser downloads were opened and checked: the annual CSV contained 24 annual rows, units and source attribution; the evidence JSON contained 24 annual records and the reproducible Penang p-value. Copies are retained in `evidence/browser/annual-export.csv` and `evidence/browser/evidence-export.json`. Mobile chart labels and legends were checked after responsive sizing adjustments. Production screenshots are retained in `evidence/browser/production-*.jpg`.
+
 Proof images: `evidence/browser/desktop.jpg`, `evidence/browser/mobile.jpg`. These are screenshots of the implemented code-rendered app, not scientific observational images.
 
 ## Official-site inspection
 
 The signed-in browser confirmed the selected challenge, the official Resources tab, the November 13 submission/judging guides, and a Universal Event team with two listed members. Team-specific registration acceptance and all other organizer eligibility decisions are not certified by this observation.
 
-Project text, actual NASA references, other-source credits and AI-use categories were prepared in the editor. Save Progress was refused because the site requires the Terms and Conditions and original-work declarations. Those declarations were left to the owner. A saved/submitted status must not be assumed; the durable local draft is `docs/SUBMISSION.md`.
+Project text, actual NASA references, other-source credits and AI-use categories were prepared in the editor. Save Progress initially refused to continue without the Terms and Conditions and original-work declarations. The owner reviewed and checked both boxes in the browser; the agent did not check them. The draft was then saved, and the site confirmed Saved Revision / Last Saved November 15, 2026 10:23 Malaysia time. Reopening the editor verified persistence of the NightLens name, summary, rich-text details, references and six SI categories. The non-editor project tab still showed the prior placeholder title, so public publication of the revision is not claimed. The project remains marked Requires Submission for Judging. Public final-project/demo links remain blank. The durable local copy is `docs/SUBMISSION.md`.
 
 ## Verification limits
 
@@ -44,5 +48,5 @@ Project text, actual NASA references, other-source credits and AI-use categories
 - No external JPL ephemeris benchmark or field star-visibility comparison was performed.
 - No real-device touch/assistive-technology test, comprehensive browser matrix, load test, or real outdoor lighting validation was performed.
 - Black Marble HDF5 acquisition remains blocked by Earthdata authentication; no nighttime-radiance trend was analyzed.
-- A local production build is not a public deployment. No remote repository has been pushed; no production site or official judging submission is claimed.
+- A locally served production build is not a public deployment. No remote repository has been pushed; no public production site or official judging submission is claimed.
 - The official demo artifact/public URL is pending; the 28-second storyboard is a prepared script.

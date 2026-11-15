@@ -29,4 +29,6 @@ Application to this project (our product judgment, not a NASA rule): keep a regi
 
 ## Remaining gaps
 
+The account inspection showed the chosen challenge and two listed members at the Universal Event. The owner reviewed the two declarations in the editor. A NightLens revision with actual NASA links, references and AI-use disclosure was saved at 10:23 Malaysia time and reloaded successfully. This is not a judging submission; no Submit for Judging action was performed, and the public tab still displayed its prior placeholder title. Public project/demo links remain pending.
+
 NASA POWER is genuine NASA data but does not satisfy the original brief’s stricter condition to use a dataset from the challenge Resources tab. The current official guide does not impose that restriction. This distinction is recorded rather than declaring final organizer eligibility. Black Marble radiance remains unavailable without authenticated download. Publication, a real demo artifact, team eligibility checks and final submission remain owner-facing release steps.

@@ -62,7 +62,7 @@ See `docs/DATA_SOURCES.md`, `docs/SCIENTIFIC_METHOD.md`, `docs/AI_DISCLOSURE.md`
 
 Official challenge Resources and the November 13, 2026 submission/judging guides were inspected in the signed-in browser on November 15. NASA POWER is not listed in the challenge Resources tab; the official submission guide permits a NASA data **or resource**, without limiting this to the tab. The original project brief imposes a stricter tab-listed-data condition that remains unmet. Global eligibility is ultimately determined by the organizers; registration, team composition, demo, public links and final declarations still need owner review.
 
-Live demo: **not deployed**. Remote repository: **not created or pushed**. Official submission: **not submitted**.
+Live demo: **not deployed**. Remote repository: **not created or pushed**. Official judging submission: **not submitted**. The signed-in Space Apps editor has a saved NightLens revision, verified after reopening, with description, actual NASA links, source credits and AI disclosure. Its final-project/demo links remain blank; the public Project tab still shows its previous placeholder title.
 
 ## License and attribution
 
