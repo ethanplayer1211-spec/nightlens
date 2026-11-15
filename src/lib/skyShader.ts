@@ -15,7 +15,7 @@ uniform float hasSurvey;
 uniform mat3 worldToGalactic;
 uniform vec3 forward,rightward,upward,sunDirection,moonDirection;
 uniform float tangent,aspect,sunAltitude,moonLight,pollution,baselinePollution,comparison,split,clouds;
-uniform float haze,cloudOpacity,glare,fixtureGlare,warmth,exposure,horizonKind,eyeHeight;
+uniform float fogDensity,haze,cloudOpacity,glare,fixtureGlare,warmth,exposure,horizonKind,eyeHeight;
 const float PI=3.141592653589793;
 float hash(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}
 float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);}
@@ -32,6 +32,8 @@ void main(){
     if(horizonKind>3.5){
       // Unmapped distance is atmospheric context, never an invented continuation of the city.
       vec3 distant=mix(vec3(.012,.022,.037)+vec3(.055,.07,.083)*light,vec3(.31,.43,.54),daylight);
+      vec3 fogDistance=mix(vec3(.028,.038,.052)+lamp*light*.32,vec3(.48,.57,.63),daylight);
+      distant=mix(distant,fogDistance,1.0-exp(-fogDensity*5.5));
       gl_FragColor=vec4(distant,1.0);return;
     }
     float height=horizonKind>.5&&horizonKind<1.5?1.7:eyeHeight;
@@ -98,6 +100,9 @@ void main(){
   if(clouds>.995)cloudMask=1.0;
   vec3 cloudColor=mix(vec3(.026,.036,.05)+lamp*light*(.48+haze*.2)+moonLight*.045,vec3(.64,.69,.72),daylight);
   color=mix(color,cloudColor,cloudMask*cloudOpacity);
+  float fogVeil=1.0-exp(-fogDensity*(1.5+4.0*horizon));
+  vec3 fogColor=mix(vec3(.028,.038,.052)+lamp*light*.32,vec3(.48,.57,.63),daylight);
+  color=mix(color,fogColor,fogVeil);
   gl_FragColor=vec4(clamp(color,0.0,1.0),1.0);
 }`;
 
@@ -127,7 +132,7 @@ export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, 1, 1, 0, gl.RGB, gl.UNSIGNED_BYTE, new Uint8Array([0, 0, 0]));
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-    const names = ['survey','hasSurvey','worldToGalactic','forward','rightward','upward','sunDirection','tangent','aspect','sunAltitude','moonLight','pollution','baselinePollution','comparison','split','clouds','moonDirection','haze','cloudOpacity','glare','fixtureGlare','warmth','exposure','horizonKind','eyeHeight','moonTexture','hasMoonTexture','moonRadius','sunRadius','pixelAngle','moonVisible','moonPhase','worldToMoon'];
+    const names = ['survey','hasSurvey','worldToGalactic','forward','rightward','upward','sunDirection','tangent','aspect','sunAltitude','moonLight','pollution','baselinePollution','comparison','split','clouds','moonDirection','fogDensity','haze','cloudOpacity','glare','fixtureGlare','warmth','exposure','horizonKind','eyeHeight','moonTexture','hasMoonTexture','moonRadius','sunRadius','pixelAngle','moonVisible','moonPhase','worldToMoon'];
     const uniforms = Object.fromEntries(names.map(name => [name, gl.getUniformLocation(program!, name)]));
     gl.uniform1i(uniforms.survey, 0);
     moonTexture=gl.createTexture();gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,moonTexture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,1,1,0,gl.RGB,gl.UNSIGNED_BYTE,new Uint8Array([148,148,148]));gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.uniform1i(uniforms.moonTexture,1);
@@ -167,7 +172,7 @@ export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void
         const moon = props.sky.objects.find(o => o.kind === 'moon');
         const ma=(moon?.azimuth ?? 0)*rad,mh=(moon?.altitude ?? -90)*rad;
         gl.uniform3f(uniforms.moonDirection,Math.cos(mh)*Math.sin(ma),Math.sin(mh),Math.cos(mh)*Math.cos(ma));
-        gl.uniform1f(uniforms.haze,props.filters.hazePercent/100);gl.uniform1f(uniforms.cloudOpacity,props.filters.cloudOpacityPercent/100);
+        gl.uniform1f(uniforms.fogDensity,(props.filters.fogPercent??0)/100);gl.uniform1f(uniforms.haze,props.filters.hazePercent/100);gl.uniform1f(uniforms.cloudOpacity,props.filters.cloudOpacityPercent/100);
         gl.uniform1f(uniforms.glare,props.filters.glarePercent/100);gl.uniform1f(uniforms.fixtureGlare,props.fixtureGlare);
         gl.uniform1f(uniforms.warmth,props.warmth);gl.uniform1f(uniforms.exposure,props.filters.viewStyle==='survey'?0.82:0.23);
         gl.uniform1f(uniforms.horizonKind,['local','rooftop','coast','meadow','viewpoint'].indexOf(props.filters.horizon));gl.uniform1f(uniforms.eyeHeight,props.filters.observerHeight);

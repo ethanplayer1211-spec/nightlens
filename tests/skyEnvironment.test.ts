@@ -7,6 +7,18 @@ import { studyContrast,interventionStudy } from '../src/lib/intervention';
 import { calculateSky,LOCATIONS } from '../src/lib/astronomy';
 import { DEFAULT_CAMERA,type ImmersiveSkyProps } from '../src/lib/skyView';
 
+describe('independent fog illustration',()=>{
+  it('normalizes strength and reduces contrast without changing astronomy',()=>{
+    expect(normalizeFilters({...DEFAULT_FILTERS,fogPercent:200}).fogPercent).toBe(100);
+    expect(()=>normalizeFilters({...DEFAULT_FILTERS,fogPercent:NaN})).toThrow();
+    const base={artificialLight:0,sunAltitude:-30,moonInfluence:0,filters:{...DEFAULT_FILTERS,fogPercent:0},cloudCover:0,fixtureGlare:0};
+    for(const altitude of [10,30,70]){
+      const clear=starDisplayContrast(2,altitude,base),foggy=starDisplayContrast(2,altitude,{...base,filters:{...base.filters,fogPercent:90}});
+      expect(foggy).toBeLessThan(clear*.3);
+    }
+  });
+});
+
 describe('recurring observing-night schedule',()=>{
   const scheduled={...DEFAULT_NIGHT_LIGHTING,scheduleEnabled:true};
   it('switches exactly at midnight and stays active until 06:00',()=>{

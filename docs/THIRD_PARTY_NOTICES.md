@@ -1,5 +1,7 @@
 # Third-party notices
 
+- **NASA Giovanni / MODIS Terra MOD08_M3 v6.1:** the default Penang atmospheric investigation uses an actual monthly service export. Original CSV, requested and actual grid bounds, checksum and reproduction link are retained in `docs/DATA_SOURCES.md` and the app. Giovanni is developed and maintained by NASA GES DISC.
+
 - **NASA POWER / CERES SYN1deg:** NASA-derived scientific data, downloaded through the public POWER API. Exact endpoints, timestamps and hashes are in the cached metadata and `DATA_SOURCES.md`. No NASA logos are used for NightLens branding. NASA endorsement is not claimed.
 - **HYG v3.8:** David Nash / Astronexus, licensed under Creative Commons Attribution-ShareAlike 4.0: https://creativecommons.org/licenses/by-sa/4.0/. Source https://github.com/astronexus/HYG-Database. Changes: selected catalog V magnitude ≤ 5.8, removed Sun, retained only chart-relevant fields, converted CSV to JSON. `public/data/stars.json` and `data/raw/hyg_v38.csv.gz` retain this data license; they are not relicensed under the application MIT license.
 - **Astronomy Engine:** Copyright Don Cross, MIT. https://github.com/cosinekitty/astronomy. Its package source retains the MIT notice. Full text is included under `public/licenses/astronomy-engine.txt`.

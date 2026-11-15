@@ -1,5 +1,17 @@
 # NightLens — The Atlas of Lost Starlight
 
+
+**Judges: [start with the three-minute review](docs/JUDGES_GUIDE.md).**
+
+[Open the public application](https://nightlens-sky-atlas.leveling-magician.chatgpt.site) · [NASA investigation](https://nightlens-sky-atlas.leveling-magician.chatgpt.site/#time-machine) · [Sources & scientific method](docs/SCIENTIFIC_METHOD.md)
+
+1. **NASA trends:** the challenge investigation. Inspect the 2001–2024 MODIS aerosol record near Penang, data completeness, trend and uncertainty.
+2. **Observatory:** explore the calculated sky. Use Place & time, Lighting, and the independent Environment panel. Compare starts with Busy city versus No artificial light if the current settings would produce identical sides.
+3. **City experiment:** a simplified evening timeline for dimming selected nonessential fixtures. This is an illustration, separate from the NASA historical record.
+4. **Sources & method:** provenance, limitations, attribution and AI disclosure.
+
+This repository contains the working React/TypeScript source, cached scientific data, original NASA export, reproducible Python analysis and tests. The live application requires no account or API key. The project is a scientific prototype; scene materials and lighting appearance are illustrative.
+
 A digital observatory for the changing night sky. Built for NASA Space Apps 2026, **Be An Earth System Trend Detective!**
 
 NightLens connects two carefully separated experiences: a reproducible NASA atmospheric trend investigation and a hypothetical outdoor-lighting experiment over a calculated sky. It does not claim the atmospheric record measures light pollution.

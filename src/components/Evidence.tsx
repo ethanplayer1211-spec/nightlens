@@ -3,7 +3,7 @@ import { ArrowUpRight, BookOpen, X } from 'lucide-react';
 
 export function EvidenceContent({ topic }: { topic: 'city' | 'data' | 'astronomy' | 'all' }) {
   return <div className="evidence-copy">
-    <p className="evidence-intro">An honest instrument tells you what it knows—and where its knowledge ends.</p>
+    <p className="evidence-intro">Data, calculations and illustrative effects are documented separately below.</p>
     {(topic === 'city' || topic === 'all') && <>
       <span className="evidence-tag illustrative">ILLUSTRATIVE</span>
       <h3>A city experiment, not a forecast.</h3>

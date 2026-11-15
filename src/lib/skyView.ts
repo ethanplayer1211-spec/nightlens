@@ -6,6 +6,7 @@ import type {ReactNode} from 'react';
 
 export interface SkyCamera { azimuth: number; altitude: number; fieldOfView: number }
 export interface SkyViewActions {
+  controlSection:'observe'|'lighting'|'environment';
   skyOnly:boolean;onSkyOnly:(value:boolean)=>void;onCityView:()=>void;
   moonAvailable:boolean;moonStudy:boolean;onMoonStudy:()=>void;
   quality:RenderQuality;onQuality:(value:RenderQuality)=>void;
@@ -39,7 +40,7 @@ export interface ImmersiveSkyProps {
   warmth: number;
   cityLightPercent: number;
   horizonData: LocalHorizon | null;
-  baselineLabel: string;
+  baselineLabel: string;selectedLabel?:string;comparisonNote?:string;
   scene?:CityScene|null;
   /** Virtual camera height; original source geometry remains at its original elevation. */
   observerElevation?:number;clearPlatform?:boolean;

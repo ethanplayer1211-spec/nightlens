@@ -99,3 +99,14 @@ The primary toolbar now exposes only Adjust sky, Compare and Reset. The adjustme
 Quick lighting looks change only artificial-light inputs. The midnight look explicitly previews the following 00:05, using the existing scenario assumptions; other looks preserve time and atmospheric conditions. Reset restores local buildings and appearance/camera defaults without discarding the observing instant. Star guides show names/asterisms where contrast permits. The enhanced-survey warning is now visible regardless of guide mode.
 
 The existing licensed KL and Sydney historical photographs are available directly below the place selector in a native modal viewer with author/license, source-date/pose limits and a fixed-image warning. Source bytes are unchanged and included in the standalone. The photo is never composited into the sky or relit by the lighting controls. Other cities do not offer a nonexistent reference. City facade room/floor lighting is now spatially correlated to reduce unrelated speckling; facades and lighting remain approximate, not photographic scans or measured luminance.
+
+
+## Separate tools and explicit comparison — final revision
+
+Lighting, Environment and Place & time are now separate panels. The toolbar exposes Lighting / Environment / Compare / Reset; Place & time is in the view header and panel navigation. The old combined adjustment drawer is superseded.
+
+Compare selects Busy city versus No artificial light if the current lighting would give identical sides. Before/After labels name the actual pair. The schedule experiment instead compares Undimmed fixtures with selected dimmed/shielded/warmer settings at the same instant. A caption states that place, time, camera and air are shared; equal lighting, daylight and high-cloud warnings explain muted differences.
+
+Environment has direct controls for artificial light, haze, fog, clouds and nearby glare, plus Clear air / Hazy / Foggy / Overcast examples. Fog is a deterministic, uncalibrated veil/extinction with distance attenuation for city geometry. It is distinct from haze and clouds. These settings do not feed NASA statistics or alter celestial positions. Strengths are display controls, not measured local extinction or visibility. Essential safety lighting is retained in responsible proposals; no-artificial-light is a reference view.
+
+The visual reference is Google Earth Studio's scene-first approach (https://www.google.com/earth/studio/), adapted to the existing celestial atlas. Interface controls use plain rows, native checkboxes, larger DM Sans text and a restrained segmented toolbar. Serif typography remains in editorial titles.

@@ -12,7 +12,7 @@ function Toggle({label,checked,onChange,disabled=false}:{label:string;checked:bo
   return <label className={`sky-toggle-row ${disabled?'is-disabled':''}`}><input type="checkbox" role="switch" aria-label={label} checked={checked} disabled={disabled} onChange={e=>onChange(e.target.checked)}/><span className="sky-toggle-track" aria-hidden="true"/><span className="sky-toggle-label">{label}</span><span className="sky-toggle-state" aria-hidden="true">{checked?'On':'Off'}</span></label>;
 }
 export default function SkyControls(p:{
-  activeTab:string;onTab:(tab:string)=>void;glow:number;theme:string;onGlow:(v:number)=>void;onTheme:(id:string)=>void;
+  onlySchedule?:boolean;activeTab:string;onTab:(tab:string)=>void;glow:number;theme:string;onGlow:(v:number)=>void;onTheme:(id:string)=>void;
   filters:SkyFilters;onFilters:(patch:Partial<SkyFilters>)=>void;
   lighting:NightLighting;onLighting:(patch:Partial<NightLighting>)=>void;
   scheduleActive:boolean;fixtureOutput:number;onMidnightPreview:(after:boolean)=>void;
@@ -20,10 +20,10 @@ export default function SkyControls(p:{
   conditions:CurrentConditions|null;weatherStatus:string;weatherFresh:boolean;timeZone:string;nowMode:boolean;useClouds:boolean;onUseClouds:(v:boolean)=>void;onRefresh:()=>void;
   onReset:()=>void;onEvidence:()=>void;
 }){
-  const tab=p.activeTab,setTab=p.onTab;
+  const tab=p.onlySchedule?'experiment':p.activeTab,setTab=p.onTab;
   const tabs=[['light','Lighting'],['air','Atmosphere'],['experiment','Experiment']];
   const startLabel=p.lighting.scheduleStart>=1440?`${String(Math.floor((p.lighting.scheduleStart-1440)/60)).padStart(2,'0')}:00`:`${Math.floor(p.lighting.scheduleStart/60)}:00`;
-  return <aside className="observatory-controls" aria-label="Sky appearance controls"><span className="eyebrow">THE LIGHT BETWEEN US</span><h2>Imagine<br/><em>a darker sky.</em></h2><p className="lighting-caption">Combine light, atmosphere and responsible lighting choices. Positions stay calculated.</p>
+  return <aside className={`observatory-controls ${p.onlySchedule?'schedule-controls':''}`} aria-label="Sky appearance controls"><span className="eyebrow">THE LIGHT BETWEEN US</span><h2>Imagine<br/><em>a darker sky.</em></h2><p className="lighting-caption">Combine light, atmosphere and responsible lighting choices. Positions stay calculated.</p>
     <div className="sky-control-tabs" role="tablist" aria-label="Sky control groups">{tabs.map(([id,label],index)=><button tabIndex={tab===id?0:-1} onKeyDown={e=>{const next=e.key==='ArrowRight'?(index+1)%tabs.length:e.key==='ArrowLeft'?(index+tabs.length-1)%tabs.length:e.key==='Home'?0:e.key==='End'?tabs.length-1:null;if(next!==null){e.preventDefault();setTab(tabs[next][0]);document.getElementById(`sky-tab-${tabs[next][0]}`)?.focus();}}} key={id} id={`sky-tab-${id}`} role="tab" aria-selected={tab===id} aria-controls={`sky-panel-${id}`} onClick={()=>setTab(id)}>{label}</button>)}</div>
     <section id="sky-panel-light" role="tabpanel" aria-labelledby="sky-tab-light" hidden={tab!=='light'}>
       <div className="sky-themes" role="group" aria-label="Lighting themes">{LIGHTING_THEMES.map(t=><button key={t.id} onClick={()=>p.onTheme(t.id)} aria-pressed={p.theme===t.id}><span className={`theme-mark theme-${t.id}`} aria-hidden="true"/><span>{t.title}<small>{t.subtitle}</small></span>{p.theme===t.id?<Check size={14}/>:<span className="theme-open-circle"/>}</button>)}</div>

@@ -4,6 +4,7 @@ export type HorizonTheme = 'local' | 'rooftop' | 'coast' | 'meadow' | 'viewpoint
 export type ViewStyle = 'natural' | 'survey';
 export interface SkyFilters {
   hazePercent: number;
+  fogPercent: number;
   cloudPercent: number;
   cloudOpacityPercent: number;
   glarePercent: number;
@@ -23,13 +24,13 @@ export interface NightLighting {
   /** Explicit uncalibrated source-mixture assumption, not a NASA measurement. */
   selectedSourceSharePercent: number;
 }
-export const DEFAULT_FILTERS: Readonly<SkyFilters> = Object.freeze({ hazePercent: 18, cloudPercent: 0, cloudOpacityPercent: 85, glarePercent: 15, moonlightEnabled: true, viewStyle: 'natural', horizon: 'local', observerHeight: 14 });
+export const DEFAULT_FILTERS: Readonly<SkyFilters> = Object.freeze({ hazePercent: 18, fogPercent: 0, cloudPercent: 0, cloudOpacityPercent: 85, glarePercent: 15, moonlightEnabled: true, viewStyle: 'natural', horizon: 'local', observerHeight: 14 });
 export const DEFAULT_NIGHT_LIGHTING: Readonly<NightLighting> = Object.freeze({ scheduleEnabled: false, scheduleStart: 1440, dimmingPercent: 50, participatingFixturePercent: 70, shieldingEnabled: false, lightColorScenario: 'cool', selectedSourceSharePercent: 35 });
 const clamp = (v: number, a = 0, b = 100) => { if (!Number.isFinite(v)) throw new RangeError('Display inputs must be finite'); return Math.max(a, Math.min(b, v)); };
 
 export function normalizeFilters(value: SkyFilters): SkyFilters {
   if (!['local','rooftop','coast','meadow','viewpoint'].includes(value.horizon) || !['natural','survey'].includes(value.viewStyle) || typeof value.moonlightEnabled !== 'boolean') throw new RangeError('Unknown sky environment');
-  return { ...value, hazePercent:clamp(value.hazePercent),cloudPercent:clamp(value.cloudPercent),cloudOpacityPercent:clamp(value.cloudOpacityPercent),glarePercent:clamp(value.glarePercent),observerHeight:clamp(value.observerHeight,1.7,value.horizon==='viewpoint'?600:60) };
+  return { ...value, hazePercent:clamp(value.hazePercent),fogPercent:clamp(value.fogPercent??0),cloudPercent:clamp(value.cloudPercent),cloudOpacityPercent:clamp(value.cloudOpacityPercent),glarePercent:clamp(value.glarePercent),observerHeight:clamp(value.observerHeight,1.7,value.horizon==='viewpoint'?600:60) };
 }
 export function normalizeLighting(value: NightLighting): NightLighting {
   if (typeof value.scheduleEnabled !== 'boolean' || typeof value.shieldingEnabled !== 'boolean' || !['warm','cool'].includes(value.lightColorScenario)) throw new RangeError('Unknown lighting setting');
@@ -64,7 +65,8 @@ export function starDisplayContrast(magnitude: number, altitude: number, context
   const signal = Math.pow(10,-.4*magnitude)*transmission;
   const background = .0018 + .32*Math.pow(light,2.6) + .05*context.moonInfluence + .20*context.filters.glarePercent/100*context.fixtureGlare*light;
   const opaqueCloud = clamp(context.cloudCover)/100*context.filters.cloudOpacityPercent/100;
-  const alpha = night*(signal/(signal+background))*Math.pow(1-opaqueCloud,3)*(1-Math.pow(light,8));
+  const fogTransmission=Math.exp(-(context.filters.fogPercent??0)/100*(1.5+4*Math.exp(-Math.max(0,altitude)/15)));
+  const alpha = fogTransmission*night*(signal/(signal+background))*Math.pow(1-opaqueCloud,3)*(1-Math.pow(light,8));
   return Math.max(0,Math.min(1,alpha*(context.filters.viewStyle==='survey'?1.2:.88)));
 }
 

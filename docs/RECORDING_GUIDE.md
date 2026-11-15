@@ -51,3 +51,10 @@ Pick a special sky selects actual local dates/times with tags: First-quarter Moo
 For the science shot, choose **Time Machine → Penang → MODIS Terra via Giovanni**. Keep 2001–2024, the 23 complete annual values / 1 missing label, source and inconclusive inference visible. Endpoint change is −15.1%, but the fitted trend is inconclusive (p≈0.197). This difference is a useful scientific finding, not a defect to hide.
 
 Night Designer tracks the three explored scenarios and offers one evidence question. It is learning progress, not a sky-quality/safety score. Do not claim exact star counts, city savings, prediction accuracy, photographic realism, a winning score or NASA endorsement.
+
+
+## Clear-tool revision
+
+The immersive toolbar now exposes Lighting, Environment, Compare and Reset. Place & time is a separate header action. Compare initially chooses Busy city versus No artificial light when the current lighting would give identical sides. Before/After badges name the actual lighting; location, time, camera and air are shared. Clouds and daylight warnings explain why a comparison may be muted.
+
+For a clear take: Enter the sky → Compare → slowly move the divider → Environment → Foggy → Clear air → Done → Return → NASA trends. Foggy, Hazy and Overcast are selected illustrations, not recorded weather. Use a wide landscape window if available. Font sizing and flat row controls have been simplified; the controls no longer sit inside one combined filter drawer.

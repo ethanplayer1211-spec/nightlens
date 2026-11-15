@@ -1,5 +1,15 @@
 # Validation record
 
+## Separate observatory tools — latest revision
+
+**71 TypeScript + 24 Python tests passed (95 total)**. Lint/typecheck/build and standalone verification passed. The standalone is 16,867,109 bytes. This section supersedes older combined-drawer and test-count descriptions below.
+
+Browser checks: the default Compare action changes identical baseline settings to Busy city versus No artificial light; both labels and the shared-condition caption are explicit. Responsible lighting selects 00:05 and compares Undimmed fixtures with Dimmed + shielded + warmer. Fixture schedule controls remain available without duplicate atmosphere tabs. Fog toggled on/off and its slider reached 100; artificial light switched to zero; Clear air, Foggy and Overcast visibly changed the rendered scene. Cloud coverage reached 100. No console errors/warnings were observed. The 390 px viewport had no horizontal overflow (page width 390; panel width 366).
+
+Proofs: `tools-compare-clear.jpg`, `tools-foggy.jpg`, `tools-overcast.jpg`, `tools-environment-desktop.jpg`, `tools-final-compare.jpg`, `tools-environment-mobile.jpg`, `tools-start-here-mobile.jpg` under `evidence/browser/`. The renamed app navigation and Start here guide explain each section. The GitHub judge's starting guide documents the live app, numerical investigation, source map and reproduction commands.
+
+Appearance remains illustrative; these checks do not certify atmospheric calibration, recording FPS, photographic realism or a wide physical-device matrix.
+
 ## Final submission sprint — November 15, 2026
 
 **70 TypeScript tests + 24 Python tests passed (94 total)**. Lint and typecheck passed. The final production build passed. The standalone verifier confirmed 16,852,392 bytes, production equality, seven scene bundles, the model, seven images, five fonts and the catalog, with no external scripts. Vite reports one nonblocking shared-JavaScript chunk-size warning (about 508 kB minified). These current results supersede earlier counts and the earlier absent-Giovanni status; older dated checks remain historical evidence.

@@ -24,7 +24,7 @@ uniform vec3 sunDirection,moonDirection;
 uniform sampler2D waterMask,pavingColor,pavingNormal,pavingRoughness;
 uniform vec2 waterOrigin,waterExtent;
 uniform float hasWater,hasPaving,wetness;
-uniform float moonLight,eyeElevation,sunAltitude,cityLight,selectedLight,baselineLight,comparison,split,pixelWidth,fixtureOutput,haze,warmth,overcast;
+uniform float moonLight,eyeElevation,sunAltitude,cityLight,selectedLight,baselineLight,comparison,split,pixelWidth,fixtureOutput,haze,warmth,overcast,fogDensity;
 varying vec3 world,norm;
 varying vec4 baseColor;
 varying vec2 mat;
@@ -118,8 +118,10 @@ void main(){
   if(abs(mat.y-18.0)<.4){float tile=fract(world.x*1.3)+fract(world.z*1.5);c*=.85+.15*smoothstep(.0,.25,tile);}
   if(mat.y>3.5&&mat.y<4.5)c*=.94+.06*sin(world.y*.8+world.x*.014);
   c=pow(aces(c*1.25),vec3(1.0/2.2));
-  float fog=(1.0-exp(-distance*(.000075+haze*.00025)))*.88;
+  float fog=(1.0-exp(-distance*(.000075+haze*.00025+fogDensity*.006)))*.88;
   vec3 atmosphere=mix(vec3(.010,.019,.032)+vec3(.10,.115,.13)*pow(light,1.3),vec3(.36,.48,.58),day);
+  vec3 fogLamp=mix(vec3(.20,.245,.29),vec3(.31,.21,.125),warmth*(1.0-before));
+  atmosphere=mix(atmosphere,mix(vec3(.028,.038,.052)+fogLamp*light*.32,vec3(.48,.57,.63),day),fogDensity);
   c=mix(c,atmosphere,fog);
   gl_FragColor=vec4(clamp(c,0.0,1.0),baseColor.a);
 }`;
@@ -133,7 +135,7 @@ export function createCityGPU(canvas:HTMLCanvasElement,onMaterialReady:()=>void=
     const compile=(type:number,source:string)=>{const s=gl.createShader(type);if(!s)throw new Error('Scene shader allocation failed');gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){gl.deleteShader(s);throw new Error('Scene shader unavailable');}return s;};
     vs=compile(gl.VERTEX_SHADER,vertex);fs=compile(gl.FRAGMENT_SHADER,fragment);program=gl.createProgram();if(!program)throw new Error('Scene program allocation failed');gl.attachShader(program,vs);gl.attachShader(program,fs);gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw new Error('Scene program unavailable');
     const attributes=['position','normal','color','material'].map(name=>gl.getAttribLocation(program!,name));
-    const names=['forward','rightward','upward','eyeElevation','tangent','aspect','sunDirection','moonDirection','moonLight','sunAltitude','cityLight','selectedLight','baselineLight','comparison','split','pixelWidth','fixtureOutput','haze','warmth','overcast','waterMask','waterOrigin','waterExtent','hasWater','pavingColor','pavingNormal','pavingRoughness','hasPaving','wetness'];
+    const names=['forward','rightward','upward','eyeElevation','tangent','aspect','sunDirection','moonDirection','moonLight','sunAltitude','cityLight','selectedLight','baselineLight','comparison','split','pixelWidth','fixtureOutput','fogDensity','haze','warmth','overcast','waterMask','waterOrigin','waterExtent','hasWater','pavingColor','pavingNormal','pavingRoughness','hasPaving','wetness'];
     const uniforms=Object.fromEntries(names.map(name=>[name,gl.getUniformLocation(program!,name)]));
     const opaque=gl.createBuffer(),glass=gl.createBuffer(),platform=gl.createBuffer();if(!opaque||!glass||!platform)throw new Error('Scene buffer allocation failed');buffers.push(opaque,glass,platform);
     let platformHeight=NaN,platformVertices=0;
@@ -179,7 +181,7 @@ export function createCityGPU(canvas:HTMLCanvasElement,onMaterialReady:()=>void=
         gl.uniform1f(uniforms.moonLight,(p.filters.moonlightEnabled?1:0)*Math.max(0,Math.sin(mh))*p.sky.moonIllumination);
         gl.uniform1f(uniforms.overcast,Math.max(0,Math.min(1,p.cloudCover/100*p.filters.cloudOpacityPercent/100)));
         gl.uniform1f(uniforms.sunAltitude,p.sky.sunAltitude);gl.uniform1f(uniforms.cityLight,p.cityLightPercent);gl.uniform1f(uniforms.selectedLight,p.lightPollution);gl.uniform1f(uniforms.baselineLight,p.compareLightPollution);
-        gl.uniform1f(uniforms.comparison,p.comparison?1:0);gl.uniform1f(uniforms.split,p.split/100);gl.uniform1f(uniforms.pixelWidth,width);gl.uniform1f(uniforms.fixtureOutput,p.fixtureOutput);gl.uniform1f(uniforms.haze,p.filters.hazePercent/100);gl.uniform1f(uniforms.warmth,p.warmth);
+        gl.uniform1f(uniforms.comparison,p.comparison?1:0);gl.uniform1f(uniforms.split,p.split/100);gl.uniform1f(uniforms.pixelWidth,width);gl.uniform1f(uniforms.fixtureOutput,p.fixtureOutput);gl.uniform1f(uniforms.fogDensity,(p.filters.fogPercent??0)/100);gl.uniform1f(uniforms.haze,p.filters.hazePercent/100);gl.uniform1f(uniforms.warmth,p.warmth);
         bind(opaque);gl.drawArrays(gl.TRIANGLES,0,mesh.opaque.length/12);
         if(p.clearPlatform&&p.observerElevation!==undefined){
           if(platformHeight!==eye){const deck=buildClearPlatform(eye);platformHeight=eye;platformVertices=deck.opaque.length/12;gl.bindBuffer(gl.ARRAY_BUFFER,platform);gl.bufferData(gl.ARRAY_BUFFER,deck.opaque,gl.STATIC_DRAW);}

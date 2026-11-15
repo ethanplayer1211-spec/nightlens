@@ -4,7 +4,7 @@ import type {ImmersiveSkyProps} from './skyView';
 export function appearanceValues(p:ImmersiveSkyProps){
   return {light:p.lightPollution,baseline:p.compareLightPollution,city:p.cityLightPercent,cloud:p.cloudCover,
     glare:p.fixtureGlare,output:p.fixtureOutput,warmth:p.warmth,haze:p.filters.hazePercent,
-    nearby:p.filters.glarePercent,opacity:p.filters.cloudOpacityPercent};
+    fog:p.filters.fogPercent??0,nearby:p.filters.glarePercent,opacity:p.filters.cloudOpacityPercent};
 }
 export type AppearanceValues=ReturnType<typeof appearanceValues>;
 export interface AppearanceTransition {from:AppearanceValues;to:AppearanceValues;start:number;duration:number}
@@ -16,5 +16,5 @@ export function sampleAppearance(transition:AppearanceTransition,now:number){
 export function visualProps(p:ImmersiveSkyProps,v:AppearanceValues):ImmersiveSkyProps{
   return {...p,lightPollution:v.light,compareLightPollution:v.baseline,cityLightPercent:v.city,cloudCover:v.cloud,
     fixtureGlare:v.glare,fixtureOutput:v.output,warmth:v.warmth,
-    filters:{...p.filters,hazePercent:v.haze,glarePercent:v.nearby,cloudOpacityPercent:v.opacity}};
+    filters:{...p.filters,hazePercent:v.haze,fogPercent:v.fog,glarePercent:v.nearby,cloudOpacityPercent:v.opacity}};
 }
