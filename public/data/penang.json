@@ -1,0 +1,6206 @@
+{
+  "region": {
+    "id": "penang",
+    "name": "Penang, Malaysia",
+    "latitude": 5.4141,
+    "longitude": 100.3354,
+    "utcOffset": 8,
+    "elevation": 10
+  },
+  "variable": "Aerosol optical depth at 0.55 µm",
+  "parameter": "AOD_55",
+  "units": "dimensionless",
+  "provider": "NASA POWER / CERES SYN1deg",
+  "sourceKind": "Satellite-derived, model-assimilated environmental record",
+  "spatialResolution": "1° latitude × 1° longitude source grid cell",
+  "sourceUrl": "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=AOD_55&community=RE&longitude=100.3354&latitude=5.4141&start=2001&end=2024&format=JSON",
+  "documentationUrl": "https://power.larc.nasa.gov/docs/methodology/data/sources_clds_aerosols/",
+  "retrievedAt": "2026-11-15T01:40:31.254500+00:00",
+  "sha256": "886812805a3ca1830dbd50de635e0b3b92cd3bbe881df5456c7c38f2e030752c",
+  "sourceHeader": {
+    "title": "NASA/POWER Source Native Resolution Monthly and Annual",
+    "api": {
+      "version": "v2.10.0",
+      "name": "POWER Monthly and Annual API"
+    },
+    "sources": [
+      "SYN1DEG"
+    ],
+    "fill_value": -999.0,
+    "time_standard": "LST",
+    "start": "20010101",
+    "end": "20241231"
+  },
+  "fillValue": -999.0,
+  "observations": [
+    {
+      "year": 2001,
+      "month": 1,
+      "value": 0.41
+    },
+    {
+      "year": 2001,
+      "month": 2,
+      "value": 0.38
+    },
+    {
+      "year": 2001,
+      "month": 3,
+      "value": 0.34
+    },
+    {
+      "year": 2001,
+      "month": 4,
+      "value": 0.34
+    },
+    {
+      "year": 2001,
+      "month": 5,
+      "value": 0.42
+    },
+    {
+      "year": 2001,
+      "month": 6,
+      "value": 0.28
+    },
+    {
+      "year": 2001,
+      "month": 7,
+      "value": 0.37
+    },
+    {
+      "year": 2001,
+      "month": 8,
+      "value": 0.34
+    },
+    {
+      "year": 2001,
+      "month": 9,
+      "value": 0.41
+    },
+    {
+      "year": 2001,
+      "month": 10,
+      "value": 0.34
+    },
+    {
+      "year": 2001,
+      "month": 11,
+      "value": 0.37
+    },
+    {
+      "year": 2001,
+      "month": 12,
+      "value": 0.29
+    },
+    {
+      "year": 2002,
+      "month": 1,
+      "value": 0.32
+    },
+    {
+      "year": 2002,
+      "month": 2,
+      "value": 0.29
+    },
+    {
+      "year": 2002,
+      "month": 3,
+      "value": 0.35
+    },
+    {
+      "year": 2002,
+      "month": 4,
+      "value": 0.35
+    },
+    {
+      "year": 2002,
+      "month": 5,
+      "value": 0.37
+    },
+    {
+      "year": 2002,
+      "month": 6,
+      "value": 0.39
+    },
+    {
+      "year": 2002,
+      "month": 7,
+      "value": 0.37
+    },
+    {
+      "year": 2002,
+      "month": 8,
+      "value": 0.42
+    },
+    {
+      "year": 2002,
+      "month": 9,
+      "value": 0.46
+    },
+    {
+      "year": 2002,
+      "month": 10,
+      "value": 0.64
+    },
+    {
+      "year": 2002,
+      "month": 11,
+      "value": 0.33
+    },
+    {
+      "year": 2002,
+      "month": 12,
+      "value": 0.32
+    },
+    {
+      "year": 2003,
+      "month": 1,
+      "value": 0.39
+    },
+    {
+      "year": 2003,
+      "month": 2,
+      "value": 0.31
+    },
+    {
+      "year": 2003,
+      "month": 3,
+      "value": 0.4
+    },
+    {
+      "year": 2003,
+      "month": 4,
+      "value": 0.35
+    },
+    {
+      "year": 2003,
+      "month": 5,
+      "value": 0.43
+    },
+    {
+      "year": 2003,
+      "month": 6,
+      "value": 0.51
+    },
+    {
+      "year": 2003,
+      "month": 7,
+      "value": 0.36
+    },
+    {
+      "year": 2003,
+      "month": 8,
+      "value": 0.44
+    },
+    {
+      "year": 2003,
+      "month": 9,
+      "value": 0.37
+    },
+    {
+      "year": 2003,
+      "month": 10,
+      "value": 0.37
+    },
+    {
+      "year": 2003,
+      "month": 11,
+      "value": 0.36
+    },
+    {
+      "year": 2003,
+      "month": 12,
+      "value": 0.34
+    },
+    {
+      "year": 2004,
+      "month": 1,
+      "value": 0.34
+    },
+    {
+      "year": 2004,
+      "month": 2,
+      "value": 0.45
+    },
+    {
+      "year": 2004,
+      "month": 3,
+      "value": 0.47
+    },
+    {
+      "year": 2004,
+      "month": 4,
+      "value": 0.52
+    },
+    {
+      "year": 2004,
+      "month": 5,
+      "value": 0.41
+    },
+    {
+      "year": 2004,
+      "month": 6,
+      "value": 0.42
+    },
+    {
+      "year": 2004,
+      "month": 7,
+      "value": 0.33
+    },
+    {
+      "year": 2004,
+      "month": 8,
+      "value": 0.44
+    },
+    {
+      "year": 2004,
+      "month": 9,
+      "value": 0.55
+    },
+    {
+      "year": 2004,
+      "month": 10,
+      "value": 0.39
+    },
+    {
+      "year": 2004,
+      "month": 11,
+      "value": 0.3
+    },
+    {
+      "year": 2004,
+      "month": 12,
+      "value": 0.33
+    },
+    {
+      "year": 2005,
+      "month": 1,
+      "value": 0.32
+    },
+    {
+      "year": 2005,
+      "month": 2,
+      "value": 0.42
+    },
+    {
+      "year": 2005,
+      "month": 3,
+      "value": 0.46
+    },
+    {
+      "year": 2005,
+      "month": 4,
+      "value": 0.46
+    },
+    {
+      "year": 2005,
+      "month": 5,
+      "value": 0.44
+    },
+    {
+      "year": 2005,
+      "month": 6,
+      "value": 0.39
+    },
+    {
+      "year": 2005,
+      "month": 7,
+      "value": 0.38
+    },
+    {
+      "year": 2005,
+      "month": 8,
+      "value": 0.51
+    },
+    {
+      "year": 2005,
+      "month": 9,
+      "value": 0.42
+    },
+    {
+      "year": 2005,
+      "month": 10,
+      "value": 0.44
+    },
+    {
+      "year": 2005,
+      "month": 11,
+      "value": 0.35
+    },
+    {
+      "year": 2005,
+      "month": 12,
+      "value": 0.33
+    },
+    {
+      "year": 2006,
+      "month": 1,
+      "value": 0.34
+    },
+    {
+      "year": 2006,
+      "month": 2,
+      "value": 0.35
+    },
+    {
+      "year": 2006,
+      "month": 3,
+      "value": 0.42
+    },
+    {
+      "year": 2006,
+      "month": 4,
+      "value": 0.38
+    },
+    {
+      "year": 2006,
+      "month": 5,
+      "value": 0.37
+    },
+    {
+      "year": 2006,
+      "month": 6,
+      "value": 0.36
+    },
+    {
+      "year": 2006,
+      "month": 7,
+      "value": 0.48
+    },
+    {
+      "year": 2006,
+      "month": 8,
+      "value": 0.45
+    },
+    {
+      "year": 2006,
+      "month": 9,
+      "value": 0.58
+    },
+    {
+      "year": 2006,
+      "month": 10,
+      "value": 0.97
+    },
+    {
+      "year": 2006,
+      "month": 11,
+      "value": 0.42
+    },
+    {
+      "year": 2006,
+      "month": 12,
+      "value": 0.37
+    },
+    {
+      "year": 2007,
+      "month": 1,
+      "value": 0.37
+    },
+    {
+      "year": 2007,
+      "month": 2,
+      "value": 0.43
+    },
+    {
+      "year": 2007,
+      "month": 3,
+      "value": 0.44
+    },
+    {
+      "year": 2007,
+      "month": 4,
+      "value": 0.44
+    },
+    {
+      "year": 2007,
+      "month": 5,
+      "value": 0.41
+    },
+    {
+      "year": 2007,
+      "month": 6,
+      "value": 0.37
+    },
+    {
+      "year": 2007,
+      "month": 7,
+      "value": 0.46
+    },
+    {
+      "year": 2007,
+      "month": 8,
+      "value": 0.4
+    },
+    {
+      "year": 2007,
+      "month": 9,
+      "value": 0.41
+    },
+    {
+      "year": 2007,
+      "month": 10,
+      "value": 0.37
+    },
+    {
+      "year": 2007,
+      "month": 11,
+      "value": 0.38
+    },
+    {
+      "year": 2007,
+      "month": 12,
+      "value": 0.39
+    },
+    {
+      "year": 2008,
+      "month": 1,
+      "value": 0.4
+    },
+    {
+      "year": 2008,
+      "month": 2,
+      "value": 0.4
+    },
+    {
+      "year": 2008,
+      "month": 3,
+      "value": 0.5
+    },
+    {
+      "year": 2008,
+      "month": 4,
+      "value": 0.41
+    },
+    {
+      "year": 2008,
+      "month": 5,
+      "value": 0.51
+    },
+    {
+      "year": 2008,
+      "month": 6,
+      "value": 0.39
+    },
+    {
+      "year": 2008,
+      "month": 7,
+      "value": 0.41
+    },
+    {
+      "year": 2008,
+      "month": 8,
+      "value": 0.5
+    },
+    {
+      "year": 2008,
+      "month": 9,
+      "value": 0.38
+    },
+    {
+      "year": 2008,
+      "month": 10,
+      "value": 0.33
+    },
+    {
+      "year": 2008,
+      "month": 11,
+      "value": 0.38
+    },
+    {
+      "year": 2008,
+      "month": 12,
+      "value": 0.36
+    },
+    {
+      "year": 2009,
+      "month": 1,
+      "value": 0.43
+    },
+    {
+      "year": 2009,
+      "month": 2,
+      "value": 0.49
+    },
+    {
+      "year": 2009,
+      "month": 3,
+      "value": 0.4
+    },
+    {
+      "year": 2009,
+      "month": 4,
+      "value": 0.39
+    },
+    {
+      "year": 2009,
+      "month": 5,
+      "value": 0.42
+    },
+    {
+      "year": 2009,
+      "month": 6,
+      "value": 0.43
+    },
+    {
+      "year": 2009,
+      "month": 7,
+      "value": 0.5
+    },
+    {
+      "year": 2009,
+      "month": 8,
+      "value": 0.44
+    },
+    {
+      "year": 2009,
+      "month": 9,
+      "value": 0.48
+    },
+    {
+      "year": 2009,
+      "month": 10,
+      "value": 0.45
+    },
+    {
+      "year": 2009,
+      "month": 11,
+      "value": 0.36
+    },
+    {
+      "year": 2009,
+      "month": 12,
+      "value": 0.34
+    },
+    {
+      "year": 2010,
+      "month": 1,
+      "value": 0.41
+    },
+    {
+      "year": 2010,
+      "month": 2,
+      "value": 0.32
+    },
+    {
+      "year": 2010,
+      "month": 3,
+      "value": 0.41
+    },
+    {
+      "year": 2010,
+      "month": 4,
+      "value": 0.41
+    },
+    {
+      "year": 2010,
+      "month": 5,
+      "value": 0.39
+    },
+    {
+      "year": 2010,
+      "month": 6,
+      "value": 0.35
+    },
+    {
+      "year": 2010,
+      "month": 7,
+      "value": 0.36
+    },
+    {
+      "year": 2010,
+      "month": 8,
+      "value": 0.36
+    },
+    {
+      "year": 2010,
+      "month": 9,
+      "value": 0.39
+    },
+    {
+      "year": 2010,
+      "month": 10,
+      "value": 0.41
+    },
+    {
+      "year": 2010,
+      "month": 11,
+      "value": 0.35
+    },
+    {
+      "year": 2010,
+      "month": 12,
+      "value": 0.36
+    },
+    {
+      "year": 2011,
+      "month": 1,
+      "value": 0.4
+    },
+    {
+      "year": 2011,
+      "month": 2,
+      "value": 0.47
+    },
+    {
+      "year": 2011,
+      "month": 3,
+      "value": 0.42
+    },
+    {
+      "year": 2011,
+      "month": 4,
+      "value": 0.44
+    },
+    {
+      "year": 2011,
+      "month": 5,
+      "value": 0.4
+    },
+    {
+      "year": 2011,
+      "month": 6,
+      "value": 0.44
+    },
+    {
+      "year": 2011,
+      "month": 7,
+      "value": 0.63
+    },
+    {
+      "year": 2011,
+      "month": 8,
+      "value": 0.49
+    },
+    {
+      "year": 2011,
+      "month": 9,
+      "value": 0.63
+    },
+    {
+      "year": 2011,
+      "month": 10,
+      "value": 0.39
+    },
+    {
+      "year": 2011,
+      "month": 11,
+      "value": 0.37
+    },
+    {
+      "year": 2011,
+      "month": 12,
+      "value": 0.43
+    },
+    {
+      "year": 2012,
+      "month": 1,
+      "value": 0.4
+    },
+    {
+      "year": 2012,
+      "month": 2,
+      "value": 0.41
+    },
+    {
+      "year": 2012,
+      "month": 3,
+      "value": 0.48
+    },
+    {
+      "year": 2012,
+      "month": 4,
+      "value": 0.42
+    },
+    {
+      "year": 2012,
+      "month": 5,
+      "value": 0.39
+    },
+    {
+      "year": 2012,
+      "month": 6,
+      "value": 0.5
+    },
+    {
+      "year": 2012,
+      "month": 7,
+      "value": 0.45
+    },
+    {
+      "year": 2012,
+      "month": 8,
+      "value": 0.53
+    },
+    {
+      "year": 2012,
+      "month": 9,
+      "value": 0.51
+    },
+    {
+      "year": 2012,
+      "month": 10,
+      "value": 0.41
+    },
+    {
+      "year": 2012,
+      "month": 11,
+      "value": 0.39
+    },
+    {
+      "year": 2012,
+      "month": 12,
+      "value": 0.38
+    },
+    {
+      "year": 2013,
+      "month": 1,
+      "value": 0.37
+    },
+    {
+      "year": 2013,
+      "month": 2,
+      "value": 0.38
+    },
+    {
+      "year": 2013,
+      "month": 3,
+      "value": 0.39
+    },
+    {
+      "year": 2013,
+      "month": 4,
+      "value": 0.44
+    },
+    {
+      "year": 2013,
+      "month": 5,
+      "value": 0.38
+    },
+    {
+      "year": 2013,
+      "month": 6,
+      "value": 0.42
+    },
+    {
+      "year": 2013,
+      "month": 7,
+      "value": 0.44
+    },
+    {
+      "year": 2013,
+      "month": 8,
+      "value": 0.46
+    },
+    {
+      "year": 2013,
+      "month": 9,
+      "value": 0.46
+    },
+    {
+      "year": 2013,
+      "month": 10,
+      "value": 0.38
+    },
+    {
+      "year": 2013,
+      "month": 11,
+      "value": 0.38
+    },
+    {
+      "year": 2013,
+      "month": 12,
+      "value": 0.47
+    },
+    {
+      "year": 2014,
+      "month": 1,
+      "value": 0.47
+    },
+    {
+      "year": 2014,
+      "month": 2,
+      "value": 0.35
+    },
+    {
+      "year": 2014,
+      "month": 3,
+      "value": 0.32
+    },
+    {
+      "year": 2014,
+      "month": 4,
+      "value": 0.47
+    },
+    {
+      "year": 2014,
+      "month": 5,
+      "value": 0.44
+    },
+    {
+      "year": 2014,
+      "month": 6,
+      "value": 0.47
+    },
+    {
+      "year": 2014,
+      "month": 7,
+      "value": 0.5
+    },
+    {
+      "year": 2014,
+      "month": 8,
+      "value": 0.47
+    },
+    {
+      "year": 2014,
+      "month": 9,
+      "value": 0.62
+    },
+    {
+      "year": 2014,
+      "month": 10,
+      "value": 0.63
+    },
+    {
+      "year": 2014,
+      "month": 11,
+      "value": 0.49
+    },
+    {
+      "year": 2014,
+      "month": 12,
+      "value": 0.38
+    },
+    {
+      "year": 2015,
+      "month": 1,
+      "value": 0.43
+    },
+    {
+      "year": 2015,
+      "month": 2,
+      "value": 0.4
+    },
+    {
+      "year": 2015,
+      "month": 3,
+      "value": 0.39
+    },
+    {
+      "year": 2015,
+      "month": 4,
+      "value": 0.44
+    },
+    {
+      "year": 2015,
+      "month": 5,
+      "value": 0.49
+    },
+    {
+      "year": 2015,
+      "month": 6,
+      "value": 0.47
+    },
+    {
+      "year": 2015,
+      "month": 7,
+      "value": 0.42
+    },
+    {
+      "year": 2015,
+      "month": 8,
+      "value": 0.56
+    },
+    {
+      "year": 2015,
+      "month": 9,
+      "value": 1.26
+    },
+    {
+      "year": 2015,
+      "month": 10,
+      "value": 1.6
+    },
+    {
+      "year": 2015,
+      "month": 11,
+      "value": 0.38
+    },
+    {
+      "year": 2015,
+      "month": 12,
+      "value": 0.34
+    },
+    {
+      "year": 2016,
+      "month": 1,
+      "value": 0.36
+    },
+    {
+      "year": 2016,
+      "month": 2,
+      "value": 0.38
+    },
+    {
+      "year": 2016,
+      "month": 3,
+      "value": 0.38
+    },
+    {
+      "year": 2016,
+      "month": 4,
+      "value": 0.59
+    },
+    {
+      "year": 2016,
+      "month": 5,
+      "value": 0.49
+    },
+    {
+      "year": 2016,
+      "month": 6,
+      "value": 0.4
+    },
+    {
+      "year": 2016,
+      "month": 7,
+      "value": 0.43
+    },
+    {
+      "year": 2016,
+      "month": 8,
+      "value": 0.41
+    },
+    {
+      "year": 2016,
+      "month": 9,
+      "value": 0.36
+    },
+    {
+      "year": 2016,
+      "month": 10,
+      "value": 0.34
+    },
+    {
+      "year": 2016,
+      "month": 11,
+      "value": 0.35
+    },
+    {
+      "year": 2016,
+      "month": 12,
+      "value": 0.4
+    },
+    {
+      "year": 2017,
+      "month": 1,
+      "value": 0.4
+    },
+    {
+      "year": 2017,
+      "month": 2,
+      "value": 0.44
+    },
+    {
+      "year": 2017,
+      "month": 3,
+      "value": 0.48
+    },
+    {
+      "year": 2017,
+      "month": 4,
+      "value": 0.42
+    },
+    {
+      "year": 2017,
+      "month": 5,
+      "value": 0.43
+    },
+    {
+      "year": 2017,
+      "month": 6,
+      "value": 0.34
+    },
+    {
+      "year": 2017,
+      "month": 7,
+      "value": 0.42
+    },
+    {
+      "year": 2017,
+      "month": 8,
+      "value": 0.45
+    },
+    {
+      "year": 2017,
+      "month": 9,
+      "value": 0.42
+    },
+    {
+      "year": 2017,
+      "month": 10,
+      "value": 0.39
+    },
+    {
+      "year": 2017,
+      "month": 11,
+      "value": 0.39
+    },
+    {
+      "year": 2017,
+      "month": 12,
+      "value": 0.42
+    },
+    {
+      "year": 2018,
+      "month": 1,
+      "value": 0.49
+    },
+    {
+      "year": 2018,
+      "month": 2,
+      "value": 0.46
+    },
+    {
+      "year": 2018,
+      "month": 3,
+      "value": 0.47
+    },
+    {
+      "year": 2018,
+      "month": 4,
+      "value": 0.51
+    },
+    {
+      "year": 2018,
+      "month": 5,
+      "value": 0.5
+    },
+    {
+      "year": 2018,
+      "month": 6,
+      "value": 0.43
+    },
+    {
+      "year": 2018,
+      "month": 7,
+      "value": 0.4
+    },
+    {
+      "year": 2018,
+      "month": 8,
+      "value": 0.45
+    },
+    {
+      "year": 2018,
+      "month": 9,
+      "value": 0.44
+    },
+    {
+      "year": 2018,
+      "month": 10,
+      "value": 0.45
+    },
+    {
+      "year": 2018,
+      "month": 11,
+      "value": 0.43
+    },
+    {
+      "year": 2018,
+      "month": 12,
+      "value": 0.37
+    },
+    {
+      "year": 2019,
+      "month": 1,
+      "value": 0.41
+    },
+    {
+      "year": 2019,
+      "month": 2,
+      "value": 0.31
+    },
+    {
+      "year": 2019,
+      "month": 3,
+      "value": 0.38
+    },
+    {
+      "year": 2019,
+      "month": 4,
+      "value": 0.45
+    },
+    {
+      "year": 2019,
+      "month": 5,
+      "value": 0.39
+    },
+    {
+      "year": 2019,
+      "month": 6,
+      "value": 0.49
+    },
+    {
+      "year": 2019,
+      "month": 7,
+      "value": 0.45
+    },
+    {
+      "year": 2019,
+      "month": 8,
+      "value": 0.59
+    },
+    {
+      "year": 2019,
+      "month": 9,
+      "value": 1.02
+    },
+    {
+      "year": 2019,
+      "month": 10,
+      "value": 0.41
+    },
+    {
+      "year": 2019,
+      "month": 11,
+      "value": 0.43
+    },
+    {
+      "year": 2019,
+      "month": 12,
+      "value": 0.38
+    },
+    {
+      "year": 2020,
+      "month": 1,
+      "value": 0.34
+    },
+    {
+      "year": 2020,
+      "month": 2,
+      "value": 0.33
+    },
+    {
+      "year": 2020,
+      "month": 3,
+      "value": 0.37
+    },
+    {
+      "year": 2020,
+      "month": 4,
+      "value": 0.42
+    },
+    {
+      "year": 2020,
+      "month": 5,
+      "value": 0.45
+    },
+    {
+      "year": 2020,
+      "month": 6,
+      "value": 0.5
+    },
+    {
+      "year": 2020,
+      "month": 7,
+      "value": 0.44
+    },
+    {
+      "year": 2020,
+      "month": 8,
+      "value": 0.47
+    },
+    {
+      "year": 2020,
+      "month": 9,
+      "value": 0.48
+    },
+    {
+      "year": 2020,
+      "month": 10,
+      "value": 0.41
+    },
+    {
+      "year": 2020,
+      "month": 11,
+      "value": 0.46
+    },
+    {
+      "year": 2020,
+      "month": 12,
+      "value": 0.42
+    },
+    {
+      "year": 2021,
+      "month": 1,
+      "value": 0.4
+    },
+    {
+      "year": 2021,
+      "month": 2,
+      "value": 0.26
+    },
+    {
+      "year": 2021,
+      "month": 3,
+      "value": 0.31
+    },
+    {
+      "year": 2021,
+      "month": 4,
+      "value": 0.41
+    },
+    {
+      "year": 2021,
+      "month": 5,
+      "value": 0.45
+    },
+    {
+      "year": 2021,
+      "month": 6,
+      "value": 0.34
+    },
+    {
+      "year": 2021,
+      "month": 7,
+      "value": 0.39
+    },
+    {
+      "year": 2021,
+      "month": 8,
+      "value": 0.41
+    },
+    {
+      "year": 2021,
+      "month": 9,
+      "value": 0.39
+    },
+    {
+      "year": 2021,
+      "month": 10,
+      "value": 0.33
+    },
+    {
+      "year": 2021,
+      "month": 11,
+      "value": 0.37
+    },
+    {
+      "year": 2021,
+      "month": 12,
+      "value": 0.37
+    },
+    {
+      "year": 2022,
+      "month": 1,
+      "value": 0.32
+    },
+    {
+      "year": 2022,
+      "month": 2,
+      "value": 0.4
+    },
+    {
+      "year": 2022,
+      "month": 3,
+      "value": 0.43
+    },
+    {
+      "year": 2022,
+      "month": 4,
+      "value": 0.45
+    },
+    {
+      "year": 2022,
+      "month": 5,
+      "value": 0.4
+    },
+    {
+      "year": 2022,
+      "month": 6,
+      "value": 0.38
+    },
+    {
+      "year": 2022,
+      "month": 7,
+      "value": 0.41
+    },
+    {
+      "year": 2022,
+      "month": 8,
+      "value": 0.43
+    },
+    {
+      "year": 2022,
+      "month": 9,
+      "value": 0.38
+    },
+    {
+      "year": 2022,
+      "month": 10,
+      "value": 0.4
+    },
+    {
+      "year": 2022,
+      "month": 11,
+      "value": 0.39
+    },
+    {
+      "year": 2022,
+      "month": 12,
+      "value": 0.42
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "value": 0.43
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "value": 0.39
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "value": 0.35
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "value": 0.55
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "value": 0.33
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "value": 0.36
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "value": 0.42
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "value": 0.36
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "value": 0.46
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "value": 0.47
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "value": 0.31
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "value": 0.37
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "value": 0.41
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "value": 0.25
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "value": 0.32
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "value": 0.42
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "value": 0.51
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "value": 0.4
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "value": 0.47
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "value": 0.44
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "value": 0.43
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "value": 0.37
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "value": 0.35
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "value": 0.47
+    }
+  ],
+  "annual": [
+    {
+      "year": 2001,
+      "value": 0.35739726027397256,
+      "validMonths": 12
+    },
+    {
+      "year": 2002,
+      "value": 0.384958904109589,
+      "validMonths": 12
+    },
+    {
+      "year": 2003,
+      "value": 0.3863287671232876,
+      "validMonths": 12
+    },
+    {
+      "year": 2004,
+      "value": 0.4119125683060109,
+      "validMonths": 12
+    },
+    {
+      "year": 2005,
+      "value": 0.4099726027397261,
+      "validMonths": 12
+    },
+    {
+      "year": 2006,
+      "value": 0.4586301369863014,
+      "validMonths": 12
+    },
+    {
+      "year": 2007,
+      "value": 0.40569863013698626,
+      "validMonths": 12
+    },
+    {
+      "year": 2008,
+      "value": 0.4145081967213115,
+      "validMonths": 12
+    },
+    {
+      "year": 2009,
+      "value": 0.42712328767123287,
+      "validMonths": 12
+    },
+    {
+      "year": 2010,
+      "value": 0.37715068493150683,
+      "validMonths": 12
+    },
+    {
+      "year": 2011,
+      "value": 0.45895890410958906,
+      "validMonths": 12
+    },
+    {
+      "year": 2012,
+      "value": 0.43915300546448083,
+      "validMonths": 12
+    },
+    {
+      "year": 2013,
+      "value": 0.41432876712328764,
+      "validMonths": 12
+    },
+    {
+      "year": 2014,
+      "value": 0.467972602739726,
+      "validMonths": 12
+    },
+    {
+      "year": 2015,
+      "value": 0.5995342465753425,
+      "validMonths": 12
+    },
+    {
+      "year": 2016,
+      "value": 0.4074590163934426,
+      "validMonths": 12
+    },
+    {
+      "year": 2017,
+      "value": 0.4167397260273973,
+      "validMonths": 12
+    },
+    {
+      "year": 2018,
+      "value": 0.44989041095890414,
+      "validMonths": 12
+    },
+    {
+      "year": 2019,
+      "value": 0.47586301369863016,
+      "validMonths": 12
+    },
+    {
+      "year": 2020,
+      "value": 0.42423497267759563,
+      "validMonths": 12
+    },
+    {
+      "year": 2021,
+      "value": 0.369972602739726,
+      "validMonths": 12
+    },
+    {
+      "year": 2022,
+      "value": 0.40084931506849314,
+      "validMonths": 12
+    },
+    {
+      "year": 2023,
+      "value": 0.3998630136986301,
+      "validMonths": 12
+    },
+    {
+      "year": 2024,
+      "value": 0.40420765027322403,
+      "validMonths": 12
+    }
+  ],
+  "windows": {
+    "2001-2002": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2001,
+      "endYear": 2002,
+      "absoluteChange": 0.027561643835616434,
+      "percentChange": 7.711766960521273,
+      "slopePerYear": 0.027561643835616323,
+      "interceptAtStart": 0.3573972602739725,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2003": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2001,
+      "endYear": 2003,
+      "absoluteChange": 0.02893150684931506,
+      "percentChange": 8.095055576849365,
+      "slopePerYear": 0.01446575342465753,
+      "interceptAtStart": 0.36176255707762545,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2004": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2001,
+      "endYear": 2004,
+      "absoluteChange": 0.054515308032038357,
+      "percentChange": 15.253420798538905,
+      "slopePerYear": 0.016491578710981378,
+      "interceptAtStart": 0.36041200688674296,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2005": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2001,
+      "endYear": 2005,
+      "absoluteChange": 0.052575342465753516,
+      "percentChange": 14.710617094672315,
+      "slopePerYear": 0.013210434912792933,
+      "interceptAtStart": 0.3636931506849313,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2006": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2001,
+      "endYear": 2006,
+      "absoluteChange": 0.10123287671232883,
+      "percentChange": 28.325028746646247,
+      "slopePerYear": 0.0173368365895651,
+      "interceptAtStart": 0.3581912817825686,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2007": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2001,
+      "endYear": 2007,
+      "absoluteChange": 0.0483013698630137,
+      "percentChange": 13.514756611728634,
+      "slopePerYear": 0.011281800391389443,
+      "interceptAtStart": 0.36828300877952796,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2008": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2008,
+      "absoluteChange": 0.057110936447338945,
+      "percentChange": 15.979679419914694,
+      "slopePerYear": 0.008552849158227568,
+      "interceptAtStart": 0.3737409112458516,
+      "ci95PerYear": [
+        0.0006003232282453079,
+        0.016505375088209828
+      ],
+      "pValue": 0.03897472960227852,
+      "residualLag1": -0.18868614450865562,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2009": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2009,
+      "absoluteChange": 0.0697260273972603,
+      "percentChange": 19.50939057110005,
+      "slopePerYear": 0.007550154702198268,
+      "interceptAtStart": 0.3760805316432532,
+      "ci95PerYear": [
+        0.002408086957656286,
+        0.01269222244674025
+      ],
+      "pValue": 0.010377746014224504,
+      "residualLag1": -0.08544036243277774,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2010": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2010,
+      "absoluteChange": 0.01975342465753427,
+      "percentChange": 5.527021847451138,
+      "slopePerYear": 0.0039020871186602538,
+      "interceptAtStart": 0.3858087118660215,
+      "ci95PerYear": [
+        -0.0033100780633121257,
+        0.011114252300632633
+      ],
+      "pValue": 0.247442728211967,
+      "residualLag1": -0.025632259635281596,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2011": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2011,
+      "absoluteChange": 0.1015616438356165,
+      "percentChange": 28.417018014564988,
+      "slopePerYear": 0.005453419893976838,
+      "interceptAtStart": 0.3811547135400716,
+      "ci95PerYear": [
+        0.0004423130495761528,
+        0.010464526738377524
+      ],
+      "pValue": 0.0360502571880142,
+      "residualLag1": -0.2037387029933925,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2012": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2012,
+      "absoluteChange": 0.08175574519050827,
+      "percentChange": 22.875313909187827,
+      "slopePerYear": 0.005376907320540844,
+      "interceptAtStart": 0.381409755451525,
+      "ci95PerYear": [
+        0.0017560895636038751,
+        0.008997725077477814
+      ],
+      "pValue": 0.007895543145936927,
+      "residualLag1": -0.21202128177734242,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2013": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2013,
+      "absoluteChange": 0.05693150684931508,
+      "percentChange": 15.929474894595636,
+      "slopePerYear": 0.0043350212928025735,
+      "interceptAtStart": 0.3852300042198987,
+      "ci95PerYear": [
+        0.0007661986909704723,
+        0.007903843894634674
+      ],
+      "pValue": 0.021657433802031945,
+      "residualLag1": -0.22202790293550292,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2014": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2014,
+      "absoluteChange": 0.11057534246575346,
+      "percentChange": 30.939057110003848,
+      "slopePerYear": 0.005088944770328126,
+      "interceptAtStart": 0.38221431030979636,
+      "ci95PerYear": [
+        0.0023147802970245233,
+        0.007863109243631728
+      ],
+      "pValue": 0.0017717811295789561,
+      "residualLag1": -0.25771897986355385,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2015": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2015,
+      "absoluteChange": 0.24213698630136993,
+      "percentChange": 67.75009582215411,
+      "slopePerYear": 0.008740812507351939,
+      "interceptAtStart": 0.3663895501160265,
+      "ci95PerYear": [
+        0.0016646432663384777,
+        0.015816981748365398
+      ],
+      "pValue": 0.01931619762874696,
+      "residualLag1": 0.06893878393863152,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2016": {
+      "n": 16,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2016,
+      "absoluteChange": 0.05006175611947006,
+      "percentChange": 14.007313900809946,
+      "slopePerYear": 0.006754576007362299,
+      "interceptAtStart": 0.37565865378264496,
+      "ci95PerYear": [
+        0.0013328251340660301,
+        0.012176326880658568
+      ],
+      "pValue": 0.018227138689449664,
+      "residualLag1": -0.3328441484304,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2017": {
+      "n": 17,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2017,
+      "absoluteChange": 0.05934246575342472,
+      "percentChange": 16.604062859333098,
+      "slopePerYear": 0.005441004558871234,
+      "interceptAtStart": 0.38222651102510036,
+      "ci95PerYear": [
+        -0.00021547445734617678,
+        0.011097483575088645
+      ],
+      "pValue": 0.05824001610231208,
+      "residualLag1": -0.14713976736679407,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2018": {
+      "n": 18,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2018,
+      "absoluteChange": 0.09249315068493158,
+      "percentChange": 25.879647374473002,
+      "slopePerYear": 0.005005334776993907,
+      "interceptAtStart": 0.3845500831951124,
+      "ci95PerYear": [
+        0.0003726694089951615,
+        0.009638000144992652
+      ],
+      "pValue": 0.03591388129274798,
+      "residualLag1": -0.10201514908002521,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2019": {
+      "n": 19,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2019,
+      "absoluteChange": 0.1184657534246576,
+      "percentChange": 33.14679954005368,
+      "slopePerYear": 0.005024549058851184,
+      "interceptAtStart": 0.3844412022645882,
+      "ci95PerYear": [
+        0.0013726872206108495,
+        0.008676410897091518
+      ],
+      "pValue": 0.009902203448044732,
+      "residualLag1": -0.10102352318498675,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2020": {
+      "n": 20,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2020,
+      "absoluteChange": 0.06683771240362307,
+      "percentChange": 18.70123804317549,
+      "slopePerYear": 0.00422922532020598,
+      "interceptAtStart": 0.3892131446964592,
+      "ci95PerYear": [
+        0.0010589434193738205,
+        0.0073995072210381405
+      ],
+      "pValue": 0.011769038291829154,
+      "residualLag1": -0.10605695313306143,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2021": {
+      "n": 21,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2021,
+      "absoluteChange": 0.012575342465753425,
+      "percentChange": 3.518589497891913,
+      "slopePerYear": 0.002880848068766339,
+      "interceptAtStart": 0.39775286728891024,
+      "ci95PerYear": [
+        -0.0009411383341324797,
+        0.006702834471665158
+      ],
+      "pValue": 0.1311548283732988,
+      "residualLag1": 0.011020395021185504,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2022": {
+      "n": 22,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2022,
+      "absoluteChange": 0.04345205479452058,
+      "percentChange": 12.157914909927186,
+      "slopePerYear": 0.002200199511479653,
+      "interceptAtStart": 0.4022905243374882,
+      "ci95PerYear": [
+        -0.0014247362475399553,
+        0.0058251352704992605
+      ],
+      "pValue": 0.22002617606608224,
+      "residualLag1": 0.11186033003946036,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2023": {
+      "n": 23,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2023,
+      "absoluteChange": 0.042465753424657526,
+      "percentChange": 11.881947106170946,
+      "slopePerYear": 0.0016476788604860605,
+      "interceptAtStart": 0.40615816889444323,
+      "ci95PerYear": [
+        -0.0015770278922881001,
+        0.004872385613260221
+      ],
+      "pValue": 0.30003605414435885,
+      "residualLag1": 0.15228779435777598,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2001-2024": {
+      "n": 24,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2001,
+      "endYear": 2024,
+      "absoluteChange": 0.04681038999925147,
+      "percentChange": 13.097579417191865,
+      "slopePerYear": 0.001249207536362062,
+      "interceptAtStart": 0.40908029193801954,
+      "ci95PerYear": [
+        -0.0015870141544066661,
+        0.00408542922713079
+      ],
+      "pValue": 0.3709174549450509,
+      "residualLag1": 0.1783599402580629,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2003": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2002,
+      "endYear": 2003,
+      "absoluteChange": 0.0013698630136986245,
+      "percentChange": 0.3558465589637734,
+      "slopePerYear": 0.0013698630136985135,
+      "interceptAtStart": 0.38495890410958894,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2004": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2002,
+      "endYear": 2004,
+      "absoluteChange": 0.026953664196421923,
+      "percentChange": 7.001699118706144,
+      "slopePerYear": 0.013476832098210961,
+      "interceptAtStart": 0.3809232477480848,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2005": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2002,
+      "endYear": 2005,
+      "absoluteChange": 0.025013698630137082,
+      "percentChange": 6.497758166678554,
+      "slopePerYear": 0.010062489707313493,
+      "interceptAtStart": 0.3831994760086833,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2006": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2002,
+      "endYear": 2006,
+      "absoluteChange": 0.0736712328767124,
+      "percentChange": 19.13742794107183,
+      "slopePerYear": 0.017098630136986346,
+      "interceptAtStart": 0.3761633355790102,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2007": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2002,
+      "endYear": 2007,
+      "absoluteChange": 0.020739726027397265,
+      "percentChange": 5.387516902711552,
+      "slopePerYear": 0.009104650690278354,
+      "interceptAtStart": 0.3868219748412877,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2008": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2002,
+      "endYear": 2008,
+      "absoluteChange": 0.02954929261172251,
+      "percentChange": 7.67596028985746,
+      "slopePerYear": 0.006218041876530536,
+      "interceptAtStart": 0.39163298953086734,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2009": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2009,
+      "absoluteChange": 0.04216438356164387,
+      "percentChange": 10.952957084904998,
+      "slopePerYear": 0.005548375626918192,
+      "interceptAtStart": 0.39297232203009197,
+      "ci95PerYear": [
+        0.0007368899187038024,
+        0.010359861335132583
+      ],
+      "pValue": 0.030287888173831625,
+      "residualLag1": -0.16245295444053756,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2010": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2010,
+      "absoluteChange": -0.007808219178082165,
+      "percentChange": -2.0283253860935098,
+      "slopePerYear": 0.0015344661526561323,
+      "interceptAtStart": 0.40233811080337,
+      "ci95PerYear": [
+        -0.006074144128058955,
+        0.009143076433371219
+      ],
+      "pValue": 0.6479717387799,
+      "residualLag1": -0.11393768146350282,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2011": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2011,
+      "absoluteChange": 0.07400000000000007,
+      "percentChange": 19.222831115223133,
+      "slopePerYear": 0.0038695896762369134,
+      "interceptAtStart": 0.3961111147404881,
+      "ci95PerYear": [
+        -0.001568919882505633,
+        0.00930809923497946
+      ],
+      "pValue": 0.1394760570139222,
+      "residualLag1": -0.3325471175752824,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2012": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2012,
+      "absoluteChange": 0.05419410135489183,
+      "percentChange": 14.077892672788787,
+      "slopePerYear": 0.004067134856310703,
+      "interceptAtStart": 0.3955184792002666,
+      "ci95PerYear": [
+        0.0001572039141929148,
+        0.007977065798428492
+      ],
+      "pValue": 0.04308499483064248,
+      "residualLag1": -0.2900584318865141,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2013": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2013,
+      "absoluteChange": 0.02936986301369865,
+      "percentChange": 7.629350224183338,
+      "slopePerYear": 0.0030698965679877583,
+      "interceptAtStart": 0.3988426068280099,
+      "ci95PerYear": [
+        -0.0005459006422017295,
+        0.006685693778177246
+      ],
+      "pValue": 0.08780960618101138,
+      "residualLag1": -0.3045318979853084,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2014": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2014,
+      "absoluteChange": 0.08301369863013702,
+      "percentChange": 21.564301473204768,
+      "slopePerYear": 0.0041344428458733535,
+      "interceptAtStart": 0.39493927047576277,
+      "ci95PerYear": [
+        0.0013178267258255297,
+        0.006951058965921178
+      ],
+      "pValue": 0.008004214693680161,
+      "residualLag1": -0.34638376467539544,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2015": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2015,
+      "absoluteChange": 0.2145753424657535,
+      "percentChange": 55.73980499608572,
+      "slopePerYear": 0.00844436339167983,
+      "interceptAtStart": 0.37769958829253675,
+      "ci95PerYear": [
+        0.00022861834378559188,
+        0.01666010843957407
+      ],
+      "pValue": 0.04484208842031468,
+      "residualLag1": 0.05667621450515164,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2016": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2016,
+      "absoluteChange": 0.022500112283853624,
+      "percentChange": 5.844808898730748,
+      "slopePerYear": 0.006232821907114539,
+      "interceptAtStart": 0.38728293472565306,
+      "ci95PerYear": [
+        8.870282466738339e-05,
+        0.012376940989561696
+      ],
+      "pValue": 0.047223714154351955,
+      "residualLag1": -0.32581918029151385,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2017": {
+      "n": 16,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2017,
+      "absoluteChange": 0.03178082191780829,
+      "percentChange": 8.255640167959594,
+      "slopePerYear": 0.004820273290093044,
+      "interceptAtStart": 0.39387482827175346,
+      "ci95PerYear": [
+        -0.0013621900327345886,
+        0.011002736612920677
+      ],
+      "pValue": 0.11667105918061119,
+      "residualLag1": -0.1498007102133033,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2018": {
+      "n": 17,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2018,
+      "absoluteChange": 0.06493150684931515,
+      "percentChange": 16.867126894882947,
+      "slopePerYear": 0.004406375447851125,
+      "interceptAtStart": 0.39594431748296305,
+      "ci95PerYear": [
+        -0.0004974507980735968,
+        0.009310201693775846
+      ],
+      "pValue": 0.07472805104162247,
+      "residualLag1": -0.11204739193570039,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2019": {
+      "n": 18,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2019,
+      "absoluteChange": 0.09090410958904116,
+      "percentChange": 23.613977652836116,
+      "slopePerYear": 0.004494275686486169,
+      "interceptAtStart": 0.3954755162102426,
+      "ci95PerYear": [
+        0.0007161064608749322,
+        0.008272444912097405
+      ],
+      "pValue": 0.022661468248258626,
+      "residualLag1": -0.11338919930492077,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2020": {
+      "n": 19,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2020,
+      "absoluteChange": 0.03927606856800664,
+      "percentChange": 10.20266531017182,
+      "slopePerYear": 0.003671051909285152,
+      "interceptAtStart": 0.40014045094771533,
+      "ci95PerYear": [
+        0.0005020259025014175,
+        0.006840077916068887
+      ],
+      "pValue": 0.02572287506375258,
+      "residualLag1": -0.11895771828254363,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2021": {
+      "n": 20,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2021,
+      "absoluteChange": -0.014986301369863009,
+      "percentChange": -3.8929613550636954,
+      "slopePerYear": 0.002243654273793633,
+      "interceptAtStart": 0.4087048367606641,
+      "ci95PerYear": [
+        -0.0016181724935893263,
+        0.006105481041176593
+      ],
+      "pValue": 0.23798720010892382,
+      "residualLag1": -0.006048930340205165,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2022": {
+      "n": 21,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2022,
+      "absoluteChange": 0.015890410958904144,
+      "percentChange": 4.127820083979797,
+      "slopePerYear": 0.0015588671677151432,
+      "interceptAtStart": 0.41304182176582777,
+      "ci95PerYear": [
+        -0.002044337825004911,
+        0.005162072160435197
+      ],
+      "pValue": 0.376534084979715,
+      "residualLag1": 0.08807704059895725,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2023": {
+      "n": 22,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2023,
+      "absoluteChange": 0.014904109589041092,
+      "percentChange": 3.87161056152587,
+      "slopePerYear": 0.0010144203069734556,
+      "interceptAtStart": 0.4166714675041059,
+      "ci95PerYear": [
+        -0.0021258220964288804,
+        0.004154662710375791
+      ],
+      "pValue": 0.5081221928951303,
+      "residualLag1": 0.12444346598493063,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2002-2024": {
+      "n": 23,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2002,
+      "endYear": 2024,
+      "absoluteChange": 0.019248746163635033,
+      "percentChange": 5.000208063288583,
+      "slopePerYear": 0.0006363652636658668,
+      "interceptAtStart": 0.419317852807259,
+      "ci95PerYear": [
+        -0.0020722875762123295,
+        0.003345018103544063
+      ],
+      "pValue": 0.6302022082054742,
+      "residualLag1": 0.14696417510666962,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2004": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2003,
+      "endYear": 2004,
+      "absoluteChange": 0.025583801182723298,
+      "percentChange": 6.622287377983126,
+      "slopePerYear": 0.025583801182723187,
+      "interceptAtStart": 0.38632876712328756,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2005": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2003,
+      "endYear": 2005,
+      "absoluteChange": 0.023643835616438458,
+      "percentChange": 6.120133323877766,
+      "slopePerYear": 0.011821917808219229,
+      "interceptAtStart": 0.39091606158145553,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2006": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2003,
+      "endYear": 2006,
+      "absoluteChange": 0.07230136986301378,
+      "percentChange": 18.71498475285443,
+      "slopePerYear": 0.02149641440227565,
+      "interceptAtStart": 0.3844663971854181,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2007": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2003,
+      "endYear": 2007,
+      "absoluteChange": 0.01936986301369864,
+      "percentChange": 5.01382880646763,
+      "slopePerYear": 0.008545729470768797,
+      "interceptAtStart": 0.3974170821169248,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2008": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2003,
+      "endYear": 2008,
+      "absoluteChange": 0.028179429598023886,
+      "percentChange": 7.294157721635855,
+      "slopePerYear": 0.004883224792274876,
+      "interceptAtStart": 0.4023004216882502,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2009": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2003,
+      "endYear": 2009,
+      "absoluteChange": 0.040794520547945246,
+      "percentChange": 10.559534784767049,
+      "slopePerYear": 0.004403601638274884,
+      "interceptAtStart": 0.4030997936115833,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2010": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2010,
+      "absoluteChange": -0.00917808219178079,
+      "percentChange": -2.375718034181965,
+      "slopePerYear": -0.0003275917073918347,
+      "interceptAtStart": 0.41256218030291675,
+      "ci95PerYear": [
+        -0.009761114956918946,
+        0.009105931542135277
+      ],
+      "pValue": 0.9350478123632947,
+      "residualLag1": -0.29635340253633513,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2011": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2011,
+      "absoluteChange": 0.07263013698630144,
+      "percentChange": 18.800085100347513,
+      "slopePerYear": 0.002940238790328622,
+      "interceptAtStart": 0.4049372424749023,
+      "ci95PerYear": [
+        -0.003937218189054955,
+        0.0098176957697122
+      ],
+      "pValue": 0.3457147345292277,
+      "residualLag1": -0.4327643864427557,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2012": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2012,
+      "absoluteChange": 0.05282423834119321,
+      "percentChange": 13.673389826633233,
+      "slopePerYear": 0.0033631631835988676,
+      "interceptAtStart": 0.4038094440928485,
+      "ci95PerYear": [
+        -0.0015278359626848554,
+        0.00825416232988259
+      ],
+      "pValue": 0.15147662438987217,
+      "residualLag1": -0.3526111400300604,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2013": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2013,
+      "absoluteChange": 0.028000000000000025,
+      "percentChange": 7.24771292816113,
+      "slopePerYear": 0.0023126036924375273,
+      "interceptAtStart": 0.40696112256633243,
+      "ci95PerYear": [
+        -0.0019056259039120947,
+        0.006530833288787149
+      ],
+      "pValue": 0.24625796629821264,
+      "residualLag1": -0.3839615987372412,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2014": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2014,
+      "absoluteChange": 0.0816438356164384,
+      "percentChange": 21.133252960782936,
+      "slopePerYear": 0.0036807898292290954,
+      "interceptAtStart": 0.4024005021103606,
+      "ci95PerYear": [
+        0.00033782006341794533,
+        0.0070237595950402455
+      ],
+      "pValue": 0.03406480779932094,
+      "residualLag1": -0.39874618961294933,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2015": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2015,
+      "absoluteChange": 0.21320547945205487,
+      "percentChange": 55.18757534926604,
+      "slopePerYear": 0.008723567846181826,
+      "interceptAtStart": 0.38391031604820075,
+      "ci95PerYear": [
+        -0.0008945080900691939,
+        0.018341643782432845
+      ],
+      "pValue": 0.07125567091708955,
+      "residualLag1": 0.06714387641104154,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2016": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2016,
+      "absoluteChange": 0.021130249270155,
+      "percentChange": 5.4694993146631985,
+      "slopePerYear": 0.006156205513178366,
+      "interceptAtStart": 0.3941797653802144,
+      "ci95PerYear": [
+        -0.0009296032169709024,
+        0.013242014243327634
+      ],
+      "pValue": 0.08272397525632738,
+      "residualLag1": -0.327020873084239,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2017": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2017,
+      "absoluteChange": 0.030410958904109664,
+      "percentChange": 7.871782143110438,
+      "slopePerYear": 0.004565532599745507,
+      "interceptAtStart": 0.40107268133842344,
+      "ci95PerYear": [
+        -0.0023727106658834136,
+        0.01150377586537443
+      ],
+      "pValue": 0.1786941136524449,
+      "residualLag1": -0.15413494128957825,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2018": {
+      "n": 16,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2018,
+      "absoluteChange": 0.06356164383561652,
+      "percentChange": 16.45273384866324,
+      "slopePerYear": 0.004131740113516778,
+      "interceptAtStart": 0.40309704627415777,
+      "ci95PerYear": [
+        -0.0012303749075198737,
+        0.00949385513455343
+      ],
+      "pValue": 0.12064335578142527,
+      "residualLag1": -0.11920648213158619,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2019": {
+      "n": 17,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2019,
+      "absoluteChange": 0.08953424657534254,
+      "percentChange": 23.175661300616998,
+      "slopePerYear": 0.004262291596030579,
+      "interceptAtStart": 0.40244428886158873,
+      "ci95PerYear": [
+        0.00020114504446407718,
+        0.00832343814759708
+      ],
+      "pValue": 0.040894356387226,
+      "residualLag1": -0.12063935414512868,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2020": {
+      "n": 18,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2020,
+      "absoluteChange": 0.037906205554308015,
+      "percentChange": 9.811903430481829,
+      "slopePerYear": 0.003373374520302277,
+      "interceptAtStart": 0.4071851799321392,
+      "ci95PerYear": [
+        6.546897929984516e-05,
+        0.006681280061304709
+      ],
+      "pValue": 0.04612590659684018,
+      "residualLag1": -0.12947396996266655,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2021": {
+      "n": 19,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2021,
+      "absoluteChange": -0.016356164383561633,
+      "percentChange": -4.233742287781006,
+      "slopePerYear": 0.0018270589641256295,
+      "interceptAtStart": 0.4159476347504739,
+      "ci95PerYear": [
+        -0.0022082848908291193,
+        0.005862402819080378
+      ],
+      "pValue": 0.35283938954602195,
+      "residualLag1": -0.022758537519280187,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2022": {
+      "n": 20,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2022,
+      "absoluteChange": 0.01452054794520552,
+      "percentChange": 3.758598680944625,
+      "slopePerYear": 0.0011154526784061085,
+      "interceptAtStart": 0.4202172724647909,
+      "ci95PerYear": [
+        -0.0025883327142934174,
+        0.004819238071105634
+      ],
+      "pValue": 0.534869089407019,
+      "residualLag1": 0.0666775487138309,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2023": {
+      "n": 21,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2023,
+      "absoluteChange": 0.013534246575342468,
+      "percentChange": 3.503297638465358,
+      "slopePerYear": 0.000561383687051787,
+      "interceptAtStart": 0.42372637607670155,
+      "ci95PerYear": [
+        -0.002606374426718,
+        0.003729141800821574
+      ],
+      "pValue": 0.7147994257277734,
+      "residualLag1": 0.09927569241428283,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2003-2024": {
+      "n": 22,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2003,
+      "endYear": 2024,
+      "absoluteChange": 0.01787888314993641,
+      "percentChange": 4.627893305245578,
+      "slopePerYear": 0.000190145150709118,
+      "interceptAtStart": 0.4262012996523195,
+      "ci95PerYear": [
+        -0.0024972180415613224,
+        0.0028775083429795584
+      ],
+      "pValue": 0.8841418238838096,
+      "residualLag1": 0.11871129064440566,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2005": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2004,
+      "endYear": 2005,
+      "absoluteChange": -0.0019399655662848403,
+      "percentChange": -0.4709653736138575,
+      "slopePerYear": -0.0019399655662849513,
+      "interceptAtStart": 0.41191256830601086,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2006": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2004,
+      "endYear": 2006,
+      "absoluteChange": 0.04671756868029048,
+      "percentChange": 11.341622537136054,
+      "slopePerYear": 0.02335878434014524,
+      "interceptAtStart": 0.4034796516705341,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2007": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2004,
+      "endYear": 2007,
+      "absoluteChange": -0.0062139381690246576,
+      "percentChange": -1.5085575549635346,
+      "slopePerYear": 0.003001571973950151,
+      "interceptAtStart": 0.4170511265813311,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2008": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2004,
+      "endYear": 2008,
+      "absoluteChange": 0.002595628415300588,
+      "percentChange": 0.6301406208543482,
+      "slopePerYear": 9.172842278614606e-05,
+      "interceptAtStart": 0.4199609701324948,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2009": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2004,
+      "endYear": 2009,
+      "absoluteChange": 0.015210719365221947,
+      "percentChange": 3.692705815648204,
+      "slopePerYear": 0.001049396340615738,
+      "interceptAtStart": 0.4186840795753889,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2010": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2004,
+      "endYear": 2010,
+      "absoluteChange": -0.03476188337450409,
+      "percentChange": -8.439141227824685,
+      "slopePerYear": -0.004075222161624592,
+      "interceptAtStart": 0.42722511041245603,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2011": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2011,
+      "absoluteChange": 0.04704633580357814,
+      "percentChange": 11.421437320316794,
+      "slopePerYear": 0.0009464735740841723,
+      "interceptAtStart": 0.41718171894103834,
+      "ci95PerYear": [
+        -0.0076515837856748255,
+        0.00954453093384317
+      ],
+      "pValue": 0.7966793149452177,
+      "residualLag1": -0.5812240811785947,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2012": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2012,
+      "absoluteChange": 0.02724043715846991,
+      "percentChange": 6.613159989387096,
+      "slopePerYear": 0.0019064401028020938,
+      "interceptAtStart": 0.4149417970406965,
+      "ci95PerYear": [
+        -0.004088597817972468,
+        0.007901478023576654
+      ],
+      "pValue": 0.4765942930965088,
+      "residualLag1": -0.39594036983286945,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2013": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2013,
+      "absoluteChange": 0.002416198817276727,
+      "percentChange": 0.5865805035309645,
+      "slopePerYear": 0.0009371133295678832,
+      "interceptAtStart": 0.417526668435988,
+      "ci95PerYear": [
+        -0.003536168567527559,
+        0.005410395226663325
+      ],
+      "pValue": 0.6419767797746385,
+      "residualLag1": -0.41863059739321873,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2014": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2014,
+      "absoluteChange": 0.0560600344337151,
+      "percentChange": 13.609692625855482,
+      "slopePerYear": 0.0028041497390251177,
+      "interceptAtStart": 0.4119255592076162,
+      "ci95PerYear": [
+        -0.0010322105047808044,
+        0.00664050998283104
+      ],
+      "pValue": 0.13261787630652322,
+      "residualLag1": -0.4403312047581982,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2015": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2015,
+      "absoluteChange": 0.18762167826933157,
+      "percentChange": 45.54890836201602,
+      "slopePerYear": 0.008833497440503964,
+      "interceptAtStart": 0.3918277335360201,
+      "ci95PerYear": [
+        -0.0027100767100523247,
+        0.020377071591060253
+      ],
+      "pValue": 0.11900201272783811,
+      "residualLag1": 0.055885764025873856,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2016": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2016,
+      "absoluteChange": -0.004453551912568299,
+      "percentChange": -1.0811886442027046,
+      "slopePerYear": 0.00585424404175808,
+      "interceptAtStart": 0.4027516626647551,
+      "ci95PerYear": [
+        -0.002434272451883094,
+        0.014142760535399253
+      ],
+      "pValue": 0.14833043490643735,
+      "residualLag1": -0.31674997698814195,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2017": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2017,
+      "absoluteChange": 0.004827157721386366,
+      "percentChange": 1.1718889135230897,
+      "slopePerYear": 0.004079469493752021,
+      "interceptAtStart": 0.4098507608567792,
+      "ci95PerYear": [
+        -0.0037088238578902267,
+        0.011867762845394269
+      ],
+      "pValue": 0.2760289467165533,
+      "residualLag1": -0.1474409831714223,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2018": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2018,
+      "absoluteChange": 0.03797784265289322,
+      "percentChange": 9.219879550914646,
+      "slopePerYear": 0.0036526464234919384,
+      "interceptAtStart": 0.4117003274945728,
+      "ci95PerYear": [
+        -0.0021672071285546626,
+        0.00947249997553854
+      ],
+      "pValue": 0.1982211898636269,
+      "residualLag1": -0.11795182461792833,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2019": {
+      "n": 16,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2019,
+      "absoluteChange": 0.06395044539261924,
+      "percentChange": 15.525247422193313,
+      "slopePerYear": 0.0038594035525730645,
+      "interceptAtStart": 0.4107354608921945,
+      "ci95PerYear": [
+        -0.00046843025408772367,
+        0.008187237359233853
+      ],
+      "pValue": 0.0764730353815145,
+      "residualLag1": -0.12122059392955935,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2020": {
+      "n": 17,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2020,
+      "absoluteChange": 0.012322404371584716,
+      "percentChange": 2.9915096842663877,
+      "slopePerYear": 0.002913306590695262,
+      "interceptAtStart": 0.41546594570158346,
+      "ci95PerYear": [
+        -0.00047361275467495533,
+        0.006300225936065479
+      ],
+      "pValue": 0.08666269518077221,
+      "residualLag1": -0.12842508340164702,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2021": {
+      "n": 18,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2021,
+      "absoluteChange": -0.04193996556628493,
+      "percentChange": -10.181763993937572,
+      "slopePerYear": 0.0012462968537886449,
+      "interceptAtStart": 0.42435666429841845,
+      "ci95PerYear": [
+        -0.002910594356252927,
+        0.005403188063830217
+      ],
+      "pValue": 0.5340368134748643,
+      "residualLag1": -0.025028458029534906,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2022": {
+      "n": 19,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2022,
+      "absoluteChange": -0.011063253237517778,
+      "percentChange": -2.685825606879482,
+      "slopePerYear": 0.0005209174969762198,
+      "interceptAtStart": 0.4284671473203559,
+      "ci95PerYear": [
+        -0.0032207673397945486,
+        0.004262602333746988
+      ],
+      "pValue": 0.7725211334426569,
+      "residualLag1": 0.056725079128661385,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2023": {
+      "n": 20,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2023,
+      "absoluteChange": -0.01204955460738083,
+      "percentChange": -2.9252699564217193,
+      "slopePerYear": -2.9104875370542828e-05,
+      "interceptAtStart": 0.4317672815544362,
+      "ci95PerYear": [
+        -0.0031580854157706086,
+        0.003099875665029523
+      ],
+      "pValue": 0.9846235908468901,
+      "residualLag1": 0.08542415558743666,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2004-2024": {
+      "n": 21,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2004,
+      "endYear": 2024,
+      "absoluteChange": -0.007704918032786889,
+      "percentChange": -1.8705226850623518,
+      "slopePerYear": -0.00037946245684848613,
+      "interceptAtStart": 0.43398621290379635,
+      "ci95PerYear": [
+        -0.0029839321275977404,
+        0.002225007213900768
+      ],
+      "pValue": 0.7637221443093783,
+      "residualLag1": 0.10155159803662743,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2006": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2005,
+      "endYear": 2006,
+      "absoluteChange": 0.04865753424657532,
+      "percentChange": 11.868484362469921,
+      "slopePerYear": 0.04865753424657521,
+      "interceptAtStart": 0.409972602739726,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2007": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2005,
+      "endYear": 2007,
+      "absoluteChange": -0.004273972602739817,
+      "percentChange": -1.0425020048115698,
+      "slopePerYear": -0.0021369863013699086,
+      "interceptAtStart": 0.42690410958904107,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2008": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2005,
+      "endYear": 2008,
+      "absoluteChange": 0.0045355939815854285,
+      "percentChange": 1.1063163614532754,
+      "slopePerYear": -0.003932472490455863,
+      "interceptAtStart": 0.42810110038176524,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2009": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2005,
+      "endYear": 2009,
+      "absoluteChange": 0.017150684931506788,
+      "percentChange": 4.183373429564273,
+      "slopePerYear": -0.0009820570401976045,
+      "interceptAtStart": 0.42515068493150676,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2010": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2005,
+      "endYear": 2010,
+      "absoluteChange": -0.03282191780821925,
+      "percentChange": -8.005880780539979,
+      "slopePerYear": -0.007137730582913615,
+      "interceptAtStart": 0.4333582496551282,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2011": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2005,
+      "endYear": 2011,
+      "absoluteChange": 0.04898630136986298,
+      "percentChange": 11.9486768243785,
+      "slopePerYear": 0.00019373776908022944,
+      "interceptAtStart": 0.4211391357351384,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2012": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2012,
+      "absoluteChange": 0.02918040272475475,
+      "percentChange": 7.117647015861723,
+      "slopePerYear": 0.0015818798812286226,
+      "interceptAtStart": 0.41836285151084157,
+      "ci95PerYear": [
+        -0.006719838036231376,
+        0.009883597798688621
+      ],
+      "pValue": 0.6574797555673799,
+      "residualLag1": -0.40833902862857235,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2013": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2013,
+      "absoluteChange": 0.004356164383561567,
+      "percentChange": 1.062550120288674,
+      "slopePerYear": 0.0004692716520697525,
+      "interceptAtStart": 0.42095893737887885,
+      "ci95PerYear": [
+        -0.0051977804628059844,
+        0.00613632376694549
+      ],
+      "pValue": 0.8503236776426719,
+      "residualLag1": -0.44010630351628627,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2014": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2014,
+      "absoluteChange": 0.05799999999999994,
+      "percentChange": 14.14728682170541,
+      "slopePerYear": 0.002803283678918092,
+      "interceptAtStart": 0.4147349053072834,
+      "ci95PerYear": [
+        -0.002422207887950594,
+        0.008028775245786778
+      ],
+      "pValue": 0.2511349180577883,
+      "residualLag1": -0.4391657387223365,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2015": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2015,
+      "absoluteChange": 0.1895616438356164,
+      "percentChange": 46.23763699545575,
+      "slopePerYear": 0.009929033882503456,
+      "interceptAtStart": 0.3933576546965273,
+      "ci95PerYear": [
+        -0.004079308770211232,
+        0.023937376535218144
+      ],
+      "pValue": 0.1433088999072864,
+      "residualLag1": 0.06067135295714986,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2016": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2016,
+      "absoluteChange": -0.0025135863462834585,
+      "percentChange": -0.6131108102068045,
+      "slopePerYear": 0.006270648843633363,
+      "interceptAtStart": 0.40555227149276113,
+      "ci95PerYear": [
+        -0.0036262354335209104,
+        0.016167533120787635
+      ],
+      "pValue": 0.188375786746406,
+      "residualLag1": -0.3268831604401488,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2017": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2017,
+      "absoluteChange": 0.006767123287671206,
+      "percentChange": 1.650628174284944,
+      "slopePerYear": 0.00415876978026092,
+      "interceptAtStart": 0.41329582805846005,
+      "ci95PerYear": [
+        -0.00487377980210473,
+        0.01319131936262657
+      ],
+      "pValue": 0.33265114866960604,
+      "residualLag1": -0.14851818608952808,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2018": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2018,
+      "absoluteChange": 0.039917808219178064,
+      "percentChange": 9.736701416733489,
+      "slopePerYear": 0.003659643373319567,
+      "interceptAtStart": 0.4152923336862253,
+      "ci95PerYear": [
+        -0.0029183905059790762,
+        0.01023767725261821
+      ],
+      "pValue": 0.24877502115781489,
+      "residualLag1": -0.11814597702420111,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2019": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2019,
+      "absoluteChange": 0.06589041095890408,
+      "percentChange": 16.07190590751135,
+      "slopePerYear": 0.003893035192967839,
+      "interceptAtStart": 0.4142809691344161,
+      "ci95PerYear": [
+        -0.0009315496042361206,
+        0.008717619990171798
+      ],
+      "pValue": 0.10487830074026583,
+      "residualLag1": -0.12093391347766781,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2020": {
+      "n": 16,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2020,
+      "absoluteChange": 0.014262369937869557,
+      "percentChange": 3.4788592804880967,
+      "slopePerYear": 0.0028244721558059556,
+      "interceptAtStart": 0.41926759664117186,
+      "ci95PerYear": [
+        -0.0008549013837332452,
+        0.006503845695345156
+      ],
+      "pValue": 0.12192678270817012,
+      "residualLag1": -0.1296481605801889,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2021": {
+      "n": 17,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2021,
+      "absoluteChange": -0.04000000000000009,
+      "percentChange": -9.756749532210659,
+      "slopePerYear": 0.0009717947363090723,
+      "interceptAtStart": 0.42853098373865617,
+      "ci95PerYear": [
+        -0.0035209617525443528,
+        0.005464551225162498
+      ],
+      "pValue": 0.6513854746180396,
+      "residualLag1": -0.030033300246133484,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2022": {
+      "n": 18,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2022,
+      "absoluteChange": -0.009123287671232938,
+      "percentChange": -2.225340817963126,
+      "slopePerYear": 0.00019631790845964225,
+      "interceptAtStart": 0.43266686015385286,
+      "ci95PerYear": [
+        -0.0037866528182299184,
+        0.004179288635149203
+      ],
+      "pValue": 0.9180801707694017,
+      "residualLag1": 0.04787720205664828,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2023": {
+      "n": 19,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2023,
+      "absoluteChange": -0.01010958904109599,
+      "percentChange": -2.465918203688877,
+      "slopePerYear": -0.00037743317797451006,
+      "interceptAtStart": 0.4359181163103135,
+      "ci95PerYear": [
+        -0.003662460119195676,
+        0.002907593763246656
+      ],
+      "pValue": 0.8113649236130516,
+      "residualLag1": 0.07360646328013597,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2005-2024": {
+      "n": 20,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2005,
+      "endYear": 2024,
+      "absoluteChange": -0.005764952466502049,
+      "percentChange": -1.4061799320190107,
+      "slopePerYear": -0.0007279936873398323,
+      "interceptAtStart": 0.43802147936650504,
+      "ci95PerYear": [
+        -0.0034419660880457862,
+        0.0019859787133661216
+      ],
+      "pValue": 0.580014396868315,
+      "residualLag1": 0.08738435659988734,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2007": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2006,
+      "endYear": 2007,
+      "absoluteChange": -0.052931506849315135,
+      "percentChange": -11.541218637992845,
+      "slopePerYear": -0.052931506849315246,
+      "interceptAtStart": 0.45863013698630134,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2008": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2006,
+      "endYear": 2008,
+      "absoluteChange": -0.04412194026498989,
+      "percentChange": -9.620375266858607,
+      "slopePerYear": -0.022060970132494945,
+      "interceptAtStart": 0.4483399580806946,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2009": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2006,
+      "endYear": 2009,
+      "absoluteChange": -0.03150684931506853,
+      "percentChange": -6.869772998805265,
+      "slopePerYear": -0.008571098136088001,
+      "interceptAtStart": 0.4393467100830902,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2010": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2006,
+      "endYear": 2010,
+      "absoluteChange": -0.08147945205479457,
+      "percentChange": -17.765830346475518,
+      "slopePerYear": -0.014153424657534231,
+      "interceptAtStart": 0.44492903660453614,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2011": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2006,
+      "endYear": 2011,
+      "absoluteChange": 0.00032876712328766544,
+      "percentChange": 0.0716845878136188,
+      "slopePerYear": -0.002039568830002267,
+      "interceptAtStart": 0.42877722883449365,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2012": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2006,
+      "endYear": 2012,
+      "absoluteChange": -0.019477131521820568,
+      "percentChange": -4.246805857505679,
+      "slopePerYear": 0.00038327291392638296,
+      "interceptAtStart": 0.4247391592612791,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2013": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2013,
+      "absoluteChange": -0.04430136986301375,
+      "percentChange": -9.659498207885315,
+      "slopePerYear": -0.0007078356306966307,
+      "interceptAtStart": 0.4269213763505252,
+      "ci95PerYear": [
+        -0.009227318452773641,
+        0.00781164719138038
+      ],
+      "pValue": 0.8456199244064084,
+      "residualLag1": -0.368063331079619,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2014": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2014,
+      "absoluteChange": 0.009342465753424622,
+      "percentChange": 2.037037037037029,
+      "slopePerYear": 0.0024064251316216123,
+      "interceptAtStart": 0.41965476790511586,
+      "ci95PerYear": [
+        -0.005472885069948879,
+        0.010285735333192103
+      ],
+      "pValue": 0.49359626580232674,
+      "residualLag1": -0.4979574504568116,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2015": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2015,
+      "absoluteChange": 0.1409041095890411,
+      "percentChange": 30.72281959378733,
+      "slopePerYear": 0.011036697085383379,
+      "interceptAtStart": 0.3966407093617514,
+      "ci95PerYear": [
+        -0.0063049163303027025,
+        0.02837831050106946
+      ],
+      "pValue": 0.18039333498406604,
+      "residualLag1": -0.04181203500355056,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2016": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2016,
+      "absoluteChange": -0.051171120592858776,
+      "percentChange": -11.157382924966221,
+      "slopePerYear": 0.006511757820740538,
+      "interceptAtStart": 0.41021552715567977,
+      "ci95PerYear": [
+        -0.005569521345739903,
+        0.01859303698722098
+      ],
+      "pValue": 0.2537232406909705,
+      "residualLag1": -0.3460825216263724,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2017": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2017,
+      "absoluteChange": -0.04189041095890411,
+      "percentChange": -9.133811230585424,
+      "slopePerYear": 0.004007714083954839,
+      "interceptAtStart": 0.41856233961163225,
+      "ci95PerYear": [
+        -0.006651664066694471,
+        0.014667092234604148
+      ],
+      "pValue": 0.42174984888240774,
+      "residualLag1": -0.13972610346209083,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2018": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2018,
+      "absoluteChange": -0.008739726027397254,
+      "percentChange": -1.9056152927120655,
+      "slopePerYear": 0.0034550383369157263,
+      "interceptAtStart": 0.4205888173507757,
+      "ci95PerYear": [
+        -0.00411828706283008,
+        0.011028363736661531
+      ],
+      "pValue": 0.3369004662218288,
+      "residualLag1": -0.1108543462852011,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2019": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2019,
+      "absoluteChange": 0.01723287671232876,
+      "percentChange": 3.757467144563917,
+      "slopePerYear": 0.0037510011360000345,
+      "interceptAtStart": 0.4194049661544382,
+      "ci95PerYear": [
+        -0.0017523605248615393,
+        0.009254362796861608
+      ],
+      "pValue": 0.16332176762524914,
+      "residualLag1": -0.1181948837315875,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2020": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2020,
+      "absoluteChange": -0.03439516430870576,
+      "percentChange": -7.4995429944310645,
+      "slopePerYear": 0.0025589009014789534,
+      "interceptAtStart": 0.424570733837363,
+      "ci95PerYear": [
+        -0.0016228505456380255,
+        0.006740652348595932
+      ],
+      "pValue": 0.2089668994689377,
+      "residualLag1": -0.11487807404575107,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2021": {
+      "n": 16,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2021,
+      "absoluteChange": -0.08865753424657541,
+      "percentChange": -19.33094384707289,
+      "slopePerYear": 0.0005078352113358281,
+      "interceptAtStart": 0.4341423737246979,
+      "ci95PerYear": [
+        -0.004555691579500154,
+        0.00557136200217181
+      ],
+      "pValue": 0.8327862078889752,
+      "residualLag1": -0.004570072123862784,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2022": {
+      "n": 17,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2022,
+      "absoluteChange": -0.057780821917808256,
+      "percentChange": -12.598566308243736,
+      "slopePerYear": -0.00030429071096961985,
+      "interceptAtStart": 0.438203003336225,
+      "ci95PerYear": [
+        -0.004760268081652914,
+        0.004151686659713675
+      ],
+      "pValue": 0.8862122835472526,
+      "residualLag1": 0.06704789674605141,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2023": {
+      "n": 18,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2023,
+      "absoluteChange": -0.05876712328767131,
+      "percentChange": -12.813620071684603,
+      "slopePerYear": -0.0008861687381821054,
+      "interceptAtStart": 0.4413063528146913,
+      "ci95PerYear": [
+        -0.004577242957276309,
+        0.002804905480912098
+      ],
+      "pValue": 0.6177296622851471,
+      "residualLag1": 0.09136436281524206,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2006-2024": {
+      "n": 19,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2006,
+      "endYear": 2024,
+      "absoluteChange": -0.05442248671307737,
+      "percentChange": -11.866312813783296,
+      "slopePerYear": -0.0012200792421956201,
+      "interceptAtStart": 0.44319851233743485,
+      "ci95PerYear": [
+        -0.0043113140464326,
+        0.0018711555620413598
+      ],
+      "pValue": 0.41654684738477316,
+      "residualLag1": 0.10332680900622594,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2008": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2007,
+      "endYear": 2008,
+      "absoluteChange": 0.008809566584325246,
+      "percentChange": 2.171455836898106,
+      "slopePerYear": 0.008809566584325135,
+      "interceptAtStart": 0.4056986301369862,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2009": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2007,
+      "endYear": 2009,
+      "absoluteChange": 0.021424657534246605,
+      "percentChange": 5.2809292274446324,
+      "slopePerYear": 0.010712328767123303,
+      "interceptAtStart": 0.4050643760760535,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2010": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2007,
+      "endYear": 2010,
+      "absoluteChange": -0.02854794520547943,
+      "percentChange": -7.0367368989735235,
+      "slopePerYear": -0.0073028744666516765,
+      "interceptAtStart": 0.417074511565237,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2011": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2007,
+      "endYear": 2011,
+      "absoluteChange": 0.0532602739726028,
+      "percentChange": 13.128038897893045,
+      "slopePerYear": 0.00691630361554012,
+      "interceptAtStart": 0.402855333483045,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2012": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2007,
+      "endYear": 2012,
+      "absoluteChange": 0.03345437532749457,
+      "percentChange": 8.246114934181199,
+      "slopePerYear": 0.007161468458930842,
+      "interceptAtStart": 0.4025284470251908,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2013": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2007,
+      "endYear": 2013,
+      "absoluteChange": 0.008630136986301384,
+      "percentChange": 2.1272285251215597,
+      "slopePerYear": 0.0038219873172713748,
+      "interceptAtStart": 0.4080942489279565,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2014": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2014,
+      "absoluteChange": 0.06227397260273976,
+      "percentChange": 15.349810913019999,
+      "slopePerYear": 0.006582357533177204,
+      "interceptAtStart": 0.4025735084961448,
+      "ci95PerYear": [
+        0.0013372076992397485,
+        0.011827507367114659
+      ],
+      "pValue": 0.021921502614493115,
+      "residualLag1": -0.5762874262721667,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2015": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2015,
+      "absoluteChange": 0.19383561643835623,
+      "percentChange": 47.77822798487306,
+      "slopePerYear": 0.01620248272076252,
+      "interceptAtStart": 0.3801265497251124,
+      "ci95PerYear": [
+        -0.0016019747190815226,
+        0.03400694016060656
+      ],
+      "pValue": 0.06842496427452936,
+      "residualLag1": -0.055231096297625085,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2016": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2016,
+      "absoluteChange": 0.0017603862564563588,
+      "percentChange": 0.43391476472620955,
+      "slopePerYear": 0.009739398476115324,
+      "interceptAtStart": 0.39736144104417165,
+      "ci95PerYear": [
+        -0.003253666119901069,
+        0.02273246307213172
+      ],
+      "pValue": 0.12215146832505792,
+      "residualLag1": -0.4703916639022157,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2017": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2017,
+      "absoluteChange": 0.011041095890411023,
+      "percentChange": 2.721501890869816,
+      "slopePerYear": 0.0061932303043913325,
+      "interceptAtStart": 0.4079999455593435,
+      "ci95PerYear": [
+        -0.006017612425707921,
+        0.018404073034490584
+      ],
+      "pValue": 0.28082293975511846,
+      "residualLag1": -0.16534827311964004,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2018": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2018,
+      "absoluteChange": 0.04419178082191788,
+      "percentChange": 10.892760669908176,
+      "slopePerYear": 0.005184189229439643,
+      "interceptAtStart": 0.41136341580918256,
+      "ci95PerYear": [
+        -0.003115768761540169,
+        0.013484147220419455
+      ],
+      "pValue": 0.1941903492987859,
+      "residualLag1": -0.11073469488404425,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2019": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2019,
+      "absoluteChange": 0.0701643835616439,
+      "percentChange": 17.294705564559713,
+      "slopePerYear": 0.00525966155261014,
+      "interceptAtStart": 0.41108668395755765,
+      "ci95PerYear": [
+        -0.0002606346663569089,
+        0.010779957771577187
+      ],
+      "pValue": 0.059903580272102304,
+      "residualLag1": -0.1110249053867984,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2020": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2020,
+      "absoluteChange": 0.018536342540609374,
+      "percentChange": 4.568993130282565,
+      "slopePerYear": 0.00368173836792747,
+      "interceptAtStart": 0.417398376696288,
+      "ci95PerYear": [
+        -0.0005354405974071818,
+        0.007898917333262121
+      ],
+      "pValue": 0.08141704363543352,
+      "residualLag1": -0.11344389706120418,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2021": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2021,
+      "absoluteChange": -0.035726027397260274,
+      "percentChange": -8.806050783360346,
+      "slopePerYear": 0.0012074855902388035,
+      "interceptAtStart": 0.42812013873293897,
+      "ci95PerYear": [
+        -0.004554016914305391,
+        0.006968988094782998
+      ],
+      "pValue": 0.6581808811169035,
+      "residualLag1": 0.00036815755806638773,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2022": {
+      "n": 16,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2022,
+      "absoluteChange": -0.004849315068493121,
+      "percentChange": -1.1952998379254385,
+      "slopePerYear": 0.0002063876302822957,
+      "interceptAtStart": 0.43279192921273624,
+      "ci95PerYear": [
+        -0.0049222080505920964,
+        0.005334983311156688
+      ],
+      "pValue": 0.9324409830425057,
+      "residualLag1": 0.08048144859992211,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2023": {
+      "n": 17,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2023,
+      "absoluteChange": -0.005835616438356173,
+      "percentChange": -1.4384116693679114,
+      "slopePerYear": -0.0005040264402789359,
+      "interceptAtStart": 0.4363439995655423,
+      "ci95PerYear": [
+        -0.0047892196330406095,
+        0.0037811667524827374
+      ],
+      "pValue": 0.8054460109002849,
+      "residualLag1": 0.10534712818171883,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2007-2024": {
+      "n": 18,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2007,
+      "endYear": 2024,
+      "absoluteChange": -0.0014909798637622318,
+      "percentChange": -0.3675092181747803,
+      "slopePerYear": -0.0009174983667276544,
+      "interceptAtStart": 0.4385491831732684,
+      "ci95PerYear": [
+        -0.004544721395198768,
+        0.002709724661743459
+      ],
+      "pValue": 0.5991793377747715,
+      "residualLag1": 0.11783439052521233,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2009": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2008,
+      "endYear": 2009,
+      "absoluteChange": 0.01261509094992136,
+      "percentChange": 3.043387573443555,
+      "slopePerYear": 0.012615090949921248,
+      "interceptAtStart": 0.41450819672131145,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2010": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2008,
+      "endYear": 2010,
+      "absoluteChange": -0.037357511789804676,
+      "percentChange": -9.012490485181274,
+      "slopePerYear": -0.018678755894902338,
+      "interceptAtStart": 0.42493947900291934,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2011": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2008,
+      "endYear": 2011,
+      "absoluteChange": 0.044450707388277555,
+      "percentChange": 10.723722170001704,
+      "slopePerYear": 0.008337951942510677,
+      "interceptAtStart": 0.4069283404446442,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2012": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2008,
+      "endYear": 2012,
+      "absoluteChange": 0.024644808743169322,
+      "percentChange": 5.945554017533433,
+      "slopePerYear": 0.008112523392469512,
+      "interceptAtStart": 0.4071537689946851,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2013": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2008,
+      "endYear": 2013,
+      "absoluteChange": -0.00017942959802386138,
+      "percentChange": -0.04328734617146744,
+      "slopePerYear": 0.0033428635590773276,
+      "interceptAtStart": 0.4135133154392083,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2014": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2008,
+      "endYear": 2014,
+      "absoluteChange": 0.05346440601841451,
+      "percentChange": 12.898274736497072,
+      "slopePerYear": 0.007028803481868823,
+      "interceptAtStart": 0.4073700822345556,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2015": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2015,
+      "absoluteChange": 0.18502604985403098,
+      "percentChange": 44.637488792153015,
+      "slopePerYear": 0.018942348479177574,
+      "interceptAtStart": 0.383542992239938,
+      "ci95PerYear": [
+        -0.003224421789665189,
+        0.04110911874802034
+      ],
+      "pValue": 0.08148784218019813,
+      "residualLag1": -0.10550429825410697,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2016": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2016,
+      "absoluteChange": -0.007049180327868887,
+      "percentChange": -1.7006130116670044,
+      "slopePerYear": 0.010434164233849831,
+      "interceptAtStart": 0.4033954221457027,
+      "ci95PerYear": [
+        -0.005785814290250279,
+        0.02665414275794994
+      ],
+      "pValue": 0.1720324966614186,
+      "residualLag1": -0.49161194322984864,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2017": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2017,
+      "absoluteChange": 0.0022315293060857777,
+      "percentChange": 0.5383558934990407,
+      "slopePerYear": 0.0060398092762341815,
+      "interceptAtStart": 0.41511370203267806,
+      "ci95PerYear": [
+        -0.008526340481564719,
+        0.020605959034033082
+      ],
+      "pValue": 0.3669805405825729,
+      "residualLag1": -0.16395324461066152,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2018": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2018,
+      "absoluteChange": 0.035382214237592635,
+      "percentChange": 8.535950438968364,
+      "slopePerYear": 0.004875200920047097,
+      "interceptAtStart": 0.41860752710123916,
+      "ci95PerYear": [
+        -0.00455636157350966,
+        0.014306763413603854
+      ],
+      "pValue": 0.27231212527943716,
+      "residualLag1": -0.1109887762255751,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2019": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2019,
+      "absoluteChange": 0.06135481697731865,
+      "percentChange": 14.801834429964158,
+      "slopePerYear": 0.005014750015311452,
+      "interceptAtStart": 0.41814236345035805,
+      "ci95PerYear": [
+        -0.0010774546020058768,
+        0.011106954632628781
+      ],
+      "pValue": 0.09653022890532022,
+      "residualLag1": -0.11207399735398627,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2020": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2020,
+      "absoluteChange": 0.009726775956284128,
+      "percentChange": 2.346582295168407,
+      "slopePerYear": 0.003231748115646622,
+      "interceptAtStart": 0.42468003708246255,
+      "ci95PerYear": [
+        -0.0014364703575768393,
+        0.007899966588870082
+      ],
+      "pValue": 0.15579937388518483,
+      "residualLag1": -0.11576141427701768,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2021": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2021,
+      "absoluteChange": -0.04453559398158552,
+      "percentChange": -10.7442010396548,
+      "slopePerYear": 0.0004683149771854203,
+      "interceptAtStart": 0.4357337696363071,
+      "ci95PerYear": [
+        -0.006034778973580777,
+        0.006971408927951618
+      ],
+      "pValue": 0.877928383922749,
+      "residualLag1": -0.008520845180408732,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2022": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2022,
+      "absoluteChange": -0.013658881652818367,
+      "percentChange": -3.2952018225110553,
+      "slopePerYear": -0.0005677066290248299,
+      "interceptAtStart": 0.44022319659655157,
+      "ci95PerYear": [
+        -0.006302170509924023,
+        0.0051667572518743635
+      ],
+      "pValue": 0.8339628679980872,
+      "residualLag1": 0.06369812366302484,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2023": {
+      "n": 16,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2023,
+      "absoluteChange": -0.014645183022681418,
+      "percentChange": -3.5331467841944493,
+      "slopePerYear": -0.001270160675992834,
+      "interceptAtStart": 0.44350131548240246,
+      "ci95PerYear": [
+        -0.006067258099034783,
+        0.003526936747049115
+      ],
+      "pValue": 0.5791040785708746,
+      "residualLag1": 0.0839521631029783,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2008-2024": {
+      "n": 17,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2008,
+      "endYear": 2024,
+      "absoluteChange": -0.010300546448087478,
+      "percentChange": -2.4850042844901563,
+      "slopePerYear": -0.0016421429189985778,
+      "interceptAtStart": 0.4453612266974311,
+      "ci95PerYear": [
+        -0.005733034136211634,
+        0.002448748298214478
+      ],
+      "pValue": 0.4056819757344547,
+      "residualLag1": 0.09304819291535982,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2010": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2009,
+      "endYear": 2010,
+      "absoluteChange": -0.049972602739726035,
+      "percentChange": -11.69980756895446,
+      "slopePerYear": -0.049972602739726146,
+      "interceptAtStart": 0.4271232876712328,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2011": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2009,
+      "endYear": 2011,
+      "absoluteChange": 0.031835616438356196,
+      "percentChange": 7.453495830660688,
+      "slopePerYear": 0.015917808219178098,
+      "interceptAtStart": 0.40515981735159806,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2012": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2009,
+      "endYear": 2012,
+      "absoluteChange": 0.012029717793247963,
+      "percentChange": 2.8164509265782596,
+      "slopePerYear": 0.01178973725578264,
+      "interceptAtStart": 0.4079118646605286,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2013": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2009,
+      "endYear": 2013,
+      "absoluteChange": -0.01279452054794522,
+      "percentChange": -2.99550994227069,
+      "slopePerYear": 0.003641327943708377,
+      "interceptAtStart": 0.4160602739726026,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2014": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2009,
+      "endYear": 2014,
+      "absoluteChange": 0.04084931506849315,
+      "percentChange": 9.563822963438103,
+      "slopePerYear": 0.008456426379219978,
+      "interceptAtStart": 0.40964014272525395,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2015": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2009,
+      "endYear": 2015,
+      "absoluteChange": 0.17241095890410962,
+      "percentChange": 40.36561898652984,
+      "slopePerYear": 0.023365949119373758,
+      "interceptAtStart": 0.3847909381583309,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2016": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2009,
+      "endYear": 2016,
+      "absoluteChange": -0.019664271277790246,
+      "percentChange": -4.603886476198486,
+      "slopePerYear": 0.011624818652665039,
+      "interceptAtStart": 0.40827319909174825,
+      "ci95PerYear": [
+        -0.009069486512648186,
+        0.03231912381797826
+      ],
+      "pValue": 0.2184055920535546,
+      "residualLag1": -0.531913368673014,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2017": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2009,
+      "endYear": 2017,
+      "absoluteChange": -0.010383561643835582,
+      "percentChange": -2.4310455420141035,
+      "slopePerYear": 0.0059893505002869465,
+      "interceptAtStart": 0.42142262478063036,
+      "ci95PerYear": [
+        -0.011915610815729833,
+        0.023894311816303727
+      ],
+      "pValue": 0.454912690638659,
+      "residualLag1": -0.16218426163716018,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2018": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2009,
+      "endYear": 2018,
+      "absoluteChange": 0.022767123287671276,
+      "percentChange": 5.330339961513801,
+      "slopePerYear": 0.004601912228051952,
+      "interceptAtStart": 0.4251224601732573,
+      "ci95PerYear": [
+        -0.006499637096182427,
+        0.01570346155228633
+      ],
+      "pValue": 0.36710998856031796,
+      "residualLag1": -0.10964001007159037,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2019": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2009,
+      "endYear": 2019,
+      "absoluteChange": 0.04873972602739729,
+      "percentChange": 11.411161000641444,
+      "slopePerYear": 0.004816522739181636,
+      "interceptAtStart": 0.4244786286398682,
+      "ci95PerYear": [
+        -0.0022355068831318072,
+        0.01186855236149508
+      ],
+      "pValue": 0.1567338006273151,
+      "residualLag1": -0.11182308335762453,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2020": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2009,
+      "endYear": 2020,
+      "absoluteChange": -0.002888314993637231,
+      "percentChange": -0.676225126797684,
+      "slopePerYear": 0.002769391735594316,
+      "interceptAtStart": 0.4313023986518259,
+      "ci95PerYear": [
+        -0.002934354694123638,
+        0.008473138165312269
+      ],
+      "pValue": 0.30471754660367933,
+      "residualLag1": -0.11447343742812624,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2021": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2009,
+      "endYear": 2021,
+      "absoluteChange": -0.05715068493150688,
+      "percentChange": -13.380372033354721,
+      "slopePerYear": -0.0003480532118528856,
+      "interceptAtStart": 0.4427330301257991,
+      "ci95PerYear": [
+        -0.008178467292858779,
+        0.007482360869153008
+      ],
+      "pValue": 0.9238260982736453,
+      "residualLag1": -0.011974905383963183,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2022": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2009,
+      "endYear": 2022,
+      "absoluteChange": -0.026273972602739726,
+      "percentChange": -6.151379089159717,
+      "slopePerYear": -0.001415453877659116,
+      "interceptAtStart": 0.44700263278902386,
+      "ci95PerYear": [
+        -0.008273921165802892,
+        0.00544301341048466
+      ],
+      "pValue": 0.660966847661279,
+      "residualLag1": 0.051727186173779756,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2023": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2009,
+      "endYear": 2023,
+      "absoluteChange": -0.027260273972602778,
+      "percentChange": -6.382296343810144,
+      "slopePerYear": -0.002098535497738266,
+      "interceptAtStart": 0.4499626531427003,
+      "ci95PerYear": [
+        -0.007882551584537306,
+        0.0036854805890607738
+      ],
+      "pValue": 0.44719399109603286,
+      "residualLag1": 0.0677065659114627,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2009-2024": {
+      "n": 16,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2009,
+      "endYear": 2024,
+      "absoluteChange": -0.022915637398008837,
+      "percentChange": -5.365110744241966,
+      "slopePerYear": -0.0024134686684015583,
+      "interceptAtStart": 0.45143234127246246,
+      "ci95PerYear": [
+        -0.007392602721039296,
+        0.0025656653842361793
+      ],
+      "pValue": 0.3161417946913717,
+      "residualLag1": 0.07380111808040184,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2011": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2010,
+      "endYear": 2011,
+      "absoluteChange": 0.08180821917808223,
+      "percentChange": 21.691123056806635,
+      "slopePerYear": 0.08180821917808212,
+      "interceptAtStart": 0.3771506849315068,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2012": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2010,
+      "endYear": 2012,
+      "absoluteChange": 0.062002320532974,
+      "percentChange": 16.43966801869498,
+      "slopePerYear": 0.031001160266487,
+      "interceptAtStart": 0.3940863712353718,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2013": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2010,
+      "endYear": 2013,
+      "absoluteChange": 0.037178082191780815,
+      "percentChange": 9.857620223739646,
+      "slopePerYear": 0.009172834793023443,
+      "interceptAtStart": 0.40863858821768106,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2014": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2010,
+      "endYear": 2014,
+      "absoluteChange": 0.09082191780821919,
+      "percentChange": 24.081069301176818,
+      "slopePerYear": 0.013701369863013726,
+      "interceptAtStart": 0.4041100531476905,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2015": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2010,
+      "endYear": 2015,
+      "absoluteChange": 0.22238356164383566,
+      "percentChange": 58.96411448496297,
+      "slopePerYear": 0.03183241902195416,
+      "interceptAtStart": 0.3799353209357702,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2016": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2010,
+      "endYear": 2016,
+      "absoluteChange": 0.03030833146193579,
+      "percentChange": 8.036133214882001,
+      "slopePerYear": 0.014317688449734245,
+      "interceptAtStart": 0.40912653855613645,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2017": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2010,
+      "endYear": 2017,
+      "absoluteChange": 0.039589041095890454,
+      "percentChange": 10.496876362051442,
+      "slopePerYear": 0.0066001358099943425,
+      "interceptAtStart": 0.42456164383561623,
+      "ci95PerYear": [
+        -0.016800784921402724,
+        0.03000105654139141
+      ],
+      "pValue": 0.5158979484570766,
+      "residualLag1": -0.17314002684674612,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2018": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2010,
+      "endYear": 2018,
+      "absoluteChange": 0.07273972602739731,
+      "percentChange": 19.286648263838458,
+      "slopePerYear": 0.004768647852883199,
+      "interceptAtStart": 0.4288351157355423,
+      "ci95PerYear": [
+        -0.009137801615641712,
+        0.01867509732140811
+      ],
+      "pValue": 0.44414138149490595,
+      "residualLag1": -0.11428361715940161,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2019": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2010,
+      "endYear": 2019,
+      "absoluteChange": 0.09871232876712333,
+      "percentChange": 26.173180299288113,
+      "slopePerYear": 0.00499283334127263,
+      "interceptAtStart": 0.42823728776650394,
+      "ci95PerYear": [
+        -0.0038459183598735375,
+        0.013831585042418798
+      ],
+      "pValue": 0.22895109830383445,
+      "residualLag1": -0.11013041105074022,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2020": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2010,
+      "endYear": 2020,
+      "absoluteChange": 0.047084287746088804,
+      "percentChange": 12.48421111965888,
+      "slopePerYear": 0.0025414402275619613,
+      "interceptAtStart": 0.43559146710763585,
+      "ci95PerYear": [
+        -0.00489935452485126,
+        0.009982234979975184
+      ],
+      "pValue": 0.45953805277922655,
+      "residualLag1": -0.1383912784014438,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2021": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2010,
+      "endYear": 2021,
+      "absoluteChange": -0.0071780821917808435,
+      "percentChange": -1.9032398663373589,
+      "slopePerYear": -0.001057586959787707,
+      "interceptAtStart": 0.4475882243988015,
+      "ci95PerYear": [
+        -0.010687799906984336,
+        0.008572625987408922
+      ],
+      "pValue": 0.8116415650114491,
+      "residualLag1": -0.06053899498392719,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2022": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2010,
+      "endYear": 2022,
+      "absoluteChange": 0.02369863013698631,
+      "percentChange": 6.2835972686328665,
+      "slopePerYear": -0.0021800440744972403,
+      "interceptAtStart": 0.45170390048607,
+      "ci95PerYear": [
+        -0.010470246112450846,
+        0.006110157963456365
+      ],
+      "pValue": 0.574394090334505,
+      "residualLag1": 0.001730243405507192,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2023": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2010,
+      "endYear": 2023,
+      "absoluteChange": 0.022712328767123258,
+      "percentChange": 6.022083393868945,
+      "slopePerYear": -0.0028514816121822523,
+      "interceptAtStart": 0.4543896506368097,
+      "ci95PerYear": [
+        -0.009813077581866048,
+        0.004110114357501545
+      ],
+      "pValue": 0.389699924933835,
+      "residualLag1": 0.011762883159945899,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2010-2024": {
+      "n": 15,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2010,
+      "endYear": 2024,
+      "absoluteChange": 0.0270569653417172,
+      "percentChange": 7.174046454835666,
+      "slopePerYear": -0.0031080130570080994,
+      "interceptAtStart": 0.45550128689772185,
+      "ci95PerYear": [
+        -0.009088182882016042,
+        0.0028721567679998432
+      ],
+      "pValue": 0.2818369538029705,
+      "residualLag1": 0.015295151562934,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2012": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2011,
+      "endYear": 2012,
+      "absoluteChange": -0.019805898645108233,
+      "percentChange": -4.315396970788267,
+      "slopePerYear": -0.019805898645108344,
+      "interceptAtStart": 0.458958904109589,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2013": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2011,
+      "endYear": 2013,
+      "absoluteChange": -0.044630136986301416,
+      "percentChange": -9.724212034383964,
+      "slopePerYear": -0.022315068493150708,
+      "interceptAtStart": 0.45979529405893643,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2014": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2011,
+      "endYear": 2014,
+      "absoluteChange": 0.009013698630136957,
+      "percentChange": 1.9639446036294108,
+      "slopePerYear": 0.00022168575492180487,
+      "interceptAtStart": 0.44477079122688834,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2015": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2011,
+      "endYear": 2015,
+      "absoluteChange": 0.14057534246575343,
+      "percentChange": 30.629178605539636,
+      "slopePerYear": 0.030997028220675234,
+      "interceptAtStart": 0.41399544876113464,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2016": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2011,
+      "endYear": 2016,
+      "absoluteChange": -0.05149988771614644,
+      "percentChange": -11.221023768143178,
+      "slopePerYear": 0.007922517724808315,
+      "interceptAtStart": 0.44476146275562406,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2017": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2011,
+      "endYear": 2017,
+      "absoluteChange": -0.04221917808219178,
+      "percentChange": -9.198901623686723,
+      "slopePerYear": -0.00017285831916417915,
+      "interceptAtStart": 0.4582537561622448,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2018": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2011,
+      "endYear": 2018,
+      "absoluteChange": -0.00906849315068492,
+      "percentChange": -1.9758834765998063,
+      "slopePerYear": -0.0007689697332634582,
+      "interceptAtStart": 0.4594459789904432,
+      "ci95PerYear": [
+        -0.012791659851930754,
+        0.011253720385403837
+      ],
+      "pValue": 0.8807688785250041,
+      "residualLag1": -0.11100535404958016,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2019": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2011,
+      "endYear": 2019,
+      "absoluteChange": 0.016904109589041094,
+      "percentChange": 3.6831423113658066,
+      "slopePerYear": 0.0007356164383561581,
+      "interceptAtStart": 0.4559352779233308,
+      "ci95PerYear": [
+        -0.007464746663047051,
+        0.008935979539759368
+      ],
+      "pValue": 0.83805807178808,
+      "residualLag1": -0.11438930225692859,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2020": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2011,
+      "endYear": 2020,
+      "absoluteChange": -0.03472393143199343,
+      "percentChange": -7.565804066784623,
+      "slopePerYear": -0.001354611917513307,
+      "interceptAtStart": 0.46150922020564955,
+      "ci95PerYear": [
+        -0.008248862909772541,
+        0.005539639074745927
+      ],
+      "pValue": 0.6625176964138489,
+      "residualLag1": -0.1316654496719289,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2021": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2011,
+      "endYear": 2021,
+      "absoluteChange": -0.08898630136986307,
+      "percentChange": -19.388729703915963,
+      "slopePerYear": -0.0048996345670947045,
+      "interceptAtStart": 0.47214428815439363,
+      "ci95PerYear": [
+        -0.014458004519815928,
+        0.004658735385626519
+      ],
+      "pValue": 0.276055721050459,
+      "residualLag1": -0.06338369226171915,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2022": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2011,
+      "endYear": 2022,
+      "absoluteChange": -0.05810958904109592,
+      "percentChange": -12.661174785100293,
+      "slopePerYear": -0.005568826599704646,
+      "interceptAtStart": 0.4743749282630936,
+      "ci95PerYear": [
+        -0.013550098549938293,
+        0.002412445350529001
+      ],
+      "pValue": 0.15108060428874165,
+      "residualLag1": -0.030980383760006804,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2023": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2011,
+      "endYear": 2023,
+      "absoluteChange": -0.05909589041095897,
+      "percentChange": -12.87607449856735,
+      "slopePerYear": -0.005822211062386217,
+      "interceptAtStart": 0.47530400462625944,
+      "ci95PerYear": [
+        -0.012505866268396903,
+        0.0008614441436244702
+      ],
+      "pValue": 0.08152477838908821,
+      "residualLag1": -0.02826469973289389,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2011-2024": {
+      "n": 14,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2011,
+      "endYear": 2024,
+      "absoluteChange": -0.05475125383636503,
+      "percentChange": -11.929445827527003,
+      "slopePerYear": -0.005690999935015192,
+      "interceptAtStart": 0.4747791601167751,
+      "ci95PerYear": [
+        -0.011474630368110823,
+        9.26304980804378e-05
+      ],
+      "pValue": 0.0532179111950518,
+      "residualLag1": -0.02834082846960323,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2013": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2012,
+      "endYear": 2013,
+      "absoluteChange": -0.024824238341193183,
+      "percentChange": -5.652753831193123,
+      "slopePerYear": -0.024824238341193294,
+      "interceptAtStart": 0.4391530054644808,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2014": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2012,
+      "endYear": 2014,
+      "absoluteChange": 0.02881959727524519,
+      "percentChange": 6.562541282112699,
+      "slopePerYear": 0.014409798637622595,
+      "interceptAtStart": 0.42607499313820885,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2015": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2012,
+      "endYear": 2015,
+      "absoluteChange": 0.16038124111086166,
+      "percentChange": 36.52058374079225,
+      "slopePerYear": 0.05347875589490236,
+      "interceptAtStart": 0.40002902163335574,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2016": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2012,
+      "endYear": 2016,
+      "absoluteChange": -0.03169398907103821,
+      "percentChange": -7.217072108504937,
+      "slopePerYear": 0.012181750130997853,
+      "interceptAtStart": 0.44132602739726007,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2017": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2012,
+      "endYear": 2017,
+      "absoluteChange": -0.022413279437083544,
+      "percentChange": -5.103751803628804,
+      "slopePerYear": -3.182872969534345e-05,
+      "interceptAtStart": 0.4576107992115179,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2018": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2012,
+      "endYear": 2018,
+      "absoluteChange": 0.010737405494423313,
+      "percentChange": 2.44502607538041,
+      "slopePerYear": -0.0008385518590997842,
+      "interceptAtStart": 0.4589553377605251,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2019": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2012,
+      "endYear": 2019,
+      "absoluteChange": 0.03671000823414933,
+      "percentChange": 8.359275190504981,
+      "slopePerYear": 0.00105957638688383,
+      "interceptAtStart": 0.45515908126855786,
+      "ci95PerYear": [
+        -0.011834874827270239,
+        0.013954027601037899
+      ],
+      "pValue": 0.8472867134110232,
+      "residualLag1": -0.110201412176918,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2020": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2012,
+      "endYear": 2020,
+      "absoluteChange": -0.014918032786885194,
+      "percentChange": -3.397001182106627,
+      "slopePerYear": -0.0015671382588517099,
+      "interceptAtStart": 0.46128808210860733,
+      "ci95PerYear": [
+        -0.01326903719401833,
+        0.01013476067631491
+      ],
+      "pValue": 0.7607255504350631,
+      "residualLag1": -0.13761991248407554,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2021": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2012,
+      "endYear": 2021,
+      "absoluteChange": -0.06918040272475484,
+      "percentChange": -15.753143406495534,
+      "slopePerYear": -0.005778660170081655,
+      "interceptAtStart": 0.47251880720522077,
+      "ci95PerYear": [
+        -0.01954232056395544,
+        0.00798500022379213
+      ],
+      "pValue": 0.3613123659699951,
+      "residualLag1": -0.0840082252839079,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2022": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2012,
+      "endYear": 2022,
+      "absoluteChange": -0.03830369039598769,
+      "percentChange": -8.722174258029924,
+      "slopePerYear": -0.006409700644441255,
+      "interceptAtStart": 0.47441192862829945,
+      "ci95PerYear": [
+        -0.017680732169205404,
+        0.004861330880322893
+      ],
+      "pValue": 0.23038722684016347,
+      "residualLag1": -0.055598426701573465,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2023": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2012,
+      "endYear": 2023,
+      "absoluteChange": -0.03928999176585074,
+      "percentChange": -8.946765996578966,
+      "slopePerYear": -0.006565170176780315,
+      "interceptAtStart": 0.47493016040276315,
+      "ci95PerYear": [
+        -0.015924242811897804,
+        0.0027939024583371764
+      ],
+      "pValue": 0.1491203099500352,
+      "residualLag1": -0.054302979302149834,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2012-2024": {
+      "n": 13,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2012,
+      "endYear": 2024,
+      "absoluteChange": -0.0349453551912568,
+      "percentChange": -7.957444161015362,
+      "slopePerYear": -0.006299471319906975,
+      "interceptAtStart": 0.47395593126089425,
+      "ci95PerYear": [
+        -0.014281082070979549,
+        0.001682139431165599
+      ],
+      "pValue": 0.11024555339716101,
+      "residualLag1": -0.05269101260536253,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2014": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2013,
+      "endYear": 2014,
+      "absoluteChange": 0.05364383561643837,
+      "percentChange": 12.947166567480004,
+      "slopePerYear": 0.05364383561643826,
+      "interceptAtStart": 0.4143287671232876,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2015": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2013,
+      "endYear": 2015,
+      "absoluteChange": 0.18520547945205484,
+      "percentChange": 44.70012563644781,
+      "slopePerYear": 0.09260273972602742,
+      "interceptAtStart": 0.4013424657534245,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2016": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2013,
+      "endYear": 2016,
+      "absoluteChange": -0.0068697507298450255,
+      "percentChange": -1.65804338847678,
+      "slopePerYear": 0.011095239164608167,
+      "interceptAtStart": 0.45568079946103757,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2017": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2013,
+      "endYear": 2017,
+      "absoluteChange": 0.002410958904109639,
+      "percentChange": 0.5818951266283267,
+      "slopePerYear": -0.005569166853806385,
+      "interceptAtStart": 0.47234520547945186,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2018": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2013,
+      "endYear": 2018,
+      "absoluteChange": 0.0355616438356165,
+      "percentChange": 8.582953117767653,
+      "slopePerYear": -0.004799018318308673,
+      "interceptAtStart": 0.47131834076545515,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2019": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2013,
+      "endYear": 2019,
+      "absoluteChange": 0.06153424657534251,
+      "percentChange": 14.851550618263584,
+      "slopePerYear": -0.0012270058708414855,
+      "interceptAtStart": 0.465364986686343,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2020": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2013,
+      "endYear": 2020,
+      "absoluteChange": 0.00990620555430799,
+      "percentChange": 2.3909046004909187,
+      "slopePerYear": -0.003938753613579565,
+      "interceptAtStart": 0.47078848217181907,
+      "ci95PerYear": [
+        -0.023089511649441917,
+        0.015212004422282786
+      ],
+      "pValue": 0.6327197520988093,
+      "residualLag1": -0.22573506221924938,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2021": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2013,
+      "endYear": 2021,
+      "absoluteChange": -0.04435616438356166,
+      "percentChange": -10.705547841036836,
+      "slopePerYear": -0.008559143648476682,
+      "interceptAtStart": 0.48156939225324574,
+      "ci95PerYear": [
+        -0.02717076841025979,
+        0.010052481113306427
+      ],
+      "pValue": 0.31285857876402373,
+      "residualLag1": -0.21084208222790668,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2022": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2013,
+      "endYear": 2022,
+      "absoluteChange": -0.013479452054794505,
+      "percentChange": -3.2533227534219367,
+      "slopePerYear": -0.008760295522029157,
+      "interceptAtStart": 0.4821057972493858,
+      "ci95PerYear": [
+        -0.023312517416346313,
+        0.005791926372287998
+      ],
+      "pValue": 0.2025114776848923,
+      "residualLag1": -0.18692942172740776,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2023": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2013,
+      "endYear": 2023,
+      "absoluteChange": -0.014465753424657557,
+      "percentChange": -3.4913707597698926,
+      "slopePerYear": -0.00851665135523208,
+      "interceptAtStart": 0.48137486474899444,
+      "ci95PerYear": [
+        -0.020346454707423696,
+        0.0033131519969595343
+      ],
+      "pValue": 0.1378386876961913,
+      "residualLag1": -0.18278346041814733,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2013-2024": {
+      "n": 12,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2013,
+      "endYear": 2024,
+      "absoluteChange": -0.010121116850063616,
+      "percentChange": -2.4427743505079813,
+      "slopePerYear": -0.007881422492471216,
+      "interceptAtStart": 0.47925743520645836,
+      "ci95PerYear": [
+        -0.01781639591212381,
+        0.002053550927181378
+      ],
+      "pValue": 0.10757311107731066,
+      "residualLag1": -0.17053644101654689,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2015": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2014,
+      "endYear": 2015,
+      "absoluteChange": 0.13156164383561647,
+      "percentChange": 28.113108131842406,
+      "slopePerYear": 0.13156164383561636,
+      "interceptAtStart": 0.46797260273972596,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2016": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2014,
+      "endYear": 2016,
+      "absoluteChange": -0.0605135863462834,
+      "percentChange": -12.931010489077597,
+      "slopePerYear": -0.0302567931731417,
+      "interceptAtStart": 0.5219120817426454,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2017": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2014,
+      "endYear": 2017,
+      "absoluteChange": -0.051232876712328734,
+      "percentChange": -10.947836777706216,
+      "slopePerYear": -0.03457738603188859,
+      "interceptAtStart": 0.5247924769818102,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2018": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2014,
+      "endYear": 2018,
+      "absoluteChange": -0.018082191780821877,
+      "percentChange": -3.8639423921315994,
+      "slopePerYear": -0.021895890410958862,
+      "interceptAtStart": 0.5121109813608802,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2019": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2014,
+      "endYear": 2019,
+      "absoluteChange": 0.007890410958904137,
+      "percentChange": 1.6860839529301623,
+      "slopePerYear": -0.011434249783452588,
+      "interceptAtStart": 0.49816212719087205,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2020": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2014,
+      "endYear": 2020,
+      "absoluteChange": -0.043737630062130384,
+      "percentChange": -9.346194586193777,
+      "slopePerYear": -0.012004427191941225,
+      "interceptAtStart": 0.49911242287168617,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2021": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2014,
+      "endYear": 2021,
+      "absoluteChange": -0.09800000000000003,
+      "percentChange": -20.941396873719345,
+      "slopePerYear": -0.015763496340972197,
+      "interceptAtStart": 0.5066305611697481,
+      "ci95PerYear": [
+        -0.03153997970018942,
+        1.2987018245029514e-05
+      ],
+      "pValue": 0.05013698186357483,
+      "residualLag1": -0.39373521933127675,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2022": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2014,
+      "endYear": 2022,
+      "absoluteChange": -0.06712328767123288,
+      "percentChange": -14.343422516246122,
+      "slopePerYear": -0.014408381365870708,
+      "interceptAtStart": 0.5034686262278446,
+      "ci95PerYear": [
+        -0.026466242656103436,
+        -0.0023505200756379803
+      ],
+      "pValue": 0.025567889794519495,
+      "residualLag1": -0.3890691585127887,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2023": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2014,
+      "endYear": 2023,
+      "absoluteChange": -0.06810958904109593,
+      "percentChange": -14.5541830103624,
+      "slopePerYear": -0.012986391196945848,
+      "interceptAtStart": 0.49967665244404513,
+      "ci95PerYear": [
+        -0.023473411835427633,
+        -0.002499370558464064
+      ],
+      "pValue": 0.02129513419119199,
+      "residualLag1": -0.35824654313106474,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2014-2024": {
+      "n": 11,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2014,
+      "endYear": 2024,
+      "absoluteChange": -0.06376495246650199,
+      "percentChange": -13.62578751260068,
+      "slopePerYear": -0.011422986206098704,
+      "interceptAtStart": 0.4949864374715035,
+      "ci95PerYear": [
+        -0.020806588513595743,
+        -0.002039383898601666
+      ],
+      "pValue": 0.022337429036677195,
+      "residualLag1": -0.3137059731805889,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2015-2016": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2015,
+      "endYear": 2016,
+      "absoluteChange": -0.19207523018189987,
+      "percentChange": -32.037407584149086,
+      "slopePerYear": -0.19207523018189998,
+      "interceptAtStart": 0.5995342465753424,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2015-2017": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2015,
+      "endYear": 2017,
+      "absoluteChange": -0.1827945205479452,
+      "percentChange": -30.489421011744277,
+      "slopePerYear": -0.0913972602739726,
+      "interceptAtStart": 0.5659749232727,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2015-2018": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2015,
+      "endYear": 2018,
+      "absoluteChange": -0.14964383561643835,
+      "percentChange": -24.960014623223504,
+      "slopePerYear": -0.043965079721536016,
+      "interceptAtStart": 0.5343534695710759,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2015-2019": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2015,
+      "endYear": 2019,
+      "absoluteChange": -0.12367123287671233,
+      "percentChange": -20.627884659324593,
+      "slopePerYear": -0.020491107118796304,
+      "interceptAtStart": 0.5108794969683358,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2015-2020": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2015,
+      "endYear": 2020,
+      "absoluteChange": -0.17529927389774685,
+      "percentChange": -29.23924277872211,
+      "slopePerYear": -0.018232391218333283,
+      "interceptAtStart": 0.5078678757677186,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2015-2021": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2015,
+      "endYear": 2021,
+      "absoluteChange": -0.2295616438356165,
+      "percentChange": -38.28999680116987,
+      "slopePerYear": -0.02128606183097538,
+      "interceptAtStart": 0.5129573267887886,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2015-2022": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2015,
+      "endYear": 2022,
+      "absoluteChange": -0.19868493150684935,
+      "percentChange": -33.139880272357544,
+      "slopePerYear": -0.01821152673959769,
+      "interceptAtStart": 0.5068082566060332,
+      "ci95PerYear": [
+        -0.040399139786462736,
+        0.003976086307267354
+      ],
+      "pValue": 0.09135453377057558,
+      "residualLag1": -0.2558870591864667,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2015-2023": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2015,
+      "endYear": 2023,
+      "absoluteChange": -0.1996712328767124,
+      "percentChange": -33.304391536809405,
+      "slopePerYear": -0.015628395338972485,
+      "interceptAtStart": 0.5007809500045745,
+      "ci95PerYear": [
+        -0.034085623659964204,
+        0.0028288329820192297
+      ],
+      "pValue": 0.08534047626932065,
+      "residualLag1": -0.25525318033279437,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2015-2024": {
+      "n": 10,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2015,
+      "endYear": 2024,
+      "absoluteChange": -0.19532659630211846,
+      "percentChange": -32.579722912888194,
+      "slopePerYear": -0.013223908521550545,
+      "interceptAtStart": 0.49436898515811606,
+      "ci95PerYear": [
+        -0.028764755214213594,
+        0.0023169381711125054
+      ],
+      "pValue": 0.08536602618727762,
+      "residualLag1": -0.24388706962769827,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2016-2017": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2016,
+      "endYear": 2017,
+      "absoluteChange": 0.009280709633954665,
+      "percentChange": 2.2777038329158503,
+      "slopePerYear": 0.009280709633954554,
+      "interceptAtStart": 0.40745901639344256,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2016-2018": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2016,
+      "endYear": 2018,
+      "absoluteChange": 0.04243139456546152,
+      "percentChange": 10.413659499067201,
+      "slopePerYear": 0.02121569728273076,
+      "interceptAtStart": 0.4034806871771838,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2016-2019": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2016,
+      "endYear": 2019,
+      "absoluteChange": 0.06840399730518754,
+      "percentChange": 16.787945425936186,
+      "slopePerYear": 0.023836267684706994,
+      "interceptAtStart": 0.4017336402425332,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2016-2020": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2016,
+      "endYear": 2020,
+      "absoluteChange": 0.016775956284153015,
+      "percentChange": 4.117213169717698,
+      "slopePerYear": 0.009267520023953917,
+      "interceptAtStart": 0.416302387903286,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2016-2021": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2016,
+      "endYear": 2021,
+      "absoluteChange": -0.03748641365371663,
+      "percentChange": -9.200045193629911,
+      "slopePerYear": -0.003970677873664646,
+      "interceptAtStart": 0.43395331843344426,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2016-2022": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2016,
+      "endYear": 2022,
+      "absoluteChange": -0.00660970132494948,
+      "percentChange": -1.6221757425947225,
+      "slopePerYear": -0.004964956743982132,
+      "interceptAtStart": 0.43561044988397335,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2016-2023": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2016,
+      "endYear": 2023,
+      "absoluteChange": -0.007596002694812531,
+      "percentChange": -1.864237233488491,
+      "slopePerYear": -0.005047684992104489,
+      "interceptAtStart": 0.435775906380218,
+      "ci95PerYear": [
+        -0.014687271806512763,
+        0.004591901822303785
+      ],
+      "pValue": 0.24737622352466243,
+      "residualLag1": 0.2898275739182027,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2016-2024": {
+      "n": 9,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2016,
+      "endYear": 2024,
+      "absoluteChange": -0.0032513661202185906,
+      "percentChange": -0.7979615100918689,
+      "slopePerYear": -0.004460136736781703,
+      "interceptAtStart": 0.4344049604511314,
+      "ci95PerYear": [
+        -0.011751008259266045,
+        0.002830734785702638
+      ],
+      "pValue": 0.19127424553177755,
+      "residualLag1": 0.29708707445902044,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2017-2018": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2017,
+      "endYear": 2018,
+      "absoluteChange": 0.03315068493150686,
+      "percentChange": 7.954769574649926,
+      "slopePerYear": 0.033150684931506746,
+      "interceptAtStart": 0.41673972602739723,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2017-2019": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2017,
+      "endYear": 2019,
+      "absoluteChange": 0.05912328767123287,
+      "percentChange": 14.187101439747549,
+      "slopePerYear": 0.029561643835616436,
+      "interceptAtStart": 0.4179360730593607,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2017-2020": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2017,
+      "endYear": 2020,
+      "absoluteChange": 0.007495246650198351,
+      "percentChange": 1.7985438349368208,
+      "slopePerYear": 0.004845834269032151,
+      "interceptAtStart": 0.43441327943708374,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2017-2021": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2017,
+      "endYear": 2021,
+      "absoluteChange": -0.0467671232876713,
+      "percentChange": -11.222141871014413,
+      "slopePerYear": -0.01191896848566509,
+      "interceptAtStart": 0.4511780821917807,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2017-2022": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2017,
+      "endYear": 2022,
+      "absoluteChange": -0.015890410958904144,
+      "percentChange": -3.8130300440470792,
+      "slopePerYear": -0.010595243442088287,
+      "interceptAtStart": 0.4494131154670118,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2017-2023": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2017,
+      "endYear": 2023,
+      "absoluteChange": -0.016876712328767196,
+      "percentChange": -4.049700874367251,
+      "slopePerYear": -0.009092954990215285,
+      "interceptAtStart": 0.44690930138055673,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2017-2024": {
+      "n": 8,
+      "missingYears": 0,
+      "status": "exploratory",
+      "startYear": 2017,
+      "endYear": 2024,
+      "absoluteChange": -0.012532075754173255,
+      "percentChange": -3.0071708962416923,
+      "slopePerYear": -0.00734720217153409,
+      "interceptAtStart": 0.4434177957431943,
+      "ci95PerYear": [
+        -0.01609113773020526,
+        0.00139673338713708
+      ],
+      "pValue": 0.08552293209755232,
+      "residualLag1": 0.12587342248261282,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2018-2019": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2018,
+      "endYear": 2019,
+      "absoluteChange": 0.025972602739726014,
+      "percentChange": 5.773095426587902,
+      "slopePerYear": 0.025972602739725903,
+      "interceptAtStart": 0.4498904109589041,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2018-2020": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2018,
+      "endYear": 2020,
+      "absoluteChange": -0.025655438281308507,
+      "percentChange": -5.702597267326962,
+      "slopePerYear": -0.012827719140654253,
+      "interceptAtStart": 0.46282385158569744,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2018-2021": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2018,
+      "endYear": 2021,
+      "absoluteChange": -0.07991780821917815,
+      "percentChange": -17.763838986663433,
+      "slopePerYear": -0.029138146567856876,
+      "interceptAtStart": 0.47369746987049943,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2018-2022": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2018,
+      "endYear": 2022,
+      "absoluteChange": -0.049041095890411,
+      "percentChange": -10.900675963705021,
+      "slopePerYear": -0.02039726027397258,
+      "interceptAtStart": 0.4649565835766149,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2018-2023": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2018,
+      "endYear": 2023,
+      "absoluteChange": -0.050027397260274054,
+      "percentChange": -11.119907435600771,
+      "slopePerYear": -0.015126870060847189,
+      "interceptAtStart": 0.45792939662578125,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2018-2024": {
+      "n": 7,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2018,
+      "endYear": 2024,
+      "absoluteChange": -0.04568276068568011,
+      "percentChange": -10.15419746073518,
+      "slopePerYear": -0.011158354988076533,
+      "interceptAtStart": 0.45131520483783,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2019-2020": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2019,
+      "endYear": 2020,
+      "absoluteChange": -0.05162804102103452,
+      "percentChange": -10.849349399894985,
+      "slopePerYear": -0.05162804102103463,
+      "interceptAtStart": 0.4758630136986301,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2019-2021": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2019,
+      "endYear": 2021,
+      "absoluteChange": -0.10589041095890417,
+      "percentChange": -22.252288560078313,
+      "slopePerYear": -0.052945205479452084,
+      "interceptAtStart": 0.4763020685181026,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2019-2022": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2019,
+      "endYear": 2022,
+      "absoluteChange": -0.07501369863013702,
+      "percentChange": -15.763716967010197,
+      "slopePerYear": -0.02793034658282806,
+      "interceptAtStart": 0.4596254959203534,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2019-2023": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2019,
+      "endYear": 2023,
+      "absoluteChange": -0.07600000000000007,
+      "percentChange": -15.970982785422317,
+      "slopePerYear": -0.017538565760910244,
+      "interceptAtStart": 0.4492337150984354,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2019-2024": {
+      "n": 6,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2019,
+      "endYear": 2024,
+      "absoluteChange": -0.07165536342540613,
+      "percentChange": -15.057981259872896,
+      "slopePerYear": -0.01144331376386172,
+      "interceptAtStart": 0.4411067124357042,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2020-2021": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2020,
+      "endYear": 2021,
+      "absoluteChange": -0.05426236993786965,
+      "percentChange": -12.790640431030006,
+      "slopePerYear": -0.0542623699378697,
+      "interceptAtStart": 0.4242349726775956,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2020-2022": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2020,
+      "endYear": 2022,
+      "absoluteChange": -0.023385657609102495,
+      "percentChange": -5.512430401836486,
+      "slopePerYear": -0.011692828804551247,
+      "interceptAtStart": 0.4100451256331561,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2020-2023": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2020,
+      "endYear": 2023,
+      "absoluteChange": -0.024371958978965547,
+      "percentChange": -5.744919808270361,
+      "slopePerYear": -0.004223916460812924,
+      "interceptAtStart": 0.40506585073733076,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2020-2024": {
+      "n": 5,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2020,
+      "endYear": 2024,
+      "absoluteChange": -0.020027322404371606,
+      "percentChange": -4.720808913505511,
+      "slopePerYear": -0.0010164233849838955,
+      "interceptAtStart": 0.40185835766150146,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2021-2022": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2021,
+      "endYear": 2022,
+      "absoluteChange": 0.030876712328767153,
+      "percentChange": 8.345675355450245,
+      "slopePerYear": 0.030876712328767042,
+      "interceptAtStart": 0.36997260273972593,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2021-2023": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2021,
+      "endYear": 2023,
+      "absoluteChange": 0.0298904109589041,
+      "percentChange": 8.079087677725118,
+      "slopePerYear": 0.01494520547945205,
+      "interceptAtStart": 0.37528310502283097,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2021-2024": {
+      "n": 4,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2021,
+      "endYear": 2024,
+      "absoluteChange": 0.03423504753349804,
+      "percentChange": 9.253400732913795,
+      "slopePerYear": 0.010171884123063121,
+      "interceptAtStart": 0.37846531926042376,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2022-2023": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2022,
+      "endYear": 2023,
+      "absoluteChange": -0.0009863013698630518,
+      "percentChange": -0.2460529013738049,
+      "slopePerYear": -0.0009863013698631629,
+      "interceptAtStart": 0.4008493150684931,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2022-2024": {
+      "n": 3,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2022,
+      "endYear": 2024,
+      "absoluteChange": 0.003358335204730889,
+      "percentChange": 0.8378049003668748,
+      "slopePerYear": 0.0016791676023654445,
+      "interceptAtStart": 0.3999608254110835,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    },
+    "2023-2024": {
+      "n": 2,
+      "missingYears": 0,
+      "status": "insufficient",
+      "startYear": 2023,
+      "endYear": 2024,
+      "absoluteChange": 0.004344636574593941,
+      "percentChange": 1.0865312433893721,
+      "slopePerYear": 0.00434463657459383,
+      "interceptAtStart": 0.39986301369863003,
+      "ci95PerYear": null,
+      "pValue": null,
+      "residualLag1": null,
+      "method": "OLS; Newey–West HAC covariance, lag 1, small-sample correction, Student-t inference (n−2 df)"
+    }
+  },
+  "processing": {
+    "aggregation": "Day-weighted mean of 12 complete monthly means; incomplete years excluded; month 13 excluded",
+    "scaling": "NASA API values used as returned; dimensionless, no additional scaling",
+    "quality": "Fill −999, nonfinite and negative AOD excluded; no per-observation quality flags are supplied by this API",
+    "uncertainty": "HAC lag-1 intervals address limited serial dependence, not measurement error, higher-order correlation, model bias or causal inference. No multiple-testing correction; selectable windows are exploratory."
+  }
+}

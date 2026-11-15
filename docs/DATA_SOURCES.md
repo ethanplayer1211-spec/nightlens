@@ -1,0 +1,71 @@
+# Data sources and access proof
+
+Verified November 15, 2026 (Malaysia time). No fabricated measurements are included.
+
+## Official challenge and eligibility
+
+- Challenge: https://www.spaceappschallenge.org/2026/challenges/earth-system-trend-detective/
+- Resources tab: https://www.spaceappschallenge.org/2026/challenges/earth-system-trend-detective/?tab=resources
+- Submission guide, dated November 13: https://www.spaceappschallenge.org/resources/project-submission-guide/
+- Judging guide, dated November 13: https://www.spaceappschallenge.org/resources/judging-awards-guide/
+
+The official tab was directly inspected through the user-opened, signed-in browser. Its NASA section lists Giovanni (https://giovanni.gsfc.nasa.gov/), Hydrology Time Series (https://disc.gsfc.nasa.gov/information/tools?title=Hydrology%20Time%20Series), AppEEARS (https://appeears.earthdatacloud.nasa.gov/), Climate Data Online (https://www.ncei.noaa.gov/cdo-web/), and the SeaWiFS time-series research article (https://ntrs.nasa.gov/api/citations/20090042747/downloads/20090042747.pdf). The tab also includes partner resources.
+
+NASA POWER and Black Marble were **not listed**. No tab-listed dataset has been downloaded or represented as used. The original brief’s stricter condition—actually use a NASA dataset from this tab—is unresolved. The official submission guide itself states a NASA data or resource is required for a Global Award, without a tab restriction. NightLens genuinely uses the NASA dataset below; do not describe this as organizer certification of eligibility.
+
+## Working numerical dataset: NASA POWER / CERES SYN1deg
+
+- Provider: NASA Langley Research Center, POWER; underlying CERES SYN1deg aerosol field.
+- Documentation: https://power.larc.nasa.gov/docs/methodology/data/sources_clds_aerosols/
+- API documentation: https://power.larc.nasa.gov/docs/services/api/temporal/monthly/
+- CERES product documentation: https://ceres.larc.nasa.gov/Data/
+- Variable: `AOD_55`, aerosol optical depth at 0.55 µm / 550 nm.
+- Units: dimensionless. API source header: `SYN1DEG`.
+- Scientific kind: satellite-derived, model-assimilated product. MODIS aerosol retrievals and MATCH supply the aerosol field; it is not a direct ground sensor measurement.
+- Native source resolution: 1° latitude × 1° longitude.
+- Time coverage used: January 2001–December 2024, 288 monthly means per region.
+- Penang query coordinate: 5.4141° N, 100.3354° E.
+- Seoul query coordinate: 37.5665° N, 126.9780° E.
+- Spatial meaning: one source grid cell selected by the query point, not a citywide average. The returned point coordinate is not a cell-boundary record.
+
+Exact queries:
+
+https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=AOD_55&community=RE&longitude=100.3354&latitude=5.4141&start=2001&end=2024&format=JSON
+
+https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=AOD_55&community=RE&longitude=126.978&latitude=37.5665&start=2001&end=2024&format=JSON
+
+Provenance is stored in `public/data/{penang,seoul}.json`: exact query, retrieved-at UTC timestamp, original header, raw response SHA-256, observations, annual aggregates, processing notes and all selectable regression windows. Original responses are retained at `data/raw/power-{penang,seoul}.json`.
+
+No rescaling is applied. API fill −999, nonfinite and negative values are excluded. API annual entry month 13 is not treated as a month. Annual means require 12 valid monthly observations and weight each by calendar days. No per-observation quality flags are supplied by this endpoint. Missing values remain null; no interpolation occurs.
+
+## Preferred radiance dataset: blocked, not used
+
+- NASA Black Marble: https://blackmarble.gsfc.nasa.gov/
+- VNP46A4 v2: https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/VNP46A4
+- DOI: https://doi.org/10.5067/VIIRS/VNP46A4.002
+- CMR collection identifier: `C3860065683-LAADS`, version `2`.
+- Public archive listing: https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/5200/VNP46A4/2023/001/.json
+- Identified Penang tile: `VNP46A4.A2023001.h28v08.002.2025162082338.h5`, listed size 95,138,289 bytes.
+- Exact attempted file: https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/5200/VNP46A4/2023/001/VNP46A4.A2023001.h28v08.002.2025162082338.h5
+
+A byte-range request followed an OAuth redirect to `urs.earthdata.nasa.gov` and returned an HTML sign-in page, not HDF5. Both CMR discovery and the LAADS route were evaluated. No credentials were requested or stored. No file was downloaded, so units/scaling and quality flags were not applied to observations. V2 documentation identifies floating-point radiances, unlike V1 integer scaling; no hardcoded V1 scaling is used.
+
+Consequence: NightLens does not answer whether nighttime artificial radiance is increasing in Penang/Seoul. It investigates a related atmospheric variable, and presents lighting changes strictly as an independent educational illustration.
+
+## Astronomy and catalog
+
+- Astronomy Engine: https://github.com/cosinekitty/astronomy
+- JavaScript API: https://github.com/cosinekitty/astronomy/tree/master/source/js
+- HYG v3.8 archive: https://raw.githubusercontent.com/astronexus/HYG-Database/main/hyg/v3/hyg_v38.csv.gz
+- HYG project archive: https://github.com/astronexus/HYG-Database
+- Current HYG home: https://codeberg.org/astronexus/hyg
+- Catalog license: CC BY-SA 4.0, David Nash / Astronexus. The versioned subset retains attribution and license metadata in `public/data/stars.json`.
+
+Selection: Sun excluded; catalog V magnitude ≤ 5.8. Result: 4,105 records. RA is in hours; declination is in degrees at J2000. Magnitude selection is a rendering/performance limit, not an observer visibility threshold. Coordinates are transformed for the selected place and instant; no randomly placed stars are added.
+
+## Educational lighting guidance
+
+DarkSky International and Illuminating Engineering Society, Five Principles for Responsible Outdoor Lighting:
+https://darksky.org/resources/guides-and-how-tos/lighting-principles/
+
+Principles are paraphrased and attributed in the Evidence notebook. No certification, endorsement, quantitative performance model or safety standard is implied.
