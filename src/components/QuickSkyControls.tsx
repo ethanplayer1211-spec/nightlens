@@ -31,10 +31,10 @@ export default function QuickSkyControls(p:Props){
     </>}
     {p.view.controlSection==='environment'&&p.environment}
     {p.view.controlSection==='lighting'&&<>
-      <p className="panel-intro">Choose a lighting scene. Compare holds the place, time, camera and atmosphere steady.</p>
+      <p className="panel-intro">Choose a lighting scene. Compare keeps the same place, time and camera. Choose Your changes or Clear reference.</p>
       <div className="lighting-scene-list" role="group" aria-label="Lighting scenes">{looks.map(([id,title,note])=><button key={id} aria-pressed={p.look===id} onClick={()=>p.onLook(id)}><span className="scene-radio" aria-hidden="true"/><span><strong>{title}</strong><small>{note}</small></span></button>)}</div>
-      <button className="panel-primary-action" onClick={p.onCompare}>Compare with busy city →</button>
-      <p className="panel-footnote">Start with No artificial light for the clearest contrast. Responsible lighting is a smaller, scheduled fixture experiment. Retain essential safety lighting; proposed changes concern selected nonessential fixtures.</p>
+      <button className="panel-primary-action" onClick={p.onCompare}>Open comparison →</button>
+      <p className="panel-footnote">Select Clear reference in Compare for the strongest contrast. Responsible lighting is a smaller, scheduled fixture experiment. Retain essential safety lighting; proposed changes concern selected nonessential fixtures.</p>
       {(p.daylight||p.cloudCover>75)&&<p className="panel-warning">{p.daylight?'Daylight/twilight can hide the difference. Choose Tonight in Place & time.':'Clouds obscure both views. Try Environment → Clear air.'}{!p.daylight&&<button onClick={p.onClearAir}>Use clear air</button>}</p>}
       <details className="quick-advanced"><summary>Fixture schedule & detailed controls</summary>{p.advanced}</details>
       <details className="quick-learning"><summary>Night designer <small>{looks.filter(v=>p.visitedLooks.includes(v[0])).length}/4 scenes explored</small></summary><p>Does 50% fixture dimming mean 50% less skyglow?</p><div className="quick-explore"><button aria-pressed={answer==='yes'} onClick={()=>setAnswer('yes')}>Yes</button><button aria-pressed={answer==='no'} onClick={()=>setAnswer('no')}>No</button></div>{answer&&<p role="status">{answer==='no'?'Correct. ':'Try again. '}Fixture output and sky brightness differ. A six-night Tucson study fitted about −7.6% satellite response for roughly halving municipal lighting power; it does not forecast this city. <button onClick={p.onEvidence}>Read the evidence</button></p>}<a href="https://darksky.org/resources/guides-and-how-tos/lighting-principles/" target="_blank" rel="noreferrer">DarkSky + IES lighting principles ↗</a></details>

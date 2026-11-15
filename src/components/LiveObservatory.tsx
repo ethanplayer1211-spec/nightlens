@@ -189,7 +189,7 @@ export default function LiveObservatory({ compact = false, onHistory }: { compac
   const chooseMoment=(moment:SkyMoment)=>{setMomentId(moment.id);setInstant(moment.instant);setNowMode(false);setTimeError('');setSelectedId(null);if(moment.target==='pair'){setLabels(true);setAsterisms(false);}setCamera(momentCamera(moment,observerPlace)??eveningCamera(observerPlace,moment.instant));};
   const chooseLook=(id:QuickLook)=>{const next=quickLightingLook(id);setGlow(next.glow);setLighting(next.lighting);setTheme(id==='midnight'?'custom':id);setCombination(id==='midnight'||id==='responsible'?'midnight':null);setVisitedLooks(v=>v.includes(id)?v:[...v,id]);if(id==='midnight'||id==='responsible')midnightPreview(true);};
   const comparisonBaseline=lighting.scheduleEnabled?glow:85;
-  const startComparison=()=>{if(Math.abs(lightingView.effectiveArtificialLight-comparisonBaseline)<1)chooseLook('natural');setComparison(true);setSplit(50);};
+  const startComparison=()=>{setComparison(true);setSplit(50);};
   const clearAir=()=>{setUseClouds(false);setFilters(v=>({...v,hazePercent:0,fogPercent:0,cloudPercent:0,glarePercent:0}));};
   const selectedLightingLabel=theme==='natural'?'No artificial light':theme==='future'?'Overlit future':theme==='responsible'&&lightingView.scheduleActive?'Dimmed + shielded + warmer':theme==='city'?'Busy city lighting':lighting.scheduleEnabled?'Scheduled fixture changes':'Custom lighting settings';
   const environmentControls=<EnvironmentControls filters={filters} glow={glow} onGlow={v=>{setGlow(v);setTheme('custom');}} onFilters={changeFilters} onSelectedClouds={()=>setUseClouds(false)} onReset={()=>{setGlow(85);setTheme('custom');}} cloudCover={cloudCover} daylight={sky.sunAltitude>=-6}/>;

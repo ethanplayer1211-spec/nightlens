@@ -1,4 +1,5 @@
 import type { ImmersiveSkyProps } from './skyView';
+import {comparisonSides} from './comparison';
 
 const vertexSource = `
 attribute vec2 position;
@@ -150,7 +151,8 @@ export function createSkyGPU(canvas: HTMLCanvasElement, onImageReady: () => void
     image.onerror = () => { if (!disposed) onImageError(); };
     image.src = document.getElementById('nightlens-gaia-texture')?.getAttribute('src') ?? '/data/gaia-sky.png';
     return {
-      draw(props, width, height) {
+      draw: function draw(props, width, height) {
+        if(props.comparison&&props.comparisonMode){const sides=comparisonSides(props),cut=Math.round(width*props.split/100);gl.enable(gl.SCISSOR_TEST);gl.scissor(0,0,cut,height);draw(sides.before,width,height);gl.scissor(cut,0,width-cut,height);draw(sides.after,width,height);gl.disable(gl.SCISSOR_TEST);return;}
         if (disposed || !width || !height || gl.isContextLost()) return;
         gl.viewport(0, 0, width, height); gl.useProgram(program);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,texture);gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,moonTexture);
         const rad = Math.PI / 180, az = props.camera.azimuth * rad, alt = props.camera.altitude * rad;

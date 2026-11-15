@@ -22,3 +22,7 @@ Named-viewpoint extension: Codex implemented the station model, native WebGL geo
 ## Immersive design and source-asset pass
 
 Codex adapted the composition and progressive interaction patterns of Apple’s official Vision Pro product page into NightLens’s own celestial-atlas layout. No Apple code, imagery, logos or proprietary fonts were copied. Motion responds to entry, camera actions, drawers and section arrival; reduced-motion preferences disable it. All five bundled fonts are original OFL distributions. The NASA Moon map, NanoRay artist model, Poly Haven material maps and two historical source-reference photographs are attributed original third-party assets, not AI-generated bitmaps. City materials, missing architecture, Penang’s virtual terrace and lighting transfer remain code-authored approximations. Claude’s earlier refused attempt remains the only Claude attempt; no Claude-authored work is claimed.
+
+## Submission presentation
+
+Codex assisted slide writing, layout, PDF packaging and the public HTML slideshow. All embedded screenshots are actual NightLens app captures; none is a generative photograph. The seven-slide public demo uses slide transitions and keyboard/touch controls. A separate two-page judge brief is supplemental material, not additional demo slides. Native PowerPoint animation was not verified. The editable Spaces presentation can be exported as PPTX through its viewer.

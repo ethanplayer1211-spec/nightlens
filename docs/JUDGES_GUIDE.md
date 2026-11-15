@@ -4,11 +4,13 @@
 
 [Open the public app](https://nightlens-sky-atlas.leveling-magician.chatgpt.site) — no account, API key or Earthdata sign-in is required to review it.
 
+[Seven-slide public demo](https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/) · [Download the seven-slide PDF](https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/NightLens-seven-slide-demo.pdf) · [Separate judge brief](https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/NightLens-judge-brief.pdf)
+
 ## A three-minute review
 
 1. Open **NASA trends**. This is the challenge's numerical investigation. Choose Penang and the default **MODIS Terra via Giovanni** record. Keep 2001–2024. Inspect the original annual series, missing-year gap, endpoint change, fitted trend, confidence interval and p-value.
 2. Open **Processing, source and uncertainty**. The original NASA CSV, its checksum, the precise source grid and a reproducible Giovanni request are linked. Download Annual CSV or Evidence JSON if useful.
-3. Open **Observatory → Enter the sky → Compare**. The first comparison deliberately uses a visibly different lighting pair when current settings are identical: Busy city versus No artificial light. Both sides share the same location, instant, camera, Moon and atmosphere. Drag the divider.
+3. Open **Observatory → Enter the sky → Compare**. Choose **Clear reference** to compare your current settings against no artificial glow, haze, fog or clouds, retaining the actual Sun and Moon. Choose **Your changes** to capture Before, then edit Lighting or Environment for After. **Set Before** refreshes that snapshot. Both sides share the same location, instant and camera. Drag the divider.
 4. Open **Environment**. Try Foggy, Clear air and Overcast. Switch individual effects on/off or change their strength. These illustrative effects do not change astronomical coordinates or the NASA trend.
 5. Open **Place & time**. Choose a featured city or tagged observing date. Clear 360° is an explicitly virtual elevated platform; turning it off restores the named source viewpoint. It is not a surveyed or accessible rooftop.
 6. Open **City experiment** for the simplified 18:00–midnight scheduling lesson, or **Sources & method** to review evidence and limitations.

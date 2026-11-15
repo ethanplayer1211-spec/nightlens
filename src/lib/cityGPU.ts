@@ -1,3 +1,4 @@
+import {comparisonSides} from './comparison';
 import {createCityPostprocess} from './cityPostprocess';
 import type { ImmersiveSkyProps } from './skyView';
 import { buildSceneMesh,buildClearPlatform,type SceneMesh } from './sceneMesh';
@@ -163,7 +164,8 @@ export function createCityGPU(canvas:HTMLCanvasElement,onMaterialReady:()=>void=
     let scene:CityScene|undefined,mesh:SceneMesh|null=null,disposed=false;
     const bind=(buffer:WebGLBuffer)=>{gl.bindBuffer(gl.ARRAY_BUFFER,buffer);for(let i=0;i<4;i++){gl.enableVertexAttribArray(attributes[i]);gl.vertexAttribPointer(attributes[i],[3,3,4,2][i],gl.FLOAT,false,48,[0,12,24,40][i]);}};
     return{
-      draw(p,width,height){
+      draw: function draw(p:ImmersiveSkyProps,width:number,height:number):SceneMesh|null {
+        if(p.comparison&&p.comparisonMode){const sides=comparisonSides(p),cut=Math.round(width*p.split/100);gl.enable(gl.SCISSOR_TEST);gl.scissor(0,0,cut,height);const first=draw(sides.before,width,height);gl.scissor(cut,0,width-cut,height);const second=draw(sides.after,width,height);gl.disable(gl.SCISSOR_TEST);return second??first;}
         if(disposed||gl.isContextLost())return null;
         gl.bindFramebuffer(gl.FRAMEBUFFER,null);
         if(p.filters.horizon==='viewpoint'&&p.scene)post?.begin(width,height);

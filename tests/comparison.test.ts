@@ -1,0 +1,10 @@
+import {describe,it,expect} from 'vitest';
+import {captureAppearance,comparisonSides} from '../src/lib/comparison';
+import {DEFAULT_FILTERS} from '../src/lib/skyAppearance';
+import type {ImmersiveSkyProps} from '../src/lib/skyView';
+const p={sky:{sunAltitude:-20,moonAltitude:30},camera:{azimuth:55,altitude:8,fieldOfView:78},worldToGalactic:[1,0,0,0,1,0,0,0,1],filters:{...DEFAULT_FILTERS,hazePercent:70,fogPercent:80,moonlightEnabled:false},lightPollution:90,cityLightPercent:90,cloudCover:70,fixtureGlare:1,fixtureOutput:1,warmth:0} as ImmersiveSkyProps;
+describe('comparison appearance snapshots',()=>{
+ it('clear reference removes weather and artificial light while preserving astronomy and viewpoint',()=>{const {before,after}=comparisonSides({...p,comparisonMode:'clean'});expect(before.lightPollution).toBe(90);expect(after.lightPollution).toBe(0);expect(after.cloudCover).toBe(0);expect(after.filters.fogPercent).toBe(0);expect(after.filters.hazePercent).toBe(0);expect(after.filters.moonlightEnabled).toBe(true);expect(after.sky).toBe(p.sky);expect(after.camera).toBe(p.camera);expect(after.worldToGalactic).toBe(p.worldToGalactic);expect(after.comparison).toBe(false);});
+ it('captured Before stays fixed while After follows edits',()=>{const snapshot=captureAppearance(p);const {before,after}=comparisonSides({...p,comparisonMode:'changes',comparisonBefore:snapshot,lightPollution:20,filters:{...p.filters,fogPercent:5}});expect(before.lightPollution).toBe(90);expect(before.filters.fogPercent).toBe(80);expect(after.lightPollution).toBe(20);expect(after.filters.fogPercent).toBe(5);expect(snapshot.filters).not.toBe(p.filters);});
+ it('both sides always use current geometry even if a captured observer setting changed',()=>{const snapshot=captureAppearance(p);const current={...p,comparisonMode:'changes' as const,comparisonBefore:snapshot,filters:{...p.filters,observerHeight:20}};const {before,after}=comparisonSides(current);expect(before.filters.observerHeight).toBe(20);expect(after.filters.observerHeight).toBe(20);expect(p.filters.observerHeight).not.toBe(20);});
+});

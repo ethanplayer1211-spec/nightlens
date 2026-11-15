@@ -3,10 +3,10 @@
 
 **Judges: [start with the three-minute review](docs/JUDGES_GUIDE.md).**
 
-[Open the public application](https://nightlens-sky-atlas.leveling-magician.chatgpt.site) · [NASA investigation](https://nightlens-sky-atlas.leveling-magician.chatgpt.site/#time-machine) · [Sources & scientific method](docs/SCIENTIFIC_METHOD.md)
+[Seven-slide demo](https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/) · [Two-page judge brief](https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/NightLens-judge-brief.pdf) · [Open the public application](https://nightlens-sky-atlas.leveling-magician.chatgpt.site) · [NASA investigation](https://nightlens-sky-atlas.leveling-magician.chatgpt.site/#time-machine) · [Sources & scientific method](docs/SCIENTIFIC_METHOD.md)
 
 1. **NASA trends:** the challenge investigation. Inspect the 2001–2024 MODIS aerosol record near Penang, data completeness, trend and uncertainty.
-2. **Observatory:** explore the calculated sky. Use Place & time, Lighting, and the independent Environment panel. Compare starts with Busy city versus No artificial light if the current settings would produce identical sides.
+2. **Observatory:** explore the calculated sky. Use Place & time, Lighting, and the independent Environment panel. Compare offers **Your changes** (captured Before, editable After) and **Clear reference** (current Before, no artificial glow/haze/fog/clouds After; actual Sun/Moon retained).
 3. **City experiment:** a simplified evening timeline for dimming selected nonessential fixtures. This is an illustration, separate from the NASA historical record.
 4. **Sources & method:** provenance, limitations, attribution and AI disclosure.
 
@@ -15,6 +15,10 @@ This repository contains the working React/TypeScript source, cached scientific 
 A digital observatory for the changing night sky. Built for NASA Space Apps 2026, **Be An Earth System Trend Detective!**
 
 NightLens connects two carefully separated experiences: a reproducible NASA atmospheric trend investigation and a hypothetical outdoor-lighting experiment over a calculated sky. It does not claim the atmospheric record measures light pollution.
+
+## Why I built it
+
+The creator: “I made this website because these days, I can’t visually see any stars in the sky, and that makes me upset. I hope people seeing this website can see what the sky can become, with certain actions.” Visual experiments illustrate possibilities; they do not predict local visibility.
 
 ## Run locally
 

@@ -11,3 +11,6 @@ __pycache__/
 .pytest_cache/
 public/downloads/nightlens-sky.html
 /evidence/browser/earthdata-agreement.jpg
+
+/output/
+/evidence/browser/

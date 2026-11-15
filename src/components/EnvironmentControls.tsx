@@ -15,7 +15,7 @@ export default function EnvironmentControls(p:{filters:SkyFilters;glow:number;on
     <Effect name="Clouds" description="Covers the sky. Overcast can hide the entire stellar field." value={p.cloudCover} restore={85} onChange={cloudPercent=>air({cloudPercent,cloudOpacityPercent:100})}/>
     <Effect name="Nearby glare" description="Adds local light spill; visible when artificial light is present." value={p.filters.glarePercent} restore={70} onChange={glarePercent=>air({glarePercent})}/>
     {p.daylight&&<p className="panel-warning">It is daylight or twilight here. Removing artificial light cannot remove the Sun; choose Tonight in Place & time.</p>}
-    <p className="panel-footnote">Appearance is illustrative. These are selected conditions, not a weather forecast or NASA measurement. Comparison applies the same air to both sides.</p>
+    <p className="panel-footnote">Appearance is illustrative. These are selected conditions, not a weather forecast or NASA measurement. Compare can hold Before steady or show a clear-sky reference.</p>
     <button className="panel-text-action" onClick={()=>{p.onSelectedClouds();p.onFilters({hazePercent:DEFAULT_FILTERS.hazePercent,fogPercent:0,cloudPercent:0,cloudOpacityPercent:85,glarePercent:15});p.onReset();}}>Reset environment</button>
   </div>;
 }

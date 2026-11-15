@@ -3,6 +3,7 @@ import type { SkyFilters } from './skyAppearance';
 import type { LocalHorizon } from './horizon';
 import type { CityScene } from './cityScene';
 import type {ReactNode} from 'react';
+import type {AppearanceSnapshot,ComparisonMode} from './comparison';
 
 export interface SkyCamera { azimuth: number; altitude: number; fieldOfView: number }
 export interface SkyViewActions {
@@ -26,6 +27,7 @@ export interface ImmersiveSkyProps {
   lightPollution: number;
   compareLightPollution: number;
   comparison: boolean;
+  comparisonMode?:ComparisonMode;comparisonBefore?:AppearanceSnapshot;
   split: number;
   onSplitChange: (value: number) => void;
   showLabels: boolean;

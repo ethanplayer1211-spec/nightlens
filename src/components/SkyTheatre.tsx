@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState, useId } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Columns2, Maximize2, Minus, Plus, RotateCcw, X, SlidersHorizontal } from 'lucide-react';
+import {captureAppearance,comparisonSides,type ComparisonMode} from '../lib/comparison';
 import { ASTERISMS, cardinal } from '../lib/astronomy';
 import {appearanceValues,sampleAppearance,visualProps} from '../lib/appearanceTransition';
 import { starDisplayContrast } from '../lib/skyAppearance';
@@ -20,6 +21,7 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
   const controlsId=useId(),controlsPanel=useRef<HTMLElement>(null),controlsButton=useRef<HTMLButtonElement>(null);
   const renderFrame=useRef<number|null>(null),qualityRef=useRef(quality),resizeRenderer=useRef<(()=>void)|null>(null);qualityRef.current=quality;
   const initialAppearance=appearanceValues(props),appearance=useRef({from:initialAppearance,to:initialAppearance,start:0,duration:0});
+  const [comparisonMode,setComparisonMode]=useState<ComparisonMode>('clean'),[comparisonBefore,setComparisonBefore]=useState(()=>captureAppearance(props));
   const studyCamera=useRef(props.camera);
   const priorFocus=useRef<HTMLElement|null>(null),cameraMotion=useRef<number|null>(null);
   const cityCanvas=useRef<HTMLCanvasElement>(null),cityGPU=useRef<CityGPU|null>(null);
@@ -27,7 +29,7 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
   const occlusion=useRef<{key:unknown[];blocked:Map<string,boolean>}>({key:[],blocked:new Map()});
   const reportedCeiling=useRef('');
   const frame = useRef<HTMLDivElement>(null), background = useRef<HTMLCanvasElement>(null), foreground = useRef<HTMLCanvasElement>(null);
-  const current = useRef({...props,quiet:false,skyDetail:false,skyOnly:false}); current.current = {...props,quiet:immersive&&quiet,skyDetail,skyOnly};
+  const current = useRef({...props,quiet:false,skyDetail:false,skyOnly:false,comparisonMode,comparisonBefore}); current.current = {...props,quiet:immersive&&quiet,skyDetail,skyOnly,comparisonMode,comparisonBefore};
   const gpu = useRef<SkyGPU | null>(null);
   const dimensions = useRef({ width: 1, height: 1, dpr: 1 });
   const [moonReady,setMoonReady]=useState(false);
@@ -54,11 +56,12 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
     const daylight = clamp((p.sky.sunAltitude + 12) / 16);
     const darkness = 1 - clamp((p.sky.sunAltitude + 16) / 13);
-    const naturalMoon = (p.filters.moonlightEnabled ? 1 : 0) * Math.max(0, Math.sin(p.sky.moonAltitude * Math.PI / 180)) * p.sky.moonIllumination;
+    const naturalMoon = Math.max(0, Math.sin(p.sky.moonAltitude * Math.PI / 180)) * p.sky.moonIllumination;
+    const sides=comparisonSides(p);
     if (!gpu.current) {
       for (let side = 0; side < (p.comparison ? 2 : 1); side++) {
         const x = side === 0 ? 0 : w * p.split / 100, width = p.comparison ? side === 0 ? w * p.split / 100 : w - x : w;
-        const glow = (p.comparison && side === 0 ? p.compareLightPollution : p.lightPollution) / 100;
+        const glow = (p.comparison ? (side===0?sides.before:sides.after).lightPollution : p.lightPollution) / 100;
         const gradient = ctx.createLinearGradient(0, 0, 0, h);
         gradient.addColorStop(0, `rgb(${Math.round(4 + daylight * 42 + glow * 16)},${Math.round(8 + daylight * 81 + glow * 10)},${Math.round(17 + daylight * 132)})`);
         gradient.addColorStop(1, `rgb(${Math.round(10 + daylight * 95 + glow * 70)},${Math.round(16 + daylight * 120 + glow * 42)},${Math.round(23 + daylight * 135 + glow * 20)})`);
@@ -69,7 +72,7 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
     if(keys.some((value,i)=>value!==occlusion.current.key[i]))occlusion.current={key:keys,blocked:new Map()};
     const blocked=(o:{id:string;altitude:number;azimuth:number})=>{if(p.skyDetail||p.skyOnly||p.clearPlatform&&p.observerElevation!==undefined)return false;const cached=occlusion.current.blocked.get(o.id);if(cached!==undefined)return cached;const value=p.scene&&p.filters.horizon==='viewpoint'?sceneBlocks(p.scene,o.altitude,o.azimuth):blockedByBuilding(o.altitude,o.azimuth,p);occlusion.current.blocked.set(o.id,value);return value;};
     const points = p.sky.objects.map(object => ({ ...object, projected: projectPerspective(object.altitude, object.azimuth, p.camera, w, h) })).filter(object => object.projected?.visible);
-    const contrastFor = (o: typeof points[number]) => o.kind === 'moon' ? Math.pow(1-p.cloudCover/100*p.filters.cloudOpacityPercent/100,3) : starDisplayContrast(o.magnitude,o.altitude,{artificialLight:p.comparison && o.projected!.x < w*p.split/100 ? p.compareLightPollution : p.lightPollution,sunAltitude:p.sky.sunAltitude,moonInfluence:naturalMoon,filters:p.filters,cloudCover:p.cloudCover,fixtureGlare:p.comparison && o.projected!.x < w*p.split/100 ? 1 : p.fixtureGlare});
+    const contrastFor = (o: typeof points[number]) => {const side=p.comparison?(o.projected!.x<w*p.split/100?sides.before:sides.after):p;return o.kind==='moon'?Math.pow(1-side.cloudCover/100*side.filters.cloudOpacityPercent/100,3):starDisplayContrast(o.magnitude,o.altitude,{artificialLight:side.lightPollution,sunAltitude:p.sky.sunAltitude,moonInfluence:side.filters.moonlightEnabled?naturalMoon:0,filters:side.filters,cloudCover:side.cloudCover,fixtureGlare:side.fixtureGlare});};
     const contrasts = new Map(points.map(o=>[o.id,contrastFor(o)]));
     projected.current = points.filter(o => o.name && (contrasts.get(o.id)??0)>.12 && !blocked(o)).map(o => ({ id: o.id, x: o.projected!.x, y: o.projected!.y, name: o.name }));
     const hips = new Map(points.filter(o => o.hip && (contrasts.get(o.id)??0)>.16).map(o => [o.hip, o]));
@@ -132,8 +135,8 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
     if (selected) { const { x, y } = selected.projected!; ctx.strokeStyle = '#d5b783'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(x, y, 13, 0, Math.PI * 2); ctx.moveTo(x - 19, y); ctx.lineTo(x - 9, y); ctx.moveTo(x + 9, y); ctx.lineTo(x + 19, y); ctx.moveTo(x, y - 19); ctx.lineTo(x, y - 9); ctx.moveTo(x, y + 9); ctx.lineTo(x, y + 19); ctx.stroke(); }
     if(!p.skyDetail&&!p.skyOnly&&!cityMesh&&p.comparison){
       const divider=w*p.split/100;
-      ctx.save();ctx.beginPath();ctx.rect(0,0,divider,h);ctx.clip();drawSurroundings(ctx,{...p,cityLightPercent:p.compareLightPollution},w,h);ctx.restore();
-      ctx.save();ctx.beginPath();ctx.rect(divider,0,w-divider,h);ctx.clip();drawSurroundings(ctx,p,w,h);ctx.restore();
+      ctx.save();ctx.beginPath();ctx.rect(0,0,divider,h);ctx.clip();drawSurroundings(ctx,sides.before,w,h);ctx.restore();
+      ctx.save();ctx.beginPath();ctx.rect(divider,0,w-divider,h);ctx.clip();drawSurroundings(ctx,sides.after,w,h);ctx.restore();
     }else if(!p.skyDetail&&!p.skyOnly&&!cityMesh)drawSurroundings(ctx,p,w,h);
     // Compass labels follow the projected geometric horizon, including camera pitch.
     ctx.font = '9px "DM Mono",monospace'; ctx.textAlign = 'center';
@@ -170,14 +173,14 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
     const to=appearanceValues(current.current),previous=appearance.current;
     if(Object.entries(to).every(([key,value])=>value===previous.to[key as keyof typeof to]))return;
     const now=performance.now();appearance.current={from:sampleAppearance(previous,now).values,to,start:now,duration:window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:360};render();
-  },[props.lightPollution,props.compareLightPollution,props.cityLightPercent,props.cloudCover,props.fixtureGlare,props.fixtureOutput,props.warmth,props.filters.hazePercent,props.filters.glarePercent,props.filters.cloudOpacityPercent,render]);
+  },[props.lightPollution,props.compareLightPollution,props.cityLightPercent,props.cloudCover,props.fixtureGlare,props.fixtureOutput,props.warmth,props.filters.hazePercent,props.filters.fogPercent,props.filters.glarePercent,props.filters.cloudOpacityPercent,render]);
   useEffect(()=>{resizeRenderer.current?.();},[quality]);
   const onImmersiveChange=props.onImmersiveChange;
   useEffect(()=>{onImmersiveChange?.(immersive);},[immersive,onImmersiveChange]);
   useEffect(()=>{if(props.showLabels||props.showConstellations)setQuiet(false);},[props.showLabels,props.showConstellations]);
   useEffect(()=>{if(!immersive)setControlsOpen(false);},[immersive]);
   useEffect(()=>{if(controlsOpen)controlsPanel.current?.querySelector<HTMLButtonElement>('button')?.focus({preventScroll:true});},[controlsOpen]);
-  useEffect(render, [props, render,immersive,quiet,skyDetail,skyOnly]);
+  useEffect(render, [props, render,immersive,quiet,skyDetail,skyOnly,comparisonMode,comparisonBefore]);
   useEffect(()=>{if(cameraMotion.current!==null){cancelAnimationFrame(cameraMotion.current);cameraMotion.current=null;}},[props.scene?.id,props.sky.date]);
   useEffect(()=>{if(props.enterViewRequest)setImmersive(true);},[props.enterViewRequest]);
   useEffect(()=>{if(props.openControlsRequest){setImmersive(true);setControlsOpen(true);}},[props.openControlsRequest]);
@@ -197,11 +200,13 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
     const tick=(now:number)=>{const t=Math.min(1,(now-began)/duration),ease=t*t*(3-2*t);current.current.onCameraChange({azimuth:(start.azimuth+delta*ease+360)%360,altitude:start.altitude+(end.altitude-start.altitude)*ease,fieldOfView:start.fieldOfView+(end.fieldOfView-start.fieldOfView)*ease});cameraMotion.current=t<1?requestAnimationFrame(tick):null;};
     cameraMotion.current=requestAnimationFrame(tick);
   };
+  useEffect(()=>{if(props.comparison)setComparisonBefore(captureAppearance(current.current));},[props.comparison]);
+  const selectComparisonMode=(mode:ComparisonMode)=>{setComparisonBefore(captureAppearance(props));setComparisonMode(mode);};
   const openPanel=(section:'observe'|'lighting'|'environment')=>{setControlSection(section);setControlsOpen(!controlsOpen||controlSection!==section);};
   const showSkyOnly=(value:boolean)=>{setSkyOnly(value);setSkyDetail(false);if(value)moveCamera(skyFirstCamera(props.camera),650);};
   const faceCity=()=>{setSkyOnly(false);setSkyDetail(false);moveCamera(props.clearPlatform?clearPlatformCamera(props.scene?.site.camera??DEFAULT_CAMERA):props.scene?.site.camera??DEFAULT_CAMERA,650);};
   const moonStudy=()=>{if(skyDetail){setSkyDetail(false);moveCamera(studyCamera.current,650);}else{const moon=props.sky.objects.find(o=>o.kind==='moon');if(!moon)return;studyCamera.current={...props.camera};setSkyDetail(true);moveCamera({azimuth:moon.azimuth,altitude:moon.altitude,fieldOfView:12},850);}};
-  const resetView=()=>{setSkyOnly(false);setSkyDetail(false);setQuiet(true);props.onReset?.();};
+  const resetView=()=>{setComparisonMode('clean');setSkyOnly(false);setSkyDetail(false);setQuiet(true);props.onReset?.();};
   const pan = (az: number, alt: number) => moveCamera({ ...props.camera, azimuth: props.camera.azimuth + az, altitude: props.camera.altitude + alt });
   const zoom = (amount: number) => moveCamera({ ...props.camera, fieldOfView: props.camera.fieldOfView + amount });
   const splitPointer = (event: React.PointerEvent<HTMLDivElement>) => { const bounds = frame.current?.getBoundingClientRect(); if (bounds) props.onSplitChange(Math.round(clamp((event.clientX - bounds.left) / bounds.width, 0.04, 0.96) * 100)); };
@@ -218,13 +223,13 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
       onPointerCancel={() => pointers.current.clear()} />
     <canvas ref={cityCanvas} className="theatre-city" aria-hidden="true"/>
     <div className="theatre-experience-toolbar">{immersive&&<div className="theatre-place-title"><strong>{props.clearPlatform&&props.scene?`Above ${props.scene.site.city} · virtual platform`:props.scene?.site.name??'The sky above you'}</strong><span>{props.localClockLabel??`${props.sky.date.toISOString().replace('T',' ').slice(0,16)} UTC`} · CALCULATED SKY</span><button className="theatre-place-edit" onClick={()=>openPanel('observe')}>Place & time</button></div>}<button className="inline-sky-only" aria-pressed={skyOnly} onClick={()=>{setSkyOnly(v=>!v);setSkyDetail(false);if(!skyOnly)moveCamera(skyFirstCamera(props.camera),650);}}>Sky only</button><button onClick={()=>setImmersive(v=>!v)} aria-label={immersive?'Exit immersive view':'Enter immersive view'}>{immersive?<><X size={15}/>Return to instrument</>:<><Maximize2 size={14}/>Enter the view</>}</button></div>
-    {immersive&&<p className="simple-sky-hint">{props.comparison?'Drag the divider · Both sides share the same sky and air':'Drag to look around · Scroll to zoom'}</p>}
+    {immersive&&<p className="simple-sky-hint">{props.comparison?'Drag the divider · Same place, time and sky geometry':'Drag to look around · Scroll to zoom'}</p>}
     {immersive&&<div className="theatre-control-dock simple-sky-dock">{props.controlPanel&&<><button className="primary-adjust" ref={controlsButton} aria-expanded={controlsOpen&&controlSection==='lighting'} aria-controls={controlsId} onClick={()=>openPanel('lighting')}><SlidersHorizontal size={15}/>Lighting</button><button aria-pressed={controlsOpen&&controlSection==='environment'} onClick={()=>openPanel('environment')}>Environment</button></>}{props.onComparisonToggle&&<button onClick={props.onComparisonToggle} aria-pressed={props.comparison}><Columns2 size={14}/>Compare</button>}<button onClick={resetView}><RotateCcw size={14}/>Reset</button></div>}
 
     {immersive&&controlsOpen&&<aside ref={controlsPanel} id={controlsId} className="immersive-controls-panel guided-controls-panel" aria-label={controlSection==='environment'?'Environment controls':controlSection==='observe'?'Place and time controls':'Lighting controls'}><header><strong>{controlSection==='observe'?'Place & time':controlSection==='environment'?'Environment':'Lighting experiments'}</strong><button aria-label="Done" onClick={()=>{setControlsOpen(false);controlsButton.current?.focus();}}>Done</button></header><nav className="observatory-panel-nav" aria-label="Observatory tools">{(['observe','lighting','environment'] as const).map(id=><button key={id} aria-pressed={controlSection===id} onClick={()=>setControlSection(id)}>{id==='observe'?'Place & time':id==='lighting'?'Lighting':'Environment'}</button>)}</nav>{typeof props.controlPanel==='function'?props.controlPanel({controlSection,skyOnly,onSkyOnly:showSkyOnly,onCityView:faceCity,moonAvailable:props.sky.objects.some(o=>o.kind==='moon'),moonStudy:skyDetail,onMoonStudy:moonStudy,quality,onQuality:setQuality,clearPlatform:Boolean(props.clearPlatform),onClearPlatform:value=>{setSkyOnly(false);setSkyDetail(false);props.onClearPlatform?.(value);moveCamera(value?clearPlatformCamera(props.camera):skyFirstCamera(props.camera),650);},platformElevation:props.platformElevation}):props.controlPanel}</aside>}
 
     <div className="theatre-top"><div className="theatre-state"><i className={mode === 'DAYLIGHT' ? 'theatre-day-dot' : ''} /><span>{mode}</span></div><span className="theatre-appearance">SIMULATED APPEARANCE</span></div>
-    {props.comparison && <><div className="theatre-compare-label theatre-before"><span>BEFORE</span><strong>{props.baselineLabel}</strong></div><div className="theatre-compare-label theatre-after"><span>AFTER</span><strong>{props.selectedLabel??'Selected lighting'}</strong></div><p className="comparison-explanation">{props.comparisonNote??'Same place, instant and air. Only lighting changes.'}</p><div className="theatre-divider" style={{ left: `${props.split}%` }} onPointerDown={e => { e.currentTarget.setPointerCapture(e.pointerId); splitPointer(e); }} onPointerMove={e => { if (e.buttons) splitPointer(e); }}><span><Columns2 size={16} /></span></div></>}
+    {props.comparison && <><div className="theatre-compare-label theatre-before"><span>BEFORE</span><strong>{comparisonMode==='clean'?'Your settings':'Captured settings'}</strong></div><div className="theatre-compare-label theatre-after"><span>AFTER</span><strong>{comparisonMode==='clean'?'Clear-sky reference':'Your changes'}</strong></div><p className="comparison-explanation">{comparisonMode==='clean'?'After: no artificial glow, haze, fog or clouds. The real Sun and Moon remain.':'Before is held steady. Change Lighting or Environment to edit After.'}</p><div className="theatre-divider" style={{ left: `${props.split}%` }} onPointerDown={e => { e.currentTarget.setPointerCapture(e.pointerId); splitPointer(e); }} onPointerMove={e => { if (e.buttons) splitPointer(e); }}><span><Columns2 size={16} /></span></div></>}
     {props.clearPlatform&&props.filters.horizon==='viewpoint'&&!cityFallback&&props.observerElevation!==undefined&&!skyOnly&&!skyDetail&&<span className="theatre-clear-sky-note">CLEAR 360° · VIRTUAL PLATFORM · {Math.round(props.observerElevation)} m ASL</span>}
     {skyOnly&&!skyDetail&&<span className="theatre-clear-sky-note">SKY ONLY · LOCAL OBSTRUCTIONS HIDDEN</span>}
     {props.camera.fieldOfView<=15&&<span className="theatre-magnified-note">{skyDetail?'MAGNIFIED STUDY · LOCAL OBSTRUCTIONS HIDDEN':'MAGNIFIED VIEW'} · FOV {props.camera.fieldOfView.toFixed(0)}°</span>}
@@ -234,6 +239,7 @@ export default function SkyTheatre(props: ImmersiveSkyProps) {
     {fullscreenError && <span className="theatre-camera-message" role="status">{fullscreenError}</span>}<div className="theatre-centre-reticle" aria-hidden="true"><span /><span /></div>
     <div className="theatre-horizon-caption">{props.filters.horizon==='viewpoint'?(cityFallback?'3D VIEW UNAVAILABLE · SIMPLIFIED FALLBACK':props.scene?(props.clearPlatform?'VIRTUAL PLATFORM · MAP-BASED CITY BELOW':'NAMED VIEWPOINT · MAP-BASED RECONSTRUCTION'):'LOADING NAMED VIEWPOINT'):props.filters.horizon==='local'&&props.horizonData?'MAPPED BUILDINGS · ESTIMATED HEIGHTS':props.filters.horizon==='local'?'ILLUSTRATIVE SKYLINE · MAP UNAVAILABLE':props.filters.horizon==='rooftop'?'ILLUSTRATIVE ROOFTOP':props.filters.horizon==='coast'?'ILLUSTRATIVE COAST':'ILLUSTRATIVE FIELD'}</div>
     <div className="theatre-source-credit">{fallback ? 'STAR CATALOG MODE · WEBGL UNAVAILABLE' : imageFailed ? 'SURVEY IMAGE UNAVAILABLE · CATALOG POSITIONS PRESERVED' : 'ESA/Gaia/DPAC · SURVEY BACKGROUND'}{skyDetail&&<span>{moonReady&&!fallback?'Moon surface: NASA/SVS · LRO/LROC · size and phase calculated':'Moon texture unavailable · calculated phase, schematic surface'}</span>}{props.scene?.landmarkModel&&!skyDetail&&!skyOnly&&<span>Petronas 3D model: NanoRay · CC BY 4.0 · georegistered artist model</span>}{props.filters.horizon==='viewpoint'&&!skyDetail&&!skyOnly&&<span>© OpenStreetMap contributors · NASA/USGS terrain · reconstruction</span>}<small>DRAG TO LOOK AROUND · SCROLL / PINCH TO ZOOM</small></div>
+    {props.comparison&&<div className="comparison-mode" role="group" aria-label="After view"><strong>After</strong><button aria-pressed={comparisonMode==='changes'} onClick={()=>selectComparisonMode('changes')}>Your changes</button><button aria-pressed={comparisonMode==='clean'} onClick={()=>selectComparisonMode('clean')}>Clear reference</button>{comparisonMode==='changes'&&<button onClick={()=>setComparisonBefore(captureAppearance(props))}>Set Before</button>}</div>}
     {props.comparison && <label className="theatre-compare-access">Compare lighting <input type="range" min="4" max="96" value={props.split} aria-label="Immersive sky comparison divider" onChange={e => props.onSplitChange(Number(e.target.value))} /></label>}
   </div>;
 }

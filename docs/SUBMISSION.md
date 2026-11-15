@@ -1,113 +1,55 @@
-# Submission draft — owner review required
+# NightLens — final submission review
 
-The official project editor contains a saved NightLens revision (November 15, 2026 10:23 Malaysia time), verified by reopening the editor. The owner reviewed/checked the declarations. No Submit for Judging action was performed. Public final-project and demo links remain required, and the public non-editor tab still showed its prior placeholder title. This local document is the durable source draft.
+**Prepared 15 November 2026. A saved draft is not submitted for judging.**
 
-## Project name
+## Links
 
-NightLens — The Atlas of Lost Starlight
+- Project: https://github.com/ethanplayer1211-spec/nightlens
+- Live app: https://nightlens-sky-atlas.leveling-magician.chatgpt.site
+- Seven-slide public demo: https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/
+- Separate brief: https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/NightLens-judge-brief.pdf
 
-## High-level project summary
+## Summary
 
-NightLens is a digital observatory for the changing night sky. It lets people investigate a 2001–2024 MODIS Terra aerosol record near Penang, exported through the challenge-listed NASA Giovanni resource, compare separately labeled POWER context near Penang and Seoul, inspect a calculated astronomical sky, and ask “What if?” about responsible outdoor lighting. A traceable trend explorer reports how much the environmental variable changed, its fitted trend, confidence interval and exploratory significance. A separate City Experiment offers scheduled dimming and a draggable sky comparison. Measured environmental records, calculated astronomy and illustrative lighting effects are carefully distinguished.
+NightLens turns a personal question—why can I no longer see stars above my city?—into an evidence-led digital observatory. Explore a calculated sky above a sourced city reconstruction, compare your environmental settings with a clear-sky reference, and test scheduled dimming of selected nonessential fixtures. The challenge investigation analyzes 2001–2024 MODIS Terra aerosol data near Penang, exported through NASA Giovanni. It exposes the original record, missing data, trend, confidence interval and exploratory significance. A separate six-night Tucson study shows why fixture dimming and sky response differ. Measured atmospheric records, calculated astronomy and illustrative appearance remain distinct. Public source, reproducible analysis, evidence exports and a seven-slide demo make the work reviewable. No exact star-visibility, energy-saving or safety forecasts are claimed.
 
-## Challenge
+## Project details
 
-Be An Earth System Trend Detective!
-https://www.spaceappschallenge.org/2026/challenges/earth-system-trend-detective/
+WHY I BUILT IT
+The creator: “I made this website because these days, I can't visually see any stars in the sky, and that makes me upset. I hope people seeing this website can see what the sky can become, with certain actions.”
 
-## Link to final project
+START WITH THE EXPERIENCE
+• Observatory: select a place and instant; drag the calculated sky. Seven named city reconstructions provide context. Clear 360° uses an explicitly virtual elevated platform, not an accessible or surveyed rooftop.
+• Lighting and Environment are separate. Haze, fog, clouds and glare visibly change the illustration. Compare offers captured Before with editable After, or your current settings against a clear-sky reference. Actual Sun/Moon and astronomical geometry remain.
+• City experiment: scrub 18:00–midnight; schedules activate at the chosen time. Adjust participating nonessential fixtures, dimming, shielding and colour. Essential safety lighting is excluded.
 
-https://github.com/ethanplayer1211-spec/nightlens
+THE NASA CHALLENGE INVESTIGATION
+• Challenge-listed NASA Giovanni: MODIS Terra MOD08_M3 v6.1 combined Dark Target/Deep Blue AOD at 550 nm, 2001–2024. Requested bounds: 100–101° E, 5–6° N; actual 1° grid centre: 100.5° E, 5.5° N. This is a source grid cell, not a citywide average.
+• 288 monthly timestamps; October 2022 is fill. Excluding incomplete 2022 leaves 23 complete annual values. Calendar-day weighting, OLS and calendar-year Newey–West HAC lag 1 with small-sample correction and Student-t inference are reproducible in Python. Missing years are not bridged. Windows under eight complete years suppress inference.
+• Endpoint change: −15.1%. Fitted trend: −0.01555 AOD/decade; 95% CI −0.03982 to +0.00873; p≈0.197. The trend is inconclusive. Window selection is exploratory and does not establish causation. POWER/CERES Penang/Seoul context remains separate; products are not spliced.
+• Original NASA CSV, request, SHA-256, annual CSV and evidence JSON are available. Aerosols are atmospheric context, not a nighttime-lighting trend or a visibility calibration.
 
-Use the code repository as the project submission link. Its README begins with the judge’s starting guide and links to the public app: https://nightlens-sky-atlas.leveling-magician.chatgpt.site . Repository visibility is public. Live version 2 was verified on 15 November 2026. The official editor was not changed by this release.
+HUMAN ACTION, WITH EVIDENCE
+The app separately reanalyzes six published Tucson 2019 VIIRS observations. Municipal power 1.38→0.70 MW corresponds to a fitted satellite-sum response of about −7.6%, not −50%. Conditional 95% interval: −10.3% to −4.9%, with fixed fitted denominator uncertainty omitted. Exact permutation and leave-one-night-out checks are included. This is not a forecast for the selected city. DarkSky International/IES Five Principles guide the educational lighting scenarios.
 
-## Link to project demo
+WHAT THE APP DOES NOT CLAIM
+Lighting/weather transfer, materials and fine architecture are illustrative. The sky is a calculated reconstruction, not a live photograph or a calibrated naked-eye forecast. No Bortle class, exact visible-star count, energy saving or safety effect is calculated. No Black Marble radiance trend is claimed.
 
-PENDING — provide a publicly accessible video ≤30 seconds or a slide deck ≤7 slides, including title/intro. `DEMO_STORYBOARD.md` supplies a 28-second script. A storyboard alone is not the required demo.
+BUILD & DISCLOSURE
+React, TypeScript, Vite, native WebGL/Canvas and Astronomy Engine; HYG stars, ESA/Gaia survey field, NASA LROC lunar map, attributed OSM/terrain and licensed source assets. NumPy/SciPy/statsmodels support reproducible statistics. 74 TypeScript and 24 scientific tests pass; production build passes. Codex assisted implementation, analysis code, research, tests, prose, slide layout and packaging. Source observations and photographic assets are attributed originals; no generated photographic image/video/audio is used. Claude Code was attempted with permission but produced no code after provider authorization refusal. Full licenses, asset sources and AI disclosure are in the repository. NASA does not endorse NightLens.
 
-## Detailed description
+PUBLIC REVIEW
+Project/source: https://github.com/ethanplayer1211-spec/nightlens
+Live app: https://nightlens-sky-atlas.leveling-magician.chatgpt.site
+Seven-slide demo: https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/
+Separate two-page brief: https://nightlens-sky-atlas.leveling-magician.chatgpt.site/demo/NightLens-judge-brief.pdf
+Judges: begin with README and docs/JUDGES_GUIDE.md.
 
-Environmental changes can alter our experience of the sky, but atmospheric records and light-pollution illustrations should not be conflated. NightLens makes that distinction part of the experience.
+## Owner’s final checks
 
-The default Time Machine record explores MODIS Terra MOD08_M3 v6.1 combined Dark Target / Deep Blue aerosol optical depth at 550 nm, exported through NASA Giovanni. Requested Penang bounds are 100–101° E, 5–6° N; the actual source grid centre is 100.5° E, 5.5° N. Its 288 monthly timestamps span 2001–2024. October 2022 is fill, so 2022 is excluded, leaving 23 complete annual values. The fitted slope is −0.01555 AOD per decade (95% CI −0.03982 to +0.00873, p≈0.197): inconclusive, despite −15.1% endpoint change. Calendar-year HAC pairs do not bridge the excluded year. NASA POWER’s CERES SYN1deg context remains separate for Penang and Seoul; values are not spliced between products. Each location selects a 1° source grid cell, not a citywide average. Monthly values are cached with provenance and raw-response checksums. Complete years are aggregated using calendar-day weighting. The user selects a period and inspects the actual annual record, endpoint change and linear trend. Confidence intervals and two-sided p-values use a Newey–West lag-1 HAC covariance estimate, with small-sample correction and Student-t inference. Shorter than eight complete years suppresses inference; all windows are labeled exploratory. The complete data and assumptions can be downloaded as CSV or JSON evidence.
-
-The Observatory uses Astronomy Engine and an attributed HYG star catalog. It calculates the sky for a selected place, date and local evening time, including the Moon and selected planets. Below-horizon objects are filtered, and the interface shows altitude/direction and Moon illumination. It does not guarantee observability or provide live weather.
-
-The What If? — City Experiment schedules dimming of participating nonessential outdoor fixtures. Timeline scrubbing activates or reverses the schedule at the chosen time. A draggable divider compares the same astronomical geometry with baseline and hypothetical lighting appearance. Shielding, color and four preset experiments make responsible lighting principles tangible. All visual effects are explicitly illustrative. No conversion to exact skyglow reduction, Bortle class, star count, energy savings or safety outcome is claimed. Essential safety lighting is excluded.
-
-The main view uses a perspective sky over geographically sourced city reconstruction. Clear 360° is an explicitly fictional elevated observation platform above every rendered source vertex, with the same virtual height supplied to astronomy; it is not an accessible or surveyed rooftop. Named-viewpoint mode remains available. Five curated observing tags select calculated lunar-phase evenings, the NASA-highlighted November 2026 Mars/Jupiter pairing and Geminid planning geometry. Meteor appearance or rates are not forecast. Three direct lighting looks and a short Night Designer learning activity expose the difference between fixture output and measured sky response. Restrained controls and the evidence notebook use the visual language of a celestial atlas. The product is a static React/TypeScript application with local cached data; the scientific pipeline uses Python, NumPy, SciPy and statsmodels. It does not require an account, permanent backend or runtime API credentials.
-
-## NASA data and resources actually used
-
-- NASA Giovanni (listed challenge resource): Terra MOD08_M3 v6.1 monthly AOD, Penang region, 2001–2024; original CSV SHA-256 `121f595c5668c0fe56c51537c959e1bac660195b5527da2a049538adf23dc299`. The app analyzes this record with reproducible Python and exports evidence. https://giovanni.gsfc.nasa.gov/
-- NASA POWER monthly API, `AOD_55`, 2001–2024, exact requests and raw SHA-256 hashes documented in `DATA_SOURCES.md`.
-- NASA CERES SYN1deg aerosol product documentation: https://power.larc.nasa.gov/docs/methodology/data/sources_clds_aerosols/
-- NASA CERES product description: https://ceres.larc.nasa.gov/Data/
-- Official challenge and November 13 submission/judging guides were consulted.
-
-NASA Giovanni is explicitly listed in the selected challenge Resources tab and is now used numerically in the working application. The earlier source gap has been addressed by the actual MODIS CSV export and trend analysis. This documents resource use; organizers retain eligibility decisions. NASA does not endorse this application.
-
-Black Marble VNP46A4 was evaluated but could not be downloaded without Earthdata sign-in. It is not an analyzed dataset in this version. The numerical investigation is aerosols; it is not a radiance trend investigation.
-
-## Use of SI
-
-Codex assisted with coding, documentation, research and testing. The user supplied the project concept and requirements. NASA records and HYG coordinates were downloaded from their cited sources, not generated by AI. There is no trained custom machine-learning model. No generative bitmap, video or audio asset is used. See `AI_DISCLOSURE.md`.
-
-## Other references and tools
-
-- Astronomy Engine, Don Cross, MIT: https://github.com/cosinekitty/astronomy
-- HYG v3.8, David Nash / Astronexus, CC BY-SA 4.0: https://github.com/astronexus/HYG-Database
-- DarkSky International / Illuminating Engineering Society lighting principles: https://darksky.org/resources/guides-and-how-tos/lighting-principles/
-- React: https://react.dev/
-- TypeScript: https://www.typescriptlang.org/
-- Vite: https://vite.dev/
-- Lucide icons, ISC: https://lucide.dev/
-- NumPy: https://numpy.org/
-- SciPy: https://scipy.org/
-- statsmodels: https://www.statsmodels.org/
-- Vitest: https://vitest.dev/
-- pytest: https://docs.pytest.org/
-- Fonts: Instrument Serif, DM Sans, DM Mono via Google Fonts, SIL Open Font License.
-
-## Required owner checks
-
-- Confirm every teammate is registered/accepted at the same Local Event or Universal Event, and meets its team-size requirements.
-- The November 13 judging guide requires ≥1 teammate at a Local Event and ≥2 at the Universal Event; maximum six.
-- Confirm the Local Event’s deadline. The official guide uses November 15, 2026, 23:59 in the event’s local timezone (Universal Event: team owner’s residence timezone). Malaysia client time is UTC+08:00.
-- Approve publication; verify the final public URL and public demo URL without login.
-- Fill remaining factual team information and all required form fields in English.
-- Personally review final original-work, licensing and legal declarations; submit before the applicable deadline.
-- After any later form changes, follow the official save/resubmit flow and verify a success banner. A saved draft is not a judged submission.
-
-
-## Local extension after the saved revision
-
-The perspective Observatory extension is implemented and locally tested. The saved online draft has not been updated to describe it. Before a later final submission, include the current location/time sky, embedded Gaia survey, optional Open-Meteo model conditions, illustrative lighting themes, and standalone HTML. Retain the separation from NASA POWER/CERES aerosol history. Add the actual new source references:
-
-- ESA/Gaia/DPAC, acknowledgement A. Moitinho; Gaia EDR3 integrated brightness/colour sky map, CC BY-SA 3.0 IGO: https://www.esa.int/media/interactive-map-of-the-sky-from-gaia-s-early-data-release-3
-- Open-Meteo / GeoNames geocoding and current model conditions, CC BY 4.0: https://open-meteo.com/en/docs/geocoding-api and https://open-meteo.com/en/docs ; source/license notices https://open-meteo.com/en/licence
-- NASA/JPL Horizons limited independent Moon position reference: https://ssd-api.jpl.nasa.gov/doc/horizons.html ; exact query/response cached in the project.
-
-Codex implemented this extension. A specifically approved Claude Code collaboration failed with an account/organization authorization error before any code contribution. Do not claim Claude co-authorship. See `AI_DISCLOSURE.md`, `OBSERVATORY.md` and `VALIDATION.md` for actual scope and limits. This addition is not a published demo or a final judging submission.
-
-
-## Realism / human-intervention extension after the saved revision
-
-The local implementation now adds six editable environmental combinations, stronger glare/cloud attenuation, coherent constellation/star/label contrast, a recurring after-midnight nonessential-fixture schedule, map-based surroundings and an observed intervention case. The saved online draft is still the earlier revision; it has not been silently updated or submitted.
-
-Additional references required before a later submission:
-
-- NASA Earth Observatory, Experimenting with Tucson Night Lights: https://science.nasa.gov/earth/earth-observatory/experimenting-with-tucson-night-lights-148259/
-- Kyba et al., DOI 10.1177/1477153520958463, Table 6 (actual numerical source for the six-night VIIRS reanalysis): https://journals.sagepub.com/doi/full/10.1177/1477153520958463?journalCode=lrtd
-- Barentine et al., DOI 10.1016/j.jqsrt.2020.107120, Table 7, separately cited ground measurements: https://www.johncbarentine.com/uploads/7/8/0/8/78081652/barentine-et-al-2020.pdf
-- OpenStreetMap contributors / ODbL: https://www.openstreetmap.org/copyright ; Overpass API: https://wiki.openstreetmap.org/wiki/Overpass_API
-
-Describe the numerical source as attributed rounded published VIIRS aggregates from NOAA-generated Suomi NPP data, not a newly downloaded Black Marble record. Keep its small-sample reanalysis separate from the original 24-year NASA POWER challenge investigation and the uncalibrated appearance model. Building footprints are mapped, but heights/facades/terrain/viewpoint remain approximations. Essential safety lighting remains excluded. Current validation and source limitations are in `VALIDATION.md`, `OBSERVATORY.md` and `TUCSON_EVIDENCE.md`.
-
-## Prepared local addition: named viewpoints
-
-The Observatory adds seven named virtual outdoor stations, initially KL Tower Sky Deck looking toward the Petronas Twin Towers. Cached OSM footprint/building-part geometry and NASA/USGS SRTMGL3 V003 terrain align the city context with the calculated astronomical frame. Published landmark dimensions constrain simplified original geometry. Facades, materials, furniture shapes, paving and railings remain illustrative; no surveyed or exact photorealistic city is claimed. The selected date changes astronomy, not the city-construction vintage. Source references/provenance: docs/VIEWPOINT_SOURCES.md and data/viewpoint-{map,terrain}-sources.json. This local addition has not been copied to the official editor, deployed, pushed or submitted for judging.
-
-## Current design-pass handoff (local only)
-
-The Observatory now opens with an explicit Tonight preview, an immersive sky, progressive controls, wider mapped context, a georegistered attributed Petronas artist model, an assumed George Town terrace and a NASA LROC Moon surface with calculated size/phase/orientation. Separate historical reference photographs and source credits help users assess the reconstruction. Local fonts and all seven viewpoint bundles are included in the approximately 16.03 MiB standalone. City fine detail, domestic foreground and lighting appearance remain illustrative, not a live photograph or measured digital twin. No changes were made to the saved online editor, public deployment or judging submission during this pass. The corrected tab-listed-resource eligibility gap above must be resolved before claiming Global Awards eligibility.
+- Owner confirmed at least two accepted Universal Event teammates and Malaysia residence timezone.
+- Review all seven demo slides, public app and source repository.
+- Confirm project name, summary, personal motivation, sources and SI-use selections.
+- Review the existing owner-checked original-work and legal declarations.
+- Only after approval, click Submit for Judging before 23:59 MYT on 15 November 2026.
+- Verify an explicit submission success notification; Save Progress alone does not count.
